@@ -1,0 +1,62 @@
+Sprint 1
+
+Home page
+registration
+Login
+
+Tasks breakdown
+
+sprint 2
+
+//edit questions
+//delete questions if no answers
+
+make questions
+make answers - require minimum, maximum not too much
+make search bar to look for questions
+ranking system for votes (upvotes, selected/best answer)
+sorted questions - most upvotes, questions with best answers, how many answers, date
+
+//All features
+
+
+- Home page
+- registration
+	- username
+	- password
+	- gender
+	- security question
+	- profile pic (default silohoutte)
+	- bio
+	- profession (student, professor, work)
+	- captcha
+	
+- Login
+	- username
+	- password
+		- ask security questions (3 attempts) if forgotten
+	- fast login (pin)
+
+- Tasks breakdown
+- make questions
+- make answers - require minimum, maximum not too much
+- make search bar to look for questions
+- ranking system for votes (upvotes, selected/best answer)
+- sorted questions - most upvotes, questions with best answers, how many answers, date
+
+- download thread questions and answers -> simple
+	- potentially by upvotes, dates, 
+- member status/profile
+	- questions done
+	- answers done
+	- number of best answers
+	- ranking system for best answers
+	- edit password
+		- captcha
+- Anonymous can only view and download
+- delete or edit answer from owner
+
+//BONUS
+
+- purging account...
+- sign in with google, authentication
