@@ -26,9 +26,9 @@ sprint 2
 	- password
 	- gender
 	- security question
-	- profile pic (default silohoutte)
+	- profile pic (default silohoutte "2 avatars to be created")
 	- bio
-	- profession (student, professor, work)
+	- profession (student, professor, work "search bar for schools, universities and domains") 
 	- captcha
 	
 - Login
