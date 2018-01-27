@@ -1,0 +1,3 @@
+util class with utility functions
+
+i.e. can be used for validation or general refactoring of code
