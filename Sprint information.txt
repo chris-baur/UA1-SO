@@ -1,21 +1,21 @@
 Sprint 1
 
-Home page
-registration
-Login
-
-Tasks breakdown
+- Home page
+- Registration
+- Login
+- Tasks breakdown
 
 sprint 2
 
 //edit questions
 //delete questions if no answers
 
-make questions
-make answers - require minimum, maximum not too much
-make search bar to look for questions
-ranking system for votes (upvotes, selected/best answer)
-sorted questions - most upvotes, questions with best answers, how many answers, date
+- make questions
+- make answers - require minimum, maximum not too much
+- make search bar to look for questions
+- ranking system for votes (upvotes, selected/best answer)
+- sorted questions 
+	- most upvotes, questions with best answers, how many answers, date
 
 //All features
 
