@@ -5,6 +5,7 @@
 	
 	class Account{
 		//Variables
+		var $id;
 		var $username;
 		var $password;
 		var $name;
@@ -18,8 +19,30 @@
 		var $profession;
 		var $pin;
 		
+		function __construct($id = 0, $username = 'username', $password = 'password', $name = 'name', $last_name = 'last name', $gender = 'other', $security_one = 'default',
+			$security_two = 'default 2', $answer_one = 'answer one', $answer_two = 'answer two', $bio = 'my bio', $profession = 'profession', $pin = '0000'){
+			
+			$this->id = $id;
+			$this->$username = $username;
+			$this->$password = $password;
+			$this->$name = $name;
+			$this->$last_name = $last_name;
+			$this->$gender = $gender;
+			$this->$security_one = $security_one;
+			$this->$security_two = $security_two;
+			$this->$answer_one = $answer_one;
+			$this->$answer_two = $answer_two;
+			$this->$bio = $bio;
+			$this->$profession = $profession;
+			$this->$pin = $pin;
+		}
+		
+		function get_id(){
+			return $this->id;
+		}
+		
 		function get_username(){
-			return $this->username
+			return $this->username;
 		}
 		
 		function get_password(){
@@ -64,6 +87,10 @@
 		
 		function get_pin(){
 			return $this->pin;
+		}
+		
+		function set_id($new_id){
+			$this->id = $new_id;
 		}
 		
 		function set_username($new_username){
