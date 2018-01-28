@@ -1,1 +1,11 @@
 [28/Jan/2018:04:18:26] (create_db) Connected successfully
+[28/Jan/2018:05:16:26] (create_db) Connected successfully
+[28/Jan/2018:05:16:26] (create_db) Error creating table: 
+[28/Jan/2018:05:17:32] (create_db) Connected successfully
+[28/Jan/2018:05:17:32] (create_db) Error creating table: 
+[28/Jan/2018:05:19:18] (create_db) Connected successfully
+[28/Jan/2018:05:19:18] (create_db) Table accounts created successfully
+[28/Jan/2018:05:20:10] (create_db) Connected successfully
+[28/Jan/2018:05:20:10] (create_db) Table accounts created successfully
+[28/Jan/2018:05:21:01] (create_db) Connected successfully
+[28/Jan/2018:05:21:01] (create_db) Table accounts created successfully
