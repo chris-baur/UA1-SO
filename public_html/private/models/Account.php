@@ -140,4 +140,5 @@
 		function set_pin($new_pin){
 			$this->pin = $new_pin;
 		}
+	}
 ?>
