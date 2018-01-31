@@ -16,6 +16,14 @@ $security_one = $sets->to_string_security_one();
 $security_two = $sets->to_string_security_two();
 $professions = $sets->to_string_professions();
 
+// comment or uncomment for creating database and tables
+//createDatabaseAndTables();
+
+function createDatabaseAndTales(){
+    createDatabase();
+    createAccountsTable();
+}
+
 function createDatabase(){
     global $servername, $username, $password, $dbname;
     
