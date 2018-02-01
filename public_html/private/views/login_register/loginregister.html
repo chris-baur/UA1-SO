@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myRegister" ng-controller="myCtrl">
 <head>
 		<title>login</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="../../../css/loginregister.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/loginregister.css">				
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+		<script src="register.js"></script>
 		<script src="login.js"></script>
-    <script src="register.js"></script>
 </head>
 <body>
   <p><a href="../home_page/homepage.html"><img style="display: block; margin-left: auto; margin-right: auto;" src="../../../img/logo.png" alt="" width="800" height="450" /></a></p>
@@ -25,10 +26,10 @@
 
       <div class="container">
         <label><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="username" required>
+          <input ng-model='userName'type="text" placeholder="Enter Username" name="username" required>
 
         <label><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="password" required>
+          <input ng-model='password' type="password" placeholder="Enter Password" name="password" required>
         
         <button type="submit">Login</button>
 
@@ -43,7 +44,7 @@
   </div>
 
 
-  <p style="text-align: center;"><button onclick="document.getElementById('register').style.display='block'" style="width:auto;">Sign Up</button></p>
+  <p style="text-align: center;"><button onclick="document.getElementById('register').style.display='block'" style="width:auto;" ng-click="newAccount">Sign Up</button></p>
 
 
   <div id="register" class="modal">
@@ -54,10 +55,10 @@
         <p>Please fill in this form to create an account.</p>
         <hr>
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" required>
+        <input ng-model='userName' type="text" placeholder="Enter Username" name="username" required>
 
         <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <input ng-model='password' type="password" placeholder="Enter Password" name="password" required>
       
         <label> <b> Security Question 1 </b>
           <select name = "SQ1">
@@ -69,7 +70,7 @@
             <option value = "job"> What is your dream job? </option>
           </select> 
         </label>
-        <input type="text" placeholder="Enter Answer" name="Answer1" required>
+        <input ng-model='answer1' type="text" placeholder="Enter Answer" name="Answer1" required>
         <br>
         <label> <b> Security Question 2 </b>
           <select name = "SQ2">
@@ -81,12 +82,12 @@
             <option value = "job"> What is your dream job? </option>
           </select> 
         </label>
-        <input type="text" placeholder="Enter Answer" name="Answer2" required>
+        <input ng-model='answer2' type="text" placeholder="Enter Answer" name="Answer2" required>
         <br>
         <form action="gender"> <b> Gender </b>
-          <input type="radio" name="male" value="male"> Male
-          <input type="radio" name="female" value="female"> Female
-          <input type="radio" name="other" value="other"> other
+          <input type="radio" name="male" value="male" ng-model='gender'> Male
+          <input type="radio" name="female" value="female" ng-model='gender'> Female
+          <input type="radio" name="other" value="other" ng-model='gender'> other
         </form>
 
         <p>&nbsp;</p>
@@ -98,7 +99,7 @@
         <p>By creating an account you agree to our <a href="#" style="color:blue">Terms & Privacy</a>.</p>
 
         <div>
-          <button type="submit" >Sign Up</button>
+          <button type="submit" ng-click="newAccount()">Sign Up</button>
           <button type="button" onclick="document.getElementById('register').style.display='none'" >Cancel</button>
         </div>
         </div>
