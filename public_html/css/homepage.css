@@ -44,6 +44,7 @@ body {
   font-size: 17px;
   border: none;
   cursor: pointer;
+  width: 70px;
 }
 
 .container .search-container button:hover {
