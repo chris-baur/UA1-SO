@@ -32,6 +32,7 @@ $professions = $sets->to_string_professions();
                 :password, :name, :last_name, :gender, :security_one, :security_two, :answer_one, :answer_two, 
                 :bio, :profession, :pin);');
                 //@TODO complete function
+                //blah
 			$name = $userObj -> getName();
 			$email = $userObj -> getEmail();
 			$username = $userObj -> getUsername();
