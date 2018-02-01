@@ -1,14 +1,11 @@
 <!DOCTYPE HTML>
-<html ng-app="myApp" ng-controller="myCtrl">
+<html>
   <head>
-    <title>Ask It! Home</title>
+    <title>Ask It! Favorites</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../../css/homepage.css">
     <link rel="stylesheet" type="text/css" href="../../../css/button.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
-	<script src="../../../js/homepage.js"></script>
 </head>
   <body>
     <header id="header">
@@ -37,7 +34,7 @@
               <a href="about.html">about</a>
             </li>
             <li>
-              <button onclick="location.href='../login_register/loginregister.html';"/>Login / Sign Up</button>
+              <a><button onclick="location.href='../login_register/loginregister.html';"/>Login / Sign Up</button></a>
             </li>
           </ul>
         </nav>
@@ -47,22 +44,6 @@
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <!--<p style="text-align: center;"><img src="../../../img/fill.png" alt="" width="1100" height="700" /></p>
-	-->
-	<form>
-		<div class="row" ng-repeat="question in questions">
-			<div class="col-md-1 userBox">
-			<img class="col-md-10" src="../../../img/avatar2.png" alt="" width="80" height="80" />
-			<span class="col-md-3">
-			<label >{{question.userName}}</label>
-			</span>
-			</div>
-			<div class="col-md-8 questionBox">
-			<h3>{{question.title}}</h3>
-			<p>{{question.question}}</p>
-			</div>
-		</div>      
-	</form>
   </body>
 </html>  
     
