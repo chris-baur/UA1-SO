@@ -47,19 +47,10 @@ body {
   width: 70px;
 }
 
-.footer-container {
-  position: absolute;
-  margin: 0 ;
-  width: 100%;
-  font-family: helvetica, sans-serif;
-  background: #D9BB91;
-  color: white;
-  line-height: 60px;
-}
-
 .container .search-container button:hover {
   background: #ccc;
 }
+
 #header {
   z-index: 2;
   position: fixed;
@@ -88,26 +79,18 @@ body {
   padding: 0 10px;
 }
 
-.footer-container .navbar {
-  position: absolute;
-  right: 0;
-  height: 70px;
-  bottom: 0;
-
-
+.fcontainer {
+  position: relative;
+  margin: 0 ;
+  width: 100%;
+  font-family: helvetica, sans-serif;
+  background: #D9BB91;
+  color: white;
+  line-height: 16px;
 }
 
- .footer-container .navbar a {
-    float: right;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 0 10px;
-    text-decoration: none;
-    font-size: 12px;
-  
-}
-.footer-container img{
+.fcontainer img{
+
   bottom: 0%;
-  top: -15px;
+  top: 0px;
 }
