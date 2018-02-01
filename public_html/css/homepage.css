@@ -55,7 +55,7 @@ body {
   z-index: 2;
   position: fixed;
   width: 100%;
-  top: 0.5px;
+  top: 0;
   height: 120px;
   line-height: 60px;
   background: #D9BB91;
@@ -80,8 +80,8 @@ body {
 }
 
 .fcontainer {
-  position: relative;
-  margin: 0 ;
+  position: absolute;
+  margin: 0 auto;
   width: 100%;
   font-family: helvetica, sans-serif;
   background: #D9BB91;
@@ -90,7 +90,6 @@ body {
 }
 
 .fcontainer img{
-
-  bottom: 0%;
-  top: 0px;
+  padding: 0 100px;
 }
+
