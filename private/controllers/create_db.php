@@ -27,6 +27,7 @@ function createDatabaseAndTales(){
     createDatabase();
     createAccountsTable();
     createQuestionsTable();
+    createAnswersTable();
 }
 
 function createDatabase(){
@@ -76,9 +77,43 @@ function createAccountsTable(){
         $log->lwrite('Table accounts created successfully');
         
     }
-    catch(PDOException $e)
-    {
-    $log->lwrite('Connection failed: ' . $e->getMessage());
+    catch(PDOException $e){
+        $log->lwrite('Connection failed: ' . $e->getMessage());
+    }finally{
+        unset ($pdo);
+    }
+}
+
+function createAnswersTable(){
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $log->lwrite('Connected successfully');
+
+        //create Questions Table
+        $sql = "DROP TABLE IF EXISTS `answers`;
+            CREATE TABLE IF NOT EXISTS `answers` (
+            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `account_id` int(11) DEFAULT NULL,
+            `question_id` int(11) DEFAULT NULL,
+            `content` varchar(500) NOT NULL DEFAULT 'noob did not answer',
+            `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            `upvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
+            `downvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
+            PRIMARY KEY (`id`),
+            KEY `fk_answers_account_id` (`account_id`),
+            KEY `fk_answers_question_id` (`question_id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `answers`
+            ADD CONSTRAINT `fk_answers_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL,
+            ADD CONSTRAINT `fk_answers_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE";
+
+        $conn->exec($sql);
+        $log->lwrite('Answers Table created successfully');
+        
+    }
+    catch(PDOException $e){
+        $log->lwrite('Connection failed: ' . $e->getMessage());
     }finally{
         unset ($pdo);
     }
@@ -94,7 +129,7 @@ function createQuestionsTable(){
         //create Questions Table
         $sql = "DROP TABLE IF EXISTS `questions`;
             CREATE TABLE IF NOT EXISTS `questions` (
-            `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+            `id` int(11) NOT NULL AUTO_INCREMENT,
             `account_id` int(11) DEFAULT NULL,
             `header` varchar(100) NOT NULL DEFAULT 'Ain''t it Fun',
             `content` varchar(500) NOT NULL DEFAULT 'Brick by Boring Brick',
@@ -103,15 +138,15 @@ function createQuestionsTable(){
             `downvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
             `tags` varchar(100) NOT NULL DEFAULT 'noob',
             PRIMARY KEY (`id`),
-            KEY `fk_account_id` (`account_id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
+            KEY `fk_questions_account_id` (`account_id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `questions`
+            ADD CONSTRAINT `fk_questions_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;";
 
         $conn->exec($sql);
         $log->lwrite('Questions Table created successfully');
         
     }
-    catch(PDOException $e)
-    {
+    catch(PDOException $e){
         $log->lwrite('Connection failed: ' . $e->getMessage());
     }finally{
         unset ($pdo);

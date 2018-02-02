@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 02, 2018 at 09:59 PM
+-- Generation Time: Feb 02, 2018 at 10:42 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -25,21 +25,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `questions`
+-- Table structure for table `answers`
 --
 
-DROP TABLE IF EXISTS `questions`;
-CREATE TABLE IF NOT EXISTS `questions` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `answers`;
+CREATE TABLE IF NOT EXISTS `answers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_id` int(11) DEFAULT NULL,
-  `header` varchar(100) NOT NULL DEFAULT 'Ain''t it Fun',
-  `content` varchar(500) NOT NULL DEFAULT 'Brick by Boring Brick',
+  `question_id` int(11) DEFAULT NULL,
+  `content` varchar(500) NOT NULL DEFAULT 'noob did not answer',
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `upvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
   `downvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
-  `tags` varchar(100) NOT NULL DEFAULT 'noob',
   PRIMARY KEY (`id`),
-  KEY `fk_account_id` (`account_id`)
+  KEY `fk_answers_account_id` (`account_id`),
+  KEY `fk_answers_question_id` (`question_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -47,10 +47,11 @@ CREATE TABLE IF NOT EXISTS `questions` (
 --
 
 --
--- Constraints for table `questions`
+-- Constraints for table `answers`
 --
-ALTER TABLE `questions`
-  ADD CONSTRAINT `fk_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+ALTER TABLE `answers`
+  ADD CONSTRAINT `fk_answers_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `fk_answers_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
