@@ -72,10 +72,9 @@ margin-bottom:10px;
 
 #footer {
   z-index: 2;
-  position: fixed;
   width: 100%;
   bottom: 0;
-  height: 120px;
+  height: 90px;
   line-height: 60px;
   background: #D9BB91;
   color: white;
