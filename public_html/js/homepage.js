@@ -3,7 +3,7 @@ var app = angular.module('myApp', []);
 /* $http ajax calls really belongs in a service, 
 but I'll be using them inside the controller for this demo */ 
 
-app.controller('myCtrl', function($scope, $http) {
+app.controller('mainCtrl', function($scope, $http) {
   /*$http.get('path/to/json').then(function(data) {
     $scope.questions = data;
   });*/
