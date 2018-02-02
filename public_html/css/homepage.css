@@ -64,7 +64,7 @@ margin-bottom:10px;
   z-index: 2;
   position: fixed;
   width: 100%;
-  top: 0.5px;
+  top: 0;
   height: 120px;
   background: #D9BB91;
   color: white;
@@ -87,3 +87,18 @@ margin-bottom:10px;
   text-decoration: none;
   padding: 0 10px;
 }
+
+.fcontainer {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  font-family: helvetica, sans-serif;
+  background: #D9BB91;
+  color: white;
+  line-height: 16px;
+}
+
+.fcontainer img{
+  padding: 0 100px;
+}
+
