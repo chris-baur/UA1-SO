@@ -173,7 +173,7 @@ function validateUser(){
                 $security_two, $answer_one, $answer_two, $bio, $profession, $pin);
             addAccount($account);
             $valid = true;
-        //}
+        }
         // username already in use, show error
        else
             $invalidArray['username'] = true;
