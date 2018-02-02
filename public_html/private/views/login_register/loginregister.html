@@ -55,11 +55,13 @@
         <p>Please fill in this form to create an account.</p>
         <hr>
         <label><b>Username</b></label>
-        <input ng-model='userName' type="text" placeholder="Enter Username" name="username" required>
-
+        <input ng-model='userName' type="text" placeholder="Enter Username" name="username" maxlength="20" required>
+		<span class="alert" ng-if="userName.length<4 && userName.length!=0">Username enter is to short</span>
+		<br>
         <label><b>Password</b></label>
-        <input ng-model='password' type="password" placeholder="Enter Password" name="password" required>
-      
+        <input ng-model='password' type="password" placeholder="Enter Password" name="password" maxlength="20" required>
+		<span class="alert" ng-if="password.length<4 && password.length!=0">Password enter is to short</span>
+		<br>
         <label> <b> Security Question 1 </b>
           <select name = "SQ1">
             <option value = "select"> -Please select- </option>

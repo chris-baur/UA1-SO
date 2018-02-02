@@ -104,4 +104,8 @@ span.password {
     to {transform: scale(1)}
 }
 
+.alert{
+    color:red;
+}
+
 
