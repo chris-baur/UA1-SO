@@ -134,12 +134,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             setcookie('invalidArray', 'false', time() + 30);
             header('Location: ..\views\login_register\loginregister.html');
         }
-        else
+        else{
+            $invalidArray['username'] = true;
             showUserError();
+        }
     }
+    //invalid data from previous input fields
     else
         showUserError();
-
 }
 
 /**
