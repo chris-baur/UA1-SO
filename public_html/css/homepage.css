@@ -50,11 +50,12 @@ body {
 .container .search-container button:hover {
   background: #ccc;
 }
+
 #header {
   z-index: 2;
   position: fixed;
   width: 100%;
-  top: 0.5px;
+  top: 0;
   height: 120px;
   line-height: 60px;
   background: #D9BB91;
@@ -77,3 +78,18 @@ body {
   text-decoration: none;
   padding: 0 10px;
 }
+
+.fcontainer {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  font-family: helvetica, sans-serif;
+  background: #D9BB91;
+  color: white;
+  line-height: 16px;
+}
+
+.fcontainer img{
+  padding: 0 100px;
+}
+
