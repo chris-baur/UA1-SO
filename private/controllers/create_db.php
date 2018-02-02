@@ -95,13 +95,15 @@ function createQuestionsTable(){
         $sql = "DROP TABLE IF EXISTS `questions`;
             CREATE TABLE IF NOT EXISTS `questions` (
             `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+            `account_id` int(11) DEFAULT NULL,
             `header` varchar(100) NOT NULL DEFAULT 'Ain''t it Fun',
             `content` varchar(500) NOT NULL DEFAULT 'Brick by Boring Brick',
             `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `upvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
             `downvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
             `tags` varchar(100) NOT NULL DEFAULT 'noob',
-            PRIMARY KEY (`id`)
+            PRIMARY KEY (`id`),
+            KEY `fk_account_id` (`account_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
 
         $conn->exec($sql);
