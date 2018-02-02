@@ -1,7 +1,7 @@
 <?php
 
 include '..\util\sets.php';
-//include '..\util\validation.php';
+include '..\controllers\account_controller.php';
 include '..\models\Account.php';
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
@@ -104,13 +104,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     //validate pin
-    if(validateString('pin'))
-        $pin = htmlentities($_POST['pin']);
-    //invalid pin
-    else{
-        $invalidArray['pin'] = true;
-        $validData = false;
-    }
+    // if(validateString('pin'))
+    //     $pin = htmlentities($_POST['pin']);
+    // //invalid pin
+    // else{
+    //     $invalidArray['pin'] = true;
+    //     $validData = false;
+    // }
 
     //password TO BE HASHED
     // validate password 
@@ -169,7 +169,7 @@ function validateUser(){
         // user does not exist, can add user to DB
         // @TODO
         if(!(accountExists($user_name))){
-            $account = new Account($null, $user_name, $hash, $name, $last_name, $gender, $security_one,
+            $account = new Account(0, $user_name, $hash, $name, $last_name, $gender, $security_one,
                 $security_two, $answer_one, $answer_two, $bio, $profession, $pin);
             addAccount($account);
             $valid = true;
