@@ -4,8 +4,9 @@ include '..\util\sets.php';
 //include '..\util\validation.php';
 include '..\models\Account.php';
 
-
-
+if($_SERVER["REQUEST_METHOD"] == "GET"){
+    header("location: ..\views\home_page\about.html");
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $account = new Account();
@@ -22,156 +23,122 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $answer_one = "";
     $answer_two = "";
     $bio = "";
-    //$pin = "";
+    $pin = null;
     $validData = true;
-    $errMessage = "";
+    $invalidArray = null;
 
-    //get data from post form
-    // $username = test_input($_POST["username"]);
-    // $password = test_input($_POST["password"]);
-    // $name = test_input($_POST["name"]);
-    // $last_name = test_input($_POST["last_name"]);
-    // $professions = test_input($_POST["professions"]);
-    // $security_one = test_input($_POST["security_one"]);
-    // $security_two = test_input($_POST["security_two"]);
-    // $answer_one = test_input($_POST["answer_one"]);
-    // $answer_two = test_input($_POST["answer_two"]);
-    // $gender = test_input($_POST["gender"]);
-    // $bio = test_input($_POST["bio"]);
+    /**
+     * Validating the inputs for the registraton form
+     */
 
+    //validating first name
     if(validateString('name'))
         $name = htmlentities($_POST['name']);
     else{
-        $errMessage = "Invalid name.";
+        $invalidArray['name'] = true;
         $validData = false;
     }
 
     //validate last name
-    if($validData){
-        if(validateString('last_name'))
-            $last_name = htmlentities($_POST['last_name']);
-        else{
-            $errMessage = "Invalid last name.";
-            $validData = false;
-        }
-    }else
-        showUserError($errMessage);
+    if(validateString('last_name'))
+        $last_name = htmlentities($_POST['last_name']);
+    else{
+        $invalidArray['last_name'] = "Invalid last name.";
+        $validData = false;
+    }
 
     //validate professions
-    if($validData){
-        if(validateString('profession') && in_array(($_POST['profession']), $sets->get_professions()))
-            $profession = htmlentities($_POST['profession']);
-        else{
-            $errMessage = "Invalid Profession";
-            $validData = false;
-        }
-    }else
-        showUserError($errMessage);
+    if(validateString('profession') && in_array(($_POST['profession']), $sets->get_professions()))
+        $profession = htmlentities($_POST['profession']);
+    else{
+        $invalidArray['profession'] = true;
+        $validData = false;
+    }
 
     //validate gender
-    if($validData){
-        if(validateString('gender') && in_array(($_POST['gender']), $sets->get_genders()))
-            $gender = htmlentities($_POST['gender']);
-        else{
-            $errMessage = "Invalid Gender";
-            $validData = false;
-        }
-    }else
-        showUserError($errMessage);
+    if(validateString('gender') && in_array(($_POST['gender']), $sets->get_genders()))
+        $gender = htmlentities($_POST['gender']);
+    else{
+        $invalidArray['gender'] = true;
+        $validData = false;
+    }
     
     //validate bio
-    if($validData){
-        if(validateString('bio'))
-            $bio = htmlentities($_POST['bio']);
-        else{
-            $errMessage = "Invalid Bio.";
-            $validData = false;
-        }
-    }else
-        showUserError($errMessage);
+    if(validateString('bio'))
+        $bio = htmlentities($_POST['bio']);
+    else{
+        $invalidArray['bio'] = true;
+        $validData = false;
+    }
     
     //validate security question one
-    if($validData){
-        if(validateString('SQ1') && in_array($_POST['SQ1'], $sets->get_security_one()))
-            $security_one = htmlentities($_POST['SQ1']);
-        else{
-            $errMessage = "Invalid security question one";
-            $validData = false;
-        }
-    }else
-        showUserError($errMessage);
+    if(validateString('SQ1') && in_array($_POST['SQ1'], $sets->get_security_one()))
+        $security_one = htmlentities($_POST['SQ1']);
+    else{
+        $invalidArray['SQ1'] = true;
+        $validData = false;
+    }
 
     //validate security question two
-    if($validData){
-        if(validateString('SQ2') && in_array($_POST['SQ2'], $sets->get_security_two()))
-            $security_one = htmlentities($_POST['SQ1']);
-        else{
-            $errMessage = "Invalid security question two";
-            $validData = false;
-        }
-    }else
-        showUserError($errMessage);
+    if(validateString('SQ2') && in_array($_POST['SQ2'], $sets->get_security_two()))
+        $security_two = htmlentities($_POST['SQ2']);
+    else{
+        $invalidArray['SQ2'] = true;
+        $validData = false;
+    }
 
     //validate answer one
-    if($validData){
-        if(validateString('Answer1'))
-            $bio = htmlentities($_POST['Answer1']);
-        else{
-            $errMessage = "Invalid answer for security question one.";
-            $validData = false;
-        }
-    }else
-        showUserError($errMessage);
+    if(validateString('Answer1'))
+        $answer_one = htmlentities($_POST['Answer1']);
+    else{
+        $invalidArray['Answer1'] = true;
+        $validData = false;
+    }
     
     //validate answer two
-    if($validData){
-        if(validateString('Answer2'))
-            $bio = htmlentities($_POST['Answer2']);
-        else{
-            $errMessage = "Invalid answer for security question two.";
-            $validData = false;
-        }
-    }else
-        showUserError($errMessage);
+    if(validateString('Answer2'))
+        $answer_two = htmlentities($_POST['Answer2']);
+    else{
+        $invalidArray['Answer2'] = true;
+        $validData = false;
+    }
     
     //validate pin
-    // if($validData){
-    //     if(validateString('pin'))
-    //         $pin = htmlentities($_POST['pin']);
-    //     else{
-    //         $errMessage = "Invalid pin";
-    //         $validData = false;
-    //     }
-    // }else
-    //     showUserError($errMessage);
+    if(validateString('pin'))
+        $pin = htmlentities($_POST['pin']);
+    //invalid pin
+    else{
+        $invalidArray['pin'] = true;
+        $validData = false;
+    }
 
     //password TO BE HASHED
-    if($validData){
-        // validate password 
-        if(validateString('password')){
-            if(strlen($_POST['password']) < 8 ){
-                $validData = false;
-                $errMessage = 'Invalid Password, minimum 8 characters. ';
-            }
-            else
-                $hash = password_hash(htmlentities($_POST['password']), PASSWORD_DEFAULT);
-        }
-        else{
+    // validate password 
+    if(validateString('password')){
+        if(strlen($_POST['password']) < 8 ){
             $validData = false;
-            $errMessage = 'Invalid Password';
+            $invalidArray['password'] = true;
         }
+        else
+            $hash = password_hash(htmlentities($_POST['password']), PASSWORD_DEFAULT);
+    }
+    else{
+        $validData = false;
+        $invalidArray['password'] = true;
     }
     
     //validate user name
     if($validData){
-        if(validateUser('username') && strlen($_POST['username']) > 0 && strlen($_POST['username']) <= 20)
+        if(validateUser() && strlen($_POST['username']) > 0 && strlen($_POST['username']) <= 20){
             // redirect to login page
-            header('Location: login.php');
+            setcookie('invalidArray', 'false', time() + 30);
+            header('Location: ..\views\login_register\loginregister.html');
+        }
         else
-            showUserError($errMessage);
+            showUserError();
     }
     else
-        showUserError($errMessage);
+        showUserError();
 
 }
 
@@ -193,39 +160,46 @@ function validateString($string){
  * 
  * @param string 	username to validate
  */
-function validateUser($string){
+function validateUser(){
     global $name, $hash, $last_name, $gender, $security_one, $security_two,
-        $answer_one, $answer_two, $bio, $profession, $pin, $errMessage;
+        $answer_one, $answer_two, $bio, $profession, $pin, $invalidArray;
     $valid = false;
-    if(validateString($string)){
+    if(validateString('username')){
         $user_name = htmlentities($_POST['username']);
         // user does not exist, can add user to DB
         // @TODO
-        //if(!(UserExists($user_name))){
-          //  $userObj = new User(0, $name, $email, $user_name, $hash);
-            //addUser($userObj);
+        if(!(accountExists($user_name))){
+            $account = new Account($null, $user_name, $hash, $name, $last_name, $gender, $security_one,
+                $security_two, $answer_one, $answer_two, $bio, $profession, $pin);
+            addAccount($account);
             $valid = true;
         //}
-        // user exists, show error
-       // else
-            //$errMessage = $errMessage."$user_name is already taken. ";
+        // username already in use, show error
+       else
+            $invalidArray['username'] = true;
     }
+    //invalid username
     else
-        $errMessage = $errMessage."$user_name is invalid";
+        $invalidArray['username'] = true;
     return $valid;
 }
 
-    // show user error
-    function showUserError($string){
-        echo '<script language="javascript">';
-        echo 'alert("'.$string.'")';
-        echo '</script>';
-    }
+// show user error
+function showUserError(){
+    global $invalidArray;
+    //echo 'in showuser error';
+    // echo '<script language="javascript">';
+    // echo 'alert("'.$string.'")';
+    // echo '</script>';
+    setcookie('invalidArray', json_encode($invalidArray), time()+20);
+    header('Location: ..\views\login_register\loginregister.html');
+}
 
-// function test_input($data) {
-//   $data = trim($data);
-//   $data = stripslashes($data);
-//   $data = htmlentities($data);
-//   return $data;
-// }
+// // function test_input($data) {
+// //   $data = trim($data);
+// //   $data = stripslashes($data);
+// //   $data = htmlentities($data);
+// //   return $data;
+// // }
+
 ?>
