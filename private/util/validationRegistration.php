@@ -1,11 +1,15 @@
 <?php
 
+/**
+ * @author Christoffer Baur
+ */
+
 include '..\util\sets.php';
 include '..\controllers\account_controller.php';
 include '..\models\Account.php';
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    header("location: ..\views\home_page\about.html");
+    header("location: ..\..\public_html\home_page\about.html");
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -132,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(validateUser() && strlen($_POST['username']) > 0 && strlen($_POST['username']) <= 20){
             // redirect to login page
             setcookie('invalidArray', 'false', time() + 30);
-            header('Location: ..\views\login_register\loginregister.html');
+            header('Location: ..\..\public_html\login_register\loginregister.html');
         }
         else{
             $invalidArray['username'] = true;
@@ -189,19 +193,8 @@ function validateUser(){
 // show user error
 function showUserError(){
     global $invalidArray;
-    //echo 'in showuser error';
-    // echo '<script language="javascript">';
-    // echo 'alert("'.$string.'")';
-    // echo '</script>';
     setcookie('invalidArray', json_encode($invalidArray), time()+20);
-    header('Location: ..\views\login_register\loginregister.html');
+    header('Location: ..\..\public_html\login_register\loginregister.html');
 }
-
-// // function test_input($data) {
-// //   $data = trim($data);
-// //   $data = stripslashes($data);
-// //   $data = htmlentities($data);
-// //   return $data;
-// // }
 
 ?>

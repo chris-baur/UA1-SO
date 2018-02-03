@@ -1,10 +1,11 @@
 <?php
 
+/**
+ * @author Christoffer Baur
+ */
+
 include '..\util\sets.php';
-//include '..\util\validation.php';
 include '..\models\Account.php';
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -49,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['username'] = $account -> get_username();
                 session_regenerate_id();
                 // redirect to user home page
-                header('Location: ..\views\home_page\homepage.html');
+                header('Location: ..\..\public_html\home_page\homepage.html');
             }
             //password doesnt match
             else{
@@ -123,18 +124,7 @@ function validateUser(){
 // show user error
 function showUserError(){
     global $invalidArray;
-    //echo 'in showuser error';
-    // echo '<script language="javascript">';
-    // echo 'alert("'.$string.'")';
-    // echo '</script>';
     setcookie('invalidArray', json_encode($invalidArray), time()+20);
-    header('Location: ..\views\login_register\loginregister.html');
+    header('Location: ..\..\public_html\login_register\loginregister.html');
 }
-
-// function test_input($data) {
-//   $data = trim($data);
-//   $data = stripslashes($data);
-//   $data = htmlentities($data);
-//   return $data;
-// }
 ?>

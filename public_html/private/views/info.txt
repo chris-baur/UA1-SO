@@ -1,3 +1,0 @@
-represent the pages of our website
-
-The pages will be in php, and will contain

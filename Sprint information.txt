@@ -7,15 +7,18 @@ Sprint 1
 
 sprint 2
 
-//edit questions
-//delete questions if no answers
-
+- make front end work from sprint 1
 - make questions
 - make answers - require minimum, maximum not too much
 - make search bar to look for questions
 - ranking system for votes (upvotes, selected/best answer)
 - sorted questions 
 	- most upvotes, questions with best answers, how many answers, date
+
+sprint 3
+
+//edit questions
+//delete questions if no answers
 
 //All features
 

@@ -13,7 +13,7 @@
 
         public function __construct(){
             if (is_null(self::$sets)) {  // OR if (!is_array(self::$date))
-                self::$sets = json_decode(file_get_contents('../../../sets.txt', true));
+                self::$sets = json_decode(file_get_contents('../../sets.txt', true));
             }
         }
         

@@ -10,6 +10,6 @@ $myObj->security_two = ["In what city or town did your mother and father meet?",
 
 $myJSON = json_encode($myObj);
 
-echo file_put_contents("..\..\..\sets.txt",$myJSON);
+echo file_put_contents("..\..\sets.txt",$myJSON);
 //echo '\'' . implode('\',\'', $myObj->genders) . '\'';
 ?>

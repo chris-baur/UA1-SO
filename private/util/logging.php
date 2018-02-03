@@ -40,7 +40,7 @@
 		private function lopen() {
 			// in case of Windows set default log file
 			if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-				$log_file_default = '../../../logfile.txt';
+				$log_file_default = '../../logfile.txt';
 			}
 			// set default log file for Linux and other systems
 			else {
