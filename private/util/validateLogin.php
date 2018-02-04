@@ -55,13 +55,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //password doesnt match
             else{
                 //increaseAttemptCounter($userObj);
+                $invalidArray['password'] = 'Incorrect password entered';
                 showUserError();
             }
         }
         //incorrect syntax/length password entered
         else{
             //increaseAttemptCounter($userObj);
-            $invalidArray['password'] = true;
+            $invalidArray['password'] = 'Incorrect password entered. Check length/syntax';
             showUserError();
         }
     }
@@ -113,11 +114,11 @@ function validateUser(){
             $valid = true;
         // user does not exist, show error
         else
-            $invalidArray['username'] = true;
+            $invalidArray['username'] = 'Username does not exist';
     //username provided is not a valid string
     }
     else
-        $invalidArray['username'] = true;
+        $invalidArray['username'] = 'Username provided is not a valid string';
     return $valid;
 }
 
