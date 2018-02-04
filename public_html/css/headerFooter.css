@@ -28,26 +28,22 @@ body {
   float: left;
 }
 
-.container input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
+.search-container input[type=text] {
   font-size: 17px;
   border: none;
+  width:88%;
 }
 
-.container .search-container button {
+.search-container button {
   float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
+  padding: 8px 10px;
   background: #ddd;
   font-size: 17px;
   border: none;
   cursor: pointer;
-  width: 70px;
 }
 
-.container .search-container button:hover {
+.search-container button:hover {
   background: #ccc;
 }
 .questionBox {
@@ -97,4 +93,49 @@ margin-bottom:10px;
   text-decoration: none;
   padding: 0 10px;
 }
+.menu{
+  background: #D9BB91;
+}
+.myButtons {
+  color:white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 17px;
+  margin: auto 0;
+  padding: 8px 10px;
+}
 
+.myButtons:hover {
+    background-color:black; 
+    text-decoration: none;
+    color:white;
+  }
+.myActiveButton {
+  background-color: #a67024;
+  color:white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 17px;
+  margin: auto 0;
+  padding: 8px 10px;
+}
+.myActiveButton:hover {
+    background-color:black; 
+    text-decoration: none;
+    color:white;
+}
+.loginButton{
+  background-color: #A48963;
+    color: white;    
+    border: none;
+    cursor: pointer;
+    margin: auto 0;
+    padding: 15px 25px;
+}
+.loginButton:hover{
+   opacity: 0.8;
+}
+.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
