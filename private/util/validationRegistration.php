@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('name'))
         $name = htmlentities($_POST['name']);
     else{
-        $invalidArray['name'] = true;
+        $invalidArray['name'] = 'Invalid name provided';
         $validData = false;
     }
 
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('last_name'))
         $last_name = htmlentities($_POST['last_name']);
     else{
-        $invalidArray['last_name'] = "Invalid last name.";
+        $invalidArray['last_name'] = 'Invalid last name provided';
         $validData = false;
     }
 
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('profession') && in_array(($_POST['profession']), $sets->get_professions()))
         $profession = htmlentities($_POST['profession']);
     else{
-        $invalidArray['profession'] = true;
+        $invalidArray['profession'] = 'Invalid profession selected. Make sure it is part of the list';
         $validData = false;
     }
 
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('gender') && in_array(($_POST['gender']), $sets->get_genders()))
         $gender = htmlentities($_POST['gender']);
     else{
-        $invalidArray['gender'] = true;
+        $invalidArray['gender'] = 'Invalid gender selected. Make sure it is part of the list';
         $validData = false;
     }
     
@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('bio'))
         $bio = htmlentities($_POST['bio']);
     else{
-        $invalidArray['bio'] = true;
+        $invalidArray['bio'] = 'Invalid bio provided. Make sure it is not empty and has proper text';
         $validData = false;
     }
     
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('SQ1') && in_array($_POST['SQ1'], $sets->get_security_one()))
         $security_one = htmlentities($_POST['SQ1']);
     else{
-        $invalidArray['SQ1'] = true;
+        $invalidArray['SQ1'] = 'Invalid security question 1 selected. Make sure it is part of the list';
         $validData = false;
     }
 
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('SQ2') && in_array($_POST['SQ2'], $sets->get_security_two()))
         $security_two = htmlentities($_POST['SQ2']);
     else{
-        $invalidArray['SQ2'] = true;
+        $invalidArray['SQ2'] = 'Invalid security question 2 selected. Make sure it is part of the list';
         $validData = false;
     }
 
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('Answer1'))
         $answer_one = htmlentities($_POST['Answer1']);
     else{
-        $invalidArray['Answer1'] = true;
+        $invalidArray['Answer1'] = 'Invalid answer 1 provided. Make sure it is not empty and has proper text';
         $validData = false;
     }
     
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('Answer2'))
         $answer_two = htmlentities($_POST['Answer2']);
     else{
-        $invalidArray['Answer2'] = true;
+        $invalidArray['Answer2'] = 'Invalid answer 2 provided. Make sure it is not empty and has proper text';
         $validData = false;
     }
     
@@ -121,25 +121,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('password')){
         if(strlen($_POST['password']) < 8 ){
             $validData = false;
-            $invalidArray['password'] = true;
+            $invalidArray['password'] = 'Invalid password length entered. It must be a minimum of 8 characters';
         }
         else
             $hash = password_hash(htmlentities($_POST['password']), PASSWORD_DEFAULT);
     }
     else{
         $validData = false;
-        $invalidArray['password'] = true;
+        $invalidArray['password'] = 'Invalid password entered. It cannot be empty';
     }
     
     //validate user name
     if($validData){
-        if(validateUser() && strlen($_POST['username']) > 0 && strlen($_POST['username']) <= 20){
-            // redirect to login page
-            setcookie('invalidArray', 'false', time() + 30);
-            header('Location: ..\..\public_html\login_register\loginregister.html');
+        if(validateUser()){
+            if(strlen($_POST['username']) > 0 && strlen($_POST['username']) <= 20){
+                // redirect to login page
+                setcookie('invalidArray', 'false', time() + 30);
+                header('Location: ..\..\public_html\login_register\loginregister.html');
+            )
+            else{
+                $invalidArray['username'] = 'Invalid username entered. It must be a maximum of 20 charcters, and at least one character';
+                
+            }
         }
         else{
-            $invalidArray['username'] = true;
             showUserError();
         }
     }
