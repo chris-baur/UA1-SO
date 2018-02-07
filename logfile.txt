@@ -1,42 +1,8 @@
-[30/Jan/2018:04:25:01] (create_db) Connected successfully
-[30/Jan/2018:04:25:01] (create_db) Table accounts created successfully
-[30/Jan/2018:04:29:44] (create_db) Connected successfully
-[30/Jan/2018:04:29:44] (create_db) Table accounts created successfully
-[30/Jan/2018:04:29:44] (create_db) Connection failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''hello' ('id' int(11) NOT NULL)' at line 1
-[30/Jan/2018:04:32:01] (create_db) Connection failed: SQLSTATE[HY000] [1045] Access denied for user 'hi'@'localhost' (using password: YES)
-[30/Jan/2018:04:32:29] (create_db) Connected successfully
-[30/Jan/2018:04:32:29] (create_db) Table accounts created successfully
-[30/Jan/2018:04:36:48] (create_db) Connected successfully
-[30/Jan/2018:04:36:48] (create_db) Table accounts created successfully
-[30/Jan/2018:04:39:18] (create_db) Connected successfully
-[30/Jan/2018:04:39:18] (create_db) Table accounts created successfully
-[30/Jan/2018:04:41:12] (create_db) Connected successfully
-[30/Jan/2018:04:41:12] (create_db) Table accounts created successfully
-[30/Jan/2018:04:42:09] (create_db) Connected successfully
-[30/Jan/2018:04:42:09] (create_db) Table accounts created successfully
-[30/Jan/2018:04:45:02] (create_db) Connected successfully
-[30/Jan/2018:04:45:02] (create_db) Table accounts created successfully
-[30/Jan/2018:04:45:16] (create_db) Connected successfully
-[30/Jan/2018:04:45:16] (create_db) Table accounts created successfully
-[30/Jan/2018:04:45:55] (create_db) Connected successfully
-[30/Jan/2018:04:45:55] (create_db) Table accounts created successfully
-[30/Jan/2018:04:46:26] (create_db) Connected successfully
-[30/Jan/2018:04:46:26] (create_db) Table accounts created successfully
-[30/Jan/2018:04:46:59] (create_db) Connected successfully
-[30/Jan/2018:04:46:59] (create_db) Table accounts created successfully
-[30/Jan/2018:04:48:52] (create_db) Connected successfully
-[30/Jan/2018:04:48:52] (create_db) Table accounts created successfully
-[30/Jan/2018:04:50:13] (create_db) Connected successfully
-[30/Jan/2018:04:50:13] (create_db) Table accounts created successfully
-[30/Jan/2018:04:50:58] (create_db) Connected successfully
-[30/Jan/2018:04:50:58] (create_db) Table accounts created successfully
-[30/Jan/2018:04:51:08] (create_db) Connected successfully
-[30/Jan/2018:04:51:08] (create_db) Table accounts created successfully
-[30/Jan/2018:04:51:43] (create_db) Connected successfully
-[30/Jan/2018:04:51:43] (create_db) Table accounts created successfully
-[30/Jan/2018:04:53:02] (create_db) Connected successfully
-[30/Jan/2018:04:53:02] (create_db) Table accounts created successfully
-[30/Jan/2018:04:56:09] (create_db) Connected successfully
-[30/Jan/2018:04:56:09] (create_db) Table accounts created successfully
-[30/Jan/2018:05:07:48] (create_db) Connected successfully
-[30/Jan/2018:05:07:48] (create_db) Table accounts created successfully
+[07/Feb/2018:21:13:12] (create_db) Connected successfully
+[07/Feb/2018:21:13:12] (create_db) Table accounts created successfully
+[07/Feb/2018:21:13:12] (create_db) Connected successfully
+[07/Feb/2018:21:13:12] (create_db) Questions Table created successfully
+[07/Feb/2018:21:13:12] (create_db) Connected successfully
+[07/Feb/2018:21:13:13] (create_db) Answers Table created successfully
+[07/Feb/2018:21:13:13] (create_db) Connected successfully
+[07/Feb/2018:21:13:13] (create_db) Comments Table created successfully

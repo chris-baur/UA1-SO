@@ -14,24 +14,20 @@ $password = $config['password'];
 $dbname = $config['dbname'];
 
 $log = new Logging();
-$sets = new Sets();
-$genders = $sets->to_string_genders();
-$security_one = $sets->to_string_security_one();
-$security_two = $sets->to_string_security_two();
-$professions = $sets->to_string_professions();
 
 // comment or uncomment for creating database and tables
-//createDatabaseAndTables();
+createDatabaseAndTables();
 
-function createDatabaseAndTales(){
+function createDatabaseAndTables(){
     createDatabase();
     createAccountsTable();
     createQuestionsTable();
     createAnswersTable();
+    createCommentsTable();
 }
 
 function createDatabase(){
-    global $servername, $username, $password, $dbname;
+    global $servername, $username, $password, $dbname, $log;
     
     try {
         $pdo = new PDO("mysql:host=$servername", $username, $password);
@@ -48,6 +44,14 @@ function createDatabase(){
 }
 
 function createAccountsTable(){
+    global $servername, $username, $password, $dbname, $log;
+    
+    $sets = new Sets();
+    $genders = $sets->to_string_genders();
+    $security_one = $sets->to_string_security_one();
+    $security_two = $sets->to_string_security_two();
+    $professions = $sets->to_string_professions();
+
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         // set the PDO error mode to exception
@@ -85,6 +89,8 @@ function createAccountsTable(){
 }
 
 function createAnswersTable(){
+    global $servername, $username, $password, $dbname, $log;
+
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         // set the PDO error mode to exception
@@ -106,7 +112,7 @@ function createAnswersTable(){
             KEY `fk_answers_question_id` (`question_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `answers`
             ADD CONSTRAINT `fk_answers_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL,
-            ADD CONSTRAINT `fk_answers_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE";
+            ADD CONSTRAINT `fk_answers_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE;COMMIT";
 
         $conn->exec($sql);
         $log->lwrite('Answers Table created successfully');
@@ -119,7 +125,47 @@ function createAnswersTable(){
     }
 }
 
+function createCommentsTable(){
+    global $servername, $username, $password, $dbname, $log;
+
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $log->lwrite('Connected successfully');
+
+        //create Questions Table
+        $sql = "DROP TABLE IF EXISTS `comments`;
+        CREATE TABLE IF NOT EXISTS `comments` (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `content` varchar(250) NOT NULL DEFAULT 'This is noob''s comment',
+          `account_id` int(11) DEFAULT NULL,
+          `question_id` int(11) DEFAULT NULL,
+          `answer_id` int(11) DEFAULT NULL,
+          `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          PRIMARY KEY (`id`),
+          KEY `fk_comments_account_id` (`account_id`),
+          KEY `fk_comments_question_id` (`question_id`),
+          KEY `fk_comments_answer_id` (`answer_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `comments`
+        ADD CONSTRAINT `fk_comments_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL,
+        ADD CONSTRAINT `fk_comments_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `answers` (`id`) ON DELETE CASCADE,
+        ADD CONSTRAINT `fk_comments_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE;COMMIT";
+
+        $conn->exec($sql);
+        $log->lwrite('Comments Table created successfully');
+        
+    }
+    catch(PDOException $e){
+        $log->lwrite('Connection failed: ' . $e->getMessage());
+    }finally{
+        unset ($pdo);
+    }   
+}
+
 function createQuestionsTable(){
+    global $servername, $username, $password, $dbname, $log;
+
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
         // set the PDO error mode to exception
@@ -140,7 +186,7 @@ function createQuestionsTable(){
             PRIMARY KEY (`id`),
             KEY `fk_questions_account_id` (`account_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `questions`
-            ADD CONSTRAINT `fk_questions_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;";
+            ADD CONSTRAINT `fk_questions_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;COMMIT";
 
         $conn->exec($sql);
         $log->lwrite('Questions Table created successfully');
