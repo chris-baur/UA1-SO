@@ -2,6 +2,7 @@
 
 include '..\util\logging.php';
 include '..\util\sets.php';
+include '..\models\Account.php';
 $config = parse_ini_file('..\..\..\config.ini');
 
 $servername = $config['servername'];

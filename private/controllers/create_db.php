@@ -134,7 +134,7 @@ function createCommentsTable(){
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $log->lwrite('Connected successfully');
 
-        //create Questions Table
+        //create Comments Table
         $sql = "DROP TABLE IF EXISTS `comments`;
         CREATE TABLE IF NOT EXISTS `comments` (
           `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -186,7 +186,7 @@ function createQuestionsTable(){
             PRIMARY KEY (`id`),
             KEY `fk_questions_account_id` (`account_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `questions`
-            ADD CONSTRAINT `fk_questions_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;COMMIT";
+            ADD CONSTRAINT `fk_questions_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL;COMMIT";
 
         $conn->exec($sql);
         $log->lwrite('Questions Table created successfully');
