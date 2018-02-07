@@ -69,7 +69,7 @@ function createAccountsTable(){
             `security_one` set($security_one) DEFAULT '".$sets->get_security_one()[0]."',
             `security_two` set($security_two) NOT NULL DEFAULT '".$sets->get_security_two()[0]."',
             `answer_one` varchar(20) NOT NULL DEFAULT 'a1',
-            `answer_two` varchar(20) NOT NULL DEFAULT 'a1',
+            `answer_two` varchar(20) NOT NULL DEFAULT 'a2',
             `bio` varchar(500) NOT NULL DEFAULT 'Training to be like goku',
             `profession` set($professions) NOT NULL DEFAULT '".$sets->get_professions()[2]."',
             `pin` tinyint(4) UNSIGNED NULL DEFAULT NULL,

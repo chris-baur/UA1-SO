@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `security_one` set('What is the first name of the person you first kissed?','What is the last name of the teacher who gave you your first failing grade?','What is your pets name?','What was the name of your elementary / primary school?','In what city or town does your nearest sibling live?','What was your childhood nickname?','What is the name of your favorite childhood friend?') DEFAULT 'What is the first name of the person you first kissed?',
   `security_two` set('In what city or town did your mother and father meet?','What is the middle name of your oldest child?','What is your favorite team?','What is your favorite movie?','What was your favorite sport in high school?','What was your favorite food as a child?','Who is your childhood sports hero?','What was the name of the company where you had your first job?') NOT NULL DEFAULT 'In what city or town did your mother and father meet?',
   `answer_one` varchar(20) NOT NULL DEFAULT 'a1',
-  `answer_two` varchar(20) NOT NULL DEFAULT 'a1',
+  `answer_two` varchar(20) NOT NULL DEFAULT 'a2',
   `bio` varchar(500) NOT NULL DEFAULT 'Training to be like goku',
   `profession` set('Gamer','Student','Potatoe','Teacher','Professor','Hipster','Trainer','Sloth') NOT NULL DEFAULT 'Potatoe',
   `pin` tinyint(4) UNSIGNED NOT NULL DEFAULT '0',
