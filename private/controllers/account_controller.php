@@ -16,7 +16,7 @@ $security_one = $sets->to_string_security_one();
 $security_two = $sets->to_string_security_two();
 $professions = $sets->to_string_professions();
 
-/**
+	/**
 	* Adds an account to the account table in the Database
 	*
 	* @param $account		Account object
@@ -48,7 +48,7 @@ $professions = $sets->to_string_professions();
 			
 			$stmt -> execute();
             $user_id = $pdo -> lastInsertId();
-            $log->lwrite('added user succesfully. UserID: '.$user_id);
+            $log->lwrite('added account succesfully. ID: '.$user_id);
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
@@ -118,5 +118,46 @@ $professions = $sets->to_string_professions();
 		// returns the account object
 		return $account;
 	}
+
+	/**
+	* Updates an account in the account table of the Database
+	*
+	* @param $account		Account object
+	*/
+	function updateAccount($account){
+		global $servername, $username, $password, $dbname, $log;
+		$user_id = 0;
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+            $stmt = $pdo -> prepare('UPDATE accounts set password = :password, name = :name, last_name = :last_name, gender = :gender, 
+                security_one = :security_one, security_two = :security_two, answer_one = :answer_one, answer_two = :answer_two,
+				bio = :bio, profession = :profession, pin = :pin WHERE username = :username;');
+                //@TODO complete function
+										
+			$stmt -> bindParam(':username', $account->get_username());
+			$stmt -> bindParam(':password', $account->get_password());
+			$stmt -> bindParam(':name', $account->get_username());
+            $stmt -> bindParam(':last_name', $account->get_last_name());
+            $stmt -> bindParam(':gender', $account->get_gender());
+            $stmt -> bindParam(':security_one', $account->get_security_one());
+            $stmt -> bindParam(':security_two', $account->get_security_two());
+            $stmt -> bindParam(':answer_one', $account->get_answer_one());
+            $stmt -> bindParam(':answer_two', $account->get_answer_two());
+            $stmt -> bindParam(':bio', $account->get_bio());
+            $stmt -> bindParam(':profession', $account->get_profession());
+            $stmt -> bindParam(':pin', $account->get_pin());
+			
+			$stmt -> execute();
+            $log->lwrite('account updated succesfully. user name: '.$account->get_username());
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+		return $user_id;
+    }
     
 ?>
