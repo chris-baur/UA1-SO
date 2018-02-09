@@ -27,13 +27,13 @@ $log = new Logging();
             $stmt = $pdo -> prepare('INSERT INTO questions(account_id, header, content, date, upvotes, downvotes, tags) VALUES(:account_id, :header, :content, :date, :upvotes, :downvotes, :tags);');
                 //@TODO complete function
 										
-			$stmt -> bindParam(':account_id', $question->getAccountId());
-			$stmt -> bindParam(':header', $question->getHeader());
-			$stmt -> bindParam(':content', $question->getContent());
-            $stmt -> bindParam(':date', $question->getDate());
-            $stmt -> bindParam(':upvotes', $question->getUpvotes());
-            $stmt -> bindParam(':downvotes', $question->getownvotes());
-            $stmt -> bindParam(':tags', $question->getTags());
+			$stmt -> bindParam(':account_id', $question->get_accountId());
+			$stmt -> bindParam(':header', $question->get_header());
+			$stmt -> bindParam(':content', $question->get_content());
+            $stmt -> bindParam(':date', $question->get_date());
+            $stmt -> bindParam(':upvotes', $question->get_upvotes());
+            $stmt -> bindParam(':downvotes', $question->get_downvotes());
+            $stmt -> bindParam(':tags', $question->get_tags());
 			
 			$stmt -> execute();
             $question_id = $pdo -> lastInsertId();
@@ -70,14 +70,14 @@ $log = new Logging();
 			while($result = $stmt -> fetch()){
                 $q = new Question();
 
-				$q->setId($result[0]);
-                $q->setAccountId($result[1]);
-                $q->setHeader($result[2]);
-                $q->setContent($result[3]);
-                $q->setDate($result[4]);
-                $q->setUpvotes($result[5]);
-                $q->setDownvotes($result[6]);
-                $q->tags($result[7]);
+				$q->set_id($result[0]);
+                $q->set_accountId($result[1]);
+                $q->set_header($result[2]);
+                $q->set_content($result[3]);
+                $q->set_date($result[4]);
+                $q->set_upvotes($result[5]);
+                $q->set_downvotes($result[6]);
+                $q->set_tags($result[7]);
 
                 $questionArray[] = $q;
 			}
@@ -114,14 +114,14 @@ $log = new Logging();
             while($result = $stmt -> fetch()){
                 $q = new Question();
 
-				$q->setId($result[0]);
-                $q->setAccountId($result[1]);
-                $q->setHeader($result[2]);
-                $q->setContent($result[3]);
-                $q->setDate($result[4]);
-                $q->setUpvotes($result[5]);
-                $q->setDownvotes($result[6]);
-                $q->tags($result[7]);
+				$q->set_id($result[0]);
+                $q->set_accountId($result[1]);
+                $q->set_header($result[2]);
+                $q->set_content($result[3]);
+                $q->set_date($result[4]);
+                $q->set_upvotes($result[5]);
+                $q->set_downvotes($result[6]);
+                $q->set_tags($result[7]);
 
                 $questionArray[] = $q;
 			}
@@ -158,14 +158,14 @@ $log = new Logging();
 			while($result = $stmt -> fetch()){
                 $q = new Question();
 
-				$q->setId($result[0]);
-                $q->setAccountId($result[1]);
-                $q->setHeader($result[2]);
-                $q->setContent($result[3]);
-                $q->setDate($result[4]);
-                $q->setUpvotes($result[5]);
-                $q->setDownvotes($result[6]);
-                $q->tags($result[7]);
+				$q->set_id($result[0]);
+                $q->set_accountId($result[1]);
+                $q->set_header($result[2]);
+                $q->set_content($result[3]);
+                $q->set_date($result[4]);
+                $q->set_upvotes($result[5]);
+                $q->set_downvotes($result[6]);
+                $q->set_tags($result[7]);
 
                 $questionArray[] = $q;
 			}
@@ -195,12 +195,12 @@ $log = new Logging();
                 WHERE id = :id;');
                 //@TODO complete function
 										
-			$stmt -> bindParam(':header', $question->getHeader());
-			$stmt -> bindParam(':content', $question->getContent());
-            $stmt -> bindParam(':upvotes', $question->getUpvotes());
-            $stmt -> bindParam(':downvotes', $question->getownvotes());
-            $stmt -> bindParam(':tags', $question->getTags());
-            $stmt -> bindParam(':id', $question->getId());
+			$stmt -> bindParam(':header', $question->get_header());
+			$stmt -> bindParam(':content', $question->get_content());
+            $stmt -> bindParam(':upvotes', $question->get_upvotes());
+            $stmt -> bindParam(':downvotes', $question->get_downvotes());
+            $stmt -> bindParam(':tags', $question->get_tags());
+            $stmt -> bindParam(':id', $question->get_id());
 			
 			$stmt -> execute();
             $log->lwrite('Updated question succesfully. ID: '.$question_id);

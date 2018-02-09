@@ -12,10 +12,10 @@
 		var $date;
 		var $upvotes;
 		var $downvotes;
-		var $tags
+		var $tags;
 
 		
-		function __construct($id = 0, $account_id = 'account_id', $header = 'header', $content = 'content', $date = 'date', $upvotes = 'upvotes', $downvotes = 'downvotes') {
+		function __construct($id = 0, $account_id = 0, $header = 'header', $content = 'content', $date = '2018-01-01 01:00:00.0', $upvotes = 0, $downvotes = 0) {
 			
 			$this->id = $id;
 			$this->account_id = $account_id;
@@ -31,7 +31,7 @@
 			return $this->id;
 		}
 		
-		function get_accountID(){
+		function get_accountId(){
 			return $this->account_id;
 		}
 		
@@ -62,7 +62,7 @@
 			$this->id = $new_id;
 		}
 		
-		function set_accountID($new_accountID){
+		function set_accountId($new_accountID){
 			$this->account_id = $new_accountID;
 		}
 		
