@@ -29,7 +29,7 @@
 
 				<div class="column" style="background-color:#ccc;">
 					<h1><img src="../img/avatar2.png" alt="" width="200" height="200">
-						Rodrigo Cordova Cespedes
+						Rodrigo Cespedes
 					</h1>
 					<a href="#" class="grayButton facebook">Find me on Facebook</a>
 					<a href="mailto:rodrigoSebastian9@hotmail.com" class="grayButton mail">Email me</a>
@@ -37,7 +37,7 @@
 			
 				<div class="column" style="background-color:#ddd;">
 					<h1><img src="../img/avatar2.png" alt="" width="200" height="200">
-						Christopher Andrew Concio
+						Christopher Concio
 					</h1>
 					<a href="#" class="grayButton facebook">Find me on Facebook</a>
 					<a href="mailto:chris-768@hotmail.com" class="grayButton mail">Email me</a>

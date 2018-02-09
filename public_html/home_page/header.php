@@ -16,8 +16,8 @@
     <header>
   <nav class="navbar navbar-inverse menu">
     <div class="col-lg-2 no-padding ">
-      <img class="col-lg-12 no-padding" 
-      src="../img/logobig.png" alt=""/>
+      <a href="homepage.php"><img class="col-lg-12 no-padding" 
+      src="../img/logobig.png" alt=""/></a>
     </div>
     <div class="col-lg-10 container-fluid">          
       <div class="col-lg-3 row search-container no-padding">
@@ -25,8 +25,7 @@
         <button type="submit"><i class="fa fa-search"></i></button>        
       </div>
         <div class="row col-lg-9 no-padding menubar">
-            <?php include("menu_template.php");
-            ?>
+            <?php include("menu_template.php");?>
       </div>
       </div>
     </header>
