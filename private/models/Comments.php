@@ -10,6 +10,8 @@
 		var $question_id;
 		var $content;
 		var $date;
+		var $upvotes;
+		var $downvotes;
 		
 		function __construct($id = 0, $account_id = 'account_id', $question_id = 'question_id', $answer_id = '$answer_id', $content = 'content', $date = 'date') {
 			
@@ -45,6 +47,14 @@
 		function get_date(){
 			return $this->date;
 		}
+
+		function get_upvotes(){
+			return $this -> $upvotes;
+		}
+		
+		function get_downvotes(){
+			return $this -> $downvotes;
+		}
 		
 		
 		function set_id($new_id){
@@ -71,5 +81,21 @@
 			$this->date = $new_date;
 		}
 		
+		function set_upvote($new_upvotes){
+			$this -> $upvotes = $new_upvote;
+		}
+		
+		function set_downvote($new_downvotes){
+			$this -> $downvotes = $new_downvotes;
+		}
+		
+		// function to increament the upvotes/downvotes by one
+		function increment_upvotes(){
+			$this -> $upvotes++;
+		}
+		
+		function increment_downvotes(){
+			$this -> $downvotes--;
+		}
 	}
 ?>
