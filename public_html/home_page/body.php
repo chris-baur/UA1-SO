@@ -1,6 +1,4 @@
-<p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
+
     <p>&nbsp;</p>
     <!-- This is angularJs for sprint2
 	<form>
