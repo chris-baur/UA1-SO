@@ -16,18 +16,23 @@ if($menuLinkid=="homepage"){
 	$myquestions='myActiveButton';
 }
 ?>
-<div class="col-lg-2 <?php echo $index;?>">
-<a class="<?php echo $index;?>"href="homepage.php">Home</a>
-</div>
-<div class="col-lg-2 <?php echo $myquestions;?>">
-<a class="<?php echo $myquestions;?>"href="myquestions.php">My questions</a>
-</div>
-<div class="col-lg-2 <?php echo $favorites;?>">
-<a class="<?php echo $favorites;?>"href="favorites.php">Favorites</a>
-</div>
-<div class="col-lg-2 <?php echo $about;?>">
-<a class="<?php echo $about;?>"href="about.php">About</a>
-</div>
-<div class="col-lg-4">
-<button class="btn loginButton" onclick="location.href='../login_register/loginregister.html';"/>Login / Sign Up</button>
-</div>
+<nav id="nav">
+          <ul>
+            <li>
+              <a class="<?php echo $index;?>"href="homepage.php">Home</a>
+            </li>
+            <li>
+              <a class="<?php echo $myquestions;?>"href="myquestions.php">My Questions</a>
+            </li>
+            <li>
+              <a class="<?php echo $favorites;?>"href="favorites.php">Favorites</a>
+            </li>
+            <li>
+              <a class="<?php echo $about;?>"href="about.php">About</a>
+            </li>
+            <li>
+              <a><button onclick="location.href='loginregister.html';"/>Login / Sign Up</button></a>
+            </li>
+          </ul>
+        </nav>
+      </div>

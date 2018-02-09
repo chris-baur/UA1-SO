@@ -1,4 +1,4 @@
- <header id="footer">
+<header id="footer">
       <div class="container">
         <a href="footer.html"></a>
         <img src="../img/logobig.png" alt="" width="240" height="130" />
@@ -27,5 +27,5 @@
         </table>
       </div>
     </header>
-    </body>
+  </body>
 </html>
