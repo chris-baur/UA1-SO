@@ -10,7 +10,7 @@ body {
 .container {
   position: relative;
   margin: 0 auto;
-  width: 100%;
+  width: 96%;
   max-width: 1100px;
   font-family: helvetica, sans-serif;
 }
@@ -31,7 +31,7 @@ body {
 .search-container input[type=text] {
   font-size: 17px;
   border: none;
-  width:88%;
+  width:80%;
 }
 
 .search-container button {
@@ -59,7 +59,7 @@ margin-bottom:10px;
 #header {
   z-index: 2;
   position: fixed;
-  width: 100%;
+  width: 96%;
   top: 0;
   height: 85px;
   background: #D9BB91;
@@ -102,11 +102,11 @@ margin-bottom:10px;
   text-align: center;
   font-size: 17px;
   margin: auto 0;
-  padding: 8px 10px;
+  padding: 4px;
 }
 
 .myButtons:hover {
-    background-color:black; 
+    background-color: #a67024; 
     text-decoration: none;
     color:white;
   }
@@ -117,10 +117,10 @@ margin-bottom:10px;
   text-align: center;
   font-size: 17px;
   margin: auto 0;
-  padding: 8px 10px;
+  padding: 4px;
 }
 .myActiveButton:hover {
-    background-color:black; 
+    background-color: #a67024; 
     text-decoration: none;
     color:white;
 }
@@ -134,8 +134,4 @@ margin-bottom:10px;
 }
 .loginButton:hover{
    opacity: 0.8;
-}
-.no-padding {
-   padding: 0 !important;
-   margin: 0 !important;
 }
