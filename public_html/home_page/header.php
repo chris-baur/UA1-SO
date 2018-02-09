@@ -24,7 +24,7 @@
 			<button type="submit"><i class="fa fa-search"></i></button>
 			</form>
 		</div>
-        <div class="row col-lg-9 no-padding">
+        <div>
             <?php include("menu_template.php");
             ?>
       </div>

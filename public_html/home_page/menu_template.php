@@ -31,7 +31,7 @@ if($menuLinkid=="homepage"){
               <a class="<?php echo $about;?>"href="about.php">About</a>
             </li>
             <li>
-              <a><button onclick="location.href='loginregister.html';"/>Login / Sign Up</button></a>
+              <a><button onclick="location.href='../login_register/loginregister.html';"/>Login / Sign Up</button></a>
             </li>
           </ul>
         </nav>
