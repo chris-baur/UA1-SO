@@ -1,8 +1,7 @@
 <header id="footer">
       <div class="container">
         <a href="footer.html"></a>
-        <img src="../img/logobig.png" alt="" width="240" height="130" />
-        <table style="height: 184px;">
+        <table align="center" style="height: 184px;">
         <tr>
           <!--<th><img src="../img/logo.png" alt="" width="240" height="130" /></th>-->
           <th><br>Conctact us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>

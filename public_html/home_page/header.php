@@ -13,18 +13,18 @@
     <link rel="stylesheet" type="text/css" href="../css/button.css">
 </head>
   <body>
-    <header id="header">
-      <div class="container">
-        <a href="header.html">
-		      <img src="../img/logobig.png" alt="" width="240" height="120" />
- 		    </a>
-		<div class="search-container">
-			<form action="/action_page.php">
-			<input type="text" placeholder="Search.." name="search">
-			<button type="submit"><i class="fa fa-search"></i></button>
-			</form>
-		</div>
-        <div>
+    <header>
+  <nav class="navbar navbar-inverse menu">
+    <div class="col-lg-2 no-padding ">
+      <img class="col-lg-12 no-padding" 
+      src="../img/logobig.png" alt=""/>
+    </div>
+    <div class="col-lg-10 container-fluid">          
+      <div class="col-lg-3 row search-container no-padding">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>        
+      </div>
+        <div class="row col-lg-9 no-padding menubar">
             <?php include("menu_template.php");
             ?>
       </div>
