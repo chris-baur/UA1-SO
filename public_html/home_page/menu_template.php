@@ -20,7 +20,7 @@ if($menuLinkid=="homepage"){
 <a class="<?php echo $index;?>"href="homepage.php">Home</a>
 </div>
 <div class="col-lg-2 <?php echo $myquestions;?>">
-<a class="<?php echo $myquestions;?>"href="myquestions.php">My questions</a>
+<a class="<?php echo $myquestions;?>"href="myquestions.php">My Questions</a>
 </div>
 <div class="col-lg-2 <?php echo $favorites;?>">
 <a class="<?php echo $favorites;?>"href="favorites.php">Favorites</a>
