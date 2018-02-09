@@ -1,8 +1,4 @@
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,10 +21,10 @@
 
 				<div class="column" style="background-color:#bbb;">
 					<h1><img src="../img/avatar2.png" alt="" width="200" height="200">
-						Saif Elderbi
+						Seif Elderbi
 					</h1>
-					<a href="#" class="grayButton facebook">Find me on Facebook</a>
-					<a href="mailto:saif.derbi@yahoo.com" class="grayButton mail">Email me</a>
+					<a href="https://www.facebook.com/selderby" class="grayButton facebook">Find me on Facebook</a>
+					<a href="mailto:seif.derby@yahoo.com" class="grayButton mail">Email me</a>
 				</div>
 
 				<div class="column" style="background-color:#ccc;">
