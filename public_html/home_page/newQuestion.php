@@ -1,5 +1,5 @@
-<?php include("header.php");
-   ?>
+<?php include("header.php");?>
+<p>&nbsp;</p>
 <!--Body-->
 <div class="container">
 	<div class="form-control">
