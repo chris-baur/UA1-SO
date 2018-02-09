@@ -14,7 +14,7 @@
 		var $downvotes;
 
 		
-		function __construct($id = 0, $account_id = 'account_id', $question_id = 'question_id', $content = 'content', $date = 'date', $upvotes = 'upvotes', $downvotes = 'downvotes') {
+		function __construct($id = 0, $account_id = 0, $question_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0) {
 			
 			$this->id = $id;
 			$this->account_id = $account_id;
@@ -30,11 +30,11 @@
 			return $this->id;
 		}
 		
-		function get_accountID(){
+		function get_accountId(){
 			return $this->account_id;
 		}
 		
-		function get_questionID(){
+		function get_questionId(){
 			return $this->question_id;
 		}
 		
@@ -57,11 +57,11 @@
 			$this->id = $new_id;
 		}
 		
-		function set_accountID($new_accountID){
+		function set_accountId($new_accountID){
 			$this->account_id = $new_accountID;
 		}
 		
-		function set_questionID($new_contentID){
+		function set_questionId($new_contentID){
 			$this->question_id = $new_questionID;
 		}
 		

@@ -8,10 +8,11 @@
 		var $id;
 		var $account_id;
 		var $question_id;
+		var $answer_id;
 		var $content;
 		var $date;
 		
-		function __construct($id = 0, $account_id = 'account_id', $question_id = 'question_id', $answer_id = '$answer_id', $content = 'content', $date = 'date') {
+		function __construct($id = 0, $account_id = 0, $question_id = 0, $answer_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0') {
 			
 			$this->id = $id;
 			$this->account_id = $account_id;
@@ -26,15 +27,15 @@
 			return $this->id;
 		}
 		
-		function get_accountID(){
+		function get_accountId(){
 			return $this->account_id;
 		}
 		
-		function get_questionID(){
+		function get_questionId(){
 			return $this->question_id;
 		}
 
-		function get_answerID(){
+		function get_answerId(){
 			return $this->answer_id;
 		}
 		
@@ -51,15 +52,15 @@
 			$this->id = $new_id;
 		}
 		
-		function set_accountID($new_accountID){
+		function set_accountId($new_accountID){
 			$this->account_id = $new_accountID;
 		}
 		
-		function set_questionID($new_contentID){
+		function set_questionId($new_contentID){
 			$this->question_id = $new_questionID;
 		}
 		
-		function set_answerID($new_contentID){
+		function set_answerId($new_contentID){
 			$this->answer_id = $new_answerID;
 		}
 
