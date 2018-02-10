@@ -1,5 +1,4 @@
 body {
-    margin: 0;
     box-sizing: border-box;
 }
 
@@ -7,7 +6,6 @@ body {
     float: left;
     width: 50%;
     padding: 20px;
-    height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -38,7 +36,7 @@ a.grayButton{
     color:#444;
     text-shadow:1px 1px 0 #fff;
     display:inline-block;
-    margin-right:10px;
+    margin-right:0;
 
     -moz-transition:0.25s;
     -webkit-transition:0.25s;
