@@ -2,7 +2,7 @@
    ?>
 <?php
 //footer
-include("aboutBody.php");
+include("about.html");
 ?>
 <?php
 //footer
