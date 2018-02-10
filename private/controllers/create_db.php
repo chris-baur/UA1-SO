@@ -24,6 +24,7 @@ function createDatabaseAndTables(){
     createQuestionsTable();
     createAnswersTable();
     createCommentsTable();
+    createFavouritesTable();
 }
 
 function createDatabase(){
@@ -161,6 +162,39 @@ function createCommentsTable(){
     }finally{
         unset ($pdo);
     }   
+}
+
+function createFavouritesTable(){
+    global $servername, $username, $password, $dbname, $log;
+
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $log->lwrite('Connected successfully');
+
+        //create Favourites Table
+        $sql = "DROP TABLE IF EXISTS `favourites`;
+        CREATE TABLE IF NOT EXISTS `favourites` (
+          `id` int(11) NOT NULL AUTO_INCREMENT,
+          `account_id` int(11) DEFAULT NULL,
+          `question_id` int(11) DEFAULT NULL,
+          PRIMARY KEY (`id`),
+          KEY `fk_favourties_account_id` (`account_id`),
+          KEY `fk_favourites_question_id` (`question_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `favourites`
+        ADD CONSTRAINT `fk_favourites_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
+        ADD CONSTRAINT `fk_favourties_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE;COMMIT";
+
+        $conn->exec($sql);
+        $log->lwrite('Favourites Table created successfully');
+        
+    }
+    catch(PDOException $e){
+        $log->lwrite('Connection failed: ' . $e->getMessage());
+    }finally{
+        unset ($pdo);
+    }
 }
 
 function createQuestionsTable(){
