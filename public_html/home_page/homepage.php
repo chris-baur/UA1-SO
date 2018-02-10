@@ -1,11 +1,6 @@
 
-<?php include("header.php");
-   ?>
-<?php
-//footer
-include("body.php");
-?>
-<?php
-//footer
-include("footer.php");
-?>
+<?php include("header.php");?>
+
+<?php include("homepage.html");?>
+
+<?php include("footer.php");?>
