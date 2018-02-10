@@ -2,7 +2,7 @@
    ?>
 <?php
 //footer
-include("body.php");
+include("favorites.html");
 ?>
 <?php
 //footer
