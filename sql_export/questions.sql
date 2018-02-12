@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `upvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
   `downvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
   `tags` varchar(100) NOT NULL DEFAULT 'noob',
+  `favourite` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_questions_account_id` (`account_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

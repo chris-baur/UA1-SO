@@ -12,9 +12,9 @@
 		var $date;
 		var $upvotes;
 		var $downvotes;
-
+		var $favourite
 		
-		function __construct($id = 0, $account_id = 'account_id', $question_id = 'question_id', $content = 'content', $date = 'date', $upvotes = 'upvotes', $downvotes = 'downvotes') {
+		function __construct($id = 0, $account_id = 'account_id', $question_id = 'question_id', $content = 'content', $date = 'date', $upvotes = 'upvotes', $downvotes = 'downvotes', $favourite = 'favourite') {
 			
 			$this->id = $id;
 			$this->account_id = $account_id;
@@ -23,7 +23,7 @@
 			$this->date = $date;
 			$this->upvotes = $upvotes;
 			$this->downvotes = $downvotes;
-			
+			$this->favourite = $favourite;
 		}
 		
 		function get_id(){
@@ -52,6 +52,9 @@
 		function get_downvotes(){
 			return $this->downvotes;
 		}
+		function get_favourite(){
+			return $this->favourite;
+		}
 		
 		function set_id($new_id){
 			$this->id = $new_id;
@@ -79,6 +82,9 @@
 		function set_downvotes($new_downvotes){
 			$this->downvotes = $new_downvotes;
 		}
+		function set_favourite($new_favourite){
+			$this->favourite = $new_favourite;
+		} 
 		
 	}
 ?>
