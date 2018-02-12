@@ -1,20 +1,22 @@
-<!DOCTYPE HTML>
-<html ng-app="myApp" ng-controller="myCtrl">
-  
-  <head>
-    <title>My Questions</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/headerFooter.css">
-    <link rel="stylesheet" type="text/css" href="../css/button.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  
-  <body>
-    <div class="container">
-      <button type="button" class="btn btn-primary btn-md" onclick="location.href='newQuestion.php';"/>New Question</button>
-    </div>
-  </body>
-
-</html>  
+<form>
+<div class="container"  ng-app="myApp" ng-controller="mainCtrl">
+  <div class="form-control ">
+    <button type="button" class="btn btn-primary btn-md" onclick="location.href='newQuestion.php';"/>New Question</button>
+  </div>
+    
+    <div class="form-group row" ng-repeat="question in questions">
+      <div class="col-md-4">
+        <img class="userPhoto" src="../img/avatar2.png" alt="" width="80" height="80" />
+        <span class="col-md-3">
+        <label >{{question.userName}}</label>
+        </span>
+      </div>
+      <div class="col-md-8 ">
+        <h3>{{question.title}}</h3>
+        <p>{{question.question}}</p>
+      </div>
+    </div> 
+</div>  
+</form>
     
 

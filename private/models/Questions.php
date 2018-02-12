@@ -12,8 +12,8 @@
 		var $date;
 		var $upvotes;
 		var $downvotes;
-		var $tags
-		var $favourite
+		var $tags;
+		var $favourite;
 		
 		function __construct($id = 0, $account_id = 'account_id', $header = 'header', $content = 'content', $date = 'date', $upvotes = 'upvotes', $downvotes = 'downvotes',  $favourite = 'favourite') {
 			
