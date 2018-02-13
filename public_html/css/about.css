@@ -1,19 +1,41 @@
-body {
-    box-sizing: border-box;
+.header img{
+    background-color: orange;
+    padding-top: 0px;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.header span {
+    float: right;
+    right: 60px; 
+    font-size: 32px;
+    text-transform: none;
+    position: absolute;
+}
+
+@media (max-width: 650px) {
+    .header span {
+        font-size: 0px;
+    }
+
 }
 
 .column {
     float: left;
     width: 50%;
-    padding: 20px;
+    padding-top: 20px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+@media (max-width: 1075px) {
+    .column {
+        width: 100%;
+    }
+    .header img {
+        padding-top: 60px;
+    }
 }
+
 
 a.grayButton{
     padding:6px 12px 6px 30px;
@@ -68,10 +90,20 @@ a.grayButton.mail:before{
     content: '';
 }
 
-@media (max-width: 1075px) {
-    .column {
-        width: 100%;
-    }
+a.option {
+    padding:6px 20px 6px 20px;
+    color: black;
+    text-decoration: none;
+
+}
+
+a.option:hover{
+    text-decoration:none !important;
+    box-shadow:0 0 2px #2b99ff;
+}
+
+a.option:active {
+    color:white;
 }
 
 

@@ -1,10 +1,8 @@
-<?php include("header.php");
-   ?>
-<?php
-//footer
-include("about.html");
-?>
-<?php
-//footer
-include("footer.php");
-?>
+
+<?php #include("header.php");?>
+
+
+<?php include("about.html");?>
+
+
+<?php #include("footer.php");?> 
