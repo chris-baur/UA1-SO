@@ -14,7 +14,6 @@
 		var $downvotes;
 		var $tags;
 
-		
 		function __construct($id = 0, $account_id = 0, $header = 'header', $content = 'content', $date = '2018-01-01 01:00:00.0', $upvotes = 0, $downvotes = 0) {
 			
 			$this->id = $id;
@@ -58,6 +57,7 @@
 			return $this->tags;
 		}
 		
+		}
 		function set_id($new_id){
 			$this->id = $new_id;
 		}
@@ -88,6 +88,5 @@
 		function set_tags($new_tags){
 			$this->tags = $new_tags;
 		}
-
 	}
 ?>

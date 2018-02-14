@@ -12,10 +12,9 @@
 		var $date;
 		var $upvotes;
 		var $downvotes;
-
+		var $favourite;
 		
-		function __construct($id = 0, $account_id = 0, $question_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0) {
-			
+		function __construct($id = 0, $account_id = 0, $question_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0) {			
 			$this->id = $id;
 			$this->account_id = $account_id;
 			$this->question_id = $question_id;
@@ -23,7 +22,6 @@
 			$this->date = $date;
 			$this->upvotes = $upvotes;
 			$this->downvotes = $downvotes;
-			
 		}
 		
 		function get_id(){

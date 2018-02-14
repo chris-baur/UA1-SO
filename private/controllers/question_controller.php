@@ -1,10 +1,9 @@
 <?php
-
-include '..\util\logging.php';
-include '..\util\sets.php';
-include '..\models\Question.php';
-include '..\models\Account.php';
-$config = parse_ini_file('..\..\..\config.ini');
+include '..\..\private\util\logging.php';
+include '..\..\private\util\sets.php';
+include '..\..\private\models\Questions.php';
+include '..\..\private\models\Account.php';
+$config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 $servername = $config['servername'];
 $username = $config['username'];
