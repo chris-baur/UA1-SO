@@ -14,7 +14,7 @@
 		var $downvotes;
 		var $tags;
 
-		function __construct($id = 0, $account_id = 0, $header = 'header', $content = 'content', $date = '2018-01-01 01:00:00.0', $upvotes = 0, $downvotes = 0) {
+		function __construct($id = 0, $account_id = 0, $header = 'header', $content = 'content', $date = '2018-01-01 01:00:00.0', $upvotes = 0, $downvotes = 0, $tags = []) {
 			
 			$this->id = $id;
 			$this->account_id = $account_id;
@@ -23,6 +23,7 @@
 			$this->date = $date;
 			$this->upvotes = $upvotes;
 			$this->downvotes = $downvotes;
+			$this->tags = $tags;
 			
 		}
 		
@@ -57,7 +58,6 @@
 			return $this->tags;
 		}
 		
-		}
 		function set_id($new_id){
 			$this->id = $new_id;
 		}
