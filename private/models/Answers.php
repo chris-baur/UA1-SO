@@ -12,7 +12,7 @@
 		var $date;
 		var $upvotes;
 		var $downvotes;
-		var $favourite
+		var $favourite;
 		
 		function __construct($id = 0, $account_id = 'account_id', $question_id = 'question_id', $content = 'content', $date = 'date', $upvotes = 'upvotes', $downvotes = 'downvotes', $favourite = 'favourite') {
 			
