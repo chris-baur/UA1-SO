@@ -33,9 +33,11 @@ CREATE TABLE IF NOT EXISTS `favourites` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_id` int(11) DEFAULT NULL,
   `question_id` int(11) DEFAULT NULL,
+  `answer_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_favourties_account_id` (`account_id`),
-  KEY `fk_favourites_question_id` (`question_id`)
+  KEY `fk_favourites_question_id` (`question_id`),
+  KEY `fk_favourites_answer_id` (`answer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -47,7 +49,8 @@ CREATE TABLE IF NOT EXISTS `favourites` (
 --
 ALTER TABLE `favourites`
   ADD CONSTRAINT `fk_favourites_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_favourties_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `fk_favourties_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_favourites_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `answers` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -181,10 +181,12 @@ function createFavouritesTable(){
           `question_id` int(11) DEFAULT NULL,
           PRIMARY KEY (`id`),
           KEY `fk_favourties_account_id` (`account_id`),
-          KEY `fk_favourites_question_id` (`question_id`)
+          KEY `fk_favourites_question_id` (`question_id`),
+          KEY `fk_favourites_answer_id` (`answer_id`)
         ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `favourites`
         ADD CONSTRAINT `fk_favourites_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
-        ADD CONSTRAINT `fk_favourties_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE;COMMIT";
+        ADD CONSTRAINT `fk_favourties_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE,
+        ADD CONSTRAINT `fk_favourites_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `answers` (`id`) ON DELETE CASCADE;COMMIT";
 
         $conn->exec($sql);
         $log->lwrite('Favourites Table created successfully');
