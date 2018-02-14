@@ -3,32 +3,34 @@
 		if(isset($_GET['action'])=='submitQuestion') {
     		submitQuestion();
 		}
-		else
-
 	  ?>
+
+ <script src="../js/newQuestion.js"></script>
+ <link rel="stylesheet" type="text/css" href="../css/question_page.css">
 
 <!--Body-->
 <form method="post" action="?action=submitQuestion">
-<div class="container">
-	<div class="form-control">
-		<span class="col-lg-2">Tilte  </span>
-		<input class="col-lg-10" type="text" placeholder="Title of your question" name="header" 
-		ng-model="question_title">		
-	</div>
-	<div class="form-control">
-		<textarea class="form-control" rows="10" name="content"
-		ng-model="content"></textarea>
-	</div>
-	<div class="form-control">
-		<label>Tags</label>
-		<div></div>
-	</div>
-	<div>
-		<button type="submit" class="btn btn-primary btn-md"> Ask it! </button>
-	</div>
+	<div class="container" ng-app="newQuestion" ng-controller="questionController">
+		<div class="form-control space">
+			<span class="col-lg-2">Tilte  </span>
+			<input class="col-lg-10" type="text" placeholder="Title of your question" name="header" 
+			ng-model="question_title">		
+		</div>
+		<div class="form-control space">
+			<textarea class="form-control" rows="10" name="content"
+			ng-model="content"></textarea>
+		</div>
+		<div class="form-control space">
+			<label>Tags</label>
+			<div></div>
+		</div>
+		<div class="space">
+			<button ng-disabled="allowSubmit()" type="submit" class="btn btn-primary btn-md"> Ask it! </button>
+		</div>
 
-</div>
+	</div>
 </form>
+
 <?php 
 	function submitQuestion(){
 		if(isset($_POST['header']) and isset($_POST['content'])){
