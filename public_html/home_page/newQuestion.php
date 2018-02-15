@@ -4,9 +4,10 @@
     		submitQuestion();
 		}
 	  ?>
-
+ <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
  <script src="../js/newQuestion.js"></script>
- <link rel="stylesheet" type="text/css" href="../css/question_page.css">
+ <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
+ <link rel="stylesheet" type="text/css" href="../css/questions_page.css">
 
 <!--Body-->
 <form method="post" action="?action=submitQuestion">
@@ -21,8 +22,8 @@
 			ng-model="content"></textarea>
 		</div>
 		<div class="form-control space">
-			<label>Tags</label>
-			<div></div>
+			<label>Tags : </label>
+			<tags-input ng-model="tags"></tags-input>
 		</div>
 		<div class="space">
 			<button ng-disabled="allowSubmit()" type="submit" class="btn btn-primary btn-md"> Ask it! </button>
