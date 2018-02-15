@@ -1,52 +1,43 @@
+<html>
+<head>
+<title>Ask It! Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../css/footer.css">
+</head>
+<body>
 <header id="footer">
       <div class="container">
         <a href="footer.html"></a>
-            <table class = "footerTable" align = "center">
-              <col width = "250px">
-              <col width = "340px">
-
-              <!--Table titles-->
-              <thead>
-                <th style = "height:40px">CONTACT US</th>
-                <th>FOR ANY INQUIRIES PLEASE EMAIL</th>
-                <th>FOLLOW US</th>
-              </thead>
- 
-              <tbody>
-                <!--Contact us content-->
-                <td>
-                  <table>
-                    <tr>
-                      <td style = "height: 20px; vertical-align: top">Email us: <a href="mailto:contact@asktit.com">contact@askit.com</a></td>
-                    </tr>
-                    <tr>
-                      <td style = "vertical-align: top; height: 50px">Phone CA: (514) xxx-xxxx&nbsp;</td>
-                    </tr>
-                  </table>
-                </td>
-
-                <!--Inquiries content-->
-                <td style = "vertical-align: top"><a href="mailto:help@askit.com">help@askit.com</a></td>
-
-                <!--Follow us content-->
-                <td style = "vertical-align: top">
-                  <table>
-                    <td><img src="../img/facebook.png" alt="" width="20" height="20" /></td>
-                    <td><img src="../img/instagram.png" alt="" width="20" height="20" /></td>
-                    <td><img src="../img/twitter.png" alt="" width="20" height="20" /></td>
-                  </table>
-                </td>
-              </tbody>
-            </table>
+        <table class = "footerTable" align = "center" >
+        <tr>
+          <!--<th><img src="../img/logo.png" alt="" width="240" height="130" /></th>-->
+          <!--Contact us content--><th class="contactUsPadding"><br>CONTACT US</th>
+          <!--Inquiries content--><th class="emailUsPadding"><br>FOR ANY INQUIRIES PLEASE EMAIL US</th> 
+          <!--Follow us content--><th><br>FOLLOW US</th>
+        </tr>
+        <tr>
+          <!--Contact us content-->
+          <td>Email us: <a href="mailto:contact@asktit.com">contact@asktit.com</a></td>
+          <!--Inquiries content-->
+          <td><a href="mailto:help@askit.com">help@askit.com</a>
+          <!--Follow us content-->
+          <td><img src="../img/facebook.png" alt="" width="20" height="20" /><a>&nbsp;AskIt!</a></td>
+        </tr>
+        <tr>
+          <!--Contact us content-->
+          <td>Phone CA: (514) xxx-xxxx&nbsp;</td>
+          <td> </td>
+          <!--Follow us content-->
+          <td><img src="../img/instagram.png" alt="" width="20" height="20" /><a>&nbsp;AskIt!</a></td>
+        </tr>
+        <tr>
+          <td>   </td>
+          <td>   </td>
+          <!--Follow us content-->
+          <td><img src="../img/twitter.png" alt="" width="20" height="20" /><a>&nbsp;AskIt!</a></td>
+        </tr>
+        </table>
       </div>
     </header>
   </body>
-
-  <!-- changing style in homepage.css not working for the moment so going to style table here -->
-  <style>
-    .footerTable {
-        font-family: "Arial";
-    }
-  </style>
-
 </html>
