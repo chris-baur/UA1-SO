@@ -12,9 +12,9 @@
 		var $date;
 		var $upvotes;
 		var $downvotes;
-		var $favourite;
+		var $best;
 		
-		function __construct($id = 0, $account_id = 0, $question_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0) {			
+		function __construct($id = 0, $account_id = 0, $question_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0, $best = false) {			
 			$this->id = $id;
 			$this->account_id = $account_id;
 			$this->question_id = $question_id;
@@ -22,6 +22,7 @@
 			$this->date = $date;
 			$this->upvotes = $upvotes;
 			$this->downvotes = $downvotes;
+			$this->best = $best;
 		}
 		
 		function get_id(){
@@ -50,6 +51,9 @@
 		function get_downvotes(){
 			return $this->downvotes;
 		}
+		function get_best(){
+			return $this->best;
+		}
 		
 		function set_id($new_id){
 			$this->id = $new_id;
@@ -59,7 +63,7 @@
 			$this->account_id = $new_accountID;
 		}
 		
-		function set_questionId($new_contentID){
+		function set_questionId($new_questionID){
 			$this->question_id = $new_questionID;
 		}
 		
@@ -71,11 +75,15 @@
 			$this->date = $new_date;
 		}
 		
-		function set_upvotes($new_downvotes){
+		function set_upvotes($new_upvotes){
 			$this->upvotes = $new_upvotes;
 		}
 		function set_downvotes($new_downvotes){
 			$this->downvotes = $new_downvotes;
+		}
+
+		function set_best($new_best){
+			$this->best = $new_best;
 		}
 		
 	}

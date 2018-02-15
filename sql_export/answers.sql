@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `upvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
   `downvotes` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
-  'favourite' mediumint(8) UNSIGNED NOT DEFAULT NULL '0',
+  `best` BOOLEAN DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_answers_account_id` (`account_id`),
   KEY `fk_answers_question_id` (`question_id`)

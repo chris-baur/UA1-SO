@@ -1,5 +1,6 @@
 <?php include("header.php");
 	  include("../../private/controllers/question_controller.php");
+	  include("../../private/models/Question.php");
 		if(isset($_GET['action'])=='submitQuestion') {
     		submitQuestion();
 		}

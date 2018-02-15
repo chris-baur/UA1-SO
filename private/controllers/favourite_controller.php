@@ -1,7 +1,9 @@
 <?php
 
 include '..\util\logging.php';
-include '..\models\Facourite.php';
+include '..\models\Favourite.php';
+include '..\models\Question.php';
+include '..\models\Answer.php';
 $config = parse_ini_file('..\..\..\config.ini');
 
 $servername = $config['servername'];
@@ -83,7 +85,7 @@ $sets = new Sets();
     /**
 	 * Returns a favourite array of questions with the specified account_id, otherwsie returns default faourite if none found
 	 *
-	 * @param $id		favourite's id
+	 * @param $accountId		favourite's account id
 	 */
 	function getFavouriteQuestions($accountId){
 		global $servername, $username, $password, $dbname, $log;
@@ -123,5 +125,155 @@ $sets = new Sets();
 		// returns the favourite object
 		return $favourite;
 	}
-    
+	
+	/**
+	 * Returns a favourite array of answers with the specified account_id, otherwsie returns default faourite if none found
+	 *
+	 * @param $accountId		favourite's account id
+	 */
+	function getFavouriteAnswers($accountId){
+		global $servername, $username, $password, $dbname, $log;
+		$favouritesArray = [];
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare('SELECT A.id, A.account_id, A.question_id, A.content, A.date, A.upvotes, A.downvotes, A.best FROM answers A JOIN favourites F 
+                ON A.id=F.answer_id WHERE F.account_id=:account_id AND F.answer_id IS NOT NULL;');						
+			$stmt -> bindParam(':account_id', $accountId);
+		
+			$stmt -> execute();
+			
+			// if there is a user with specified username
+			while($result = $stmt -> fetch()){
+                $a = new Answer();
+
+				$a->set_id($result[0]);
+                $a->set_accountId($result[1]);
+                $a->set_questionId($result[2]);
+                $a->set_content($result[3]);
+                $a->set_date($result[4]);
+                $a->set_upvotes($result[5]);
+                $a->set_downvotes($result[6]);
+                $a->set_best($result[7]);
+
+                $favouritesArray[] = $a;
+			}
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+		// returns the favourite object
+		return $favourite;
+	}
+
+	/**
+	 * removes the favourite question from the account
+	 *
+	 * @param $questionId		favourite's question id
+	 * @param $accountId		favourite's account id
+	 */
+	function deleteFavouriteQuestion($accountId, $questionId){
+		global $servername, $username, $password, $dbname, $log;
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare('DELETE FROM favourites WHERE account_id=:account_id AND question_id=:question_id');						
+			$stmt -> bindParam(':account_id', $accountId);
+			$stmt -> bindParam(':question_id', $questionId);			
+		
+			$stmt -> execute();
+			$low->lwrite("Favourite question ID: $questionId was removed from account ID: $accountId");
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+	}
+	
+	/**
+	 * removes all favourite questions from the account
+	 *
+	 * @param $questionId		favourite's question id
+	 * @param $accountId		favourite's account id
+	 */
+	function deleteAllFavouriteQuestions($accountId){
+		global $servername, $username, $password, $dbname, $log;
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare('DELETE FROM favourites WHERE account_id=:account_id AND question_id IS NOT NULL');						
+			$stmt -> bindParam(':account_id', $accountId);		
+		
+			$stmt -> execute();
+			$low->lwrite("All Favourite questions were removed from account ID: $accountId");
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+	}
+	
+	/**
+	 * removes the favourite answer from the account
+	 *
+	 * @param $answerId		favourite's answer id
+	 * @param $accountId		favourite's account id
+	 */
+	function deleteFavouriteAnswer($accountId, $answerId){
+		global $servername, $username, $password, $dbname, $log;
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare('DELETE FROM favourites WHERE account_id=:account_id AND answer_id=:answer_id');						
+			$stmt -> bindParam(':account_id', $accountId);
+			$stmt -> bindParam(':answer_id', $answerId);			
+		
+			$stmt -> execute();
+			$low->lwrite("Favourite answer ID: $answerId was removed from account ID: $accountId");
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+	}
+	
+	/**
+	 * removes all favourite answers from the account
+	 *
+	 * @param $answerId		favourite's answer id
+	 * @param $accountId		favourite's account id
+	 */
+	function deleteAllFavouriteAnswers($accountId){
+		global $servername, $username, $password, $dbname, $log;
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare('DELETE FROM favourites WHERE account_id=:account_id AND answer_id IS NOT NULL');						
+			$stmt -> bindParam(':account_id', $accountId);		
+		
+			$stmt -> execute();
+			$low->lwrite("All Favourite answers were removed from account ID: $accountId");
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+    }
+
 ?>
