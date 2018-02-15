@@ -86,6 +86,22 @@
         </label>
         <input ng-model='answer2' type="text" placeholder="Enter Answer" name="Answer2" required>
         <br>
+        <br>
+        <label> <b> Profession </b>
+          <select name = "Pro">
+            <option value = "select"> -Please select- </option>
+            <option> Student </option>
+            <option> Employee</option>
+            <option> Professor </option>
+            <option> Other </option>
+          </select> 
+        </label>
+        <br>
+        <br>
+        <b> Pin (for quick login): </b>
+           <input ng-model='answer3' type="number" placeholder="Enter Pin" name="Answer3" required>
+        <br>
+        <br>
         <form action="gender"> <b> Gender </b>
           <input type="radio" name="male" value="male" ng-model='gender'> Male
           <input type="radio" name="female" value="female" ng-model='gender'> Female
