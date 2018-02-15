@@ -38,7 +38,11 @@
 			$question_title=$_POST['header'];
 			$content=$_POST['content'];
 		}
-		$newQuestion=new Questions('0','123',$question_title,$content,date("l jS \of F Y h:i:s A"),'0','0');
+		//@TODO
+		//must validate/sanitize data provided by the user
+		//missing tags element, getting account id from session.
+
+		$newQuestion=new Question('0','123',$question_title,$content,date("l jS \of F Y h:i:s A"),'0','0');
 		$response=addQuestion($newQuestion);
 		print "$response"; // This is temporal, I want to see the response
 		header("Location: myquestions.php");

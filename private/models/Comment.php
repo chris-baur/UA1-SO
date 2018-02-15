@@ -3,7 +3,7 @@
 	 * Comments object  
 	*/
 	
-	class Comments{
+	class Comment{
 		//Variables
 		var $id;
 		var $account_id;

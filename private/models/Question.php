@@ -1,27 +1,30 @@
 <?php
 	/* @author Wissem Bahloul
-	 * Answers object  
+	 * Questions object  
 	*/
 	
-	class Answers{
+	class Question{
 		//Variables
 		var $id;
 		var $account_id;
-		var $question_id;
+		var $header;
 		var $content;
 		var $date;
 		var $upvotes;
 		var $downvotes;
-		var $favourite;
-		
-		function __construct($id = 0, $account_id = 0, $question_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0) {			
+		var $tags;
+
+		function __construct($id = 0, $account_id = null, $header = 'header', $content = 'content', $date = '2018-01-01 01:00:00.0', $upvotes = 0, $downvotes = 0, $tags = []) {
+			
 			$this->id = $id;
 			$this->account_id = $account_id;
-			$this->question_id = $question_id;
+			$this->header = $header;
 			$this->content = $content;
 			$this->date = $date;
 			$this->upvotes = $upvotes;
 			$this->downvotes = $downvotes;
+			$this->tags = $tags;
+			
 		}
 		
 		function get_id(){
@@ -32,8 +35,8 @@
 			return $this->account_id;
 		}
 		
-		function get_questionId(){
-			return $this->question_id;
+		function get_header(){
+			return $this->header;
 		}
 		
 		function get_content(){
@@ -50,6 +53,10 @@
 		function get_downvotes(){
 			return $this->downvotes;
 		}
+
+		function get_tags(){
+			return $this->tags;
+		}
 		
 		function set_id($new_id){
 			$this->id = $new_id;
@@ -59,8 +66,8 @@
 			$this->account_id = $new_accountID;
 		}
 		
-		function set_questionId($new_contentID){
-			$this->question_id = $new_questionID;
+		function set_questionID($new_contentID){
+			$this->header = $new_questionID;
 		}
 		
 		function set_content($new_content){
@@ -78,5 +85,8 @@
 			$this->downvotes = $new_downvotes;
 		}
 		
+		function set_tags($new_tags){
+			$this->tags = $new_tags;
+		}
 	}
 ?>

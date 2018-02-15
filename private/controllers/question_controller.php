@@ -1,7 +1,7 @@
 <?php
 include '..\..\private\util\logging.php';
 include '..\..\private\util\sets.php';
-include '..\..\private\models\Questions.php';
+include '..\..\private\models\Question.php';
 include '..\..\private\models\Account.php';
 $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
@@ -98,7 +98,6 @@ $log = new Logging();
 	 */
 	function getQuestionsByContent($content){
 		global $servername, $username, $password, $dbname, $log;
-        $question = new Question();
         $questionArray = [];
 		
 		try{

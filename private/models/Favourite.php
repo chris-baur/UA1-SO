@@ -7,14 +7,14 @@
  * 
  */
 
- class Favourites{
+ class Favourite{
     //class variables
     var $id;
     var $accountId;
     var $questionId;
     var $answerId;
 
-    function __contruct($id = 0, $accoundId = 0, $questionId = 0, $answerId = 0){
+    function __contruct($id = 0, $accoundId = null, $questionId = null, $answerId = null){
         $this->id = $id;
         $this->accountId = $accountId;
         $this->questionId = $questionId;
