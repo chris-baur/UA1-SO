@@ -31,6 +31,8 @@ body {
 .search-container input[type=text] {
   font-size: 17px;
   border: none;
+  width: 50%;
+  height: 30px;
 }
 
 .search-container button {
@@ -40,6 +42,8 @@ body {
   font-size: 17px;
   border: none;
   cursor: pointer;
+  height: 30px;
+  width: 40px;
 }
 
 .container .search-container button:hover {
@@ -92,21 +96,23 @@ body {
   padding: 0 !important;
 }
 .myButtons:hover {
-    background-color: #a67024; 
+    background-color: #ab7c3b; 
     text-decoration: none;
     color:white;
+    font-family: arial;
   }
 .myActiveButton {
-  background-color: #a67024;
+  background-color: #ab7c3b;
   color:white;
   text-decoration: none;
   text-align: center;
   font-size: 17px;
   margin: auto 0;
   padding: 4px;
+  font-family: arial;
 }
 .myActiveButton:hover {
-    background-color: #a67024; 
+    background-color: #ab7c3b; 
     text-decoration: none;
     color:white;
 }

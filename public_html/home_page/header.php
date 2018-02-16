@@ -17,7 +17,7 @@
   <nav class="navbar navbar-inverse menu">
     <div class="col-lg-2 no-padding ">
       <a href="homepage.php"><img class="col-lg-12 no-padding" 
-      src="../img/logobig.png" alt=""/></a>
+      src="../img/newlogo.png" alt=""/></a>
     </div>
     <div class="col-lg-10 container-fluid">          
       <div class="col-lg-3 row search-container no-padding">
