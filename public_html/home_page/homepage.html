@@ -8,6 +8,35 @@
 
   <body>  
     <p style="text-align: center;"><img src="../img/fill.png" alt="" width="1100" height="600" /></p>
+
+    <!--Outputting the items in the database-->
+    <!--<center>
+    <div style = "width:70%">
+    <div class ="comment"; style = "width:100%; height: 100%; background-color: #f0e5d7; float:left";>
+
+
+    <?php
+
+    	$user = 'ua1';
+    	$pass = 'Ua1password0)';
+    	$db = 'ua1_so';
+
+    	$db = new MySQLi('localhost', $user, $pass, $db) or die("Unable to connect");
+
+    	$resultset = $db->query("SELECT * FROM questions");
+
+    	while($rows = $resultset -> fetch_assoc()){
+    		$header = $rows['header'];
+    		$content = $rows['content'];
+    		$date = $rows['date'];
+    		echo "<p style='color:#a48963; font-family: arial; font-size: 17px; text-align:left;'>$header<br>$content<br>Posted on: $date</p>";
+    	}
+
+    ?>
+    </div>
+	</div>
+</center>
+-->
   </body>
 
 </html>
