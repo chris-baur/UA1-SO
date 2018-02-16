@@ -191,7 +191,6 @@ $log = new Logging();
 
             $stmt = $pdo -> prepare('UPDATE questions set header = :header, content = :content, upvotes = :upvotes, downvotes = :downvotes, tags = :tags
                 WHERE id = :id;');
-                //@TODO complete function
 										
 			$stmt -> bindParam(':header', $question->get_header());
 			$stmt -> bindParam(':content', $question->get_content());
