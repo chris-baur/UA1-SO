@@ -1,8 +1,8 @@
 
-<?php #include("header.php");?>
+<?php include("header.php");?>
 
 
-<?php include("about.html");?>
+<?php include("aboutBody.html");?>
 
 
-<?php #include("footer.php");?> 
+<?php include("footer.php");?> 
