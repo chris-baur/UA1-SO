@@ -4,8 +4,8 @@ This is a template from github for readme files.
 
 # Stack Overflow Wannabe site
 
-https://travis-ci.org/chris-baur/UA1-SO.svg?branch=master
-
+<img src="https://travis-ci.org/chris-baur/UA1-SO.svg?branch=master
+" alt="Build Status">
 Project assignment for SOEN 341, Concordia University.
 The goal of the project is to create a site like Stack Overflow.
 
