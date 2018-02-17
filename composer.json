@@ -1,0 +1,17 @@
+{
+    "name": "ua1-so",
+    "description": "A PHP project",
+    "type": "website",
+    "authors": [
+        {
+            "name": "ua1",
+            "email": "ua1-so@gmail.com"
+        }
+    ],
+    "require-dev": {
+      "phpunit/phpunit": "5.7.*"
+    },
+    "autoload": {
+        "psr-4": {"UA1-SO\\": "private/"}
+}
+}
