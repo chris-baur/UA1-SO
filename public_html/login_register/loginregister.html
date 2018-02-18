@@ -108,7 +108,7 @@
         <br>
         <br>
         <label> <b> Profession </b>
-          <select name = "Pro">
+          <select name = "profession">
             <option value = "select"> -Please select- </option>
             <option> Student </option>
             <option> Employee</option>
@@ -119,7 +119,8 @@
         <br>
         <br>
         <b> Pin (for quick login): </b>
-           <input ng-model='answer3' type="number" placeholder="Enter Pin" name="Answer3" required>
+           <input ng-model='pin' type="pin" placeholder="Enter Pin" name="pin" maxlength="4" required>
+    <span class="alert" ng-if="pin.length<4 && pin.length!=0">Pin enter is to short</span>
         <br>
         <br>
         <form action="gender"> <b> Gender </b>

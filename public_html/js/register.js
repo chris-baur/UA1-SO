@@ -11,6 +11,7 @@ app.controller('myCtrl', function($scope, $http) {
 							'password': $scope.password, 
 							'answer1':$scope.answer1,
 							'answer2':$scope.answer2,
+							'pin': $scope.pin,
 							'gender':$scope.gender.value});
 		// Writing it to the server
 		//		
@@ -19,6 +20,7 @@ app.controller('myCtrl', function($scope, $http) {
 				password: $scope.password, 
 				answer1:$scope.answer1,
 				answer2:$scope.answer2,
+				pin:$scope.pin,
 				gender:$scope.gender
 		});	
 		console.log(dataObj);
@@ -38,6 +40,7 @@ app.controller('myCtrl', function($scope, $http) {
 		$scope.password='';
 		$scope.answer1='';
 		$scope.answer2='';
+		$scope.pin=''; 
 		$scope.gender='';		
 	};
 });
