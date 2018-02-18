@@ -26,7 +26,7 @@
 
       <div class="container">
         <label><b>Username</b></label>
-          <input ng-model='userName'type="text" placeholder="Enter Username" name="username" required>
+          <input ng-model='userName' type="text" placeholder="Enter Username" name="username" required>
 
         <label><b>Password</b></label>
           <input ng-model='password' type="password" placeholder="Enter Password" name="password" required>
@@ -43,6 +43,26 @@
     </form>
   </div>
 
+  <p style="text-align: center;"><button onclick="document.getElementById('pin_login').style.display='block'" style="width:auto;">Login using Pin</button></p>
+
+<div id="pin_login" class="modal">
+    <form class="modal-content animate" action="../../private/util/validateLogin.php">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('pin_login').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="../img/avatar.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label><b>Pin: </b></label>
+          <input ng-model='pin' type="number" placeholder="Enter Pin" name="pin" required>
+        <button type="submit">Login</button>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('pin_login').style.display='none'" class="cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
 
   <p style="text-align: center;"><button onclick="document.getElementById('register').style.display='block'" style="width:auto;" ng-click="newAccount">Sign Up</button></p>
 
