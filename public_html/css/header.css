@@ -1,16 +1,11 @@
-body {
-  background: white;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+.menu{
+  background-color: #FFA500;
+  text-transform: uppercase;
+  font-weight: bold;
 }
+
 .container {
   position: relative;
-  margin: 0 auto;
-  width: 94%;
   max-width: 1100px;
   font-family: helvetica, sans-serif;
 }
@@ -49,61 +44,25 @@ body {
 .container .search-container button:hover {
   background: #ccc;
 }
-#header {
-  z-index: 2;
-  position: fixed;
-  width: 100%;
-  top: 0px;
-  height: 120px;
-  line-height: 60px;
-  background: #D9BB91;
-  color: white;
-}
 
-#footer {
-  background: #D9BB91;
-  color: white;
-}
-
-#nav {
-  position: absolute;
-  right: 0;
-  top: -15px;
-  height: 60px;
-}
-#nav ul li {
-  float: left;
-  list-style: none;
-}
-#nav ul li a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 0 10px;
-}
-.menu{
-  background: #D9BB91;
-}
 .myButtons {
-  color:white;
+  color: black;
   text-decoration: none;
   text-align: center;
   font-size: 17px;
   margin: auto 0;
   padding: 4px;
 }
-.no-padding {
-  padding: 0 !important;
-}
+
 .myButtons:hover {
-    background-color: #ab7c3b; 
+    background-color: #FF8C00; 
     text-decoration: none;
-    color:white;
+    color:black;
     font-family: arial;
   }
 .myActiveButton {
-  background-color: #ab7c3b;
-  color:white;
+  background-color: #FF8C00;
+  color: black;
   text-decoration: none;
   text-align: center;
   font-size: 17px;
@@ -112,13 +71,15 @@ body {
   font-family: arial;
 }
 .myActiveButton:hover {
-    background-color: #ab7c3b; 
+    background-color: #FF8C00; 
     text-decoration: none;
-    color:white;
+    color:black;
 }
 .loginButton{
-  background-color: #A48963;
-    color: white;    
+    background-color: #FF8C00;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;    
     border: none;
     cursor: pointer;
     margin: auto 0;
