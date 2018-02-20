@@ -1,5 +1,5 @@
 .menu{
-  background-color: #FFA500;
+  background-color: #DEB887;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -55,13 +55,13 @@
 }
 
 .myButtons:hover {
-    background-color: #FF8C00; 
+    background-color: #D2B48C; 
     text-decoration: none;
     color:black;
     font-family: arial;
   }
 .myActiveButton {
-  background-color: #FF8C00;
+  background-color: #D2B48C;
   color: black;
   text-decoration: none;
   text-align: center;
@@ -71,12 +71,12 @@
   font-family: arial;
 }
 .myActiveButton:hover {
-    background-color: #FF8C00; 
+    background-color: #D2B48C; 
     text-decoration: none;
     color:black;
 }
 .loginButton{
-    background-color: #FF8C00;
+    background-color: #D2B48C;
     text-transform: uppercase;
     font-weight: bold;
     color: black;    
