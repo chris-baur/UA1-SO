@@ -17,18 +17,23 @@ if($menuLinkid=="homepage"){
 }
 ?>
 <div class="col-lg-2 <?php echo $index;?>">
-<a class="<?php echo $index;?>"href="homepage.php">Home</a>
+	<a class="<?php echo $index;?>"href="homepage.php">Home</a>
 </div>
+
 <div class="col-lg-2 <?php echo $myquestions;?>">
-<a class="<?php echo $myquestions;?>"href="myquestions.php">My Questions</a>
+	<a class="<?php echo $myquestions;?>"href="myquestions.php">My Questions</a>
 </div>
+
 <div class="col-lg-2 <?php echo $favorites;?>">
-<a class="<?php echo $favorites;?>"href="favorites.php">Favorites</a>
+	<a class="<?php echo $favorites;?>"href="favorites.php">Favorites</a>
 </div>
+
 <div class="col-lg-2 <?php echo $about;?>">
-<a class="<?php echo $about;?>"href="about.php">About</a>
+	<a class="<?php echo $about;?>"href="about.php">About</a>
 </div>
+
 <div class="col-lg-4">
-<button class="btn loginButton" onclick="location.href='../login_register/loginregister.html';"/>Login / Sign Up</button>
+	<button class="btn loginButton" onclick="location.href='../login_register/loginregister.html';"/>Login / Sign Up</button>
 </div>
+
       

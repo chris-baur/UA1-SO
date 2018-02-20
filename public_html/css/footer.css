@@ -1,13 +1,22 @@
+#footer {
+	background-color: #DEB887;	
+	margin:0;
+    padding:0;
+}
 
-    .footerTable {
-        font-family: "Arial";
-        height: 184px;
-    }
+.container {
+	position: relative;
+  	font-family: helvetica, sans-serif;
+}
 
-    .contactUsPadding{
-      padding-right: 12em;
-    }
+.footerTable {
+    height: 184px;
+}
 
-    .emailUsPadding{
-      padding-right: 7em;
-    }
+.contactUsPadding{
+   	padding-right: 12em;
+}
+
+.emailUsPadding{
+    padding-right: 7em;
+}
