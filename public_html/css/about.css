@@ -42,17 +42,26 @@ body {
     background: #FAEBD7;
 }
 
-p.title {
-    margin-right: 300px;
-    margin-left: 300px;
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
+p.title {  
+  position: relative;
+  margin-right: 200px;
+  margin-left: 200px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+    p.title {
+        margin: 20px;
+    }
+
 }
 
 p.title span {
-    font-size: 18px;
-    text-align: middle;
+
+  font-size: 18px;
+  text-align: middle;
 }
 
 a.grayButton {
