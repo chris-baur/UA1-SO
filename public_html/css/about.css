@@ -51,18 +51,30 @@ p.title {
   text-align: center;
 }
 
-@media (max-width: 1200px) {
-    p.title {
-        margin: 20px;
-    }
-
-}
 
 p.title span {
 
   font-size: 18px;
   text-align: middle;
 }
+
+@media (max-width: 1200px) {
+    p.title {
+        margin: 20px;
+    }
+}
+
+
+@media (max-width: 800px) {
+    p.title {
+        font-size: 24px;
+    }
+    p.title span {
+        font-size: 16px;
+    }
+}
+
+
 
 a.grayButton {
     padding:6px 12px 6px 30px;
@@ -143,6 +155,7 @@ a.option:active {
   background-color: #D2B48C;
   vertical-align: center;
 }
+
 
 .mySlides h1 {
   text-align: left;

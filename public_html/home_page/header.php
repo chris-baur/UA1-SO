@@ -12,12 +12,12 @@
   <body>
     <header>
       <nav class="navbar navbar-inverse menu">
-        <div class="col-lg-2 no-padding ">
-          <a href="homepage.php"><img class="col-lg-12 no-padding" 
+        <div class="col-lg-2">
+          <a href="homepage.php"><img class="col-lg-12" 
           src="../img/newlogo.png" alt=""/></a>
         </div>
         <div class="col-lg-10 container-fluid">          
-          <div class="col-lg-3 row search-container no-padding">
+          <div class="col-lg-3 row search-container">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button>        
           </div>
