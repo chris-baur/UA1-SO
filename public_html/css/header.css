@@ -4,10 +4,12 @@
   font-weight: bold;
 }
 
-@media (max-width: 800px) {
-  .menu {
-      background-color: orange;
-      font-size: 0;
+.header {
+  display: none;
+}
+
+.burgerMenu {
+  display: none;
 }
 
 .container {
@@ -77,20 +79,119 @@
   font-family: arial;
 }
 .myActiveButton:hover {
-    background-color: #D2B48C; 
-    text-decoration: none;
-    color:black;
+  background-color: #D2B48C; 
+  text-decoration: none;
+  color:black;
 }
 .loginButton{
-    background-color: #D2B48C;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: black;    
-    border: none;
-    cursor: pointer;
-    margin: auto 0;
-    padding: 15px 25px;
+  background-color: #D2B48C;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  color: black;    
+  border: none;
+  cursor: pointer;
+  margin: auto 0;
+  padding: 15px 25px;
 }
 .loginButton:hover{
    opacity: 0.8;
+}
+
+
+
+@media (max-width: 990px) {
+  
+  .menu { 
+    display: none;
+  }
+
+  .menubar {
+    display: none;
+  }
+
+  .search-container {
+    display: none;
+  }
+
+  .header {
+    display: block;
+  }
+
+  .header img{
+    background-color: #DEB887;
+    padding-top: 0px;
+    width: 100%;
+    height: auto;
+}
+
+  .header span {
+    font-size: 28px;
+    background-color: #DEB887; 
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-transform: none;
+    position: fixed;
+  }
+
+  @media (max-width: 650px) {
+    .header span {
+        font-size: 21px;
+    }
+
+  }
+
+  a.option {
+    float: right;
+    padding:3px 10px 3px 10px;
+    color: black;
+    text-decoration: none;
+  }
+
+  a.option:hover{
+    text-decoration:none !important;
+    box-shadow:0 0 2px #2b99ff;
+  }
+
+  a.option:active {
+    color:white;
+  }
+
+  a.hamburger { 
+    font-size: 21px;
+    margin: 10px;
+    position: fixed;
+    width: 1.25em;
+    height: 0.9em;
+    margin-right: 0.4em;
+    margin-bottom:-0.2em;
+    border-top: 0.2em solid black;
+    border-bottom: 0.2em solid black;
+  }
+
+  a.hamburger:before {
+    font-size: 21px;
+    font-weight: 600;
+    content: "";
+    position: absolute;
+    top: 0.155em;
+    left: 0px;
+    width: 100%;
+    border-top: 0.2em solid black;
+  }
+
+  a.hamburger:hover {
+    text-decoration:none !important;
+    box-shadow:0 0 2px #2b99ff;
+  }
+
+  a.hamburger:active {
+    
+  }
+
+  a.hamburger:active.a {
+
+  }
+  
 }

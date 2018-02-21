@@ -11,13 +11,13 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-inverse menu">
-        <div class="col-lg-2">
-          <a href="homepage.php"><img class="col-lg-12" 
+      <div class="navbar navbar-inverse menu">
+        <div class="col-lg-2 no-padding">
+          <a href="homepage.php"><img class="col-lg-12 no-padding"
           src="../img/newlogo.png" alt=""/></a>
         </div>
         <div class="col-lg-10 container-fluid">          
-          <div class="col-lg-3 row search-container">
+          <div class="col-lg-3 row search-container no-padding">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button>        
           </div>
@@ -25,8 +25,20 @@
                 <?php include("menu_template.php");?>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
+
+    <div class = "header" >
+     <!--<div class = "hamburger"> </div>-->
+        <span>
+          <a class = "hamburger"> </a>
+          <a class = "option" href = "../home_page/about.php">About</a>
+          <a class = "option" href = "../home_page/myquestions.php">Question</a> 
+          <a class = "option" href = "../home_page/homepage.php">Home</a>      
+        </span> 
+        <img src="../img/newlogo.png">
+    </div>
+
   </body>
 
 </html>

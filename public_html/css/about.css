@@ -117,22 +117,6 @@ a.grayButton.mail:before{
     content: '';
 }
 
-a.option {
-    padding:6px 20px 6px 20px;
-    color: black;
-    text-decoration: none;
-
-}
-
-a.option:hover{
-    text-decoration:none !important;
-    box-shadow:0 0 2px #2b99ff;
-}
-
-a.option:active {
-    color:white;
-}
-
 /** SLIDESHOW CSS STYLES **/
 .mySlides {
   display: none;
