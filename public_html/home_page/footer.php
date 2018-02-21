@@ -8,7 +8,9 @@
 
   <body>
 
-    <header id= "footer">
+    <div class = "footer" style = "
+      background-color: #DEB887; /*color tag*/ 
+      position: relative;">
       <div class ="container">
         <table class = "footerTable" align = "center" >
         <tr>
@@ -40,7 +42,7 @@
         </tr>
         </table>
       </div>
-    </header>
+    </div>
 
   </body>
 

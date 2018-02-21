@@ -21,7 +21,7 @@ if($menuLinkid=="homepage"){
 </div>
 
 <div class="col-lg-2 <?php echo $myquestions;?>">
-	<a class="<?php echo $myquestions;?>"href="myquestions.php">My Questions</a>
+	<a class="<?php echo $myquestions;?>"href="myquestions.php">Questions</a>
 </div>
 
 <div class="col-lg-2 <?php echo $favorites;?>">
