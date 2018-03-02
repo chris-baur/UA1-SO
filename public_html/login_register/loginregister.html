@@ -78,11 +78,11 @@
         <hr>
         <label><b>Username</b></label>
         <input ng-model='userName' type="text" placeholder="Enter Username" name="username" maxlength="20" required>
-		<span class="alert" ng-if="userName.length<4 && userName.length!=0">Username enter is to short</span>
+		<span class="alert" ng-if="userName.length<4 && userName.length!=0">Username enter is too short</span>
 		<br>
         <label><b>Password</b></label>
         <input ng-model='password' type="password" placeholder="Enter Password" name="password" maxlength="20" required>
-		<span class="alert" ng-if="password.length<4 && password.length!=0">Password enter is to short</span>
+		<span class="alert" ng-if="password.length<4 && password.length!=0">Password enter is too short</span>
 		<br>
         <label> <b> Security Question 1 </b>
           <select name = "SQ1">
@@ -122,7 +122,7 @@
         <br>
         <b> Pin (for quick login): </b>
            <input ng-model='pin' type="pin" placeholder="Enter Pin" name="pin" maxlength="4" required>
-    <span class="alert" ng-if="pin.length<4 && pin.length!=0">Pin enter is to short</span>
+    <span class="alert" ng-if="pin.length<4 && pin.length!=0">Pin enter is too short</span>
         <br>
         <br>
         <form action="gender"> <b> Gender </b>

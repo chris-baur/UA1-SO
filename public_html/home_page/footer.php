@@ -8,9 +8,7 @@
 
   <body>
 
-    <div class = "footer" style = "
-      background-color: #DEB887; /*color tag*/ 
-      position: relative;">
+    <div id = "footer">
       <div class ="container">
         <table class = "footerTable" align = "center" >
         <tr>

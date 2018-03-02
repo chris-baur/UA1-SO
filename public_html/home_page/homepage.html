@@ -4,39 +4,46 @@
   <head>
     <title>Ask It! Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
   </head>
 
   <body>  
+
+
     <p style="text-align: center;"><img src="../img/fill.png" alt="" width="1100" height="600" /></p>
 
+
     <!--Outputting the items in the database-->
-    <!--<center>
-    <div style = "width:70%">
-    <div class ="comment"; style = "width:100%; height: 100%; background-color: #f0e5d7; float:left";>
-
-
+    <!--
     <?php
+    $username = 'ua1';
+    $password = 'Ua1password0)';
+    $servername = 'ua1_so';
 
-    	$user = 'ua1';
-    	$pass = 'Ua1password0)';
-    	$db = 'ua1_so';
+    // connection to database
+    $con = mysqli_connect('localhost', $username, $password, $servername) or die("Connection Failed");
 
-    	$db = new MySQLi('localhost', $user, $pass, $db) or die("Unable to connect");
-
-    	$resultset = $db->query("SELECT * FROM questions");
-
-    	while($rows = $resultset -> fetch_assoc()){
-    		$header = $rows['header'];
-    		$content = $rows['content'];
-    		$date = $rows['date'];
-    		echo "<p style='color:#a48963; font-family: arial; font-size: 17px; text-align:left;'>$header<br>$content<br>Posted on: $date</p>";
-    	}
+    $result = mysqli_query($con,"SELECT * FROM questions");
 
     ?>
+
+    <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {?>
+    
+    <div class = "separator">
+    <div class ="comment" align = "left">
+        <h5><strong><?php echo $row["header"]?></strong></h5>
+        <?php echo $row["content"]?><br>
+        <span class = "commentDetails"><?php echo "Posted on: ".$row["date"]?><br>
+        <?php echo "upvotes: ".$row["upvotes"]?>
+        <?php echo "downvotes: ".$row["downvotes"]?>
+        </span>
     </div>
-	</div>
-</center>
--->
+    </div>
+    <?php }?>
+    
+    -->
+
+    
   </body>
 
 </html>
