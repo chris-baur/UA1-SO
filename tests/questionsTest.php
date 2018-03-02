@@ -7,8 +7,8 @@ class questionModelTest extends PHPUnit\Framework\TestCase{
         $expected = 2;
         $this->assertEquals($int,$expected);
     }
-    public function testConstructor(){
-        $q = new Question();
-        $this->assertNotNull($q);
-    }
+    // public function testConstructor(){
+    //     $q = new Question();
+    //     $this->assertNotNull($q);
+    // }
 }
