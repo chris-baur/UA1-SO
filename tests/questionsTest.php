@@ -1,10 +1,12 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-include '..\private\models\Question.php';
-final class questionModelTest extends TestCase{
+//include '..\private\models\Question.php';
+class questionModelTest extends PHPUnit_Framework_TestCase{
     public function testOnePlusOne() {
-        $this->assertEquals(1+1,2);
+        $int = 1+1;
+        $expected = 2;
+        $this->assertEquals($int,$expected);
     }
     public function testConstructor(){
         $q = new Question();
