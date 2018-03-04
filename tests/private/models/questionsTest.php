@@ -2,6 +2,7 @@
 
 //require_once '..\private\models\Question.php';
 //require_once '..\private\controllers\create_db.php';
+require __DIR__ . "/../private/models/Question.php";
 
 class questionModelTest extends PHPUnit\Framework\TestCase{
     public function testOnePlusOne() {
