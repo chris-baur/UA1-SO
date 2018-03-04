@@ -1,7 +1,7 @@
 <?php
 
-require_once '..\private\models\Question.php';
-require_once '..\private\controllers\create_db.php';
+//require_once '..\private\models\Question.php';
+//require_once '..\private\controllers\create_db.php';
 
 class questionModelTest extends PHPUnit\Framework\TestCase{
     public function testOnePlusOne() {
