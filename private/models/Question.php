@@ -74,7 +74,7 @@
 			$this->date = $new_date;
 		}
 		
-		function set_upvotes($new_downvotes){
+		function set_upvotes($new_upvotes){
 			$this->upvotes = $new_upvotes;
 		}
 		function set_downvotes($new_downvotes){
