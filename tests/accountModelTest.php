@@ -1,50 +1,76 @@
 <?php
 
 class accountModelTest extends PHPUnit\Framework\TestCase{
-    public function testOnePlusOne() {
-        $int = 1+1;
-        $expected = 2;
-        $this->assertEquals($int,$expected);
-    }
     public function testConstructor(){
-        $q = new Question();
-        $this->assertNotNull($q);
+        $a = new Account();
+        $this->assertNotNull($a);
     }
     public function testId(){
-        $q = new Question();
-        $q->set_id('1');
-        $this->assertEquals($q->get_id(), '1');
+        $a = new Account();
+        $a->set_id('1');
+        $this->assertEquals($a->get_id(), '1');
     }
 
-    public function testAccountId(){
-        $q = new Question();
-        $q->set_accountId('1');
-        $this->assertEquals($q->get_accountId(), '1');
+    public function testUsername(){
+        $a = new Account();
+        $a->set_username('sxephil');
+        $this->assertEquals($a->get_username(), 'sxephil');
     }
 
-    public function testContent(){
-        $q = new Question();
-        $q->set_content("This is a test question");
-        $this->assertEquals($q->get_content(), "This is a test question");
+    public function testPassword(){
+        $a = new Account();
+        $a->set_password('$2y$10$tLoj.N4SayWqMJvAJsEq3Om0w8mHwLllj7ddUgJpd/5gTeD6bGJvq');
+        $this->assertEquals($a->get_password(), '$2y$10$tLoj.N4SayWqMJvAJsEq3Om0w8mHwLllj7ddUgJpd/5gTeD6bGJvq');
     }
-    public function testDate(){
-        $q = new Question();
-        $q->set_date("2018-01-01 01:00:00.0");
-        $this->assertEquals($q->get_date(), "2018-01-01 01:00:00.0");
+    public function testName(){
+        $a = new Account();
+        $a->set_name('boomer');
+        $this->assertEquals($a->get_name(), 'boomer');
     }
-    public function testUpvotes(){
-        $q = new Question();
-        $q->set_upvotes(7);
-        $this->assertEquals($q->get_upvotes(), 7);
+    public function testLastName(){
+        $a = new Account();
+        $a->set_last_name('The Pug');
+        $this->assertEquals($a->get_last_name(), 'The Pug');
     }
-    public function testDownvotes(){
-        $q = new Question();
-        $q->set_downvotes(100);
-        $this->assertEquals($q->get_downvotes(), 100);
+    public function testGender(){
+        $a = new Account();
+        $a->set_gender('male');
+        $this->assertEquals($a->get_gender(), 'male');
     }
-    public function testTags(){
-        $q = new Question();
-        $q->set_tags(array('sql','query','mysql','database','db'));
-        $this->assertEquals($q->get_tags(), array('sql','query','mysql','database','db'));
+    public function testSecurityOne(){
+        $a = new Account();
+        $a->set_security_one('How now brown cow');
+        $this->assertEquals($a->get_security_one(), 'How now brown cow');
+    }
+    public function testSecurityTwo(){
+        $a = new Account();
+        $a->set_security_two('How much wood can a woodchuck chuck');
+        $this->assertEquals($a->get_security_two(), 'How much wood can a woodchuck chuck');
+    }
+    public function testAnswerOne(){
+        $a = new Account();
+        $a->set_answer_one('I am ok');
+        $this->assertEquals($a->get_answer_one(), 'I am ok');
+    }
+    
+    public function testAnswerTwo(){
+        $a = new Account();
+        $a->set_answer_two('A lot of wood');
+        $this->assertEquals($a->get_answer_two(), 'A lot of wood');
+    }
+    public function testBio(){
+        $a = new Account();
+        $a->set_bio('male');
+        $this->assertEquals($a->get_bio(), 'male');
+    } 
+    public function testProfession(){
+        $a = new Account();
+        $a->set_profession('poor student');
+        $this->assertEquals($a->get_profession(), 'poor student');
+    }
+    public function testPin(){
+        $a = new Account();
+        $a->set_pin('0000');
+        $this->assertEquals($a->get_pin(), '0000');
     }
 }
