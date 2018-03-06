@@ -33,7 +33,7 @@ if($menuLinkid=="homepage"){
 </div>
 
 <div class="col-lg-4">
-	<button class="btn loginButton" onclick="location.href='../login_register/loginregister.html';"/>Login / Sign Up</button>
+	<button class="btn loginButton" onclick="location.href='../login_register/loginregister.php';"/>Login / Sign Up</button>
 </div>
 
       
