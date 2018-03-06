@@ -1,3 +1,13 @@
 .space{
 	margin: 15px auto  ;
 }
+.questionBox{
+	width: 80%;
+	background-color: #F0E5D7; 
+}
+.userPhoto{
+  float:right;
+}
+.btn-like{
+background-color: #F0E5D7; 
+}

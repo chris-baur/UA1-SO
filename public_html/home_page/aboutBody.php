@@ -59,11 +59,11 @@
 			  <div class="numbertext">4 / 6</div>
 			  <h1>
 			  		<img src="../img/avatar2.png" alt="" width="200" height="200"> 
-			  		Rodrigo Cespedes
+			  		Rodrigo Cordova Cespedes
 			  	</h1>
 				<a href="#" class="grayButton facebook">Find me on Facebook</a>
 				<a href="mailto:rodrigoSebastian9@hotmail.com" class="grayButton mail">Email me</a>
-			  <div class="text">Rodrigo Cespedes</div>
+			  <div class="text">Rodrigo Cordova Cespedes</div>
 			</div>
 
 			<div class="mySlides">

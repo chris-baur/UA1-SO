@@ -1,14 +1,28 @@
 <?php include("header.php");
 	  include("../../private/controllers/question_controller.php");
-		if(isset($_GET['action'])=='submitQuestion') {
-    		submitQuestion();
-		}
+
 	  ?>
  <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
  <script src="../js/newQuestion.js"></script>
  <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
  <link rel="stylesheet" type="text/css" href="../css/questions_page.css">
 
+    <?php
+    $username = 'ua1';
+    $password = 'Ua1password0)';
+    $servername = 'ua1_so';
+
+    // connection to database
+    $con = mysqli_connect('localhost', $username, $password, $servername) or die("Connection Failed");
+
+    $result = mysqli_query($con,"SELECT id FROM accounts");
+    $row = mysqli_fetch_array($result,MYSQLI_NUM);
+
+    if(isset($_GET['action'])=='submitQuestion') {
+    		submitQuestion();
+		}
+   
+    ?>    
 <!--Body-->
 <form method="post" action="?action=submitQuestion">
 	<div class="container" ng-app="newQuestion" ng-controller="questionController">
@@ -31,22 +45,31 @@
 
 	</div>
 </form>
-
 <?php 
 	function submitQuestion(){
 		if(isset($_POST['header']) and isset($_POST['content'])){
-			$question_title=$_POST['header'];
+			$question_title= $_POST['header'];
 			$content=$_POST['content'];
 		}
+		$row=$GLOBALS['row'];		
+		$id= $row[0];
+		
+		$account_id=$row[0]; //here shoul go the current account ID 
+		$tags=['java'];
+		$upvotes='0';
+		$downvotes='0';
+		$date=date("l jS \of F Y h:i:s A");
+
 		//@TODO
 		//must validate/sanitize data provided by the user
 		//missing tags element, getting account id from session.
 
-		$newQuestion=new Question('0','123',$question_title,$content,date("l jS \of F Y h:i:s A"),'0','0');
+		$newQuestion=new Question($id,$account_id,$question_title,$content,$date,$upvotes,$downvotes,$tags);
+
+
 		$response=addQuestion($newQuestion);
-		print "$response"; // This is temporal, I want to see the response
-		header("Location: myquestions.php");
-   		exit;
+		//header("Location: myquestions.php");
+   		//exit;
 	}
 ?>
 <?php
