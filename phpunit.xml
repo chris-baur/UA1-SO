@@ -9,7 +9,7 @@
 
     <testsuites>
         <testsuite name="PHP unit tests. Models, controllers, Database">
-            <directory>./tests/private/models</directory>
+            <directory>./tests/</directory>
             <!-- <directory>./tests/private/controllers</directory> -->
         </testsuite>
     </testsuites>
