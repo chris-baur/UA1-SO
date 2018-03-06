@@ -27,4 +27,24 @@ class questionModelTest extends PHPUnit\Framework\TestCase{
         $q->set_content("This is a test question");
         $this->assertEquals($q->get_content(), "This is a test question");
     }
+    public function testDate(){
+        $q = new Question();
+        $q->set_date("2018-01-01 01:00:00.0");
+        $this->assertEquals($q->get_date(), "2018-01-01 01:00:00.0");
+    }
+    public function testUpvotes(){
+        $q = new Question();
+        $q->set_upvotes(7);
+        $this->assertEquals($q->get_upvotes(), 7);
+    }
+    public function testDownvotes(){
+        $q = new Question();
+        $q->set_downvotes(100);
+        $this->assertEquals($q->get_downvotes(), 100);
+    }
+    public function testTags(){
+        $q = new Question();
+        $q->set_tags(array('sql','query','mysql','database','db'));
+        $this->assertEquals($q->get_tags(), array('sql','query','mysql','database','db'));
+    }
 }
