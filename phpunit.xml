@@ -15,7 +15,7 @@
 
     <filter>
         <whitelist>
-            <directory>./</directory>
+            <directory>./private</directory>
             <exclude>
                 <directory>./tests</directory>
             </exclude>
