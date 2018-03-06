@@ -9,17 +9,29 @@ function loader($class)
 spl_autoload_register('loader');
 
 spl_autoload_register(function ($class){
-    include 'private/'.$class.'.php';
+    $file = 'private/'.$class . '.php';
+    if (file_exists($file)) {
+        include $file;
+    }
 });
 
 spl_autoload_register(function ($class){
-    include 'private/models/'.$class.'.php';
+    $file = 'private/models/'.$class . '.php';
+    if (file_exists($file)) {
+        include $file;
+    }
 });
 
 spl_autoload_register(function ($class){
-    include 'private/controllers/'.$class.'.php';
+    $file = 'private/controllers/'.$class . '.php';
+    if (file_exists($file)) {
+        include $file;
+    }
 });
 
 spl_autoload_register(function ($class){
-    include 'private/util/'.$class.'.php';
+    $file = 'private/util/'.$class . '.php';
+    if (file_exists($file)) {
+        include $file;
+    }
 });
