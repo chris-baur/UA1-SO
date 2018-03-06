@@ -66,10 +66,6 @@
 			$this->account_id = $new_accountID;
 		}
 		
-		function set_questionID($new_contentID){
-			$this->header = $new_questionID;
-		}
-		
 		function set_content($new_content){
 			$this->content = $new_content;
 		}
