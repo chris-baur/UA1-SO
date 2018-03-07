@@ -4,9 +4,9 @@
  * @author Christoffer Baur
  */
 
-include '..\util\sets.php';
-include '..\controllers\account_controller.php';
-include '..\models\Account.php';
+include_once '..\util\sets.php';
+include_once '..\controllers\account_controller.php';
+include_once '..\models\Account.php';
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     header("location: ..\..\public_html\home_page\about.html");
@@ -138,10 +138,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // redirect to login page
                 setcookie('invalidArray', 'false', time() + 30);
                 header('Location: ..\..\public_html\login_register\loginregister.html');
-            )
+            }
             else{
                 $invalidArray['username'] = 'Invalid username entered. It must be a maximum of 20 charcters, and at least one character';
-                
             }
         }
         else{
