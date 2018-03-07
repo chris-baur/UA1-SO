@@ -14,7 +14,7 @@
 		var $upvotes;
 		var $downvotes;
 		
-		function __construct($id = 0, $account_id = 0, $question_id = 0, $answer_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0') {
+		function __construct($id = 0, $account_id = 0, $question_id = 0, $answer_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0) {
 			
 			$this->id = $id;
 			$this->account_id = $account_id;
@@ -22,6 +22,8 @@
 			$this->answer_id = $answer_id;
 			$this->content = $content;
 			$this->date = $date;
+			$this->upvotes = $upvotes;
+			$this->downvotes = $downvotes;
 			
 		}
 		
@@ -82,11 +84,11 @@
 			$this->date = $new_date;
 		}
 		
-		function set_upvote($new_upvotes){
+		function set_upvotes($new_upvotes){
 			$this -> $upvotes = $new_upvote;
 		}
 		
-		function set_downvote($new_downvotes){
+		function set_downvotes($new_downvotes){
 			$this -> $downvotes = $new_downvotes;
 		}
 		
@@ -94,8 +96,15 @@
 		function increment_upvotes(){
 			$this -> $upvotes++;
 		}
+
+		function decrement_upvotes(){
+			$this -> $upvotes--;
+		}
 		
 		function increment_downvotes(){
+			$this -> $downvotes++;
+		}
+		function decrement_downvotes(){
 			$this -> $downvotes--;
 		}
 	}

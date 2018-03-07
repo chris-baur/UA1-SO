@@ -7,14 +7,14 @@ class questionModelTest extends PHPUnit\Framework\TestCase{
     }
     public function testId(){
         $q = new Question();
-        $q->set_id('1');
-        $this->assertEquals($q->get_id(), '1');
+        $q->set_id(1);
+        $this->assertEquals($q->get_id(), 1);
     }
 
     public function testAccountId(){
         $q = new Question();
-        $q->set_accountId('1');
-        $this->assertEquals($q->get_accountId(), '1');
+        $q->set_accountId(1);
+        $this->assertEquals($q->get_accountId(), 1);
     }
 
     public function testContent(){

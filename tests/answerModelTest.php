@@ -7,19 +7,19 @@ class answerModelTest extends PHPUnit\Framework\TestCase{
     }
     public function testId(){
         $a = new Answer();
-        $a->set_id('1');
-        $this->assertEquals($a->get_id(), '1');
+        $a->set_id(1);
+        $this->assertEquals($a->get_id(), 1);
     }
 
     public function testAccountId(){
         $a = new Answer();
-        $a->set_accountId('1');
-        $this->assertEquals($a->get_accountId(), '1');
+        $a->set_accountId(1);
+        $this->assertEquals($a->get_accountId(), 1);
     }
     public function testQuestionId(){
         $a = new Answer();
-        $a->set_questionId('1');
-        $this->assertEquals($a->get_questionId(), '1');
+        $a->set_questionId(1);
+        $this->assertEquals($a->get_questionId(), 1);
     }
 
     public function testContent(){
