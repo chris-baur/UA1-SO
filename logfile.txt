@@ -6,3 +6,38 @@
 [07/Feb/2018:21:13:13] (create_db) Answers Table created successfully
 [07/Feb/2018:21:13:13] (create_db) Connected successfully
 [07/Feb/2018:21:13:13] (create_db) Comments Table created successfully
+[07/Mar/2018:18:31:01] (validateLogin) Form has requested a post for File: validateLogin.php
+[07/Mar/2018:18:31:51] (validateLogin) Form has requested a post for File: validateLogin.php
+[07/Mar/2018:18:35:52] (validateLogin) Form has requested a post for File: validateLogin.php
+[07/Mar/2018:18:35:52] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[07/Mar/2018:18:35:52] (validateLogin) invalid username. Valid data is false
+[07/Mar/2018:18:37:37] (validateLogin) Form has requested a post for File: validateLogin.php
+[07/Mar/2018:18:37:37] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[07/Mar/2018:18:37:37] (validateLogin) invalid username. Valid data is false
+[07/Mar/2018:18:37:37] (validateLogin) Showing user error
+[07/Mar/2018:18:38:23] (validateLogin) Form has requested a post for File: validateLogin.php
+[07/Mar/2018:18:38:23] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[07/Mar/2018:18:38:23] (validateLogin) invalid username. Valid data is false
+[07/Mar/2018:18:38:23] (validateLogin) Showing user error
+[07/Mar/2018:18:40:29] (validateLogin) Form has requested a post for File: validateLogin.php
+[07/Mar/2018:18:40:29] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[07/Mar/2018:18:40:29] (validateLogin) invalid username. Valid data is false
+[07/Mar/2018:18:40:29] (validateLogin) Showing user error
+[07/Mar/2018:18:47:11] (validateLogin) Form has requested a post for File: validateLogin.php
+[07/Mar/2018:18:47:11] (validateLogin) Username is: username
+[07/Mar/2018:18:47:11] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[07/Mar/2018:18:47:11] (validateLogin) account does not exist with given username
+[07/Mar/2018:18:47:11] (validateLogin) invalid username. Valid data is false
+[07/Mar/2018:18:47:11] (validateLogin) Showing user error
+[07/Mar/2018:18:51:30] (validateLogin) Form has requested a post for File: validateLogin.php
+[07/Mar/2018:18:51:30] (validateLogin) Username is: username
+[07/Mar/2018:18:51:30] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[07/Mar/2018:18:51:30] (validateLogin) account does not exist with given username
+[07/Mar/2018:18:51:30] (validateLogin) invalid username. Valid data is false
+[07/Mar/2018:18:51:30] (validateLogin) Showing user error
+[07/Mar/2018:18:52:35] (validateLogin) Form has requested a post for File: validateLogin.php
+[07/Mar/2018:18:52:35] (validateLogin) Username is: wissem
+[07/Mar/2018:18:52:35] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[07/Mar/2018:18:52:35] (validateLogin) account does not exist with given username
+[07/Mar/2018:18:52:35] (validateLogin) invalid username. Valid data is false
+[07/Mar/2018:18:52:35] (validateLogin) Showing user error
