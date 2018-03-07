@@ -45,7 +45,6 @@
         <span class = "time"><?php echo "Posted on: ".$info->get_date()?></span>
       </div>
     </div> 
-</div>
-<?php }?>
-
+  <?php }?>
+  </div>
 <?php include("footer.php");?>

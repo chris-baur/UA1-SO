@@ -1,4 +1,5 @@
 <?php include("header.php");
+	  include("../../private/controllers/account_controller.php");
 	  include("../../private/controllers/question_controller.php");
 
 	  ?>
