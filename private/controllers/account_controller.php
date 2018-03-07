@@ -1,9 +1,9 @@
 <?php
 
-include '..\util\logging.php';
-include '..\util\sets.php';
-include '..\models\Account.php';
-$config = parse_ini_file('..\..\..\config.ini');
+include '..\..\private\util\logging.php';
+include '..\..\private\util\sets.php';
+include '..\..\private\models\Account.php';
+$config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 $servername = $config['servername'];
 $username = $config['username'];
@@ -81,18 +81,20 @@ $professions = $sets->to_string_professions();
 	 *
 	 * @param $username		Account's username
 	 */
-	function getAccountByUsername($username){
+	function getAccountByUsername($user){
 		global $servername, $username, $password, $dbname, $log;
+
 		$account = new Account();
 		
+
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 			$stmt = $pdo -> prepare('SELECT id, username, password, name, last_name, gender, security_one, security_two, answer_one, answer_two, bio, profession, pin FROM accounts WHERE username=?;');						
-			$stmt -> bindParam(1, $username);
+			$stmt -> bindParam(1, $user);
 		
 			$stmt -> execute();
-			
+		
 			// if there is a user with specified username
 			if($result = $stmt -> fetch()){
 				$account->set_id($result[0]);

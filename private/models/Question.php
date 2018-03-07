@@ -78,7 +78,7 @@
 			$this->date = $new_date;
 		}
 		
-		function set_upvotes($new_downvotes){
+		function set_upvotes($new_upvotes){
 			$this->upvotes = $new_upvotes;
 		}
 		function set_downvotes($new_downvotes){
@@ -88,5 +88,9 @@
 		function set_tags($new_tags){
 			$this->tags = $new_tags;
 		}
+		function set_header($new_header){
+			$this->header=$new_header;
+		}
+
 	}
 ?>

@@ -1,8 +1,5 @@
 <?php
-include '..\..\private\util\logging.php';
-include '..\..\private\util\sets.php';
 include '..\..\private\models\Question.php';
-include '..\..\private\models\Account.php';
 $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 $servername = $config['servername'];
@@ -60,8 +57,9 @@ $log = new Logging();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE account_id = :account_id;");						
-			$stmt -> bindParam(':account_id', $account->get_id());
+			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE account_id = :account_id;");
+			$accountID=$account->get_id();						
+			$stmt -> bindParam(':account_id',$accountID );
 		
 			$stmt -> execute();
 			

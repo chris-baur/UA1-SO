@@ -36,7 +36,7 @@
 			$this->$profession = $profession;
 			$this->$pin = $pin;
 		}
-		
+				
 		function get_id(){
 			return $this->id;
 		}
