@@ -1,16 +1,15 @@
 <?php
 
-/**
- * @author Christoffer Baur
- */
-
-include '..\util\sets.php';
-include '..\models\Account.php';
+    include '..\..\private\util\sets.php';
+    include '.\logging.php';
+    include '..\..\private\models\Account.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $log->lwrite('Form has requested a post for File: validateLogin.php');
 
     $account = new Account();
     $sets = new Sets();
+    $log = new Logging();
     $username = "";
     $password = "";
     $hash = "";
@@ -31,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // verify username
     if(validateUser()){
+        $log->lwrite('inside valid user');
         $username = htmlentities($_POST['username']);
         $account = getAccountByUsername($username);
         // if(($account -> getAttemptCtr()) >= 5){
@@ -38,14 +38,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //     $errMessage = "$username has been locked out. Too many failed login attempts.";
         // }
     }
-    else
+    else{
+        $log->lwrite('invalid username. Valid data is false');
         $validData = false;
+    }
 
     if($validData){
         // verify password
         if(validateString('password') && strlen($_POST['password']) >= 6){
+            $log->lwrite('Password passed prelim validaton');
             $pass = htmlentities($_POST['password']);
             if (password_verify($pass, $account -> get_password())){
+                $log->lwrite('password is valid');
                 $_SESSION['userid'] = $account -> get_id();
                 $_SESSION['username'] = $account -> get_username();
                 session_regenerate_id();
@@ -55,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //password doesnt match
             else{
                 //increaseAttemptCounter($userObj);
+                $log->lwrite('Password incorrect.');
                 $invalidArray['password'] = 'Incorrect password entered';
                 showUserError();
             }
@@ -62,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //incorrect syntax/length password entered
         else{
             //increaseAttemptCounter($userObj);
+            $log->lwrite('Password failed prelim verification');
             $invalidArray['password'] = 'Incorrect password entered. Check length/syntax';
             showUserError();
         }
@@ -124,8 +130,9 @@ function validateUser(){
 
 // show user error
 function showUserError(){
+    $log->lwrite('Showing user error');
     global $invalidArray;
     setcookie('invalidArray', json_encode($invalidArray), time()+20);
-    header('Location: ..\..\public_html\login_register\loginregister.html');
+    header('Location: ..\..\public_html\login_register\loginregister.php');
 }
 ?>

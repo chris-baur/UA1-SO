@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html ng-app="myRegister" ng-controller="myCtrl">
 <head>
@@ -9,6 +10,7 @@
     <script src="../js/register.js"></script>
 </head>
 <body>
+
   <p><a href="../home_page/homepage.php"><img style="display: block; margin-left: auto; margin-right: auto;" src="../img/newlogo.png" alt="" width="800" height="450" /></a></p>
   <p>&nbsp;</p>
 
@@ -18,11 +20,12 @@
 
   <div id="login" class="modal">
   
-    <form class="modal-content animate" action="../../private/util/validateLogin.php">
+    <form class="modal-content animate" action="..\..\private\util\validateLogin.php" method="POST">
       <div class="imgcontainer">
         <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="../img/avatar.png" alt="Avatar" class="avatar">
       </div>
+
 
       <div class="container">
         <label><b>Username</b></label>
@@ -46,7 +49,7 @@
   <p style="text-align: center;"><button onclick="document.getElementById('pin_login').style.display='block'" style="width:auto;">Login using Pin</button></p>
 
 <div id="pin_login" class="modal">
-    <form class="modal-content animate" action="../../private/util/validateLogin.php">
+    <form class="modal-content animate" action="../../private/util/validateLogin.php" method="POST">
       <div class="imgcontainer">
         <span onclick="document.getElementById('pin_login').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="../img/avatar.png" alt="Avatar" class="avatar">
