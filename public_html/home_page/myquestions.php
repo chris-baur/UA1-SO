@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="../css/questions_page.css">
 
 <form>
-<div class="container"  ng-app="myApp" ng-controller="mainCtrl">
+<div class="container">
   <div class="form-control space">
     <button type="button" class="btn btn-primary btn-md" onclick="location.href='newQuestion.php';"/>New Question</button>
   </div>

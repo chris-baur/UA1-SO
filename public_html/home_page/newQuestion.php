@@ -54,7 +54,7 @@
 		$row=$GLOBALS['row'];		
 		$id= $row[0];
 		
-		$account_id=$row[0]; //here shoul go the current account ID 
+		$account_id=$row[0]; //here should go the current account ID 
 		$tags=['java'];
 		$upvotes='0';
 		$downvotes='0';
