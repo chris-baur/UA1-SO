@@ -66,4 +66,5 @@ class commentModelTest extends PHPUnit\Framework\TestCase{
         $c = new Comment();
         $c->decrement_downvotes();
         $this->assertEquals($c->get_downvotes(), -1);
+    }
 }
