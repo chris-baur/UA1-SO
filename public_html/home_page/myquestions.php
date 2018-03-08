@@ -7,11 +7,12 @@
 
   echo "<link rel='stylesheet' type='text/css' href='../css/questions_page.css'>";
   
-  $_SESSION['username']='john117';// Here should go the userName of the person. If you have another userName replace here.
-  $_SESSION['userid'] = 1; 
+  $_SESSION['username']= null;//'john117';// Here should go the userName of the person. If you have another userName replace here.
+  $_SESSION['userid'] = null;//1; 
   if( !isset($_SESSION['username']) || !isset($_SESSION['userid'])){     
     echo "<div class='alert alert-warning margins'>
-      <strong>Warning!</strong>You are not connected to a session. Please use the log in to continue.
+      <h2><strong>Warning!</h2></strong><h2>You are not logged in</h2><h2>Please login to ask a question and/or view your questions</h2>
+      <h2>Thank you</h2>
       </div>";
   }
   else {
