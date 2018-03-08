@@ -32,22 +32,20 @@
       echo "
         <div class='form-group row questionBox'>
         <div class='col-md-2 userBox'>
-          <img class='userPhoto' src='../img/avatar2.png' alt='' width='80' height='80' />
-          <span class='col-md-3'>
-          <label >" . $account->get_username() . "</label>
-          </span>
           <button class='btn btn-like'><i class='fa fa-thumbs-o-up'></i></button>". $info->get_upvotes() . "
           <button class='btn btn-like'><i class='fa fa-thumbs-o-down'></i></button>". $info->get_downvotes() . "
         </div>
+        <span class = 'questionBody'>
         <div class='col-md-10 '>
-          <div class='row'>
-          <h3>" . $info->get_header() . "</h3>
+          <div>
+          <h3><strong>" . $info->get_header() . "</strong></h3>
         </div>
           <p>" . $info->get_content() . "
           </p>
           <span class = 'time'>Posted on: " . $info->get_date() . "</span>
         </div>
-      </div>";
+        </span>
+      </div><br>";
     }
     echo '</div>';
   }
