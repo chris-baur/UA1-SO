@@ -47,4 +47,23 @@ class commentModelTest extends PHPUnit\Framework\TestCase{
         $c->set_downvotes(100);
         $this->assertEquals($c->get_downvotes(), 100);
     }
+    public function testUpvotesIncrement(){
+        $c = new Comment();
+        $c->increment_upvotes();
+        $this->assertEquals($c->get_upvotes(), 1);
+    }
+    public function testDownvotesIncrement(){
+        $c = new Comment();
+        $c->increment_downvotes();
+        $this->assertEquals($c->get_downvotes(), 1);
+    }
+    public function testUpvotesDecrement(){
+        $c = new Comment();
+        $c->decrement_upvotes();
+        $this->assertEquals($c->get_upvotes(), -1);
+    }
+    public function testDownvotesDecrement(){
+        $c = new Comment();
+        $c->decrement_downvotes();
+        $this->assertEquals($c->get_downvotes(), -1);
 }
