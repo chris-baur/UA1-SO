@@ -23,13 +23,21 @@ $log = new Logging();
             $stmt = $pdo -> prepare('INSERT INTO questions(account_id, header, content, date, upvotes, downvotes, tags) VALUES(:account_id, :header, :content, :date, :upvotes, :downvotes, :tags);');
                 //@TODO complete function
 										
-			$stmt -> bindParam(':account_id', $question->get_accountId());
-			$stmt -> bindParam(':header', $question->get_header());
-			$stmt -> bindParam(':content', $question->get_content());
-            $stmt -> bindParam(':date', $question->get_date());
-            $stmt -> bindParam(':upvotes', $question->get_upvotes());
-            $stmt -> bindParam(':downvotes', $question->get_downvotes());
-            $stmt -> bindParam(':tags', $question->get_tags());
+			$account_id=$question->get_accountId();
+			$header  =	$question->get_header();
+			$content =	$question->get_content();
+			$date =	$question->get_date();
+			$upvotes=$question->get_upvotes();
+			$downvotes=$question->get_downvotes();
+			$tags=  implode(" ",$question->get_tags());
+
+			$stmt -> bindParam(':account_id', $account_id);
+			$stmt -> bindParam(':header', $header );
+			$stmt -> bindParam(':content', $content);
+            $stmt -> bindParam(':date', $date);
+            $stmt -> bindParam(':upvotes', $upvotes);
+            $stmt -> bindParam(':downvotes', $downvotes);
+            $stmt -> bindParam(':tags', $tags);
 			
 			$stmt -> execute();
             $question_id = $pdo -> lastInsertId();

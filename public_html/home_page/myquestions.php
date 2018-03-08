@@ -6,10 +6,15 @@
 
 <link rel="stylesheet" type="text/css" href="../css/questions_page.css">
 <?php
-  /*if(login false){
-      A message to indicate that the user needs to login to have acces to this page. 
-  } else {*/ 
- 
+  $_SESSION['username']="Rodrigo";// Here should go the userName of the person. If you have another userName replace here.
+  $_SESSION['userid'] =1; 
+  if( !isset($_SESSION['username']) || !isset($_SESSION['userid'])){  
+?>    
+    <div class="alert alert-warning margins">
+      <strong>Warning!</strong><?php echo " You are not connected to a session. Please use the log in to continue."; ?>
+    </div>
+<?php
+  } else {
 ?>
 
 <form>
@@ -21,9 +26,9 @@
 </form>
  <!--Outputting the items in the database-->
     <div class="container">
-    <?php  
-
-    $account=getAccountByUsername('Rodrigo');// Here should go the userName of the person. If you have another userName replace here.
+    <?php    
+    $userName=$_SESSION['username'];
+    $account=getAccountByUsername($userName);
     $rows =getQuestionsByAccount($account);
     foreach ($rows as $info) {
     ?>
@@ -47,4 +52,5 @@
     </div> 
   <?php }?>
   </div>
+<?php }?>
 <?php include("footer.php");?>

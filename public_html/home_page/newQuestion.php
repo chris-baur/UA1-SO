@@ -1,29 +1,17 @@
 <?php include("header.php");
-	  include("../../private/controllers/account_controller.php");
+      include("../../private/controllers/account_controller.php");
 	  include("../../private/controllers/question_controller.php");
-
 	  ?>
+
  <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
  <script src="../js/newQuestion.js"></script>
  <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
  <link rel="stylesheet" type="text/css" href="../css/questions_page.css">
 
-    <?php
-    $username = 'ua1';
-    $password = 'Ua1password0)';
-    $servername = 'ua1_so';
+<?php    
+    if(isset($_GET['action'])=='submitQuestion') submitQuestion();
+    ?>
 
-    // connection to database
-    $con = mysqli_connect('localhost', $username, $password, $servername) or die("Connection Failed");
-
-    $result = mysqli_query($con,"SELECT id FROM accounts");
-    $row = mysqli_fetch_array($result,MYSQLI_NUM);
-
-    if(isset($_GET['action'])=='submitQuestion') {
-    		submitQuestion();
-		}
-   
-    ?>    
 <!--Body-->
 <form method="post" action="?action=submitQuestion">
 	<div class="container" ng-app="newQuestion" ng-controller="questionController">
@@ -46,31 +34,29 @@
 
 	</div>
 </form>
+
 <?php 
 	function submitQuestion(){
 		if(isset($_POST['header']) and isset($_POST['content'])){
 			$question_title= $_POST['header'];
 			$content=$_POST['content'];
 		}
-		$row=$GLOBALS['row'];		
-		$id= $row[0];
+		if(isset($_SESSION['userid'])){
+			$id= $_SESSION['userid'];
+			$account_id=$_SESSION['userid']; //here shoul go the current account ID 
+		}		
 		
-		$account_id=$row[0]; //here should go the current account ID 
-		$tags=['java'];
-		$upvotes='0';
-		$downvotes='0';
-		$date=date("l jS \of F Y h:i:s A");
-
-		//@TODO
-		//must validate/sanitize data provided by the user
-		//missing tags element, getting account id from session.
+		$tags=array('java','default');
+		$upvotes=0;
+		$downvotes=0;
+		$date=date("Y-m-d H:i:s");
 
 		$newQuestion=new Question($id,$account_id,$question_title,$content,$date,$upvotes,$downvotes,$tags);
 
 
 		$response=addQuestion($newQuestion);
-		//header("Location: myquestions.php");
-   		//exit;
+		header("Location: myquestions.php");
+   		exit;
 	}
 ?>
 <?php

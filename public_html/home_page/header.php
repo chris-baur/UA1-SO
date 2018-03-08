@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html>
-
+  <?php
+  session_start();
+  ?>
   <head>
     <title>Ask It!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">

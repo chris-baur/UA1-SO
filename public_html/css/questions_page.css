@@ -11,3 +11,13 @@
 .btn-like{
 background-color: #F0E5D7; 
 }
+.time{
+	float: bottom;
+}
+.margins{
+	width:50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 16px;
+	text-align: center;
+}
