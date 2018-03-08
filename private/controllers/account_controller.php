@@ -1,8 +1,8 @@
 <?php
 
-include '..\..\private\util\logging.php';
-include '..\..\private\util\sets.php';
-include '..\..\private\models\Account.php';
+include_once '..\..\private\util\logging.php';
+include_once '..\..\private\util\sets.php';
+include_once '..\..\private\models\Account.php';
 $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 $servername = $config['servername'];
@@ -24,28 +24,42 @@ $professions = $sets->to_string_professions();
 	*/
 	function addAccount($account){
 		global $servername, $username, $password, $dbname, $log;
-		$user_id = 0;
+		$user_id = -9;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $stmt = $pdo -> prepare('INSERT INTO accounts(username, password, name, last_name, gender, 
                 security_one, security_two, answer_one, answer_two, bio, profession, pin) VALUES(:username, 
                 :password, :name, :last_name, :gender, :security_one, :security_two, :answer_one, :answer_two, 
                 :bio, :profession, :pin);');
-                //@TODO complete function
+				//@TODO complete function
+				
+			$user = $account->get_username();
+			$pass = $account->get_password();
+			$name = $account->get_name();
+			$lname = $account->get_last_name();
+			$gender = $account->get_gender();
+			$s1 = $account->get_security_one();
+			$s2 = $account->get_security_two();
+			$a1 = $account->get_answer_one();
+			$a2 = $account->get_answer_two();
+			$bio = $account->get_bio();
+			$profession = $account->get_profession();
+			$pin = $account->get_pin();
 										
-			$stmt -> bindParam(':username', $account->get_username());
-			$stmt -> bindParam(':password', $account->get_password());
-			$stmt -> bindParam(':name', $account->get_username());
-            $stmt -> bindParam(':last_name', $account->get_last_name());
-            $stmt -> bindParam(':gender', $account->get_gender());
-            $stmt -> bindParam(':security_one', $account->get_security_one());
-            $stmt -> bindParam(':security_two', $account->get_security_two());
-            $stmt -> bindParam(':answer_one', $account->get_answer_one());
-            $stmt -> bindParam(':answer_two', $account->get_answer_two());
-            $stmt -> bindParam(':bio', $account->get_bio());
-            $stmt -> bindParam(':profession', $account->get_profession());
-            $stmt -> bindParam(':pin', $account->get_pin());
+			$stmt -> bindParam(':username', $user);
+			$stmt -> bindParam(':password', $pass);
+			$stmt -> bindParam(':name', $name);
+            $stmt -> bindParam(':last_name', $lname);
+            $stmt -> bindParam(':gender', $gender);
+            $stmt -> bindParam(':security_one', $s1);
+            $stmt -> bindParam(':security_two', $s2);
+            $stmt -> bindParam(':answer_one', $a1);
+            $stmt -> bindParam(':answer_two', $a2);
+            $stmt -> bindParam(':bio', $bio);
+            $stmt -> bindParam(':profession', $profession);
+            $stmt -> bindParam(':pin', $pin);
 			
 			$stmt -> execute();
             $user_id = $pdo -> lastInsertId();

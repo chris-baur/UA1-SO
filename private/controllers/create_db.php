@@ -4,8 +4,9 @@
  * @author Christoffer Baur
  */
 
-include '..\util\logging.php';
-include '..\util\sets.php';
+include_once '..\util\logging.php';
+include_once '..\util\sets.php';
+include_once '.\account_controller.php';
 $config = parse_ini_file('..\..\config.ini');
 
 $servername = $config['servername'];
@@ -25,6 +26,7 @@ function createDatabaseAndTables(){
     createAnswersTable();
     createCommentsTable();
     createFavouritesTable();
+    createDefaultAccount();
 }
 
 function createDatabase(){
@@ -43,6 +45,16 @@ function createDatabase(){
         unset ($pdo);
     }
 }
+// function createDefaultAccount(){
+//     global $servername, $username, $password, $dbname, $log, $sets;
+//     $s1 = strtok($sets->to_string_security_one(), ',');
+//     $s1 = str_replace("'","",$s1);
+//     $s2 = strtok($sets->to_string_security_two(), ',');
+//     $s2 = str_replace("'","",$s2);
+//     //password is hashed version of 'password'
+//     $a = new Account(-1, 'John118', '$2y$10$C/uoZeY8TclVBl7UskXJceE7v800lyCnANBNtbTWX6jH7/dtOSqoK', 'John', 'Master Chief', 'Male', $s1, $s2, 'Cortana', 'EDZ', 'Last Spartan Alive', 'Gamer', null);
+//     $id = addAccount($a);
+// }
 
 function createAccountsTable(){
     global $servername, $username, $password, $dbname, $log;
@@ -73,10 +85,12 @@ function createAccountsTable(){
             `answer_two` varchar(20) NOT NULL DEFAULT 'a2',
             `bio` varchar(500) NOT NULL DEFAULT 'Training to be like goku',
             `profession` set($professions) NOT NULL DEFAULT '".$sets->get_professions()[2]."',
-            `pin` tinyint(4) UNSIGNED NULL DEFAULT NULL,
+            `pin` varchar(4) DEFAULT NULL,
             PRIMARY KEY (`id`),
             UNIQUE KEY `username` (`username`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;INSERT INTO `accounts` (`username`, `password`, `name`, `last_name`, `gender`, `security_one`, `security_two`, `answer_one`, `answer_two`, `bio`, `profession`, `pin`) VALUES
+            ('john117', '$2y$10\$C/uoZeY8TclVBl7UskXJceE7v800lyCnANBNtbTWX6jH7/dtOSqoK', 'John', 'Master Chief', 'Male', 'What is the first name of the person you first kissed?', 'In what city or town did your mother and father meet?', 'Cortana', 'EDZ', 'Last Spartan Alive', 'Gamer', NULL);
+            COMMIT;";
 
         $conn->exec($sql);
         $log->lwrite('Table accounts created successfully');
@@ -180,6 +194,7 @@ function createFavouritesTable(){
           `id` int(11) NOT NULL AUTO_INCREMENT,
           `account_id` int(11) DEFAULT NULL,
           `question_id` int(11) DEFAULT NULL,
+          `answer_id` int(11) DEFAULT NULL,
           PRIMARY KEY (`id`),
           KEY `fk_favourties_account_id` (`account_id`),
           KEY `fk_favourites_question_id` (`question_id`),
@@ -187,7 +202,8 @@ function createFavouritesTable(){
         ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `favourites`
         ADD CONSTRAINT `fk_favourites_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
         ADD CONSTRAINT `fk_favourties_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE,
-        ADD CONSTRAINT `fk_favourites_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `answers` (`id`) ON DELETE CASCADE;COMMIT";
+        ADD CONSTRAINT `fk_favourites_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `answers` (`id`) ON DELETE CASCADE;
+      COMMIT;";
 
         $conn->exec($sql);
         $log->lwrite('Favourites Table created successfully');

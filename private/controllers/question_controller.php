@@ -16,7 +16,7 @@ $log = new Logging();
 	*/
 	function addQuestion($question){
 		global $servername, $username, $password, $dbname, $log;
-		$question_id = 0;
+		$question_id = -1;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
