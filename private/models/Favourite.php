@@ -52,8 +52,6 @@
     function set_answerId($newAnswerId){
         $this->answerId = $newAnswerId;
     }
-
-
  }
 
 

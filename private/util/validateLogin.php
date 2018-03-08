@@ -4,8 +4,8 @@
  * @author Christoffer Baur
  */
 
-include '..\util\sets.php';
-include '..\models\Account.php';
+include_once '..\util\sets.php';
+include_once '..\models\Account.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

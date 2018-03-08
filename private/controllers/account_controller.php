@@ -1,8 +1,8 @@
 <?php
 
-include '..\util\logging.php';
-include '..\util\sets.php';
-include '..\models\Account.php';
+include_once '..\util\logging.php';
+include_once '..\util\sets.php';
+include_once '..\models\Account.php';
 $config = parse_ini_file('..\..\..\config.ini');
 
 $servername = $config['servername'];
