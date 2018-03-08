@@ -116,3 +116,4 @@
 [08/Mar/2018:19:30:35] (create_db) Favourites Table created successfully
 [08/Mar/2018:19:30:35] (create_db) added account succesfully. ID: 2
 [08/Mar/2018:19:30:35] (create_db) Default account was inserted succesfully. Account ID: 2
+[08/Mar/2018:20:13:03] (newQuestion) added question succesfully. ID: 1
