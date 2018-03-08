@@ -52,11 +52,11 @@
 		}
 
 		function get_upvotes(){
-			return $this -> $upvotes;
+			return $this ->upvotes;
 		}
 		
 		function get_downvotes(){
-			return $this -> $downvotes;
+			return $this ->downvotes;
 		}
 		
 		
@@ -68,11 +68,11 @@
 			$this->account_id = $new_accountID;
 		}
 		
-		function set_questionId($new_contentID){
+		function set_questionId($new_questionID){
 			$this->question_id = $new_questionID;
 		}
 		
-		function set_answerId($new_contentID){
+		function set_answerId($new_answerID){
 			$this->answer_id = $new_answerID;
 		}
 
@@ -85,27 +85,27 @@
 		}
 		
 		function set_upvotes($new_upvotes){
-			$this -> $upvotes = $new_upvote;
+			$this ->upvotes = $new_upvotes;
 		}
 		
 		function set_downvotes($new_downvotes){
-			$this -> $downvotes = $new_downvotes;
+			$this ->downvotes = $new_downvotes;
 		}
 		
 		// function to increament the upvotes/downvotes by one
 		function increment_upvotes(){
-			$this -> $upvotes++;
+			$this ->upvotes++;
 		}
 
 		function decrement_upvotes(){
-			$this -> $upvotes--;
+			$this ->upvotes--;
 		}
 		
 		function increment_downvotes(){
-			$this -> $downvotes++;
+			$this ->downvotes++;
 		}
 		function decrement_downvotes(){
-			$this -> $downvotes--;
+			$this ->downvotes--;
 		}
 	}
 ?>
