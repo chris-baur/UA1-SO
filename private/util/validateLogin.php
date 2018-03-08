@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hash = "";
     //$pin = "";
     $validData = true;
-    $invalidArray = null;
+    $invalidArray = false;
 
     //validate pin
     // if($validData){
