@@ -122,7 +122,7 @@
 		}
 		
 		function set_answer_one($new_answer_one){
-			$this->answer_one - $new_answer_one;
+			$this->answer_one = $new_answer_one;
 		}
 		
 		function set_answer_two($new_answer_two){
