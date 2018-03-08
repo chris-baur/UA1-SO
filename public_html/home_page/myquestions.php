@@ -7,8 +7,8 @@
 
   echo "<link rel='stylesheet' type='text/css' href='../css/questions_page.css'>";
   
-  $_SESSION['username']='Rodrigo';// Here should go the userName of the person. If you have another userName replace here.
-  $_SESSION['userid'] = 2; 
+  $_SESSION['username']='john117';// Here should go the userName of the person. If you have another userName replace here.
+  $_SESSION['userid'] = 1; 
   if( !isset($_SESSION['username']) || !isset($_SESSION['userid'])){     
     echo "<div class='alert alert-warning margins'>
       <strong>Warning!</strong>You are not connected to a session. Please use the log in to continue.
@@ -41,7 +41,7 @@
         </div>
         <div class='col-md-10 '>
           <div class='row'>
-          <h3>." . $info->get_header() . "</h3>
+          <h3>" . $info->get_header() . "</h3>
         </div>
           <p>" . $info->get_content() . "
           </p>
