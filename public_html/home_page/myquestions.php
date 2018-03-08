@@ -7,8 +7,10 @@
 
   echo "<link rel='stylesheet' type='text/css' href='../css/questions_page.css'>";
   
-  $_SESSION['username']= null;//'john117';// Here should go the userName of the person. If you have another userName replace here.
-  $_SESSION['userid'] = null;//1; 
+  $_SESSION['username']= 'john117';//'john117';// Here should go the userName of the person. If you have another userName replace here.
+  $_SESSION['userid'] = '1';//1; 
+
+  // outputs a warning message when user is not logged into an account
   if( !isset($_SESSION['username']) || !isset($_SESSION['userid'])){     
     echo "<div class='alert alert-warning margins'>
       <h2><strong>Warning!</h2></strong><h2>You are not logged in</h2><h2>Please login to ask a question and/or view your questions</h2>
