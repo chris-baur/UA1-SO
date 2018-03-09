@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html>
   <?php
-  session_start();
   ?>
   <head>
     <title>Ask It!</title>
