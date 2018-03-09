@@ -11,9 +11,6 @@
   <body>  
 
 
-    <p style="text-align: center;"><img src="../img/fill.png" alt="" width="1100" height="600" /></p>
-
-
     <!--Outputting the items in the database-->
     
     <?php
@@ -28,26 +25,34 @@
     $result = mysqli_query($con,"SELECT questions.*, accounts.username FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY upvotes DESC, downvotes");
 
     ?>
-
+    <div class = "separator">
     <!-- goes through each element in the questions table and outputs it. The order of the output is sorted by most upvotes then least downvotes -->
     <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {?>
     
-    <div class = "separator">
+    
     <div class ="comment" align = "left">
-        <h5><strong><?php echo $row["header"]?></strong></h5>
-        <?php echo $row["content"]?><br>
-
-        
-        <!-- Output of the details of the comment and commenter -->
-        <span class = "commentDetails">
+        <div class= "details">
+            <!-- Output of the details of the comment and commenter -->
             <?php echo "Created By: ".$row["username"]?><br>
             <?php echo "Posted on: ".$row["date"]?><br>
             <?php echo "Upvotes: ".$row["upvotes"]?>
             <?php echo "Downvotes: ".$row["downvotes"]?>
-        </span>
+
+        </div>
+        <div class="question">
+            <h5><strong><?php echo $row["header"]?></strong></h5>
+            <?php echo $row["content"]?><br>
+        </div>
+        
+        
+       
+
+        
+        
     </div>
-    </div>
+    
     <?php }?>
+    </div>
     
 
 
