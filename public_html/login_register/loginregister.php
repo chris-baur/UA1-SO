@@ -19,7 +19,7 @@
 
   <div id="login" class="modal">
   
-    <form class="modal-content animate" action="..\..\private\util\validateLogin.php" method="POST">
+    <form class="modal-content animate" action="validateLogin.php" method="POST">
       <div class="imgcontainer">
         <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="../img/avatar.png" alt="Avatar" class="avatar">
@@ -48,7 +48,7 @@
   <p style="text-align: center;"><button onclick="document.getElementById('pin_login').style.display='block'" style="width:auto;">Login using Pin</button></p>
 
 <div id="pin_login" class="modal">
-    <form class="modal-content animate" action="../../private/util/validateLogin.php" method="POST">
+    <form class="modal-content animate" action="validateLogin.php" method="POST">
       <div class="imgcontainer">
         <span onclick="document.getElementById('pin_login').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="../img/avatar.png" alt="Avatar" class="avatar">
@@ -73,7 +73,7 @@
 
   <div id="register" class="modal">
     <span onclick="document.getElementById('register').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" method="POST" action="../../private/util/validationRegistration.php">
+    <form class="modal-content" method="POST" action="validationRegistration.php">
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
@@ -89,6 +89,72 @@
         <label> <b> Security Question 1 </b>
           <select name = "SQ1">
             <option value = "select"> -Please select- </option>
+
+            <option value = "Dog"> What is the name of your first dog? </option>
+            <option value = "honeymoon"> Where did you spend your honeymoon?</option>
+            <option value = "spouse"> Where did you meet your spouse? </option>
+            <option value = "car"> What is the make of your first car? </option>
+            <option value = "job"> What is your dream job? </option>
+          </select> 
+        </label>
+        <input ng-model='answer1' type="text" placeholder="Enter Answer" name="Answer1" required>
+        <br>
+        <label> <b> Security Question 2 </b>
+          <select name = "SQ2">
+            <option value = "select"> -Please select- </option>
+            <option value = "Dog"> What is the name of your first dog? </option>
+            <option value = "honeymoon"> Where did you spend your honeymoon?</option>
+            <option value = "spouse"> Where did you meet your spouse? </option>
+            <option value = "car"> What is the make of your first car? </option>
+            <option value = "job"> What is your dream job? </option>
+          </select> 
+        </label>
+        <input ng-model='answer2' type="text" placeholder="Enter Answer" name="Answer2" required>
+        <br>
+        <br>
+        <label> <b> Profession </b>
+          <select name = "profession">
+            <option value = "select"> -Please select- </option>
+            <option> Student </option>
+            <option> Employee</option>
+            <option> Professor </option>
+            <option> Other </option>
+          </select> 
+        </label>
+        <br>
+        <br>
+        <b> Pin (for quick login): </b>
+           <input ng-model='pin' type="pin" placeholder="Enter Pin" name="pin" maxlength="4" >
+    <span class="alert" ng-if="pin.length<4 && pin.length!=0">Pin enter is too short</span>
+        <br>
+        <br>
+        <form action="gender"> <b> Gender </b>
+          <input type="radio" name="male" value="male" ng-model='gender'> Male
+          <input type="radio" name="female" value="female" ng-model='gender'> Female
+          <input type="radio" name="other" value="other" ng-model='gender'> other
+        </form>
+
+        <p>&nbsp;</p>
+
+        <label>
+          <input type="checkbox" checked="checked" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <p>By creating an account you agree to our <a href="#" style="color:blue">Terms & Privacy</a>.</p>
+
+        <div>
+          <button type="submit" ng-click="newAccount">Sign Up</button>
+          <button type="button" onclick="document.getElementById('register').style.display='none'" >Cancel</button>
+        </div>
+        </div>
+    </form>
+  </div>
+
+  <p>&nbsp;</p>
+  <p style="text-align: center; "> © All Rights Reserved 2018 </p>
+</body>
+</html>
+
             <?php
 
               include_once '..\..\private\util\sets.php';

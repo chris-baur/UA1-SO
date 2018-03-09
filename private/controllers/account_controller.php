@@ -28,6 +28,9 @@ $professions = $sets->to_string_professions();
 		global $servername, $username, $password, $dbname, $log;
 		$user_id = -9;
 		try{
+
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
+
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -147,7 +150,7 @@ $professions = $sets->to_string_professions();
 		global $servername, $username, $password, $dbname, $log;
 		$user_id = 0;
 		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
             $stmt = $pdo -> prepare('UPDATE accounts set password = :password, name = :name, last_name = :last_name, gender = :gender, 
                 security_one = :security_one, security_two = :security_two, answer_one = :answer_one, answer_two = :answer_two,
