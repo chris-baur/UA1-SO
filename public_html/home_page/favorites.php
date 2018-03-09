@@ -31,10 +31,11 @@
     	}
     	else{
 	    	foreach ($rows as $info) {
+	    		$questionAccount = getAccountById($info->get_accountid());
 	      		echo "
 	        	<div class='form-group row questionBox'>
 	        		<div class='col-md-2 userBox'>
-	        			<label class ='username'>".$account->get_username()."</label><br>
+	        			<label class ='username'>".$questionAccount->get_username()."</label><br>
 		          		<button class='btn btn-like'><i class='fa fa-thumbs-o-up'></i></button>". $info->get_upvotes() . "
 		          		<button class='btn btn-like'><i class='fa fa-thumbs-o-down'></i></button>". $info->get_downvotes() . "
 	        		</div>
@@ -62,12 +63,14 @@
     	}
     	else{
 	    	foreach ($rows as $info) {
+	    		$questionAccount = getAccountById($info->get_accountid());
 	      		echo "
 	        	<div class='form-group row questionBox'>
 	        		<div class='col-md-2 userBox'>
-	          		<button class='btn btn-like'><i class='fa fa-thumbs-o-up'></i></button>". $info->get_upvotes() . "
-	          		<button class='btn btn-like'><i class='fa fa-thumbs-o-down'></i></button>". $info->get_downvotes() . "
-	        	</div>
+	        			<label class ='username'>".$questionAccount->get_username()."</label><br>
+	          			<button class='btn btn-like'><i class='fa fa-thumbs-o-up'></i></button>". $info->get_upvotes() . "
+	          			<button class='btn btn-like'><i class='fa fa-thumbs-o-down'></i></button>". $info->get_downvotes() . "
+	        		</div>
 	        	<span class = 'questionBody'>
 	        		<div class='col-md-10 '>
 	          			<div>
