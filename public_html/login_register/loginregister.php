@@ -22,7 +22,7 @@
               
                 <div id='login' class='modal'>
                 
-                  <form class='modal-content animate' action='..\..\private\util\validateLogin.php' method='POST'>
+                  <form class='modal-content animate' action='./validateLogin.php' method='POST'>
                     <div class='imgcontainer'>
                       <span onclick=" . '"document.getElementById(' . "'login'" . ").style.display='none'" . '"' . "class='close' title='Close Modal'>&times;</span>
                       <img src='../img/avatar.png' alt='Avatar' class='avatar'>
@@ -51,7 +51,7 @@
                 <p style='text-align: center;'><button onclick=" . '"document.getElementById(' . "'pin_login'" . ").style.display='block'" . '"' . "style='width:auto;'>Login using Pin</button></p>
               
               <div id='pin_login' class='modal'>
-                  <form class='modal-content animate' action='../../private/util/validateLogin.php' method='POST'>
+                  <form class='modal-content animate' action='./validateLogin.php' method='POST'>
                     <div class='imgcontainer'>
                       <span onclick=" . '"document.getElementById(' . "'pin_login'" . ").style.display='none'" . '"' . "class='close' title='Close Modal'>&times;</span>
                       <img src='../img/avatar.png' alt='Avatar' class='avatar'>
@@ -76,7 +76,7 @@
               
                 <div id='register' class='modal'>
                   <span onclick=" . '"document.getElementById(' . "'register'" . ").style.display='none'" . '"' . "class='close' title='Close Modal'>&times;</span>
-                  <form class='modal-content' method='POST' action='../../private/util/validationRegistration.php'>
+                  <form class='modal-content' method='POST' action='./validationRegistration.php'>
                     <div class='container'>
                       <h1>Sign Up</h1>
                       <p>Please fill in this form to create an account.</p>
@@ -104,8 +104,9 @@
               $s2Array = $sets->security_two;
               $professionArray = $sets->professions;
               $genderArray = $sets->genders;
+              $aa = $s2Array[0];
               $log->lwrite('Got the arrays');
-              $log->lwrite($s1Array);
+              $log->lwrite($aa);
               $log->lwrite($s2Array);
               $log->lwrite($professionArray);              
               $log->lwrite($genderArray);
@@ -171,7 +172,7 @@
               <p>By creating an account you agree to our <a href='#' style='color:blue'>Terms & Privacy</a>.</p>
       
               <div>
-                <button type='submit' ng-click='newAccount()'>Sign Up</button>
+                <button type='submit'>Sign Up</button>
                 <button type='button' onclick=" . '"document.getElementById(' . "'register'" . ").style.display='none'" . '"' . ">Cancel</button>
               </div>
               </div>

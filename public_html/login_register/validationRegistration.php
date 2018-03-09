@@ -35,52 +35,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $validData = true;
     $invalidArray = null;
 
+    $log->lwrite("in validation registration");
+    
+
     /**
      * Validating the inputs for the registraton form
      */
 
     //validating first name
-    if(validateString('name'))
-        $name = htmlentities($_POST['name']);
-    else{
-        $invalidArray['name'] = 'Invalid name provided';
-        $validData = false;
-    }
+    // if(validateString('name')){
+    //     $name = htmlentities($_POST['name']);
+    //     $log->lwrite("name is ok");
+    // }
+    // else{
+    //     $invalidArray['name'] = 'Invalid name provided';
+    //     $validData = false;
+    //     $log->lwrite("Name is not ok");
+        
+    // }
 
     //validate last name
-    if(validateString('last_name'))
-        $last_name = htmlentities($_POST['last_name']);
-    else{
-        $invalidArray['last_name'] = 'Invalid last name provided';
-        $validData = false;
-    }
+    // if(validateString('last_name')){
+    //     $last_name = htmlentities($_POST['last_name']);
+    //     $log->lwrite("last Name is ok");
+        
+    // }
+    // else{
+    //     $invalidArray['last_name'] = 'Invalid last name provided';
+    //     $validData = false;
+    //     $log->lwrite("last Name is not ok");
+        
+    // }
 
     //validate professions
     if(validateString('profession') && in_array(($_POST['profession']), $sets->get_professions())) {
         $profession = htmlentities($_POST['profession']);
-        $log-lwrite('Profession option succeeded');
+        $log->lwrite('Profession option succeeded');
     }else{
         $invalidArray['profession'] = 'Invalid profession selected. Make sure it is part of the list';
         $validData = false;
+        $log->lwrite("Profession is not ok");
+        
     }
 
     //validate gender
     if(validateString('gender') && in_array(($_POST['gender']), $sets->get_genders())){
         $gender = htmlentities($_POST['gender']);
-        $log-lwrite('Gender option succeeded');
+        $log->lwrite('Gender option succeeded');
     }else{
         $invalidArray['gender'] = 'Invalid gender selected. Make sure it is part of the list';
         $validData = false;
+        $log->lwrite("Gender is not ok");
+        
     }
     
     //validate bio
-    if(validateString('bio')) {
-        $bio = htmlentities($_POST['bio']);
-    }
-    else{
-        $invalidArray['bio'] = 'Invalid bio provided. Make sure it is not empty and has proper text';
-        $validData = false;
-    }
+    // if(validateString('bio')) {
+    //     $log->lwrite("bio is ok");        
+    //     $bio = htmlentities($_POST['bio']);
+    // }
+    // else{
+    //     $invalidArray['bio'] = 'Invalid bio provided. Make sure it is not empty and has proper text';
+    //     $validData = false;
+    //     $log->lwrite("bio is not ok");
+        
+    // }
     
     //validate security question one
     if(validateString('SQ1') && in_array($_POST['SQ1'], $sets->get_security_one())){
@@ -90,6 +109,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else{
         $invalidArray['SQ1'] = 'Invalid security question 1 selected. Make sure it is part of the list';
         $validData = false;
+        $log->lwrite("security ONE is not ok");
+        
     }
 
     //validate security question two
@@ -100,25 +121,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else{
         $invalidArray['SQ2'] = 'Invalid security question 2 selected. Make sure it is part of the list';
         $validData = false;
+        $log->lwrite("security TWO is not ok");
+        
     }
 
     //validate answer one
     if(validateString('Answer1')){
             $answer_one = htmlentities($_POST['Answer1']);
-            $log->lwrite('Security answer 1 option succeeded');
+            $log->lwrite(' answer 1 option succeeded');
         }
     else{
         $invalidArray['Answer1'] = 'Invalid answer 1 provided. Make sure it is not empty and has proper text';
         $validData = false;
+        $log->lwrite("asnwer 1 is not ok");
+        
     }
     
     //validate answer two
     if(validateString('Answer2')){
             $answer_two = htmlentities($_POST['Answer2']);
-            $log->lwrite('Security answer 2 option succeeded');}
+            $log->lwrite('Security answer 2 option succeeded');
+    }
     else{
         $invalidArray['Answer2'] = 'Invalid answer 2 provided. Make sure it is not empty and has proper text';
         $validData = false;
+        $log->lwrite("answer TWO is not ok");
+        
     }
     
     //validate pin
@@ -136,6 +164,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(strlen($_POST['password']) < 8 ){
             $validData = false;
             $invalidArray['password'] = 'Invalid password length entered. It must be a minimum of 8 characters';
+        $log->lwrite("password is not ok");
+            
         }
         else
             $hash = password_hash(htmlentities($_POST['password']), PASSWORD_DEFAULT);
@@ -144,13 +174,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else{
         $validData = false;
         $invalidArray['password'] = 'Invalid password entered. It cannot be empty';
+        $log->lwrite("password is not ok");        
     }
     
     //validate user name
     if($validData){
-        $log-lwrite('valid data true');
+        $log->lwrite('valid data true');
         if(validateUser()){
-            $log-lwrite('valid user true');
+            $log->lwrite('valid user true');
             if(strlen($_POST['username']) > 0 && strlen($_POST['username']) <= 20){
                 // redirect to login page
                 //setcookie('invalidArray', 'false', time() + 30);
@@ -158,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('Location: loginregister.php');
             }
             else{
-                $log-lwrite('valid username false');
+                $log->lwrite('valid username false');
                 $invalidArray['username'] = 'Invalid username entered. It must be a maximum of 20 characters, and at least one character';         
             }
         }
@@ -218,7 +249,9 @@ function validateUser(){
 
 // show user error
 function showUserError(){
-    global $invalidArray;
+
+    global $invalidArray, $log;
+    $log->lwrite("in show user error: " . $invalidArray[0]);    
     setcookie('invalidArray', json_encode($invalidArray), time()+20);
     header('Location: loginregister.php');
 }

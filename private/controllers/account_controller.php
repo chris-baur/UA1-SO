@@ -31,7 +31,7 @@ $professions = $sets->to_string_professions();
 
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			//$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $stmt = $pdo -> prepare('INSERT INTO accounts(username, password, name, last_name, gender, 

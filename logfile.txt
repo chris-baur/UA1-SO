@@ -1,177 +1,34 @@
-
-[08/Mar/2018:19:16:17] (create_db) Connected successfully
-[08/Mar/2018:19:16:17] (create_db) Table accounts created successfully
-[08/Mar/2018:19:16:17] (create_db) Connected successfully
-[08/Mar/2018:19:16:18] (create_db) Questions Table created successfully
-[08/Mar/2018:19:16:18] (create_db) Connected successfully
-[08/Mar/2018:19:16:18] (create_db) Answers Table created successfully
-[08/Mar/2018:19:16:18] (create_db) Connected successfully
-[08/Mar/2018:19:16:18] (create_db) Comments Table created successfully
-[08/Mar/2018:19:16:18] (create_db) Connected successfully
-[08/Mar/2018:19:16:19] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:17:54] (create_db) Connected successfully
-[08/Mar/2018:19:17:54] (create_db) Table accounts created successfully
-[08/Mar/2018:19:17:54] (create_db) Connected successfully
-[08/Mar/2018:19:17:54] (create_db) Questions Table created successfully
-[08/Mar/2018:19:17:54] (create_db) Connected successfully
-[08/Mar/2018:19:17:54] (create_db) Answers Table created successfully
-[08/Mar/2018:19:17:54] (create_db) Connected successfully
-[08/Mar/2018:19:17:55] (create_db) Comments Table created successfully
-[08/Mar/2018:19:17:55] (create_db) Connected successfully
-[08/Mar/2018:19:17:55] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:17:55] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
-[08/Mar/2018:19:17:55] (create_db) Default account inserted with ID: -1
-[08/Mar/2018:19:19:53] (create_db) Connected successfully
-[08/Mar/2018:19:19:53] (create_db) Table accounts created successfully
-[08/Mar/2018:19:19:53] (create_db) Connected successfully
-[08/Mar/2018:19:19:53] (create_db) Questions Table created successfully
-[08/Mar/2018:19:19:53] (create_db) Connected successfully
-[08/Mar/2018:19:19:54] (create_db) Answers Table created successfully
-[08/Mar/2018:19:19:54] (create_db) Connected successfully
-[08/Mar/2018:19:19:54] (create_db) Comments Table created successfully
-[08/Mar/2018:19:19:54] (create_db) Connected successfully
-[08/Mar/2018:19:19:54] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:19:54] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
-[08/Mar/2018:19:19:54] (create_db) Default account inserted with ID: -1
-[08/Mar/2018:19:23:24] (create_db) Connected successfully
-[08/Mar/2018:19:23:24] (create_db) Table accounts created successfully
-[08/Mar/2018:19:23:24] (create_db) Connected successfully
-[08/Mar/2018:19:23:25] (create_db) Questions Table created successfully
-[08/Mar/2018:19:23:25] (create_db) Connected successfully
-[08/Mar/2018:19:23:25] (create_db) Answers Table created successfully
-[08/Mar/2018:19:23:25] (create_db) Connected successfully
-[08/Mar/2018:19:23:25] (create_db) Comments Table created successfully
-[08/Mar/2018:19:23:25] (create_db) Connected successfully
-[08/Mar/2018:19:23:26] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:23:26] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
-[08/Mar/2018:19:23:26] (create_db) Default account inserted with ID: 
-[08/Mar/2018:19:24:04] (create_db) Connected successfully
-[08/Mar/2018:19:24:04] (create_db) Table accounts created successfully
-[08/Mar/2018:19:24:04] (create_db) Connected successfully
-[08/Mar/2018:19:24:04] (create_db) Questions Table created successfully
-[08/Mar/2018:19:24:04] (create_db) Connected successfully
-[08/Mar/2018:19:24:05] (create_db) Answers Table created successfully
-[08/Mar/2018:19:24:05] (create_db) Connected successfully
-[08/Mar/2018:19:24:05] (create_db) Comments Table created successfully
-[08/Mar/2018:19:24:05] (create_db) Connected successfully
-[08/Mar/2018:19:24:05] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:24:05] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
-[08/Mar/2018:19:24:05] (create_db) Default account inserted with ID: 
-[08/Mar/2018:19:25:27] (create_db) Connected successfully
-[08/Mar/2018:19:25:27] (create_db) Table accounts created successfully
-[08/Mar/2018:19:25:27] (create_db) Connected successfully
-[08/Mar/2018:19:25:28] (create_db) Questions Table created successfully
-[08/Mar/2018:19:25:28] (create_db) Connected successfully
-[08/Mar/2018:19:25:28] (create_db) Answers Table created successfully
-[08/Mar/2018:19:25:28] (create_db) Connected successfully
-[08/Mar/2018:19:25:28] (create_db) Comments Table created successfully
-[08/Mar/2018:19:25:28] (create_db) Connected successfully
-[08/Mar/2018:19:25:29] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:25:29] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
-[08/Mar/2018:19:25:29] (create_db) Default account inserted with ID: 
-[08/Mar/2018:19:26:36] (create_db) Connected successfully
-[08/Mar/2018:19:26:36] (create_db) Table accounts created successfully
-[08/Mar/2018:19:26:36] (create_db) Connected successfully
-[08/Mar/2018:19:26:36] (create_db) Questions Table created successfully
-[08/Mar/2018:19:26:36] (create_db) Connected successfully
-[08/Mar/2018:19:26:37] (create_db) Answers Table created successfully
-[08/Mar/2018:19:26:37] (create_db) Connected successfully
-[08/Mar/2018:19:26:37] (create_db) Comments Table created successfully
-[08/Mar/2018:19:26:37] (create_db) Connected successfully
-[08/Mar/2018:19:26:37] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:26:37] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
-[08/Mar/2018:19:26:37] (create_db) Default account inserted with ID: -9
-[08/Mar/2018:19:27:20] (create_db) Connected successfully
-[08/Mar/2018:19:27:20] (create_db) Table accounts created successfully
-[08/Mar/2018:19:27:20] (create_db) Connected successfully
-[08/Mar/2018:19:27:21] (create_db) Questions Table created successfully
-[08/Mar/2018:19:27:21] (create_db) Connected successfully
-[08/Mar/2018:19:27:21] (create_db) Answers Table created successfully
-[08/Mar/2018:19:27:21] (create_db) Connected successfully
-[08/Mar/2018:19:27:21] (create_db) Comments Table created successfully
-[08/Mar/2018:19:27:21] (create_db) Connected successfully
-[08/Mar/2018:19:27:22] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:27:22] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
-[08/Mar/2018:19:27:22] (create_db) Default account inserted with ID: -9
-[08/Mar/2018:19:27:49] (create_db) Connected successfully
-[08/Mar/2018:19:27:49] (create_db) Table accounts created successfully
-[08/Mar/2018:19:27:49] (create_db) Connected successfully
-[08/Mar/2018:19:27:49] (create_db) Questions Table created successfully
-[08/Mar/2018:19:27:49] (create_db) Connected successfully
-[08/Mar/2018:19:27:50] (create_db) Answers Table created successfully
-[08/Mar/2018:19:27:50] (create_db) Connected successfully
-[08/Mar/2018:19:27:50] (create_db) Comments Table created successfully
-[08/Mar/2018:19:27:50] (create_db) Connected successfully
-[08/Mar/2018:19:27:51] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:27:51] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
-[08/Mar/2018:19:27:51] (create_db) Default account inserted with ID: -9
-[08/Mar/2018:19:30:34] (create_db) Connected successfully
-[08/Mar/2018:19:30:34] (create_db) Table accounts created successfully
-[08/Mar/2018:19:30:34] (create_db) Connected successfully
-[08/Mar/2018:19:30:34] (create_db) Questions Table created successfully
-[08/Mar/2018:19:30:34] (create_db) Connected successfully
-[08/Mar/2018:19:30:35] (create_db) Answers Table created successfully
-[08/Mar/2018:19:30:35] (create_db) Connected successfully
-[08/Mar/2018:19:30:35] (create_db) Comments Table created successfully
-[08/Mar/2018:19:30:35] (create_db) Connected successfully
-[08/Mar/2018:19:30:35] (create_db) Favourites Table created successfully
-[08/Mar/2018:19:30:35] (create_db) added account succesfully. ID: 2
-[08/Mar/2018:19:30:35] (create_db) Default account was inserted succesfully. Account ID: 2
-[08/Mar/2018:20:13:03] (newQuestion) added question succesfully. ID: 1
-[08/Mar/2018:20:43:34] (newQuestion) added question succesfully. ID: 2
-[08/Mar/2018:20:45:32] (newQuestion) added question succesfully. ID: 3
-[08/Mar/2018:20:45:54] (newQuestion) added question succesfully. ID: 4
-
-[09/Mar/2018:16:31:50] (validateLogin) Form has requested a post for File: validateLogin.php
-[09/Mar/2018:16:31:50] (validateLogin) Username is: DaveGrohl
-[09/Mar/2018:16:31:50] (validateLogin) account exists with given username
-[09/Mar/2018:16:31:50] (validateLogin) inside valid user
-[09/Mar/2018:16:31:50] (validateLogin) Password failed prelim verification
-[09/Mar/2018:16:31:50] (validateLogin) Showing user error
-[09/Mar/2018:16:34:52] (loginregister) in login register 
-[09/Mar/2018:16:34:53] (loginregister) Got the arrays
-[09/Mar/2018:16:36:18] (loginregister) in login register 
-[09/Mar/2018:16:36:18] (loginregister) Got the arrays
-[09/Mar/2018:16:36:18] (loginregister) 
-[09/Mar/2018:16:36:18] (loginregister) 
-[09/Mar/2018:16:36:18] (loginregister) 
-[09/Mar/2018:16:36:18] (loginregister) 
-[09/Mar/2018:16:38:04] (loginregister) in login register 
-[09/Mar/2018:16:38:04] (loginregister) Got the arrays
-[09/Mar/2018:16:38:04] (loginregister) 
-[09/Mar/2018:16:38:04] (loginregister) 
-[09/Mar/2018:16:38:04] (loginregister) 
-[09/Mar/2018:16:38:04] (loginregister) 
-[09/Mar/2018:16:38:04] (loginregister) 
-[09/Mar/2018:16:38:53] (loginregister) in login register 
-[09/Mar/2018:16:38:53] (loginregister) Got the arrays
-[09/Mar/2018:16:38:53] (loginregister) 
-[09/Mar/2018:16:38:53] (loginregister) 
-[09/Mar/2018:16:38:53] (loginregister) 
-[09/Mar/2018:16:38:53] (loginregister) 
-[09/Mar/2018:16:38:53] (loginregister) 
-[09/Mar/2018:16:39:53] (loginregister) in login register 
-[09/Mar/2018:16:39:53] (loginregister) Got the arrays
-[09/Mar/2018:16:39:53] (loginregister) 
-[09/Mar/2018:16:39:53] (loginregister) 
-[09/Mar/2018:16:39:53] (loginregister) 
-[09/Mar/2018:16:39:53] (loginregister) 
-[09/Mar/2018:16:39:53] (loginregister) 
-[09/Mar/2018:16:41:04] (loginregister) in login register 
-[09/Mar/2018:16:41:04] (loginregister) Got the arrays
-[09/Mar/2018:16:41:04] (loginregister) 
-[09/Mar/2018:16:41:04] (loginregister) 
-[09/Mar/2018:16:41:04] (loginregister) 
-[09/Mar/2018:16:41:04] (loginregister) 
-[09/Mar/2018:16:41:24] (loginregister) in login register 
-[09/Mar/2018:16:41:24] (loginregister) Got the arrays
-[09/Mar/2018:16:41:24] (loginregister) 
-[09/Mar/2018:16:41:24] (loginregister) 
-[09/Mar/2018:16:41:24] (loginregister) 
-[09/Mar/2018:16:41:24] (loginregister) 
-[09/Mar/2018:16:43:13] (loginregister) in login register 
-[09/Mar/2018:16:43:13] (loginregister) Got the arrays
-[09/Mar/2018:16:43:13] (loginregister) Array
-[09/Mar/2018:16:43:13] (loginregister) Array
-[09/Mar/2018:16:43:13] (loginregister) Array
-[09/Mar/2018:16:43:13] (loginregister) Array
+[09/Mar/2018:17:12:13] (validationRegistration) in validation registration
+[09/Mar/2018:17:12:13] (validationRegistration) Profession option succeeded
+[09/Mar/2018:17:12:13] (validationRegistration) Gender option succeeded
+[09/Mar/2018:17:12:13] (validationRegistration) Security question 1 option succeeded
+[09/Mar/2018:17:12:13] (validationRegistration) Security question 2 option succeeded
+[09/Mar/2018:17:12:13] (validationRegistration)  answer 1 option succeeded
+[09/Mar/2018:17:12:13] (validationRegistration) Security answer 2 option succeeded
+[09/Mar/2018:17:12:13] (validationRegistration) Password hashed succeeded
+[09/Mar/2018:17:12:13] (validationRegistration) valid data true
+[09/Mar/2018:17:12:13] (validationRegistration) added account succesfully. ID: 3
+[09/Mar/2018:17:12:13] (validationRegistration) valid user true
+[09/Mar/2018:17:12:13] (validationRegistration) valid username true
+[09/Mar/2018:17:12:13] (loginregister) in login register 
+[09/Mar/2018:17:12:13] (loginregister) Got the arrays
+[09/Mar/2018:17:12:13] (loginregister) In what city or town did your mother and father meet?
+[09/Mar/2018:17:12:13] (loginregister) Array
+[09/Mar/2018:17:12:14] (loginregister) Array
+[09/Mar/2018:17:12:14] (loginregister) Array
+[09/Mar/2018:17:13:54] (loginregister) in login register 
+[09/Mar/2018:17:13:54] (loginregister) Got the arrays
+[09/Mar/2018:17:13:54] (loginregister) In what city or town did your mother and father meet?
+[09/Mar/2018:17:13:54] (loginregister) Array
+[09/Mar/2018:17:13:54] (loginregister) Array
+[09/Mar/2018:17:13:54] (loginregister) Array
+[09/Mar/2018:17:14:02] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:17:14:02] (validateLogin) Username is: password
+[09/Mar/2018:17:14:02] (validateLogin) account exists with given username
+[09/Mar/2018:17:14:02] (validateLogin) inside valid user
+[09/Mar/2018:17:14:02] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:17:14:03] (validateLogin) password is valid
+[09/Mar/2018:17:14:19] (newQuestion) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:17:14:19] (newQuestion) Username provided is not a valid string
+[09/Mar/2018:17:14:19] (newQuestion) invalid username. Valid data is false
+[09/Mar/2018:17:14:19] (newQuestion) Showing user error
