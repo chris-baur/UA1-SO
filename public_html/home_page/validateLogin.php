@@ -4,10 +4,10 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    include_once '.\sets.php';
-    include_once '.\logging.php';
-    include_once '..\controllers\account_controller.php';
-    include_once '..\models\Account.php';    
+    include_once '..\..\private\util\sets.php';
+    include_once '..\..\private\util\logging.php';
+    include_once '..\..\private\controllers\account_controller.php';
+    include_once '..\..\private\models\Account.php';    
 
     $account = new Account();
     $sets = new Sets();
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['username'] = $account -> get_username();
                 session_regenerate_id();
                 // redirect to user home page
-                header('Location: ..\..\public_html\home_page\homepage.php');
+                header('Location: homepage.php');
             }
             //password doesnt match
             else{
@@ -145,6 +145,6 @@ function showUserError(){
     $log->lwrite('Showing user error');
     global $invalidArray;
     setcookie('invalidArray', json_encode($invalidArray), time()+20);
-    header('Location: ..\..\public_html\login_register\loginregister.php');
+    header('Location: loginregister.php');
 }
 ?>

@@ -9,3 +9,21 @@
 =======
 [02/Mar/2018:17:20:13] (newQuestion) added question succesfully. ID: 0
 
+[09/Mar/2018:06:36:04] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:06:36:04] (validateLogin) Username is: wissem
+[09/Mar/2018:06:36:04] (validateLogin) account exists with given username
+[09/Mar/2018:06:36:04] (validateLogin) inside valid user
+[09/Mar/2018:06:36:04] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:06:36:04] (validateLogin) password is valid
+[09/Mar/2018:15:19:20] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:15:19:20] (validateLogin) Username is: wissem
+[09/Mar/2018:15:19:20] (validateLogin) account exists with given username
+[09/Mar/2018:15:19:20] (validateLogin) inside valid user
+[09/Mar/2018:15:19:20] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:15:19:20] (validateLogin) password is valid
+[09/Mar/2018:15:30:29] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:15:30:29] (validateLogin) Username is: wissem
+[09/Mar/2018:15:30:29] (validateLogin) account exists with given username
+[09/Mar/2018:15:30:29] (validateLogin) inside valid user
+[09/Mar/2018:15:30:29] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:15:30:30] (validateLogin) password is valid

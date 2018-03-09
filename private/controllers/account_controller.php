@@ -24,7 +24,7 @@ $professions = $sets->to_string_professions();
 		global $servername, $username, $password, $dbname, $log;
 		$user_id = 0;
 		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
             $stmt = $pdo -> prepare('INSERT INTO accounts(username, password, name, last_name, gender, 
                 security_one, security_two, answer_one, answer_two, bio, profession, pin) VALUES(:username, 
@@ -127,7 +127,7 @@ $professions = $sets->to_string_professions();
 		global $servername, $username, $password, $dbname, $log;
 		$user_id = 0;
 		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
             $stmt = $pdo -> prepare('UPDATE accounts set password = :password, name = :name, last_name = :last_name, gender = :gender, 
                 security_one = :security_one, security_two = :security_two, answer_one = :answer_one, answer_two = :answer_two,
