@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if(strlen($_POST['username']) > 0 && strlen($_POST['username']) <= 20){
                 // redirect to login page
                 setcookie('invalidArray', 'false', time() + 30);
-                header('Location: ..\..\public_html\login_register\loginregister.php');
+                header('Location: ..\..\public_html\login_register\loginregister.html');
             )
             else{
                 $invalidArray['username'] = 'Invalid username entered. It must be a maximum of 20 characters, and at least one character';
