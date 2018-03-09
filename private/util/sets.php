@@ -12,9 +12,9 @@
         private static $sets = null;
 
         public function __construct(){
-            if (is_null(self::$sets)) {  // OR if (!is_array(self::$date))
+            // if (is_null(self::$sets)) {  // OR if (!is_array(self::$date))
                 self::$sets = json_decode(file_get_contents('../../sets.txt', true));
-            }
+            // }
         }
         
         public function get_security_one(){

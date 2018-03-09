@@ -128,3 +128,50 @@
 [09/Mar/2018:16:31:50] (validateLogin) inside valid user
 [09/Mar/2018:16:31:50] (validateLogin) Password failed prelim verification
 [09/Mar/2018:16:31:50] (validateLogin) Showing user error
+[09/Mar/2018:16:34:52] (loginregister) in login register 
+[09/Mar/2018:16:34:53] (loginregister) Got the arrays
+[09/Mar/2018:16:36:18] (loginregister) in login register 
+[09/Mar/2018:16:36:18] (loginregister) Got the arrays
+[09/Mar/2018:16:36:18] (loginregister) 
+[09/Mar/2018:16:36:18] (loginregister) 
+[09/Mar/2018:16:36:18] (loginregister) 
+[09/Mar/2018:16:36:18] (loginregister) 
+[09/Mar/2018:16:38:04] (loginregister) in login register 
+[09/Mar/2018:16:38:04] (loginregister) Got the arrays
+[09/Mar/2018:16:38:04] (loginregister) 
+[09/Mar/2018:16:38:04] (loginregister) 
+[09/Mar/2018:16:38:04] (loginregister) 
+[09/Mar/2018:16:38:04] (loginregister) 
+[09/Mar/2018:16:38:04] (loginregister) 
+[09/Mar/2018:16:38:53] (loginregister) in login register 
+[09/Mar/2018:16:38:53] (loginregister) Got the arrays
+[09/Mar/2018:16:38:53] (loginregister) 
+[09/Mar/2018:16:38:53] (loginregister) 
+[09/Mar/2018:16:38:53] (loginregister) 
+[09/Mar/2018:16:38:53] (loginregister) 
+[09/Mar/2018:16:38:53] (loginregister) 
+[09/Mar/2018:16:39:53] (loginregister) in login register 
+[09/Mar/2018:16:39:53] (loginregister) Got the arrays
+[09/Mar/2018:16:39:53] (loginregister) 
+[09/Mar/2018:16:39:53] (loginregister) 
+[09/Mar/2018:16:39:53] (loginregister) 
+[09/Mar/2018:16:39:53] (loginregister) 
+[09/Mar/2018:16:39:53] (loginregister) 
+[09/Mar/2018:16:41:04] (loginregister) in login register 
+[09/Mar/2018:16:41:04] (loginregister) Got the arrays
+[09/Mar/2018:16:41:04] (loginregister) 
+[09/Mar/2018:16:41:04] (loginregister) 
+[09/Mar/2018:16:41:04] (loginregister) 
+[09/Mar/2018:16:41:04] (loginregister) 
+[09/Mar/2018:16:41:24] (loginregister) in login register 
+[09/Mar/2018:16:41:24] (loginregister) Got the arrays
+[09/Mar/2018:16:41:24] (loginregister) 
+[09/Mar/2018:16:41:24] (loginregister) 
+[09/Mar/2018:16:41:24] (loginregister) 
+[09/Mar/2018:16:41:24] (loginregister) 
+[09/Mar/2018:16:43:13] (loginregister) in login register 
+[09/Mar/2018:16:43:13] (loginregister) Got the arrays
+[09/Mar/2018:16:43:13] (loginregister) Array
+[09/Mar/2018:16:43:13] (loginregister) Array
+[09/Mar/2018:16:43:13] (loginregister) Array
+[09/Mar/2018:16:43:13] (loginregister) Array
