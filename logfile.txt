@@ -122,3 +122,15 @@
 [09/Mar/2018:03:20:17] (validateLogin) Password passed prelim validaton
 [09/Mar/2018:03:20:17] (validateLogin) password is valid
 >>>>>>> 40ff34a1cdfa047cac105d60da3904814ff65982
+[09/Mar/2018:05:28:06] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:05:28:06] (validateLogin) Username is: wissem
+[09/Mar/2018:05:28:06] (validateLogin) account exists with given username
+[09/Mar/2018:05:28:06] (validateLogin) inside valid user
+[09/Mar/2018:05:28:06] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:05:28:06] (validateLogin) password is valid
+[09/Mar/2018:05:28:16] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:05:28:16] (validateLogin) Username is: lolz
+[09/Mar/2018:05:28:16] (validateLogin) account exists with given username
+[09/Mar/2018:05:28:16] (validateLogin) inside valid user
+[09/Mar/2018:05:28:16] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:05:28:17] (validateLogin) password is valid

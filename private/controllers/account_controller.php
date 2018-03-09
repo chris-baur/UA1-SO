@@ -1,8 +1,8 @@
 <?php
 
-include_once '..\util\logging.php';
-include_once '..\util\sets.php';
-include_once '..\models\Account.php';
+
+
+
 $config = parse_ini_file('..\..\config.ini');
 
 $servername = $config['servername'];
@@ -10,7 +10,7 @@ $username = $config['username'];
 $password = $config['password'];
 $dbname = $config['dbname'];
 
-$log = new Logging();
+
 $sets = new Sets();
 $genders = $sets->to_string_genders();
 $security_one = $sets->to_string_security_one();
