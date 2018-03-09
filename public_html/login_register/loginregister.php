@@ -89,6 +89,7 @@
         <label> <b> Security Question 1 </b>
           <select name = "SQ1">
             <option value = "select"> -Please select- </option>
+
             <option value = "Dog"> What is the name of your first dog? </option>
             <option value = "honeymoon"> Where did you spend your honeymoon?</option>
             <option value = "spouse"> Where did you meet your spouse? </option>
@@ -153,4 +154,89 @@
   <p style="text-align: center; "> © All Rights Reserved 2018 </p>
 </body>
 </html>
+
+            <?php
+
+              include_once '..\..\private\util\sets.php';
+              include_once '..\..\private\util\logging.php';
+              $sets = new Sets();
+              $log = new Logging();
+            
+              $s1Array = $sets->security_one;
+              $s2Array = $sets->security_two;
+              $professionArray = $sets->professions;
+              $genderArray = $sets->genders;
+              $log-lwrite('Got the arrays');
+
+              for($ctr = 0; $ctr < sizeof($s1Array); $ctr++){
+                $element = $s1Array[$ctr];
+                echo "<option value = '$element'> $element </option>";
+              }
+              echo "</select> 
+                </label>
+                <input ng-model='answer1' type='text' placeholder='Enter Answer' name='Answer1' required>
+                <br>
+                <label> <b> Security Question 2 </b>
+                  <select name = 'SQ2'>
+                    <option value = 'select'> -Please select- </option>";
+              for($ctr = 0; $ctr < sizeof($s2Array); $ctr++){
+                $element = $s2Array[$ctr];
+                echo "<option value = '$element'> $element </option>";
+              }
+            
+
+              echo "</select> 
+                </label>
+                <input ng-model='answer2' type='text' placeholder='Enter Answer' name='Answer2' required>
+                <br>
+                <br>
+                <label> <b> Profession </b>
+                  <select name = 'profession'>
+                    <option value = 'select'> -Please select- </option>";
+              for($ctr = 0; $ctr < sizeof($professionArray); $ctr++){
+                $element = $professionArray[$ctr];
+                echo "<option value = '$element'> $element </option>";
+              } 
+              
+              echo "
+                </select> 
+              </label>
+              <br>
+              <br>
+              <b> Pin (for quick login): </b>
+                <input ng-model='pin' type='pin' placeholder='Enter Pin' name='pin' maxlength='4' >
+                <span class='alert' ng-if='pin.length<4 && pin.length!=0'>Pin enter is too short</span>
+              <br>
+              <br>
+              <form action='gender'> <b> Gender </b>";
+
+              for($ctr = 0; $ctr < sizeof($genderArray); $ctr++){
+                $element = $genderArray[$ctr];
+                echo "<input type='radio' name='gender' value='$element' ng-model='gender'> $element";
+              }
+
+              echo "</form>
+
+              <p>&nbsp;</p>
+      
+              <label>
+                <input type='checkbox' checked='checked' style='margin-bottom:15px'> Remember me
+              </label>
+      
+              <p>By creating an account you agree to our <a href='#' style='color:blue'>Terms & Privacy</a>.</p>
+      
+              <div>
+                <button type='submit' ng-click='newAccount()'>Sign Up</button>
+                <button type='button' onclick='" . "document.getElementById(" . '"register"' . ").style.display=" . '"none"' . "' >Cancel</button>
+              </div>
+              </div>
+          </form>
+        </div>
+      
+        <p>&nbsp;</p>
+        <p style='text-align: center;'> © All Rights Reserved 2018 </p>
+      </body>
+      </html>";
+          ?>
+        
 
