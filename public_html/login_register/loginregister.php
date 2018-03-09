@@ -142,7 +142,7 @@
         <p>By creating an account you agree to our <a href="#" style="color:blue">Terms & Privacy</a>.</p>
 
         <div>
-          <button type="submit" ng-click="newAccount()">Sign Up</button>
+          <button type="submit" ng-click="newAccount">Sign Up</button>
           <button type="button" onclick="document.getElementById('register').style.display='none'" >Cancel</button>
         </div>
         </div>
@@ -150,7 +150,7 @@
   </div>
 
   <p>&nbsp;</p>
-  <p style="text-align: center;"> © All Rights Reserved 2018 </p>
+  <p style="text-align: center; "> © All Rights Reserved 2018 </p>
 </body>
 </html>
 

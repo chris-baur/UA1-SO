@@ -4,17 +4,21 @@
  * @author Christoffer Baur
  */
 
-include '..\..\private\util\sets.php';
-include '..\..\private\controllers\account_controller.php';
-include '..\..\private\models\Account.php';
+
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     header("location: ..\home_page\about.php");
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    include_once '..\..\private\util\sets.php';
+    include_once '..\..\private\util\logging.php';
+    include_once '..\..\private\controllers\account_controller.php';
+    include_once '..\..\private\models\Account.php';
+
     $account = new Account();
     $sets = new Sets();
+    $log = new Logging();
     $username = "";
     $password = "";
     $hash = "";
@@ -52,56 +56,66 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //validate professions
-    if(validateString('profession') && in_array(($_POST['profession']), $sets->get_professions()))
+    if(validateString('profession') && in_array(($_POST['profession']), $sets->get_professions())) {
         $profession = htmlentities($_POST['profession']);
-    else{
+        $log-lwrite('Profession option succeeded');
+    }else{
         $invalidArray['profession'] = 'Invalid profession selected. Make sure it is part of the list';
         $validData = false;
     }
 
     //validate gender
-    if(validateString('gender') && in_array(($_POST['gender']), $sets->get_genders()))
+    if(validateString('gender') && in_array(($_POST['gender']), $sets->get_genders())){
         $gender = htmlentities($_POST['gender']);
-    else{
+        $log-lwrite('Gender option succeeded');
+    }else{
         $invalidArray['gender'] = 'Invalid gender selected. Make sure it is part of the list';
         $validData = false;
     }
     
     //validate bio
-    if(validateString('bio'))
+    if(validateString('bio')) {
         $bio = htmlentities($_POST['bio']);
+    }
     else{
         $invalidArray['bio'] = 'Invalid bio provided. Make sure it is not empty and has proper text';
         $validData = false;
     }
     
     //validate security question one
-    if(validateString('SQ1') && in_array($_POST['SQ1'], $sets->get_security_one()))
-        $security_one = htmlentities($_POST['SQ1']);
+    if(validateString('SQ1') && in_array($_POST['SQ1'], $sets->get_security_one())){
+            $security_one = htmlentities($_POST['SQ1']);
+            $log->lwrite('Security question 1 option succeeded');
+    }
     else{
         $invalidArray['SQ1'] = 'Invalid security question 1 selected. Make sure it is part of the list';
         $validData = false;
     }
 
     //validate security question two
-    if(validateString('SQ2') && in_array($_POST['SQ2'], $sets->get_security_two()))
-        $security_two = htmlentities($_POST['SQ2']);
+    if(validateString('SQ2') && in_array($_POST['SQ2'], $sets->get_security_two())){
+            $security_two = htmlentities($_POST['SQ2']);
+            $log->lwrite('Security question 2 option succeeded');
+        }
     else{
         $invalidArray['SQ2'] = 'Invalid security question 2 selected. Make sure it is part of the list';
         $validData = false;
     }
 
     //validate answer one
-    if(validateString('Answer1'))
-        $answer_one = htmlentities($_POST['Answer1']);
+    if(validateString('Answer1')){
+            $answer_one = htmlentities($_POST['Answer1']);
+            $log->lwrite('Security answer 1 option succeeded');
+        }
     else{
         $invalidArray['Answer1'] = 'Invalid answer 1 provided. Make sure it is not empty and has proper text';
         $validData = false;
     }
     
     //validate answer two
-    if(validateString('Answer2'))
-        $answer_two = htmlentities($_POST['Answer2']);
+    if(validateString('Answer2')){
+            $answer_two = htmlentities($_POST['Answer2']);
+            $log->lwrite('Security answer 2 option succeeded');}
     else{
         $invalidArray['Answer2'] = 'Invalid answer 2 provided. Make sure it is not empty and has proper text';
         $validData = false;
@@ -125,6 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else
             $hash = password_hash(htmlentities($_POST['password']), PASSWORD_DEFAULT);
+            $log->lwrite('Password hashed succeeded');
     }
     else{
         $validData = false;
@@ -133,23 +148,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     //validate user name
     if($validData){
+        $log-lwrite('valid data true');
         if(validateUser()){
+            $log-lwrite('valid user true');
             if(strlen($_POST['username']) > 0 && strlen($_POST['username']) <= 20){
                 // redirect to login page
-                setcookie('invalidArray', 'false', time() + 30);
+                //setcookie('invalidArray', 'false', time() + 30);
+                $log->lwrite('valid username true');
                 header('Location: loginregister.php');
-            )
+            }
             else{
+                $log-lwrite('valid username false');
                 $invalidArray['username'] = 'Invalid username entered. It must be a maximum of 20 characters, and at least one character';         
             }
         }
         else{
             showUserError();
+            $log->lwrite('valid user false');
         }
     }
     //invalid data from previous input fields
-    else
+    else {
+        $log->lwrite('valid data false');
         showUserError();
+    }
 }
 
 /**

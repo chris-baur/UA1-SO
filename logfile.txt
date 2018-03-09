@@ -45,3 +45,17 @@
 [09/Mar/2018:15:37:54] (validateLogin) inside valid user
 [09/Mar/2018:15:37:54] (validateLogin) Password passed prelim validaton
 [09/Mar/2018:15:37:54] (validateLogin) password is valid
+[09/Mar/2018:16:04:08] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:16:04:08] (validateLogin) Username is: wissem
+[09/Mar/2018:16:04:08] (validateLogin) account exists with given username
+[09/Mar/2018:16:04:08] (validateLogin) inside valid user
+[09/Mar/2018:16:04:08] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:16:04:09] (validateLogin) password is valid
+[09/Mar/2018:16:13:17] (validationRegistration) Security answer 1 option succeeded
+[09/Mar/2018:16:13:17] (validationRegistration) Security answer 2 option succeeded
+[09/Mar/2018:16:13:17] (validationRegistration) Password hashed succeeded
+[09/Mar/2018:16:13:17] (validationRegistration) valid data false
+[09/Mar/2018:16:13:45] (validationRegistration) Security answer 1 option succeeded
+[09/Mar/2018:16:13:45] (validationRegistration) Security answer 2 option succeeded
+[09/Mar/2018:16:13:45] (validationRegistration) Password hashed succeeded
+[09/Mar/2018:16:13:45] (validationRegistration) valid data false
