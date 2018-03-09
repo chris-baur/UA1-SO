@@ -175,3 +175,35 @@
 [09/Mar/2018:16:43:13] (loginregister) Array
 [09/Mar/2018:16:43:13] (loginregister) Array
 [09/Mar/2018:16:43:13] (loginregister) Array
+[09/Mar/2018:16:51:51] (newQuestion) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:16:51:51] (newQuestion) Username provided is not a valid string
+[09/Mar/2018:16:51:51] (newQuestion) invalid username. Valid data is false
+[09/Mar/2018:16:51:51] (newQuestion) Showing user error
+[09/Mar/2018:16:52:24] (loginregister) in login register 
+[09/Mar/2018:16:52:24] (loginregister) Got the arrays
+[09/Mar/2018:16:52:24] (loginregister) Array
+[09/Mar/2018:16:52:24] (loginregister) Array
+[09/Mar/2018:16:52:24] (loginregister) Array
+[09/Mar/2018:16:52:25] (loginregister) Array
+[09/Mar/2018:16:52:41] (loginregister) in login register 
+[09/Mar/2018:16:52:41] (loginregister) Got the arrays
+[09/Mar/2018:16:52:41] (loginregister) Array
+[09/Mar/2018:16:52:41] (loginregister) Array
+[09/Mar/2018:16:52:41] (loginregister) Array
+[09/Mar/2018:16:52:41] (loginregister) Array
+[09/Mar/2018:16:54:53] (loginregister) in login register 
+[09/Mar/2018:16:54:53] (loginregister) Got the arrays
+[09/Mar/2018:16:54:53] (loginregister) Array
+[09/Mar/2018:16:54:53] (loginregister) Array
+[09/Mar/2018:16:54:53] (loginregister) Array
+[09/Mar/2018:16:54:53] (loginregister) Array
+[09/Mar/2018:16:55:39] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:16:55:39] (validateLogin) Username is: wissem
+[09/Mar/2018:16:55:39] (validateLogin) account exists with given username
+[09/Mar/2018:16:55:39] (validateLogin) inside valid user
+[09/Mar/2018:16:55:39] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:16:55:39] (validateLogin) password is valid
+[09/Mar/2018:16:55:49] (newQuestion) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:16:55:49] (newQuestion) Username provided is not a valid string
+[09/Mar/2018:16:55:49] (newQuestion) invalid username. Valid data is false
+[09/Mar/2018:16:55:49] (newQuestion) Showing user error
