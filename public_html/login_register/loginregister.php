@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html ng-app="myRegister" ng-controller="myCtrl">
 <head>

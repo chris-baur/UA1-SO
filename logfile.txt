@@ -41,9 +41,84 @@
 [07/Mar/2018:18:52:35] (validateLogin) account does not exist with given username
 [07/Mar/2018:18:52:35] (validateLogin) invalid username. Valid data is false
 [07/Mar/2018:18:52:35] (validateLogin) Showing user error
+<<<<<<< HEAD
 [09/Mar/2018:04:40:36] (validateLogin) Form has requested a post for File: validateLogin.php
 [09/Mar/2018:04:40:36] (validateLogin) Username is: john117
 [09/Mar/2018:04:40:36] (validateLogin) account exists with given username
 [09/Mar/2018:04:40:36] (validateLogin) inside valid user
 [09/Mar/2018:04:40:36] (validateLogin) Password passed prelim validaton
 [09/Mar/2018:04:40:36] (validateLogin) password is valid
+=======
+[08/Mar/2018:17:23:59] (validateLogin) Form has requested a post for File: validateLogin.php
+[08/Mar/2018:17:23:59] (validateLogin) Username is: wissem
+[08/Mar/2018:17:23:59] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[08/Mar/2018:17:23:59] (validateLogin) account does not exist with given username
+[08/Mar/2018:17:23:59] (validateLogin) invalid username. Valid data is false
+[08/Mar/2018:17:23:59] (validateLogin) Showing user error
+[08/Mar/2018:17:28:03] (validateLogin) Form has requested a post for File: validateLogin.php
+[08/Mar/2018:17:28:03] (validateLogin) Username is: lolipop
+[08/Mar/2018:17:28:03] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[08/Mar/2018:17:28:03] (validateLogin) account does not exist with given username
+[08/Mar/2018:17:28:03] (validateLogin) invalid username. Valid data is false
+[08/Mar/2018:17:28:03] (validateLogin) Showing user error
+[08/Mar/2018:19:33:34] (validateLogin) Form has requested a post for File: validateLogin.php
+[08/Mar/2018:19:33:34] (validateLogin) Username is: wissem
+[08/Mar/2018:19:33:34] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[08/Mar/2018:19:33:34] (validateLogin) account does not exist with given username
+[08/Mar/2018:19:33:34] (validateLogin) invalid username. Valid data is false
+[08/Mar/2018:19:33:34] (validateLogin) Showing user error
+[08/Mar/2018:19:36:46] (validateLogin) Form has requested a post for File: validateLogin.php
+[08/Mar/2018:19:36:46] (validateLogin) Username is: lolz
+[08/Mar/2018:19:36:46] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[08/Mar/2018:19:36:46] (validateLogin) account does not exist with given username
+[08/Mar/2018:19:36:46] (validateLogin) invalid username. Valid data is false
+[08/Mar/2018:19:36:46] (validateLogin) Showing user error
+[09/Mar/2018:02:55:20] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:02:55:20] (validateLogin) Username is: wissem
+[09/Mar/2018:02:55:20] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user ''@'localhost' (using password: NO)
+[09/Mar/2018:02:55:20] (validateLogin) account does not exist with given username
+[09/Mar/2018:02:55:20] (validateLogin) invalid username. Valid data is false
+[09/Mar/2018:02:55:20] (validateLogin) Showing user error
+[09/Mar/2018:02:59:46] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:02:59:46] (validateLogin) Username is: wissem
+[09/Mar/2018:02:59:46] (validateLogin) SQLSTATE[HY000] [1045] Access denied for user 'ua1'@'localhost' (using password: NO)
+[09/Mar/2018:02:59:46] (validateLogin) account does not exist with given username
+[09/Mar/2018:02:59:46] (validateLogin) invalid username. Valid data is false
+[09/Mar/2018:02:59:46] (validateLogin) Showing user error
+[09/Mar/2018:03:00:44] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:03:00:44] (validateLogin) Username is: wissem
+[09/Mar/2018:03:00:44] (validateLogin) account exists with given username
+[09/Mar/2018:03:00:44] (validateLogin) inside valid user
+[09/Mar/2018:03:00:44] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:03:00:45] (validateLogin) password is valid
+[09/Mar/2018:03:04:13] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:03:04:13] (validateLogin) Username is: wissem
+[09/Mar/2018:03:04:13] (validateLogin) account exists with given username
+[09/Mar/2018:03:04:13] (validateLogin) inside valid user
+[09/Mar/2018:03:04:13] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:03:04:13] (validateLogin) password is valid
+[09/Mar/2018:03:10:23] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:03:10:23] (validateLogin) Username is: wissem
+[09/Mar/2018:03:10:23] (validateLogin) account exists with given username
+[09/Mar/2018:03:10:23] (validateLogin) inside valid user
+[09/Mar/2018:03:10:23] (validateLogin) Password failed prelim verification
+[09/Mar/2018:03:10:23] (validateLogin) Showing user error
+[09/Mar/2018:03:19:37] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:03:19:37] (validateLogin) Username is: wissem
+[09/Mar/2018:03:19:37] (validateLogin) account exists with given username
+[09/Mar/2018:03:19:37] (validateLogin) inside valid user
+[09/Mar/2018:03:19:37] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:03:19:37] (validateLogin) Password incorrect.
+[09/Mar/2018:03:19:37] (validateLogin) Showing user error
+[09/Mar/2018:03:19:56] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:03:19:56] (validateLogin) Username is: wisse
+[09/Mar/2018:03:19:56] (validateLogin) account does not exist with given username
+[09/Mar/2018:03:19:56] (validateLogin) invalid username. Valid data is false
+[09/Mar/2018:03:19:56] (validateLogin) Showing user error
+[09/Mar/2018:03:20:17] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:03:20:17] (validateLogin) Username is: wissem
+[09/Mar/2018:03:20:17] (validateLogin) account exists with given username
+[09/Mar/2018:03:20:17] (validateLogin) inside valid user
+[09/Mar/2018:03:20:17] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:03:20:17] (validateLogin) password is valid
+>>>>>>> 40ff34a1cdfa047cac105d60da3904814ff65982
