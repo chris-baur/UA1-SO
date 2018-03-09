@@ -6,6 +6,7 @@ include_once '..\..\private\models\Question.php';
 include_once '..\..\private\models\Answer.php';
 $config = parse_ini_file('..\..\config.ini');
 
+
 $servername = $config['servername'];
 $username = $config['username'];
 $password = $config['password'];

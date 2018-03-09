@@ -1,22 +1,25 @@
 <?php
 
-/**
- * @author Christoffer Baur
- */
-
-include '..\util\sets.php';
-include '..\models\Account.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    include_once '.\sets.php';
+    include_once '.\logging.php';
+    include_once '..\controllers\account_controller.php';
+    include_once '..\models\Account.php';    
+
     $account = new Account();
     $sets = new Sets();
-    $username = "";
-    $password = "";
+    $log = new Logging();
+    $user = "";
+    $pass = "";
     $hash = "";
     //$pin = "";
     $validData = true;
     $invalidArray = false;
+
+    $log->lwrite('Form has requested a post for File: validateLogin.php');
 
     //validate pin
     // if($validData){
@@ -31,30 +34,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // verify username
     if(validateUser()){
-        $username = htmlentities($_POST['username']);
-        $account = getAccountByUsername($username);
+        $log->lwrite('inside valid user');
+        $user = htmlentities($_POST['username']);
+        $account = getAccountByUsername($user);
         // if(($account -> getAttemptCtr()) >= 5){
         //     $validData = false;
-        //     $errMessage = "$username has been locked out. Too many failed login attempts.";
+        //     $errMessage = "$user has been locked out. Too many failed login attempts.";
         // }
     }
-    else
+    else{
+        $log->lwrite('invalid username. Valid data is false');
         $validData = false;
+    }
 
     if($validData){
         // verify password
         if(validateString('password') && strlen($_POST['password']) >= 6){
+            $log->lwrite('Password passed prelim validaton');
             $pass = htmlentities($_POST['password']);
             if (password_verify($pass, $account -> get_password())){
+                $log->lwrite('password is valid');
                 $_SESSION['userid'] = $account -> get_id();
                 $_SESSION['username'] = $account -> get_username();
                 session_regenerate_id();
                 // redirect to user home page
-                header('Location: ..\..\public_html\home_page\homepage.html');
+                header('Location: ..\..\public_html\home_page\homepage.php');
             }
             //password doesnt match
             else{
                 //increaseAttemptCounter($userObj);
+                $log->lwrite('Password incorrect.');
                 $invalidArray['password'] = 'Incorrect password entered';
                 showUserError();
             }
@@ -62,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //incorrect syntax/length password entered
         else{
             //increaseAttemptCounter($userObj);
+            $log->lwrite('Password failed prelim verification');
             $invalidArray['password'] = 'Incorrect password entered. Check length/syntax';
             showUserError();
         }
@@ -106,26 +116,36 @@ function validateString($string){
  */
 function validateUser(){
     global $invalidArray;
+    global $log;
     $valid = false;
     $user_name = htmlentities($_POST['username']);
     if(validateString('username')){
         // user exsts, set valid to true
-        if(UserExists($user_name))
+        $log -> lwrite("Username is: ".$user_name);
+        if(accountExists($user_name)){
+            $log -> lwrite("account exists with given username");
             $valid = true;
+        }
         // user does not exist, show error
-        else
+        else{
             $invalidArray['username'] = 'Username does not exist';
+            $log -> lwrite("account does not exist with given username");
+        }
     //username provided is not a valid string
     }
-    else
+    else{
+        $log -> lwrite("Username provided is not a valid string");
         $invalidArray['username'] = 'Username provided is not a valid string';
+    }
     return $valid;
 }
 
 // show user error
 function showUserError(){
+    global $log;
+    $log->lwrite('Showing user error');
     global $invalidArray;
     setcookie('invalidArray', json_encode($invalidArray), time()+20);
-    header('Location: ..\..\public_html\login_register\loginregister.html');
+    header('Location: ..\..\public_html\login_register\loginregister.php');
 }
 ?>

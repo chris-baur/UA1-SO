@@ -14,7 +14,6 @@
 
 
     <!--Outputting the items in the database-->
-    
     <?php
     $username = 'ua1';
     $password = 'Ua1password0)';
@@ -23,9 +22,7 @@
     // connection to database
     $con = mysqli_connect('localhost', $username, $password, $servername) or die("Connection Failed");
 
-    $result = mysqli_query($con,"SELECT * FROM questions");
-
-    ?>
+    $result = mysqli_query($con,"SELECT * FROM questions");?>
 
     <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {?>
     
@@ -40,9 +37,6 @@
     </div>
     </div>
     <?php }?>
-    
-
-    
   </body>
 
 </html>

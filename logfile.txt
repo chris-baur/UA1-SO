@@ -1,3 +1,4 @@
+
 [08/Mar/2018:19:16:17] (create_db) Connected successfully
 [08/Mar/2018:19:16:17] (create_db) Table accounts created successfully
 [08/Mar/2018:19:16:17] (create_db) Connected successfully
@@ -120,3 +121,4 @@
 [08/Mar/2018:20:43:34] (newQuestion) added question succesfully. ID: 2
 [08/Mar/2018:20:45:32] (newQuestion) added question succesfully. ID: 3
 [08/Mar/2018:20:45:54] (newQuestion) added question succesfully. ID: 4
+

@@ -11,7 +11,7 @@ php:
 env:
   - DB=mysql
 # execute any number of scripts before the test run, custom env's are available as variables
-#before_script:
-#- if [[ "$DB" == "mysql" ]]; then php include ".\private\controllers\create_db.php";
+# before_script:
+# - php .\private\controllers\create_db.php;
 
-script: phpunit --configuration phpunit.xml
+script: phpunit --configuration phpunit.xml --coverage-text

@@ -5,6 +5,8 @@ include_once '..\..\private\util\sets.php';
 include_once '..\..\private\models\Account.php';
 $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
+$config = parse_ini_file('..\..\config.ini');
+
 $servername = $config['servername'];
 $username = $config['username'];
 $password = $config['password'];
@@ -102,7 +104,7 @@ $professions = $sets->to_string_professions();
 		
 
 		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)"); //hardcoded
 
 			$stmt = $pdo -> prepare('SELECT id, username, password, name, last_name, gender, security_one, security_two, answer_one, answer_two, bio, profession, pin FROM accounts WHERE username=?;');						
 			$stmt -> bindParam(1, $user);
