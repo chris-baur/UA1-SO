@@ -2,7 +2,10 @@
 	background-color: #DEB887;	
 	margin:0;
     padding:0;
-    position:relative;
+    position:fixed;
+    bottom: 0px;
+    width: 100%;
+    
 }
 
 .container {
