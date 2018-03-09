@@ -176,5 +176,51 @@ $professions = $sets->to_string_professions();
 		}
 		return $user_id;
     }
+
+    /**
+	 * Returns an account with the specified id, otherwsie returns default Account if none found
+	 *
+	 * @param $username		Account's username
+	 */
+	function getAccountById($id){
+		global $servername, $username, $password, $dbname, $log;
+
+		$account = new Account();
+		
+
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare('SELECT id, username, password, name, last_name, gender, security_one, security_two, answer_one, answer_two, bio, profession, pin FROM accounts WHERE id=?;');
+			$stmt -> bindParam(1, $id);
+		
+			$stmt -> execute();
+		
+			// if there is a user with specified id
+			if($result = $stmt -> fetch()){
+				$account->set_id($result[0]);
+                $account->set_username($result[1]);
+                $account->set_password($result[2]);
+                $account->set_name($result[3]);
+                $account->set_last_name($result[4]);
+                $account->set_gender($result[5]);
+                $account->set_security_one($result[6]);
+                $account->set_security_two($result[7]);
+                $account->set_answer_one($result[8]);
+                $account->set_answer_two($result[9]);
+                $account->set_bio($result[10]);
+                $account->set_profession($result[11]);
+                $account->set_pin($result[12]);
+			}
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+		// returns the account object
+		return $account;
+	}
     
 ?>
