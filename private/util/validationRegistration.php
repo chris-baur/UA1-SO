@@ -140,8 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('Location: ..\..\public_html\login_register\loginregister.php');
             )
             else{
-                $invalidArray['username'] = 'Invalid username entered. It must be a maximum of 20 characters, and at least one character';
-                
+                $invalidArray['username'] = 'Invalid username entered. It must be a maximum of 20 characters, and at least one character';         
             }
         }
         else{

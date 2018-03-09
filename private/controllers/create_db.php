@@ -4,8 +4,8 @@
  * @author Christoffer Baur
  */
 
-include '..\util\logging.php';
-include '..\util\sets.php';
+include_once '..\util\logging.php';
+include_once '..\util\sets.php';
 $config = parse_ini_file('..\..\config.ini');
 
 $servername = $config['servername'];

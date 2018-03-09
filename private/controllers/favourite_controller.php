@@ -1,9 +1,9 @@
 <?php
 
-include '..\util\logging.php';
-include '..\models\Favourite.php';
-include '..\models\Question.php';
-include '..\models\Answer.php';
+include_once '..\util\logging.php';
+include_once '..\models\Favourite.php';
+include_once '..\models\Question.php';
+include_once '..\models\Answer.php';
 $config = parse_ini_file('..\..\..\config.ini');
 
 $servername = $config['servername'];

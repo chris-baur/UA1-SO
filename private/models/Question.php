@@ -66,10 +66,6 @@
 			$this->account_id = $new_accountID;
 		}
 		
-		function set_questionID($new_contentID){
-			$this->header = $new_questionID;
-		}
-		
 		function set_content($new_content){
 			$this->content = $new_content;
 		}
@@ -78,7 +74,7 @@
 			$this->date = $new_date;
 		}
 		
-		function set_upvotes($new_downvotes){
+		function set_upvotes($new_upvotes){
 			$this->upvotes = $new_upvotes;
 		}
 		function set_downvotes($new_downvotes){
