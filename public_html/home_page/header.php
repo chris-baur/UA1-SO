@@ -1,12 +1,15 @@
 <!DOCTYPE HTML>
 <html>
-
+  <?php
+  session_start();
+  ?>
   <head>
     <title>Ask It!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/header.css">    
+    <link rel="stylesheet" type="text/css" href="../css/header.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>   
   </head>
 
   <body>

@@ -84,5 +84,9 @@
 		function set_tags($new_tags){
 			$this->tags = $new_tags;
 		}
+		function set_header($new_header){
+			$this->header=$new_header;
+		}
+
 	}
 ?>

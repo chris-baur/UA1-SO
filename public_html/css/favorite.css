@@ -11,7 +11,7 @@
 }
 
 .btn-like{
-	background-color: #F0E5D7;
+	background-color: white;
 }
 
 .time{
@@ -26,26 +26,13 @@
 	text-align: center;
 }
 
-.vote_btns{
+.userBox{
 	float:left;
 	width:13%;
 	padding-top: 3.2%;
 	padding-bottom: 3%;
 }
-.vote_btn{
-	border: none;
-	padding: 0;
-	display: inline-block;
-	margin:0 0 0 10px;
-	cursor:pointer;
-	background: transparent;
-}
-.vote_like:hover{
-	color:green;
-}
-.vote_dislike:hover{
-	color:#cc0000;
-}
+
 
 .questionBody{
 	display: inline-block;

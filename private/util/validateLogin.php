@@ -17,7 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hash = "";
     //$pin = "";
     $validData = true;
-    $invalidArray = null;
+    $invalidArray = false;
+
     $log->lwrite('Form has requested a post for File: validateLogin.php');
 
     //validate pin

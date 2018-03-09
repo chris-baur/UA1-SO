@@ -1,11 +1,124 @@
-[07/Feb/2018:21:13:12] (create_db) Connected successfully
-[07/Feb/2018:21:13:12] (create_db) Table accounts created successfully
-[07/Feb/2018:21:13:12] (create_db) Connected successfully
-[07/Feb/2018:21:13:12] (create_db) Questions Table created successfully
-[07/Feb/2018:21:13:12] (create_db) Connected successfully
-[07/Feb/2018:21:13:13] (create_db) Answers Table created successfully
-[07/Feb/2018:21:13:13] (create_db) Connected successfully
-[07/Feb/2018:21:13:13] (create_db) Comments Table created successfully
-=======
-[02/Mar/2018:17:20:13] (newQuestion) added question succesfully. ID: 0
+
+[08/Mar/2018:19:16:17] (create_db) Connected successfully
+[08/Mar/2018:19:16:17] (create_db) Table accounts created successfully
+[08/Mar/2018:19:16:17] (create_db) Connected successfully
+[08/Mar/2018:19:16:18] (create_db) Questions Table created successfully
+[08/Mar/2018:19:16:18] (create_db) Connected successfully
+[08/Mar/2018:19:16:18] (create_db) Answers Table created successfully
+[08/Mar/2018:19:16:18] (create_db) Connected successfully
+[08/Mar/2018:19:16:18] (create_db) Comments Table created successfully
+[08/Mar/2018:19:16:18] (create_db) Connected successfully
+[08/Mar/2018:19:16:19] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:17:54] (create_db) Connected successfully
+[08/Mar/2018:19:17:54] (create_db) Table accounts created successfully
+[08/Mar/2018:19:17:54] (create_db) Connected successfully
+[08/Mar/2018:19:17:54] (create_db) Questions Table created successfully
+[08/Mar/2018:19:17:54] (create_db) Connected successfully
+[08/Mar/2018:19:17:54] (create_db) Answers Table created successfully
+[08/Mar/2018:19:17:54] (create_db) Connected successfully
+[08/Mar/2018:19:17:55] (create_db) Comments Table created successfully
+[08/Mar/2018:19:17:55] (create_db) Connected successfully
+[08/Mar/2018:19:17:55] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:17:55] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
+[08/Mar/2018:19:17:55] (create_db) Default account inserted with ID: -1
+[08/Mar/2018:19:19:53] (create_db) Connected successfully
+[08/Mar/2018:19:19:53] (create_db) Table accounts created successfully
+[08/Mar/2018:19:19:53] (create_db) Connected successfully
+[08/Mar/2018:19:19:53] (create_db) Questions Table created successfully
+[08/Mar/2018:19:19:53] (create_db) Connected successfully
+[08/Mar/2018:19:19:54] (create_db) Answers Table created successfully
+[08/Mar/2018:19:19:54] (create_db) Connected successfully
+[08/Mar/2018:19:19:54] (create_db) Comments Table created successfully
+[08/Mar/2018:19:19:54] (create_db) Connected successfully
+[08/Mar/2018:19:19:54] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:19:54] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
+[08/Mar/2018:19:19:54] (create_db) Default account inserted with ID: -1
+[08/Mar/2018:19:23:24] (create_db) Connected successfully
+[08/Mar/2018:19:23:24] (create_db) Table accounts created successfully
+[08/Mar/2018:19:23:24] (create_db) Connected successfully
+[08/Mar/2018:19:23:25] (create_db) Questions Table created successfully
+[08/Mar/2018:19:23:25] (create_db) Connected successfully
+[08/Mar/2018:19:23:25] (create_db) Answers Table created successfully
+[08/Mar/2018:19:23:25] (create_db) Connected successfully
+[08/Mar/2018:19:23:25] (create_db) Comments Table created successfully
+[08/Mar/2018:19:23:25] (create_db) Connected successfully
+[08/Mar/2018:19:23:26] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:23:26] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
+[08/Mar/2018:19:23:26] (create_db) Default account inserted with ID: 
+[08/Mar/2018:19:24:04] (create_db) Connected successfully
+[08/Mar/2018:19:24:04] (create_db) Table accounts created successfully
+[08/Mar/2018:19:24:04] (create_db) Connected successfully
+[08/Mar/2018:19:24:04] (create_db) Questions Table created successfully
+[08/Mar/2018:19:24:04] (create_db) Connected successfully
+[08/Mar/2018:19:24:05] (create_db) Answers Table created successfully
+[08/Mar/2018:19:24:05] (create_db) Connected successfully
+[08/Mar/2018:19:24:05] (create_db) Comments Table created successfully
+[08/Mar/2018:19:24:05] (create_db) Connected successfully
+[08/Mar/2018:19:24:05] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:24:05] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
+[08/Mar/2018:19:24:05] (create_db) Default account inserted with ID: 
+[08/Mar/2018:19:25:27] (create_db) Connected successfully
+[08/Mar/2018:19:25:27] (create_db) Table accounts created successfully
+[08/Mar/2018:19:25:27] (create_db) Connected successfully
+[08/Mar/2018:19:25:28] (create_db) Questions Table created successfully
+[08/Mar/2018:19:25:28] (create_db) Connected successfully
+[08/Mar/2018:19:25:28] (create_db) Answers Table created successfully
+[08/Mar/2018:19:25:28] (create_db) Connected successfully
+[08/Mar/2018:19:25:28] (create_db) Comments Table created successfully
+[08/Mar/2018:19:25:28] (create_db) Connected successfully
+[08/Mar/2018:19:25:29] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:25:29] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
+[08/Mar/2018:19:25:29] (create_db) Default account inserted with ID: 
+[08/Mar/2018:19:26:36] (create_db) Connected successfully
+[08/Mar/2018:19:26:36] (create_db) Table accounts created successfully
+[08/Mar/2018:19:26:36] (create_db) Connected successfully
+[08/Mar/2018:19:26:36] (create_db) Questions Table created successfully
+[08/Mar/2018:19:26:36] (create_db) Connected successfully
+[08/Mar/2018:19:26:37] (create_db) Answers Table created successfully
+[08/Mar/2018:19:26:37] (create_db) Connected successfully
+[08/Mar/2018:19:26:37] (create_db) Comments Table created successfully
+[08/Mar/2018:19:26:37] (create_db) Connected successfully
+[08/Mar/2018:19:26:37] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:26:37] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
+[08/Mar/2018:19:26:37] (create_db) Default account inserted with ID: -9
+[08/Mar/2018:19:27:20] (create_db) Connected successfully
+[08/Mar/2018:19:27:20] (create_db) Table accounts created successfully
+[08/Mar/2018:19:27:20] (create_db) Connected successfully
+[08/Mar/2018:19:27:21] (create_db) Questions Table created successfully
+[08/Mar/2018:19:27:21] (create_db) Connected successfully
+[08/Mar/2018:19:27:21] (create_db) Answers Table created successfully
+[08/Mar/2018:19:27:21] (create_db) Connected successfully
+[08/Mar/2018:19:27:21] (create_db) Comments Table created successfully
+[08/Mar/2018:19:27:21] (create_db) Connected successfully
+[08/Mar/2018:19:27:22] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:27:22] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
+[08/Mar/2018:19:27:22] (create_db) Default account inserted with ID: -9
+[08/Mar/2018:19:27:49] (create_db) Connected successfully
+[08/Mar/2018:19:27:49] (create_db) Table accounts created successfully
+[08/Mar/2018:19:27:49] (create_db) Connected successfully
+[08/Mar/2018:19:27:49] (create_db) Questions Table created successfully
+[08/Mar/2018:19:27:49] (create_db) Connected successfully
+[08/Mar/2018:19:27:50] (create_db) Answers Table created successfully
+[08/Mar/2018:19:27:50] (create_db) Connected successfully
+[08/Mar/2018:19:27:50] (create_db) Comments Table created successfully
+[08/Mar/2018:19:27:50] (create_db) Connected successfully
+[08/Mar/2018:19:27:51] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:27:51] (create_db) SQLSTATE[01000]: Warning: 1265 Data truncated for column 'security_one' at row 1
+[08/Mar/2018:19:27:51] (create_db) Default account inserted with ID: -9
+[08/Mar/2018:19:30:34] (create_db) Connected successfully
+[08/Mar/2018:19:30:34] (create_db) Table accounts created successfully
+[08/Mar/2018:19:30:34] (create_db) Connected successfully
+[08/Mar/2018:19:30:34] (create_db) Questions Table created successfully
+[08/Mar/2018:19:30:34] (create_db) Connected successfully
+[08/Mar/2018:19:30:35] (create_db) Answers Table created successfully
+[08/Mar/2018:19:30:35] (create_db) Connected successfully
+[08/Mar/2018:19:30:35] (create_db) Comments Table created successfully
+[08/Mar/2018:19:30:35] (create_db) Connected successfully
+[08/Mar/2018:19:30:35] (create_db) Favourites Table created successfully
+[08/Mar/2018:19:30:35] (create_db) added account succesfully. ID: 2
+[08/Mar/2018:19:30:35] (create_db) Default account was inserted succesfully. Account ID: 2
+[08/Mar/2018:20:13:03] (newQuestion) added question succesfully. ID: 1
+[08/Mar/2018:20:43:34] (newQuestion) added question succesfully. ID: 2
+[08/Mar/2018:20:45:32] (newQuestion) added question succesfully. ID: 3
+[08/Mar/2018:20:45:54] (newQuestion) added question succesfully. ID: 4
 

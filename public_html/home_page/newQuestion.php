@@ -1,13 +1,16 @@
 <?php include("header.php");
+      include("../../private/controllers/account_controller.php");
 	  include("../../private/controllers/question_controller.php");
-		if(isset($_GET['action'])=='submitQuestion') {
-    		submitQuestion();
-		}
 	  ?>
+
  <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
  <script src="../js/newQuestion.js"></script>
  <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
  <link rel="stylesheet" type="text/css" href="../css/questions_page.css">
+
+<?php    
+    if(isset($_GET['action'])=='submitQuestion') submitQuestion();
+    ?>
 
 <!--Body-->
 <form method="post" action="?action=submitQuestion">
@@ -35,16 +38,23 @@
 <?php 
 	function submitQuestion(){
 		if(isset($_POST['header']) and isset($_POST['content'])){
-			$question_title=$_POST['header'];
+			$question_title= $_POST['header'];
 			$content=$_POST['content'];
 		}
-		//@TODO
-		//must validate/sanitize data provided by the user
-		//missing tags element, getting account id from session.
+		if(isset($_SESSION['userid'])){
+			$id= $_SESSION['userid'];
+			$account_id=$_SESSION['userid']; //here shoul go the current account ID 
+		}		
+		
+		$tags=array('java','default');
+		$upvotes=0;
+		$downvotes=0;
+		$date=date("Y-m-d H:i:s");
 
-		$newQuestion=new Question('0','123',$question_title,$content,date("l jS \of F Y h:i:s A"),'0','0');
+		$newQuestion=new Question($id,$account_id,$question_title,$content,$date,$upvotes,$downvotes,$tags);
+
+
 		$response=addQuestion($newQuestion);
-		print "$response"; // This is temporal, I want to see the response
 		header("Location: myquestions.php");
    		exit;
 	}

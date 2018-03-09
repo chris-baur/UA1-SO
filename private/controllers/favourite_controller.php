@@ -1,10 +1,11 @@
 <?php
 
-include_once '..\util\logging.php';
-include_once '..\models\Favourite.php';
-include_once '..\models\Question.php';
-include_once '..\models\Answer.php';
-$config = parse_ini_file('..\..\..\config.ini');
+include_once '..\..\private\util\logging.php';
+include_once '..\..\private\models\Favourite.php';
+include_once '..\..\private\models\Question.php';
+include_once '..\..\private\models\Answer.php';
+$config = parse_ini_file('..\..\config.ini');
+
 
 $servername = $config['servername'];
 $username = $config['username'];
@@ -123,7 +124,7 @@ $sets = new Sets();
 			unset($pdo);
 		}
 		// returns the favourite object
-		return $favourite;
+		return $favouritesArray;
 	}
 	
 	/**
@@ -167,7 +168,7 @@ $sets = new Sets();
 			unset($pdo);
 		}
 		// returns the favourite object
-		return $favourite;
+		return $favouritesArray;
 	}
 
 	/**
