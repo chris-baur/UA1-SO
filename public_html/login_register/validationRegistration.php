@@ -4,12 +4,12 @@
  * @author Christoffer Baur
  */
 
-include 'sets.php';
-include '..\controllers\account_controller.php';
-include '..\models\Account.php';
+include '..\..\private\util\sets.php';
+include '..\..\private\controllers\account_controller.php';
+include '..\..\private\models\Account.php';
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    header("location: ..\..\public_html\home_page\about.php");
+    header("location: ..\home_page\about.php");
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if(strlen($_POST['username']) > 0 && strlen($_POST['username']) <= 20){
                 // redirect to login page
                 setcookie('invalidArray', 'false', time() + 30);
-                header('Location: ..\..\public_html\login_register\loginregister.php');
+                header('Location: loginregister.php');
             )
             else{
                 $invalidArray['username'] = 'Invalid username entered. It must be a maximum of 20 characters, and at least one character';         
@@ -198,7 +198,7 @@ function validateUser(){
 function showUserError(){
     global $invalidArray;
     setcookie('invalidArray', json_encode($invalidArray), time()+20);
-    header('Location: ..\..\public_html\login_register\loginregister.php');
+    header('Location: loginregister.php');
 }
 
 ?>
