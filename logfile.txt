@@ -134,3 +134,9 @@
 [09/Mar/2018:05:28:16] (validateLogin) inside valid user
 [09/Mar/2018:05:28:16] (validateLogin) Password passed prelim validaton
 [09/Mar/2018:05:28:17] (validateLogin) password is valid
+[09/Mar/2018:05:31:37] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:05:31:37] (validateLogin) Username is: wissem
+[09/Mar/2018:05:31:37] (validateLogin) account exists with given username
+[09/Mar/2018:05:31:37] (validateLogin) inside valid user
+[09/Mar/2018:05:31:37] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:05:31:38] (validateLogin) password is valid
