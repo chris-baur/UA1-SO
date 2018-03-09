@@ -32,9 +32,9 @@
     foreach ($rows as $info) {
       echo "
         <div class='form-group row questionBox'>
-        <div class='col-md-2 userBox'>
-          <button class='btn btn-like'><i class='fa fa-thumbs-o-up'></i></button>". $info->get_upvotes() . "
-          <button class='btn btn-like'><i class='fa fa-thumbs-o-down'></i></button>". $info->get_downvotes() . "
+        <div class='col-md-2 vote_btns'>
+          <button class='vote_btn vote_like'><i class='fa fa-thumbs-up'> ". $info->get_upvotes() . "</i></button>
+          <button class='vote_btn vote_dislike'><i class='fa fa-thumbs-down'> ". $info->get_downvotes() . "</i></button>
         </div>
         <span class = 'questionBody'>
         <div class='col-md-10 '>
