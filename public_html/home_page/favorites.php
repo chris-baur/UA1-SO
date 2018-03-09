@@ -56,10 +56,6 @@
 
     	$rows = getFavouriteAnswers($account->get_id());
     	if($hasFavorite == false){
-    		echo "
- 				<div class='alert alert-warning margins'>
-      				<h2>You have not favorited any questions or answers</h2>
-      			</div>";
     	}
     	else{
 	    	foreach ($rows as $info) {
