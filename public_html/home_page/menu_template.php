@@ -1,6 +1,6 @@
 <?php
 
-include_once '..\..\private\util\validateLogin.php';
+include_once '..\login_register\validateLogin.php';
 
 $index="myButtons";
 $about="myButtons";
