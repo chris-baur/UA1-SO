@@ -19,7 +19,7 @@
 
   <div id="login" class="modal">
   
-    <form class="modal-content animate" action="..\home_page\validateLogin.php" method="POST">
+    <form class="modal-content animate" action="validateLogin.php" method="POST">
       <div class="imgcontainer">
         <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="../img/avatar.png" alt="Avatar" class="avatar">
@@ -48,7 +48,7 @@
   <p style="text-align: center;"><button onclick="document.getElementById('pin_login').style.display='block'" style="width:auto;">Login using Pin</button></p>
 
 <div id="pin_login" class="modal">
-    <form class="modal-content animate" action="../home_page/validateLogin.php" method="POST">
+    <form class="modal-content animate" action="validateLogin.php" method="POST">
       <div class="imgcontainer">
         <span onclick="document.getElementById('pin_login').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="../img/avatar.png" alt="Avatar" class="avatar">
@@ -73,7 +73,7 @@
 
   <div id="register" class="modal">
     <span onclick="document.getElementById('register').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" method="POST" action="../home_page/validationRegistration.php">
+    <form class="modal-content" method="POST" action="validationRegistration.php">
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>

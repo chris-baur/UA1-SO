@@ -27,3 +27,21 @@
 [09/Mar/2018:15:30:29] (validateLogin) inside valid user
 [09/Mar/2018:15:30:29] (validateLogin) Password passed prelim validaton
 [09/Mar/2018:15:30:30] (validateLogin) password is valid
+[09/Mar/2018:15:32:19] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:15:32:19] (validateLogin) Username is: wissem
+[09/Mar/2018:15:32:19] (validateLogin) account exists with given username
+[09/Mar/2018:15:32:19] (validateLogin) inside valid user
+[09/Mar/2018:15:32:19] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:15:32:20] (validateLogin) password is valid
+[09/Mar/2018:15:37:12] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:15:37:12] (validateLogin) Username is: wissem
+[09/Mar/2018:15:37:12] (validateLogin) account exists with given username
+[09/Mar/2018:15:37:12] (validateLogin) inside valid user
+[09/Mar/2018:15:37:12] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:15:37:12] (validateLogin) password is valid
+[09/Mar/2018:15:37:54] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:15:37:54] (validateLogin) Username is: wissem
+[09/Mar/2018:15:37:54] (validateLogin) account exists with given username
+[09/Mar/2018:15:37:54] (validateLogin) inside valid user
+[09/Mar/2018:15:37:54] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:15:37:54] (validateLogin) password is valid

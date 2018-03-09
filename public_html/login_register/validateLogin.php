@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['username'] = $account -> get_username();
                 session_regenerate_id();
                 // redirect to user home page
-                header('Location: homepage.php');
+                header('Location: ..\home_page\homepage.php');
             }
             //password doesnt match
             else{
