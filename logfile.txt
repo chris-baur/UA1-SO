@@ -41,3 +41,9 @@
 [07/Mar/2018:18:52:35] (validateLogin) account does not exist with given username
 [07/Mar/2018:18:52:35] (validateLogin) invalid username. Valid data is false
 [07/Mar/2018:18:52:35] (validateLogin) Showing user error
+[09/Mar/2018:04:40:36] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:04:40:36] (validateLogin) Username is: john117
+[09/Mar/2018:04:40:36] (validateLogin) account exists with given username
+[09/Mar/2018:04:40:36] (validateLogin) inside valid user
+[09/Mar/2018:04:40:36] (validateLogin) Password passed prelim validaton
+[09/Mar/2018:04:40:36] (validateLogin) password is valid

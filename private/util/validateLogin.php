@@ -1,18 +1,17 @@
 <?php
 
-    include_once '..\..\private\util\sets.php';
-    include_once '.\logging.php';
-    include_once '..\..\private\controllers\account_controller.php';
-    include_once '..\..\private\models\Account.php';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
+    include_once '.\sets.php';
+    include_once '.\logging.php';
+    include_once '..\controllers\account_controller.php';
+    include_once '..\models\Account.php';    
 
     $account = new Account();
     $sets = new Sets();
     $log = new Logging();
-    $username = "";
-    $password = "";
+    $user = "";
+    $pass = "";
     $hash = "";
     //$pin = "";
     $validData = true;
@@ -33,11 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // verify username
     if(validateUser()){
         $log->lwrite('inside valid user');
-        $username = htmlentities($_POST['username']);
-        $account = getAccountByUsername($username);
+        $user = htmlentities($_POST['username']);
+        $account = getAccountByUsername($user);
         // if(($account -> getAttemptCtr()) >= 5){
         //     $validData = false;
-        //     $errMessage = "$username has been locked out. Too many failed login attempts.";
+        //     $errMessage = "$user has been locked out. Too many failed login attempts.";
         // }
     }
     else{
