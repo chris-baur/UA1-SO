@@ -122,3 +122,9 @@
 [08/Mar/2018:20:45:32] (newQuestion) added question succesfully. ID: 3
 [08/Mar/2018:20:45:54] (newQuestion) added question succesfully. ID: 4
 
+[09/Mar/2018:16:31:50] (validateLogin) Form has requested a post for File: validateLogin.php
+[09/Mar/2018:16:31:50] (validateLogin) Username is: DaveGrohl
+[09/Mar/2018:16:31:50] (validateLogin) account exists with given username
+[09/Mar/2018:16:31:50] (validateLogin) inside valid user
+[09/Mar/2018:16:31:50] (validateLogin) Password failed prelim verification
+[09/Mar/2018:16:31:50] (validateLogin) Showing user error

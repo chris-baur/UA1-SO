@@ -5,9 +5,6 @@
 
  	echo "<link rel='stylesheet' type = 'text/css' href='../css/favorite.css'>";
 
- 	$_SESSION['username'] = 'john117';
- 	$_SESSION['userid'] = '1';
-
  	// outputs a warning message when user is not logged into an account
  	if( !isset($_SESSION['username']) || !isset($_SESSION['userid'])){     
     	echo "<div class='alert alert-warning margins'>
@@ -56,10 +53,6 @@
 
     	$rows = getFavouriteAnswers($account->get_id());
     	if($hasFavorite == false){
-    		echo "
- 				<div class='alert alert-warning margins'>
-      				<h2>You have not favorited any questions or answers</h2>
-      			</div>";
     	}
     	else{
 	    	foreach ($rows as $info) {
