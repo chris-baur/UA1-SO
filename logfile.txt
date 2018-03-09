@@ -6,4 +6,6 @@
 [07/Feb/2018:21:13:13] (create_db) Answers Table created successfully
 [07/Feb/2018:21:13:13] (create_db) Connected successfully
 [07/Feb/2018:21:13:13] (create_db) Comments Table created successfully
+=======
 [02/Mar/2018:17:20:13] (newQuestion) added question succesfully. ID: 0
+
