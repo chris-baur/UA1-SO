@@ -10,6 +10,9 @@
 	height: 100%;
 }
 
+main{
+	min-height: 57%;
+}
 .btn-like{
 	background-color: #F0E5D7;
 }
@@ -22,7 +25,7 @@
 	width:50%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 16px;
+	/* margin-top: 16px; */
 	text-align: center;
 }
 
@@ -52,3 +55,7 @@
 	float:right;
 	width:87%;
 }
+
+/* html, body{
+    min-height: 100%;
+  } */

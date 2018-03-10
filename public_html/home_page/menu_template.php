@@ -1,6 +1,11 @@
 <?php
 
-include_once '..\login_register\validateLogin.php';
+$status = session_status();
+if($status == PHP_SESSION_NONE){
+	//There is no active session
+	session_start();
+}
+//include_once '..\login_register\validateLogin.php';
 
 $index="myButtons";
 $about="myButtons";
