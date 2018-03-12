@@ -1,11 +1,13 @@
 <?php 
   include_once('..\..\private\util\logging.php');
+  $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
+  require "../../private/models/Vote.php";
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
-		$log->lwrite("POST METHOD. for newQuestion.php");
-		
-	}
-	else if($_SERVER["REQUEST_METHOD"] == "GET"){
+    $log->lwrite("POST METHOD. for newQuestion.php");
+    
+  }
+  else if($_SERVER["REQUEST_METHOD"] == "GET"){
     include('header.php');
     include_once('..\..\private\controllers\question_controller.php');
     include_once('..\..\private\models\Account.php');
@@ -20,6 +22,23 @@
         </div></main>";
     }
     else {
+
+      $vote=false;
+      if(isset($_GET['id']) && isset($_SESSION['userid'])){
+        $servername = $config['servername'];
+        $username = $config['username'];
+        $password = $config['password'];
+        $dbname = $config['dbname'];
+        try{
+            $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $req = $pdo -> prepare("SELECT * FROM votes WHERE ref=? AND ref_id = ? AND user_id=?");
+            $req->execute (['questions', $_GET['id'],$_SESSION['userid']]);
+            $vote=$req->fetch();
+         }catch(PDOException $e){
+          echo "Connection failed: " . $e->getMessage();
+        }
+      }
       echo "<main>
       <form>
         <div class='container'  ng-app='myApp' ng-controller='mainCtrl'>
@@ -40,11 +59,20 @@
       $rows = getQuestionsByAccount($account);
       $log->lwrite('Number of rows retrieved: ' . sizeof($rows));
       foreach ($rows as $info) {
+        if($info->get_id()==$vote['ref_id']){
+          $vote_class=Vote::getClass($vote);
+        }else{
+          $vote_class=Vote::getClass(false);
+        }
         echo "
           <div class='form-group row questionBox'>
-            <div class='col-md-2 vote_btns'>
-              <button class='vote_btn vote_like'><i class='fa fa-thumbs-up'> ". $info->get_upvotes() . "</i></button>
-              <button class='vote_btn vote_dislike'><i class='fa fa-thumbs-down'> ". $info->get_downvotes() . "</i></button>
+            <div class='col-md-2 vote_btns ".$vote_class." '>
+            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=1' method='POST'>
+              <button type='submit' class='vote_btn vote_like'><i class='fa fa-thumbs-up'> ". $info->get_upvotes() . "</i></button>
+            </form>
+            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=-1' method='POST'>
+              <button type='submit' class='vote_btn vote_dislike'><i class='fa fa-thumbs-down'> ". $info->get_downvotes() . "</i></button>
+              </form>
             </div>
             <span class = 'questionBody'>
             <div class='col-md-10 '>
