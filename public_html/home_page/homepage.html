@@ -5,37 +5,42 @@
     <title>Ask It! Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <?php $config = parse_ini_file('../../config.ini'); ?>
   </head>
 
   <body>  
-      <main>
 
-
-    <!--Outputting the items in the database-->
     <?php
-    $username = 'ua1';
-    $password = 'Ua1password0)';
-    $servername = 'ua1_so';
+    $username = $config['username'];
+    $password = $config['password'];
+    $dbname = $config['dbname'];
+    $servername = $config['servername'];
 
     // connection to database
-    $con = mysqli_connect('localhost', $username, $password, $servername) or die("Connection Failed");
+    $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
-    $result = mysqli_query($con,"SELECT * FROM questions");?>
 
+
+    <!-- goes through each element in the questions table and outputs it. The order of the output is sorted by most upvotes then least downvotes -->
     <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {?>
     
     <div class = "separator">
     <div class ="comment" align = "left">
         <h5><strong><?php echo $row["header"]?></strong></h5>
         <?php echo $row["content"]?><br>
-        <span class = "commentDetails"><?php echo "Posted on: ".$row["date"]?><br>
-        <?php echo "upvotes: ".$row["upvotes"]?>
-        <?php echo "downvotes: ".$row["downvotes"]?>
+
+        
+        <!-- Output of the details of the comment and commenter -->
+        <span class = "commentDetails">
+            <?php echo "Created By: ".$row["username"]?><br>
+            <?php echo "Posted on: ".$row["date"]?><br>
+            <?php echo "Upvotes: ".$row["upvotes"]?>
+            <?php echo "Downvotes: ".$row["downvotes"]?>
         </span>
     </div>
     </div>
     <?php }?>
-  </main>
+
   </body>
 
 </html>
