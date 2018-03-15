@@ -29,41 +29,44 @@ class Vote{
 	}
 
 	public function like($ref,$ref_id,$user_id){
+		global $servername, $username, $password, $dbname;
 		
-		if($this->voting($ref,$ref_id,$user_id,1)){
-			global $servername, $username, $password, $dbname;
-			try{
-				$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			if($this->voting($ref,$ref_id,$user_id,1)){
 				$sql_part="";
 				if($this->former_vote){
 					$sql_part=", downvotes=downvotes-1";
 				}
 				$pdo->query("UPDATE $ref SET upvotes=upvotes+1 $sql_part WHERE id= $ref_id");
-
+				return true;
+			}else{
+				$pdo->query("UPDATE $ref SET upvotes=upvotes-1 WHERE id= $ref_id");
 			}
-			catch(PDOException $e){
-				throw new Exception("Could not connect to server.");
+			return false;
+		}catch(PDOException $e){
+			throw new Exception("Could not connect to server.");
 			}	
-		}
 		
 	}
-	public function dislike($ref,$ref_id,$user_id){
+	public function dislike($ref,$ref_id,$user_id){			global $servername, $username, $password, $dbname;
 
-		if($this->voting($ref,$ref_id,$user_id,-1)){
-			global $servername, $username, $password, $dbname;
-			try{
-				$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			if($this->voting($ref,$ref_id,$user_id,-1)){
 				$sql_part="";
 				if($this->former_vote){
 					$sql_part=", upvotes=upvotes-1";
 				}
 				$pdo->query("UPDATE $ref SET downvotes=downvotes+1 $sql_part WHERE id= $ref_id");
-
+				return true;
+			}else{
+				$pdo->query("UPDATE $ref SET downvotes=downvotes-1 WHERE id= $ref_id");
 			}
-			catch(PDOException $e){
+			return false;
+			}catch(PDOException $e){
 				throw new Exception("Could not connect to server.");
 			}	
-		}
 		
 	}
 
@@ -72,9 +75,10 @@ class Vote{
 			$req = $pdo->prepare("SELECT id, vote FROM  votes WHERE ref=? AND ref_id=? AND user_id=?");
 			$req->execute([$ref,$ref_id,$user_id]);
 			$vote_row= $req-> fetch();
-			var_dump($vote_row);
 			if($vote_row){
 				if($vote_row['vote'] == $vote){
+
+					$pdo->query('DELETE FROM votes WHERE id='.$vote_row['id']);
 					return false;
 				}
 				$this->former_vote = $vote_row;

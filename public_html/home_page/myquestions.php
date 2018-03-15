@@ -23,18 +23,21 @@
     }
     else {
 
-      $vote=false;
-      if(isset($_GET['id']) && isset($_SESSION['userid'])){
+      $votes=[];
+      if(isset($_SESSION['userid'])){
         $servername = $config['servername'];
         $username = $config['username'];
         $password = $config['password'];
         $dbname = $config['dbname'];
+
         try{
             $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $req = $pdo -> prepare("SELECT * FROM votes WHERE ref=? AND ref_id = ? AND user_id=?");
-            $req->execute (['questions', $_GET['id'],$_SESSION['userid']]);
-            $vote=$req->fetch();
+            $req = $pdo -> prepare("SELECT * FROM votes WHERE ref=? AND user_id=?");
+            $req->execute (['questions',$_SESSION['userid']]);
+            while($vote=$req->fetch()){
+              array_push($votes, $vote);
+            }
          }catch(PDOException $e){
           echo "Connection failed: " . $e->getMessage();
         }
@@ -59,6 +62,7 @@
       $rows = getQuestionsByAccount($account);
       $log->lwrite('Number of rows retrieved: ' . sizeof($rows));
       foreach ($rows as $info) {
+        $vote=getVote($votes,$info->get_id());
         if($info->get_id()==$vote['ref_id']){
           $vote_class=Vote::getClass($vote);
         }else{
@@ -88,7 +92,17 @@
       }
       echo '</div></main>';
     }
+    
   }
+  //Verifie if the current question has a vote, if yes it returns it if not false
+  function getVote($votes,$info_id){
+      foreach ($votes as $vote) {
+        if($vote['ref_id']==$info_id){
+          return $vote;
+        }
+      }
+      return false;
+    }
   include("footer.php");
   
 ?>
