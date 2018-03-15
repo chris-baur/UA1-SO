@@ -42,6 +42,9 @@ sprint 3
 
 - Tasks breakdown
 - make questions
+
+Sprint 4
+
 - make answers - require minimum, maximum not too much
 - make search bar to look for questions
 - ranking system for votes (upvotes, selected/best answer)
@@ -63,3 +66,4 @@ sprint 3
 
 - purging account...
 - sign in with google, authentication
+- Changing theme

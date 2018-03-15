@@ -23,20 +23,20 @@
 			$security_two = 'default 2', $answer_one = 'answer one', $answer_two = 'answer two', $bio = 'my bio', $profession = 'profession', $pin = '0000'){
 			
 			$this->id = $id;
-			$this->$username = $username;
-			$this->$password = $password;
-			$this->$name = $name;
-			$this->$last_name = $last_name;
-			$this->$gender = $gender;
-			$this->$security_one = $security_one;
-			$this->$security_two = $security_two;
-			$this->$answer_one = $answer_one;
-			$this->$answer_two = $answer_two;
-			$this->$bio = $bio;
-			$this->$profession = $profession;
-			$this->$pin = $pin;
+			$this->username = $username;
+			$this->password = $password;
+			$this->name = $name;
+			$this->last_name = $last_name;
+			$this->gender = $gender;
+			$this->security_one = $security_one;
+			$this->security_two = $security_two;
+			$this->answer_one = $answer_one;
+			$this->answer_two = $answer_two;
+			$this->bio = $bio;
+			$this->profession = $profession;
+			$this->pin = $pin;
 		}
-		
+				
 		function get_id(){
 			return $this->id;
 		}
@@ -122,7 +122,7 @@
 		}
 		
 		function set_answer_one($new_answer_one){
-			$this->answer_one - $new_answer_one;
+			$this->answer_one = $new_answer_one;
 		}
 		
 		function set_answer_two($new_answer_two){
