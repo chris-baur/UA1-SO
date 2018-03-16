@@ -10,6 +10,7 @@ class accountDatabaseTest extends PHPUnit\Framework\TestCase{
     public function testId(){
         $a = getAccountById(1);
         $this->assertEquals($a->get_name(), 'John');
+        echo 'hhhhhhhhhhhhhh';
     }
 
     // public function testUsername(){
