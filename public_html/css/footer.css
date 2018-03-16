@@ -2,12 +2,18 @@
 	background-color: #DEB887;	
 	margin:0;
     padding:0;
+<<<<<<< HEAD
+    position:fixed;
+    bottom: 0px;
+    width: 100%;
+=======
 	position: relative;
     bottom: 0px;
 	width: 100%;
 	height: 27%;
 	/* position:relative; */
     
+>>>>>>> ee2133ff48eef2d1f9a2d6f23fb96c95878268d4
     
 }
 
