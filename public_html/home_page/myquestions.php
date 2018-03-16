@@ -71,10 +71,10 @@
         echo "
           <div class='form-group row questionBox'>
             <div class='col-md-2 vote_btns ".$vote_class." '>
-            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=1' method='POST'>
+            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=1&page=myquestions.php' method='POST'>
               <button type='submit' class='vote_btn vote_like'><i class='fa fa-thumbs-up'> ". $info->get_upvotes() . "</i></button>
             </form>
-            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=-1' method='POST'>
+            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=-1&page=myquestions.php' method='POST'>
               <button type='submit' class='vote_btn vote_dislike'><i class='fa fa-thumbs-down'> ". $info->get_downvotes() . "</i></button>
               </form>
             </div>
