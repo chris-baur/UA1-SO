@@ -1,5 +1,5 @@
 body {
-	background: red;	
+	background: #FAEBD7;	
 }
 
 .title {
@@ -11,5 +11,7 @@ body {
 
 .options {
 	text-align: center;
-	padding: 50%;
+}
+
+.options p {
 }

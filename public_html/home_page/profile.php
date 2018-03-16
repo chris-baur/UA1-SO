@@ -18,12 +18,13 @@
 
 			<div class = "title">Account Settings </div>
 			<div class = "options">
-				<p> Username <input type = "text" onfocus = "this.value=''" value = "<?php echo $_SESSION['username']; ?>" >
+				 <p> Username <input type = "text" onfocus = "this.value=''" value = "<?php echo $_SESSION['username']; ?>" >
 				</p>
 				<p> First Name <input type = "text" onfocus = "this.value=''" value = "Enter your First name" >  
 				</p>
 				<p> Last Name <input type = "text" onfocus = "this.value=''" value = "Enter your last name" >  
 				</p>
+				<input type="submit" value="Submit Changes">
 			</div>
 
 		</body>

@@ -32,3 +32,21 @@
 [09/Mar/2018:17:14:19] (newQuestion) Username provided is not a valid string
 [09/Mar/2018:17:14:19] (newQuestion) invalid username. Valid data is false
 [09/Mar/2018:17:14:19] (newQuestion) Showing user error
+[16/Mar/2018:02:58:09] (myquestions) ID retrieved from session: 1
+[16/Mar/2018:02:58:09] (myquestions) ID in account object: 1
+[16/Mar/2018:02:58:09] (myquestions) Number of rows retrieved: 0
+[16/Mar/2018:02:58:20] (myquestions) ID retrieved from session: 1
+[16/Mar/2018:02:58:20] (myquestions) ID in account object: 1
+[16/Mar/2018:02:58:20] (myquestions) Number of rows retrieved: 0
+[16/Mar/2018:02:58:41] (myquestions) ID retrieved from session: 1
+[16/Mar/2018:02:58:41] (myquestions) ID in account object: 1
+[16/Mar/2018:02:58:41] (myquestions) Number of rows retrieved: 0
+[16/Mar/2018:03:05:20] (myquestions) ID retrieved from session: 1
+[16/Mar/2018:03:05:20] (myquestions) ID in account object: 1
+[16/Mar/2018:03:05:20] (myquestions) Number of rows retrieved: 0
+[16/Mar/2018:03:05:22] (myquestions) ID retrieved from session: 1
+[16/Mar/2018:03:05:22] (myquestions) ID in account object: 1
+[16/Mar/2018:03:05:22] (myquestions) Number of rows retrieved: 0
+[16/Mar/2018:04:13:42] (myquestions) ID retrieved from session: 1
+[16/Mar/2018:04:13:42] (myquestions) ID in account object: 1
+[16/Mar/2018:04:13:42] (myquestions) Number of rows retrieved: 0
