@@ -9,8 +9,7 @@ class accountDatabaseTest extends PHPUnit\Framework\TestCase{
     }
     public function testId(){
         $a = getAccountById(1);
-        echo $a->get_name();
-        $this->assertEquals($a->get_name(), 'John');
+        $this->assertEquals('John', $a->get_name());
         
     }
 
