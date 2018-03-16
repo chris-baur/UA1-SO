@@ -8,14 +8,12 @@ include_once(dirname(__FILE__).'/../models/Account.php');
 
 class AccountController{
 
-
 private static $servername;
 private static $username;
 private static $password;
 private static $dbname;
 
 private static $log;
-private static $sets;
 private static $genders;
 private static $security_one;
 private static $security_two;
@@ -30,7 +28,7 @@ function __construct(){
     self::$dbname = $config['dbname'];
 
     self::$log = new Logging();
-    self::$sets = new Sets();
+    $sets = new Sets();
     self::$genders = $sets->to_string_genders();
     self::$security_one = $sets->to_string_security_one();
     self::$security_two = $sets->to_string_security_two();
@@ -240,7 +238,8 @@ function __construct(){
 		finally{
 			unset($pdo);
 		}
-		// returns the account object
+        // returns the account object
+        $log->lwrite('returning account');
 		return $account;
     }
 }
