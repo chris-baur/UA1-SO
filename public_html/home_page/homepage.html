@@ -41,7 +41,8 @@
 
         </div>
         <div class="question">
-            <h5><strong><?php echo $row["header"]?></strong></h5>
+            <?php $question = $row["id"];?>
+            <a href="questionThread.php?questionid=<?php echo $row['id'];?>"><h5><strong><?php echo $row["header"]?></strong></h5></a>
             <?php echo $row["content"]?><br>
         </div>
     </div>   
