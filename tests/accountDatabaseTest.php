@@ -14,7 +14,8 @@ class accountDatabaseTest extends PHPUnit\Framework\TestCase{
     }
 
     public function testAccountExists(){
-        $boolean = AccountController::accountExists('john117');
+        $a = new AccountController();
+        $boolean = $a::accountExists('john117');
         $this->assertTrue($boolean);
     }
 

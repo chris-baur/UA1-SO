@@ -5,26 +5,38 @@ include_once(dirname(__FILE__).'/../util/sets.php');
 include_once(dirname(__FILE__).'/../models/Account.php');
 // $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
-$config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
-
-$servername = $config['servername'];
-$username = $config['username'];
-$password = $config['password'];
-$dbname = $config['dbname'];
-
-$log = new Logging();
-$sets = new Sets();
-$genders = $sets->to_string_genders();
-$security_one = $sets->to_string_security_one();
-$security_two = $sets->to_string_security_two();
-$professions = $sets->to_string_professions();
-
 
 class AccountController{
 
+private static $config;
 
+private static $servername;
+private static $username;
+private static $password;
+private static $dbname;
 
-//function __construct(){}
+private static $log;
+private static $sets;
+private static $genders;
+private static $security_one;
+private static $security_two;
+private static $professions;
+
+function __construct(){
+
+    self::$config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
+    self::$servername = $config['servername'];
+    self::$username = $config['username'];
+    self::$password = $config['password'];
+    self::$dbname = $config['dbname'];
+
+    self::$log = new Logging();
+    self::$sets = new Sets();
+    self::$genders = $sets->to_string_genders();
+    self::$security_one = $sets->to_string_security_one();
+    self::$security_two = $sets->to_string_security_two();
+    self::$professions = $sets->to_string_professions();
+}
 
 	/**
 	* Adds an account to the account table in the Database
