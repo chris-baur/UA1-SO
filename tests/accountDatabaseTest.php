@@ -1,5 +1,7 @@
 <?php
 
+include(dirname(__FILE__)."/../private/controllers/account_controller.php");
+
 class accountDatabaseTest extends PHPUnit\Framework\TestCase{
     public function testConstructor(){
         $a = new Account();
