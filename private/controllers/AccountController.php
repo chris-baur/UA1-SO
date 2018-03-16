@@ -58,6 +58,7 @@ function __construct(){
 			$user = $account->getUsername();
 			$pass = $account->getPassword();
 			$name = $account->getName();
+			$lname = $account->getLastName();
 			$gender = $account->getGender();
 			$s1 = $account->getSecurityOne();
 			$s2 = $account->getSecurityTwo();
@@ -171,7 +172,7 @@ function __construct(){
 										
 			$stmt -> bindParam(':username', $account->getUsername());
 			$stmt -> bindParam(':password', $account->getPassword());
-			$stmt -> bindParam(':name', $account->getUsername());
+			$stmt -> bindParam(':name', $account->getName());
             $stmt -> bindParam(':last_name', $account->getLastName());
             $stmt -> bindParam(':gender', $account->getGender());
             $stmt -> bindParam(':security_one', $account->getSecurityOne());
