@@ -1,8 +1,8 @@
 <?php
 
-include_once(dirname(__FILE__).'../util/logging.php');
-include_once(dirname(__FILE__).'../util/sets.php');
-include_once(dirname(__FILE__).'../models/Account.php');
+include_once(dirname(__FILE__).'/../util/logging.php');
+include_once(dirname(__FILE__).'/../util/sets.php');
+include_once(dirname(__FILE__).'/../models/Account.php');
 // $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 $config = parse_ini_file(dirname(__FILE__).'../../config.ini');
