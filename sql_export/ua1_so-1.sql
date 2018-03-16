@@ -25,6 +25,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Add database account
+--
+
+GRANT ALL PRIVILEGES ON ua1_so.* TO 'ua1'@'localhost' IDENTIFIED BY 'Ua1password0)';
+
+--
 -- Table structure for table `accounts`
 --
 
