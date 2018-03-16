@@ -158,7 +158,7 @@ $professions = $sets->to_string_professions();
 										
 			$stmt -> bindParam(':username', $account->getUsername());
 			$stmt -> bindParam(':password', $account->getPassword());
-			$stmt -> bindParam(':name', $account->getUsername());
+			$stmt -> bindParam(':name', $account->getName());
             $stmt -> bindParam(':last_name', $account->getLastName());
             $stmt -> bindParam(':gender', $account->getGender());
             $stmt -> bindParam(':security_one', $account->getSecurityOne());
