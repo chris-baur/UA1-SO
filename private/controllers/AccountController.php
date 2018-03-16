@@ -1,34 +1,35 @@
 <?php
 
-include_once '..\..\private\util\logging.php';
-include_once '..\..\private\util\sets.php';
-include_once '..\..\private\models\Account.php';
+include_once(dirname(__FILE__).'/../util/logging.php');
+include_once(dirname(__FILE__).'/../util/sets.php');
+include_once(dirname(__FILE__).'/../models/Account.php');
+// $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 
 class AccountController{
 
-$config = parse_ini_file('..\..\config.ini');
+private static $config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
 
-$servername = $config['servername'];
-$username = $config['username'];
-$password = $config['password'];
-$dbname = $config['dbname'];
+private static $servername = $config['servername'];
+private static $username = $config['username'];
+private static $password = $config['password'];
+private static $dbname = $config['dbname'];
 
-$log = new Logging();
-$sets = new Sets();
-$genders = $sets->to_string_genders();
-$security_one = $sets->to_string_security_one();
-$security_two = $sets->to_string_security_two();
-$professions = $sets->to_string_professions();
+private static $log = new Logging();
+private static $sets = new Sets();
+private static $genders = $sets->to_string_genders();
+private static $security_one = $sets->to_string_security_one();
+private static $security_two = $sets->to_string_security_two();
+private static $professions = $sets->to_string_professions();
 
-function __construct(){}
+//function __construct(){}
 
 	/**
 	* Adds an account to the account table in the Database
 	*
 	* @param $account		Account object
 	*/
-	function addAccount($account){
+	static function addAccount($account){
 		global $servername, $username, $password, $dbname, $log;
 		$user_id = -9;
 		try{
@@ -42,7 +43,6 @@ function __construct(){}
                 security_one, security_two, answer_one, answer_two, bio, profession, pin) VALUES(:username, 
                 :password, :name, :last_name, :gender, :security_one, :security_two, :answer_one, :answer_two, 
                 :bio, :profession, :pin);');
-				//@TODO complete function
 				
 			$user = $account->get_username();
 			$pass = $account->get_password();
@@ -88,7 +88,7 @@ function __construct(){}
 	 *
 	 * @param $username			Account's username
 	 */
-	function accountExists($username){
+	static function accountExists($username){
 		$exists = false;
 		$account = getAccountByUsername($username);
 		
@@ -104,7 +104,7 @@ function __construct(){}
 	 *
 	 * @param $username		Account's username
 	 */
-	function getAccountByUsername($user){
+	static function getAccountByUsername($user){
 		global $servername, $username, $password, $dbname, $log;
 
 		$account = new Account();
@@ -150,7 +150,7 @@ function __construct(){}
 	*
 	* @param $account		Account object
 	*/
-	function updateAccount($account){
+	static function updateAccount($account){
 		global $servername, $username, $password, $dbname, $log;
 		$user_id = 0;
 		try{
@@ -159,7 +159,6 @@ function __construct(){}
             $stmt = $pdo -> prepare('UPDATE accounts set password = :password, name = :name, last_name = :last_name, gender = :gender, 
                 security_one = :security_one, security_two = :security_two, answer_one = :answer_one, answer_two = :answer_two,
 				bio = :bio, profession = :profession, pin = :pin WHERE username = :username;');
-                //@TODO complete function
 										
 			$stmt -> bindParam(':username', $account->get_username());
 			$stmt -> bindParam(':password', $account->get_password());

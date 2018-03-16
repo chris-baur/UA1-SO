@@ -13,6 +13,11 @@ class accountDatabaseTest extends PHPUnit\Framework\TestCase{
         
     }
 
+    public function testAccountExists(){
+        $boolean = AccountController::accountExists('john117');
+        $this->assertTrue($boolean);
+    }
+
     // public function testUsername(){
     //     $a = new Account();
     //     $a->set_username('sxephil');
