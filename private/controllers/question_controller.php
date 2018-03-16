@@ -189,6 +189,54 @@ $log = new Logging();
 	}
 
 	/**
+	 * Returns questions with the specified id
+	 *
+	 * @param $header		Question's header
+	 */
+	function getQuestionsById($id){
+		global $servername, $username, $password, $dbname, $log;
+        $question = new Question();
+        $questionArray = [];
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE id LIKE $id;");						
+			$stmt -> bindParam('id', $id);
+		
+			$stmt -> execute();
+			
+			// while there is a question with specified id
+			while($result = $stmt -> fetch()){
+                $q = new Question();
+
+				$q->set_id($result[0]);
+                $q->set_accountId($result[1]);
+                $q->set_header($result[2]);
+                $q->set_content($result[3]);
+                $q->set_date($result[4]);
+                $q->set_upvotes($result[5]);
+                $q->set_downvotes($result[6]);
+                $q->set_tags($result[7]);
+
+
+
+                // get the username from the accounts table
+                
+                $questionArray[] = $q;
+			}
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+		// returns the questions array
+		return $questionArray;
+	}
+
+	/**
 	* Updates a question in the question table of the Database
 	*
 	* @param $question		Question object

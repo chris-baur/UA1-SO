@@ -13,16 +13,13 @@
 .details{
 	order: 1;
 	width: 20%;
-	height: 100%;
 	align-self: center;
 	padding:10px;
 }
 
 .question{
-	width: 100%;
 	order: 2;
 	width: 80%;
-	height: inherit;
 	background-color: #F0E5D7;
 	padding:10px;
 }
