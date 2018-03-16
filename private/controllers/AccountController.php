@@ -5,22 +5,24 @@ include_once(dirname(__FILE__).'/../util/sets.php');
 include_once(dirname(__FILE__).'/../models/Account.php');
 // $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
+$config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
+
+$servername = $config['servername'];
+$username = $config['username'];
+$password = $config['password'];
+$dbname = $config['dbname'];
+
+$log = new Logging();
+$sets = new Sets();
+$genders = $sets->to_string_genders();
+$security_one = $sets->to_string_security_one();
+$security_two = $sets->to_string_security_two();
+$professions = $sets->to_string_professions();
+
 
 class AccountController{
 
-private $config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
 
-private  $servername = $config['servername'];
-private  $username = $config['username'];
-private  $password = $config['password'];
-private  $dbname = $config['dbname'];
-
-private  $log = new Logging();
-private  $sets = new Sets();
-private  $genders = $sets->to_string_genders();
-private  $security_one = $sets->to_string_security_one();
-private  $security_two = $sets->to_string_security_two();
-private  $professions = $sets->to_string_professions();
 
 //function __construct(){}
 
