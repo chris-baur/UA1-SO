@@ -3,12 +3,9 @@
 include(dirname(__FILE__)."/../private/controllers/account_controller.php");
 
 class accountDatabaseTest extends PHPUnit\Framework\TestCase{
-    public function testConstructor(){
-        $a = new Account();
-        $this->assertNotNull($a);
-    }
     public function testId(){
-        $a = getAccountById(1);
+        $ac = new AccountController();
+        $a = $ac::getAccountById(1);
         $this->assertEquals('John', $a->get_name());
         
     }
