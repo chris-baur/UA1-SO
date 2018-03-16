@@ -17,38 +17,38 @@
             // }
         }
         
-        public function get_security_one(){
+        public function getSecurityOne(){
             return self::$sets->security_one;
         }
         
-        public function get_security_two(){
+        public function getSecurityTwo(){
             return self::$sets->security_two;
         }
         
-        public function get_professions(){
+        public function getProfessions(){
             return self::$sets->professions;
         }
 
-        public function get_genders(){
+        public function getGenders(){
             return self::$sets->genders;
         }
 
         //To string functions used for DB SQL
 
         public function to_string_security_one(){
-            return $this->to_string($this->get_security_one());
+            return $this->to_string($this->getSecurityOne());
         }
 
         public function to_string_security_two(){
-            return $this->to_string($this->get_security_two());
+            return $this->to_string($this->getSecurityTwo());
         }
 
         public function to_string_professions(){
-            return $this->to_string($this->get_professions());
+            return $this->to_string($this->getProfessions());
         }
 
         public function to_string_genders(){
-            return $this->to_string($this->get_genders());
+            return $this->to_string($this->getGenders());
         }
 
         private function to_string($array){

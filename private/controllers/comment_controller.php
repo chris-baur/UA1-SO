@@ -28,13 +28,13 @@ $log = new Logging();
             $stmt = $pdo -> prepare('INSERT INTO comments(account_id, header, content, date, upvotes, downvotes, tags) VALUES(:account_id, :header, :content, :date, :upvotes, :downvotes, :tags);');
                 //@TODO complete function
 										
-			$stmt -> bindParam(':account_id', $comment->get_accountId());
-			$stmt -> bindParam(':header', $comment->get_header());
-			$stmt -> bindParam(':content', $comment->get_content());
-            $stmt -> bindParam(':date', $comment->get_date());
-            $stmt -> bindParam(':upvotes', $comment->get_upvotes());
-            $stmt -> bindParam(':downvotes', $comment->get_downvotes());
-            $stmt -> bindParam(':tags', $comment->get_tags());
+			$stmt -> bindParam(':account_id', $comment->getAccountId());
+			$stmt -> bindParam(':header', $comment->getHeader());
+			$stmt -> bindParam(':content', $comment->getContent());
+            $stmt -> bindParam(':date', $comment->getDate());
+            $stmt -> bindParam(':upvotes', $comment->getUpvotes());
+            $stmt -> bindParam(':downvotes', $comment->getDownvotes());
+            $stmt -> bindParam(':tags', $comment->getTags());
 			
 			$stmt -> execute();
             $comment_id = $pdo -> lastInsertId();
@@ -55,14 +55,14 @@ $log = new Logging();
 			while($result = $stmt -> fetch()){
                 $c = new comment();
 
-				$c->set_id($result[0]);
-                $c->set_accountId($result[1]);
-                $c->set_header($result[2]);
-                $c->set_content($result[3]);
-                $c->set_date($result[4]);
-                $c->set_upvotes($result[5]);
-                $c->set_downvotes($result[6]);
-                $c->set_tags($result[7]);
+				$c->setId($result[0]);
+                $c->setAccountId($result[1]);
+                $c->setHeader($result[2]);
+                $c->setContent($result[3]);
+                $c->setDate($result[4]);
+                $c->setUpvotes($result[5]);
+                $c->setDownvotes($result[6]);
+                $c->setTags($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -90,14 +90,14 @@ $log = new Logging();
             while($result = $stmt -> fetch()){
                 $c = new Comment();
 
-				$c->set_id($result[0]);
-                $c->set_accountId($result[1]);
-                $c->set_header($result[2]);
-                $c->set_content($result[3]);
-                $c->set_date($result[4]);
-                $c->set_upvotes($result[5]);
-                $c->set_downvotes($result[6]);
-                $c->set_tags($result[7]);
+				$c->setId($result[0]);
+                $c->setAccountId($result[1]);
+                $c->setHeader($result[2]);
+                $c->setContent($result[3]);
+                $c->setDate($result[4]);
+                $c->setUpvotes($result[5]);
+                $c->setDownvotes($result[6]);
+                $c->setTags($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -134,14 +134,14 @@ $log = new Logging();
 			while($result = $stmt -> fetch()){
                 $c = new Comment();
 
-				$c->set_id($result[0]);
-                $c->set_accountId($result[1]);
-                $c->set_header($result[2]);
-                $c->set_content($result[3]);
-                $c->set_date($result[4]);
-                $c->set_upvotes($result[5]);
-                $c->set_downvotes($result[6]);
-                $c->set_tags($result[7]);
+				$c->setId($result[0]);
+                $c->setAccountId($result[1]);
+                $c->setHeader($result[2]);
+                $c->setContent($result[3]);
+                $c->setDate($result[4]);
+                $c->setUpvotes($result[5]);
+                $c->setDownvotes($result[6]);
+                $c->setTags($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -163,22 +163,21 @@ $log = new Logging();
 	*/
 	function updateComment($comment){
 		global $servername, $username, $password, $dbname, $log;
-		$comment_id = 0;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
             $stmt = $pdo -> prepare('UPDATE comments set header = :header, content = :content, upvotes = :upvotes, downvotes = :downvotes, tags = :tags
                 WHERE id = :id;');
 										
-			$stmt -> bindParam(':header', $Comment->get_header());
-			$stmt -> bindParam(':content', $Comment->get_content());
-            $stmt -> bindParam(':upvotes', $Comment->get_upvotes());
-            $stmt -> bindParam(':downvotes', $Comment->get_downvotes());
-            $stmt -> bindParam(':tags', $Comment->get_tags());
-            $stmt -> bindParam(':id', $Comment->get_id());
+			$stmt -> bindParam(':header', $comment->getHeader());
+			$stmt -> bindParam(':content', $comment->getContent());
+            $stmt -> bindParam(':upvotes', $comment->getUpvotes());
+            $stmt -> bindParam(':downvotes', $comment->getDownvotes());
+            $stmt -> bindParam(':tags', $comment->getTags());
+            $stmt -> bindParam(':id', $comment->getId());
 			
 			$stmt -> execute();
-            $log->lwrite('Updated Comment succesfully. ID: '.$comment_id);
+            $log->lwrite('Updated Comment succesfully. ID: '. $comment->getId());
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());

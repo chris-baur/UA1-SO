@@ -1,24 +1,38 @@
 <?php
 
-include_once '..\..\private\util\logging.php';
-include_once '..\..\private\util\sets.php';
-include_once '..\..\private\models\Question.php';
-include_once '..\..\private\models\Account.php';
-$config = parse_ini_file('..\..\..\UA1-SO\config.ini');
+include_once(dirname(__FILE__).'/../util/logging.php');
+include_once(dirname(__FILE__).'/../util/sets.php');
+include_once(dirname(__FILE__).'/../models/Question.php');
+include_once(dirname(__FILE__).'/../models/Account.php');
+// $config = parse_ini_file('../../../UA1-SO/config.ini');
 
-$servername = $config['servername'];
-$username = $config['username'];
-$password = $config['password'];
-$dbname = $config['dbname'];
+class QuestionController{
 
-$log = new Logging();
+    private static $servername;
+    private static $username;
+    private static $password;
+    private static $dbname;
+    private static $log;
+
+    function __construct(){
+        $config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
+        
+        self::$servername = $config['servername'];
+        self::$username = $config['username'];
+        self::$password = $config['password'];
+        self::$dbname = $config['dbname'];
+
+        self::$log = new Logging();
+
+
+    }
 
 	/**
 	* Adds a question to the question table in the Database
 	*
 	* @param $question		Question object
 	*/
-	function addQuestion($question){
+	static function addQuestion($question){
 		global $servername, $username, $password, $dbname, $log;
 		$question_id = -1;
 		try{
@@ -27,13 +41,13 @@ $log = new Logging();
             $stmt = $pdo -> prepare('INSERT INTO questions(account_id, header, content, date, upvotes, downvotes, tags) VALUES(:account_id, :header, :content, :date, :upvotes, :downvotes, :tags);');
                 //@TODO complete function
 										
-			$account_id=$question->getAccountId();
-			$header  =	$question->getHeader();
-			$content =	$question->getContent();
+			$account_id = $question->getAccountId();
+			$header = $question->getHeader();
+			$content = $question->getContent();
 			$date =	$question->getDate();
-			$upvotes=$question->getUpvotes();
-			$downvotes=$question->getDownvotes();
-			$tags=  implode(" ",$question->getTags());
+			$upvotes = $question->getUpvotes();
+			$downvotes = $question->getDownvotes();
+			$tags = implode(" ",$question->getTags());
 
 			$stmt -> bindParam(':account_id', $account_id);
 			$stmt -> bindParam(':header', $header );
@@ -61,7 +75,7 @@ $log = new Logging();
 	 *
 	 * @param $account		Question's account owner
 	 */
-	function getQuestionsByAccount($account){
+	static function getQuestionsByAccount($account){
 		global $servername, $username, $password, $dbname, $log;
         $question = new Question();
         $questionArray = [];
@@ -106,7 +120,7 @@ $log = new Logging();
 	 *
 	 * @param $content		Question's content
 	 */
-	function getQuestionsByContent($content){
+	static function getQuestionsByContent($content){
 		global $servername, $username, $password, $dbname, $log;
         $questionArray = [];
 		
@@ -149,7 +163,7 @@ $log = new Logging();
 	 *
 	 * @param $header		Question's header
 	 */
-	function getQuestionsByHeader($header){
+	static function getQuestionsByHeader($header){
 		global $servername, $username, $password, $dbname, $log;
         $question = new Question();
         $questionArray = [];
@@ -193,9 +207,8 @@ $log = new Logging();
 	*
 	* @param $question		Question object
 	*/
-	function updateQuestion($question){
+	static function updateQuestion($question){
 		global $servername, $username, $password, $dbname, $log;
-		$question_id = 0;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
@@ -210,7 +223,7 @@ $log = new Logging();
             $stmt -> bindParam(':id', $question->getId());
 			
 			$stmt -> execute();
-            $log->lwrite('Updated question succesfully. ID: '.$question_id);
+            //$log->lwrite('Updated question succesfully. ID: '. $question->getId());
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
@@ -219,5 +232,6 @@ $log = new Logging();
 			unset($pdo);
 		}
     }
+}
     
 ?>

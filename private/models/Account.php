@@ -37,107 +37,107 @@
 			$this->pin = $pin;
 		}
 				
-		function get_id(){
+		function getId(){
 			return $this->id;
 		}
 		
-		function get_username(){
+		function getUsername(){
 			return $this->username;
 		}
 		
-		function get_password(){
+		function getPassword(){
 			return $this->password;
 		}
 		
-		function get_name(){
+		function getName(){
 			return $this->name;
 		}
 		
-		function get_last_name(){
+		function getLastName(){
 			return $this->last_name;
 		}
 		
-		function get_gender(){
+		function getGender(){
 			return $this->gender;
 		}
 		
-		function get_security_one(){
+		function getSecurityOne(){
 			return $this->security_one;
 		}
 		
-		function get_security_two(){
+		function getSecurityTwo(){
 			return $this->security_two;
 		}
 		
-		function get_answer_one(){
+		function getAnswerOne(){
 			return $this->answer_one;
 		}
 		
-		function get_answer_two(){
+		function getAnswerTwo(){
 			return $this->answer_two;
 		}
 		
-		function get_bio(){
+		function getBio(){
 			return $this->bio;
 		}
 
-		function get_profession(){
+		function getProfession(){
 			return $this->profession;
 		}
 		
-		function get_pin(){
+		function getPin(){
 			return $this->pin;
 		}
 		
-		function set_id($new_id){
+		function setId($new_id){
 			$this->id = $new_id;
 		}
 		
-		function set_username($new_username){
+		function setUsername($new_username){
 			$this->username = $new_username;
 		}
 		
-		function set_password($new_password){
+		function setPassword($new_password){
 			$this->password = $new_password;
 		}
 		
-		function set_name($new_name){
+		function setName($new_name){
 			$this->name = $new_name;
 		}
 		
-		function set_last_name($new_last_name){
+		function setLastName($new_last_name){
 			$this->last_name = $new_last_name;
 		}
 		
-		function set_gender($new_gender){
+		function setGender($new_gender){
 			$this->gender = $new_gender;
 		}
 		
-		function set_security_one($new_security_one){
+		function setSecurityOne($new_security_one){
 			$this->security_one = $new_security_one;
 		}
 		
-		function set_security_two($new_security_two){
+		function setSecurityTwo($new_security_two){
 			$this->security_two = $new_security_two;
 		}
 		
-		function set_answer_one($new_answer_one){
+		function setAnswerOne($new_answer_one){
 			$this->answer_one = $new_answer_one;
 		}
 		
-		function set_answer_two($new_answer_two){
+		function setAnswerTwo($new_answer_two){
 			$this->answer_two = $new_answer_two;
 		}
 		
-		function set_bio($new_bio){
+		function setBio($new_bio){
 			$this->bio = $new_bio;
 		}
 
-		function set_profession($new_profession){
+		function setProfession($new_profession){
 			$this->profession = $new_profession;
 		}
 		
-		function set_pin($new_pin){
+		function setPin($new_pin){
 			$this->pin = $new_pin;
 		}
 	}

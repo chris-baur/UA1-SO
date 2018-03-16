@@ -55,18 +55,17 @@ function __construct(){
                 :password, :name, :last_name, :gender, :security_one, :security_two, :answer_one, :answer_two, 
                 :bio, :profession, :pin);');
 				
-			$user = $account->get_username();
-			$pass = $account->get_password();
-			$name = $account->get_name();
-			$lname = $account->get_last_name();
-			$gender = $account->get_gender();
-			$s1 = $account->get_security_one();
-			$s2 = $account->get_security_two();
-			$a1 = $account->get_answer_one();
-			$a2 = $account->get_answer_two();
-			$bio = $account->get_bio();
-			$profession = $account->get_profession();
-			$pin = $account->get_pin();
+			$user = $account->getUsername();
+			$pass = $account->getPassword();
+			$name = $account->getName();
+			$gender = $account->getGender();
+			$s1 = $account->getSecurityOne();
+			$s2 = $account->getSecurityTwo();
+			$a1 = $account->getAnswerOne();
+			$a2 = $account->getAnswerTwo();
+			$bio = $account->getBio();
+			$profession = $account->getProfession();
+			$pin = $account->getPin();
 										
 			$stmt -> bindParam(':username', $user);
 			$stmt -> bindParam(':password', $pass);
@@ -104,7 +103,7 @@ function __construct(){
 		$account = getAccountByUsername($username);
 		
 		// user id will be we be 0 if there is no such user
-		if ($account -> get_id() != 0){
+		if ($account -> getId() != 0){
 			$exists = true;
 		}
 		return $exists;
@@ -131,19 +130,19 @@ function __construct(){
 		
 			// if there is a user with specified username
 			if($result = $stmt -> fetch()){
-				$account->set_id($result[0]);
-                $account->set_username($result[1]);
-                $account->set_password($result[2]);
-                $account->set_name($result[3]);
-                $account->set_last_name($result[4]);
-                $account->set_gender($result[5]);
-                $account->set_security_one($result[6]);
-                $account->set_security_two($result[7]);
-                $account->set_answer_one($result[8]);
-                $account->set_answer_two($result[9]);
-                $account->set_bio($result[10]);
-                $account->set_profession($result[11]);
-                $account->set_pin($result[12]);
+				$account->setId($result[0]);
+                $account->setUsername($result[1]);
+                $account->setPassword($result[2]);
+                $account->setName($result[3]);
+                $account->setLastName($result[4]);
+                $account->setGender($result[5]);
+                $account->setSecurityOne($result[6]);
+                $account->setSecurityTwo($result[7]);
+                $account->setAnswerOne($result[8]);
+                $account->setAnswerTwo($result[9]);
+                $account->setBio($result[10]);
+                $account->setProfession($result[11]);
+                $account->setPin($result[12]);
 			}
 		}
 		catch(PDOException $e){
@@ -163,7 +162,6 @@ function __construct(){
 	*/
 	static function updateAccount($account){
 		global $servername, $username, $password, $dbname, $log;
-		$user_id = 0;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
@@ -171,21 +169,21 @@ function __construct(){
                 security_one = :security_one, security_two = :security_two, answer_one = :answer_one, answer_two = :answer_two,
 				bio = :bio, profession = :profession, pin = :pin WHERE username = :username;');
 										
-			$stmt -> bindParam(':username', $account->get_username());
-			$stmt -> bindParam(':password', $account->get_password());
-			$stmt -> bindParam(':name', $account->get_username());
-            $stmt -> bindParam(':last_name', $account->get_last_name());
-            $stmt -> bindParam(':gender', $account->get_gender());
-            $stmt -> bindParam(':security_one', $account->get_security_one());
-            $stmt -> bindParam(':security_two', $account->get_security_two());
-            $stmt -> bindParam(':answer_one', $account->get_answer_one());
-            $stmt -> bindParam(':answer_two', $account->get_answer_two());
-            $stmt -> bindParam(':bio', $account->get_bio());
-            $stmt -> bindParam(':profession', $account->get_profession());
-            $stmt -> bindParam(':pin', $account->get_pin());
+			$stmt -> bindParam(':username', $account->getUsername());
+			$stmt -> bindParam(':password', $account->getPassword());
+			$stmt -> bindParam(':name', $account->getUsername());
+            $stmt -> bindParam(':last_name', $account->getLastName());
+            $stmt -> bindParam(':gender', $account->getGender());
+            $stmt -> bindParam(':security_one', $account->getSecurityOne());
+            $stmt -> bindParam(':security_two', $account->getSecurityTwo());
+            $stmt -> bindParam(':answer_one', $account->getAnswerOne());
+            $stmt -> bindParam(':answer_two', $account->getAnswerTwo());
+            $stmt -> bindParam(':bio', $account->getBio());
+            $stmt -> bindParam(':profession', $account->getProfession());
+            $stmt -> bindParam(':pin', $account->getPin());
 			
 			$stmt -> execute();
-            $log->lwrite('account updated succesfully. user name: '.$account->get_username());
+            $log->lwrite('account updated succesfully. user name: '.$account->getUsername());
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
@@ -193,7 +191,6 @@ function __construct(){
 		finally{
 			unset($pdo);
 		}
-		return $user_id;
     }
 
     /**
@@ -217,19 +214,19 @@ function __construct(){
 		
 			// if there is a user with specified id
 			if($result = $stmt -> fetch()){
-				$account->set_id($result[0]);
-                $account->set_username($result[1]);
-                $account->set_password($result[2]);
-                $account->set_name($result[3]);
-                $account->set_last_name($result[4]);
-                $account->set_gender($result[5]);
-                $account->set_security_one($result[6]);
-                $account->set_security_two($result[7]);
-                $account->set_answer_one($result[8]);
-                $account->set_answer_two($result[9]);
-                $account->set_bio($result[10]);
-                $account->set_profession($result[11]);
-                $account->set_pin($result[12]);
+				$account->setId($result[0]);
+                $account->setUsername($result[1]);
+                $account->setPassword($result[2]);
+                $account->setName($result[3]);
+                $account->setLastName($result[4]);
+                $account->setGender($result[5]);
+                $account->setSecurityOne($result[6]);
+                $account->setSecurityTwo($result[7]);
+                $account->setAnswerOne($result[8]);
+                $account->setAnswerTwo($result[9]);
+                $account->setBio($result[10]);
+                $account->setProfession($result[11]);
+                $account->setPin($result[12]);
 			}
 		}
 		catch(PDOException $e){
