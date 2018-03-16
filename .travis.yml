@@ -16,6 +16,6 @@ services:
 # execute any number of scripts before the test run, custom env's are available as variables
 before_script:
 - mysql -e "create database IF NOT EXISTS ua1_so;"
-- mysql -u root -p '' ua1_so < sql_export/ua1_so-1.sql
+- mysql -u root ua1_so < sql_export/ua1_so-1.sql
 
 script: phpunit --configuration phpunit.xml --coverage-text
