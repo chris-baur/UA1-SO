@@ -201,7 +201,7 @@ function __construct(){
 	 *
 	 * @param $username		Account's username
 	 */
-	function getAccountById($id){
+	static function getAccountById($id){
 		global $servername, $username, $password, $dbname, $log;
 
 		$account = new Account();
