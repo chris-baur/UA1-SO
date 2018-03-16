@@ -26,7 +26,7 @@ function createDatabaseAndTables(){
     createAnswersTable();
     createCommentsTable();
     createFavouritesTable();
-    createDefaultAccount();
+    //createDefaultAccount();
 }
 
 function createDatabase(){
@@ -239,7 +239,12 @@ function createQuestionsTable(){
             PRIMARY KEY (`id`),
             KEY `fk_questions_account_id` (`account_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `questions`
-            ADD CONSTRAINT `fk_questions_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL;COMMIT";
+            ADD CONSTRAINT `fk_questions_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL;
+            INSERT INTO `questions` (`id`, `account_id`, `header`, `content`, `date`, `upvotes`, `downvotes`, `tags`) VALUES
+            (1, 1, 'How many fingers does a gopher have?', 'I cant seem to find the information on google. can anyone help ?', '2018-03-16 02:39:48', 0, 0, 'animal, silly'),
+            (2, 1, 'Where can you go to the bathroom legally?', 'Im asking about the non usual places? for Science reasons. ', '2018-03-16 02:39:48', 0, 0, 'potty, bathroom'),
+            (3, 1, 'Ain\'t it Fun?', 'Riot! or Self titled is better?\r\n\r\npersonally Riot! is the best', '2018-03-16 02:43:34', 0, 0, 'Paramore. album, music'),
+            (4, NULL, 'How now brown cow', 'Testing question with no account id (i.e. account was removed)', '2018-03-16 02:43:34', 0, 0, 'removed, test');COMMIT";
 
         $conn->exec($sql);
         $log->lwrite('Questions Table created successfully');
