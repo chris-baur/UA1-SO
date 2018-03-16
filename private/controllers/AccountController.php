@@ -8,19 +8,19 @@ include_once(dirname(__FILE__).'/../models/Account.php');
 
 class AccountController{
 
-private static $config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
+private $config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
 
-private static $servername = $config['servername'];
-private static $username = $config['username'];
-private static $password = $config['password'];
-private static $dbname = $config['dbname'];
+private  $servername = $config['servername'];
+private  $username = $config['username'];
+private  $password = $config['password'];
+private  $dbname = $config['dbname'];
 
-private static $log = new Logging();
-private static $sets = new Sets();
-private static $genders = $sets->to_string_genders();
-private static $security_one = $sets->to_string_security_one();
-private static $security_two = $sets->to_string_security_two();
-private static $professions = $sets->to_string_professions();
+private  $log = new Logging();
+private  $sets = new Sets();
+private  $genders = $sets->to_string_genders();
+private  $security_one = $sets->to_string_security_one();
+private  $security_two = $sets->to_string_security_two();
+private  $professions = $sets->to_string_professions();
 
 //function __construct(){}
 
