@@ -10,9 +10,12 @@
 
   <body>  
 
+<<<<<<< HEAD
 
     <!--Outputting the items in the database-->
     
+=======
+>>>>>>> ee2133ff48eef2d1f9a2d6f23fb96c95878268d4
     <?php
     $username = $config['username'];
     $password = $config['password'];
@@ -22,10 +25,13 @@
     // connection to database
     $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
-    $result = mysqli_query($con,"SELECT questions.*, accounts.username FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY upvotes DESC, downvotes");
 
+<<<<<<< HEAD
     ?>
     <div class = "separator">
+=======
+
+>>>>>>> ee2133ff48eef2d1f9a2d6f23fb96c95878268d4
     <!-- goes through each element in the questions table and outputs it. The order of the output is sorted by most upvotes then least downvotes -->
     <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {?>
     
@@ -52,9 +58,12 @@
     </div>
     
     <?php }?>
+<<<<<<< HEAD
     </div>
     
 
+=======
+>>>>>>> ee2133ff48eef2d1f9a2d6f23fb96c95878268d4
 
   </body>
 

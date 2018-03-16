@@ -10,11 +10,8 @@
 	height: 100%;
 }
 
-main{
-	min-height: 57%;
-}
 .btn-like{
-	background-color: #F0E5D7;
+	background-color: white;
 }
 
 .time{
@@ -25,37 +22,20 @@ main{
 	width:50%;
 	margin-left: auto;
 	margin-right: auto;
-	/* margin-top: 16px; */
+	margin-top: 16px;
 	text-align: center;
 }
 
-.vote_btns{
+.userBox{
 	float:left;
 	width:13%;
 	padding-top: 3.2%;
 	padding-bottom: 3%;
 }
-.vote_btn{
-	border: none;
-	padding: 0;
-	display: inline-block;
-	margin:0 0 0 10px;
-	cursor:pointer;
-	background: transparent;
-}
-.vote_like:hover{
-	color:green;
-}
-.vote_dislike:hover{
-	color:#cc0000;
-}
+
 
 .questionBody{
 	display: inline-block;
 	float:right;
 	width:87%;
 }
-
-/* html, body{
-    min-height: 100%;
-  } */

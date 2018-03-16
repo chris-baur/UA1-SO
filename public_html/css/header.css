@@ -2,6 +2,7 @@
   background-color: #DEB887;
   text-transform: uppercase;
   font-weight: bold;
+  height: 100%;
 }
 
 .header {
@@ -186,8 +187,17 @@
     box-shadow:0 0 2px #2b99ff;
   }
 
-  a.hamburger:active {
+  /* a.hamburger:active {
     
+  } */
+
+  html, body{
+    /* min-height: 100%; */
+    height: 100%;
+  }
+
+  header{
+    height: 18%;
   }
 
   

@@ -1,9 +1,17 @@
 <?php
 
+$status = session_status();
+if($status == PHP_SESSION_NONE){
+	//There is no active session
+	session_start();
+}
+//include_once '..\login_register\validateLogin.php';
+
 $index="myButtons";
 $about="myButtons";
 $favorites="myButtons";
 $myquestions="myButtons";
+$logout="myButtons";
 
 $menuLinkid= basename($_SERVER['PHP_SELF'],".php");
 if($menuLinkid=="homepage"){
@@ -33,7 +41,21 @@ if($menuLinkid=="homepage"){
 </div>
 
 <div class="col-lg-4">
-	<button class="btn loginButton" onclick="location.href='../login_register/loginregister.php';"/>Login / Sign Up</button>
+	<?php
+
+		if(isset($_SESSION['username'])) {
+			echo "Hi, " .$_SESSION['username']. "!";
+			?>
+			<div class="col-lg-2 <?php echo $logout;?>">
+				<a class="<?php echo $logout;?>"href="logout.php">Logout</a>
+			</div>
+			<?php
+		} else {
+			?>
+			<button class="btn loginButton" onclick="location.href='../login_register/loginregister.php';"/>Login / Sign Up</button>
+			<?php
+		}
+	?>	
 </div>
 
       

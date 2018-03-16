@@ -2,9 +2,18 @@
 	background-color: #DEB887;	
 	margin:0;
     padding:0;
+<<<<<<< HEAD
     position:fixed;
     bottom: 0px;
     width: 100%;
+=======
+	position: relative;
+    bottom: 0px;
+	width: 100%;
+	height: 27%;
+	/* position:relative; */
+    
+>>>>>>> ee2133ff48eef2d1f9a2d6f23fb96c95878268d4
     
 }
 
@@ -23,4 +32,33 @@
 
 .emailUsPadding{
     padding-right: 7em;
+}
+
+.navbar{
+	padding-top: 0%;
+	padding-bottom: 0%;
+}
+
+html, body{
+    /* min-height: 100%; */
+    height: 100%;
+}
+header{
+	height: 16%;
+}
+
+main{
+	min-height: 57%;
+}
+
+a{
+	color: #805104;
+}
+
+a:hover{
+	color:#805104;
+}
+.alert{
+	margin-bottom:0%;
+	margin-top:10%;
 }
