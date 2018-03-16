@@ -1,11 +1,13 @@
 <?php
 
-include_once(dirname(__FILE__).'..\util\logging.php');
-include_once(dirname(__FILE__).'..\util\sets.php');
-include_once(dirname(__FILE__).'..\models\Account.php');
-// $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
+include_once '..\..\private\util\logging.php';
+include_once '..\..\private\util\sets.php';
+include_once '..\..\private\models\Account.php';
 
-$config = parse_ini_file(dirname(__FILE__).'..\..\config.ini');
+
+class AccountController{
+
+$config = parse_ini_file('..\..\config.ini');
 
 $servername = $config['servername'];
 $username = $config['username'];
@@ -18,6 +20,8 @@ $genders = $sets->to_string_genders();
 $security_one = $sets->to_string_security_one();
 $security_two = $sets->to_string_security_two();
 $professions = $sets->to_string_professions();
+
+function __construct(){}
 
 	/**
 	* Adds an account to the account table in the Database
@@ -226,6 +230,7 @@ $professions = $sets->to_string_professions();
 		}
 		// returns the account object
 		return $account;
-	}
+    }
+}
     
 ?>
