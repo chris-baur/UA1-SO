@@ -10,12 +10,9 @@
 
   <body>  
 
-<<<<<<< HEAD
 
     <!--Outputting the items in the database-->
     
-=======
->>>>>>> ee2133ff48eef2d1f9a2d6f23fb96c95878268d4
     <?php
     $username = $config['username'];
     $password = $config['password'];
@@ -25,21 +22,19 @@
     // connection to database
     $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
+    $result = mysqli_query($con,"SELECT questions.*, accounts.username FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY upvotes DESC, downvotes");
 
-<<<<<<< HEAD
     ?>
-    <div class = "separator">
-=======
-
->>>>>>> ee2133ff48eef2d1f9a2d6f23fb96c95878268d4
+    
     <!-- goes through each element in the questions table and outputs it. The order of the output is sorted by most upvotes then least downvotes -->
+
+    <br>
     <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {?>
     
-    
-    <div class ="comment" align = "left">
+    <div class= "questionBlock">
         <div class= "details">
             <!-- Output of the details of the comment and commenter -->
-            <?php echo "Created By: ".$row["username"]?><br>
+            <?php echo "Asked By: ".$row["username"]?><br>
             <?php echo "Posted on: ".$row["date"]?><br>
             <?php echo "Upvotes: ".$row["upvotes"]?>
             <?php echo "Downvotes: ".$row["downvotes"]?>
@@ -49,21 +44,13 @@
             <h5><strong><?php echo $row["header"]?></strong></h5>
             <?php echo $row["content"]?><br>
         </div>
-        
-        
-       
-
-        
-        
-    </div>
+    </div>   
+    <br>
     
     <?php }?>
-<<<<<<< HEAD
-    </div>
+    
     
 
-=======
->>>>>>> ee2133ff48eef2d1f9a2d6f23fb96c95878268d4
 
   </body>
 
