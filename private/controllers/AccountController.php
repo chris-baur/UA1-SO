@@ -8,7 +8,6 @@ include_once(dirname(__FILE__).'/../models/Account.php');
 
 class AccountController{
 
-private static $config;
 
 private static $servername;
 private static $username;
@@ -24,7 +23,7 @@ private static $professions;
 
 function __construct(){
 
-    self::$config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
+    $config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
     self::$servername = $config['servername'];
     self::$username = $config['username'];
     self::$password = $config['password'];
