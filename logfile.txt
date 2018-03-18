@@ -10,3 +10,27 @@
 [18/Mar/2018:01:46:13] (validateLogin) inside valid user
 [18/Mar/2018:01:46:13] (validateLogin) Password passed prelim validaton
 [18/Mar/2018:01:46:13] (validateLogin) password is valid
+[18/Mar/2018:14:15:40] (loginregister) in login register 
+[18/Mar/2018:14:15:40] (loginregister) Got the arrays
+[18/Mar/2018:14:15:40] (loginregister) In what city or town did your mother and father meet?
+[18/Mar/2018:14:15:40] (loginregister) Array
+[18/Mar/2018:14:15:41] (loginregister) Array
+[18/Mar/2018:14:15:41] (loginregister) Array
+[18/Mar/2018:14:15:47] (validateLogin) Form has requested a post for File: validateLogin.php
+[18/Mar/2018:14:15:47] (validateLogin) Username is: wissem
+[18/Mar/2018:14:15:47] (validateLogin) account exists with given username
+[18/Mar/2018:14:15:47] (validateLogin) inside valid user
+[18/Mar/2018:14:15:47] (validateLogin) Password passed prelim validaton
+[18/Mar/2018:14:15:47] (validateLogin) password is valid
+[18/Mar/2018:15:59:21] (loginregister) in login register 
+[18/Mar/2018:15:59:21] (loginregister) Got the arrays
+[18/Mar/2018:15:59:21] (loginregister) In what city or town did your mother and father meet?
+[18/Mar/2018:15:59:21] (loginregister) Array
+[18/Mar/2018:15:59:21] (loginregister) Array
+[18/Mar/2018:15:59:21] (loginregister) Array
+[18/Mar/2018:15:59:27] (validateLogin) Form has requested a post for File: validateLogin.php
+[18/Mar/2018:15:59:27] (validateLogin) Username is: wissem
+[18/Mar/2018:15:59:27] (validateLogin) account exists with given username
+[18/Mar/2018:15:59:27] (validateLogin) inside valid user
+[18/Mar/2018:15:59:27] (validateLogin) Password passed prelim validaton
+[18/Mar/2018:15:59:27] (validateLogin) password is valid
