@@ -1,0 +1,17 @@
+body {
+	background: #FAEBD7;	
+}
+
+.title {
+	text-align: center;
+	padding: 3%;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.options {
+	text-align: center;
+}
+
+.options p {
+}
