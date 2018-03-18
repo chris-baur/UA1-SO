@@ -105,7 +105,7 @@
 	  				<button class="dropbtn"> <?php echo "Hi, " .$_SESSION['username']. " !"; ?> </button>
 	  				<div class="dropdown-content">
 	    				<a href="profile.php">My Profile</a>
-	    				<a href="#">Settings</a>
+	    				<a href="myquestions.php">My Questions</a>
 	    				<a href="logout.php">Logout</a>
 	  				</div>
 				</div>
