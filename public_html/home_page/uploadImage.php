@@ -1,7 +1,15 @@
 <?php
 
+$status = session_status();
+if($status == PHP_SESSION_NONE){
+	//There is no active session
+	session_start();					
+}		 
+
 $uploaddir = '../img/accounts/';
-$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+$newfilename = $_SESSION['username'];
+$uploadfile =  $uploaddir. $newfilename. '.png';
+$_SESSION['name'] =  $uploadfile;
 
 echo "<p>";
 
@@ -11,7 +19,7 @@ if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
    echo "Upload failed";
 }
 
-header('Location: profile.php');
+header('Location: profile.php'); 
 
 echo "</p>";
 echo '<pre>';

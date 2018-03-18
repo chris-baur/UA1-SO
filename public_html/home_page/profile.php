@@ -4,7 +4,7 @@
 	<html>
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" type="text/css" href="../css/profile.css">
+			<link rel="stylesheet" type="text/css" href="../css/profil.css">
 		</head>
 		<body>
 
@@ -28,16 +28,16 @@
 						$file_path = "..\img\avatar2.png";
 					}
 						
-					echo "<img src=\"".$file_path."\" width = \"100\" height = \"100\">";
+					echo "<img src=\"".$file_path."\" width = \"150\" height = \"150\">";
 
 				}
 			?>	
 	
 
-				<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding: 2%">
-    				<input type="hidden" name="MAX_FILE_SIZE" value="512000" />
+				<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding: 1%">
+    				<input type="hidden"/>
     				Send this file: <input name="userfile" type="file" />
-    				<input type="submit" value="Send File" />
+    				<input type="submit" value="Send File"/>
 				</form>
 
 				<!--<p> First Name <input type = "text" onfocus = "this.value=''" value = "Enter your First name" >  

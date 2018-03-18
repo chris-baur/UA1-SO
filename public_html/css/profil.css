@@ -4,7 +4,8 @@ body {
 
 .title {
 	text-align: center;
-	padding: 3%;
+	padding: 1%;
+	padding-top: 2%;
 	font-size: 32px;
 	font-weight: bold;
 }
