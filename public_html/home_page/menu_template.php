@@ -78,19 +78,12 @@
 			$myquestions='myActiveButton';
 		}
 		?>
-		<div class="col-lg-2 <?php echo $index;?>">
+
+		<div class="col-lg-4 <?php echo $index;?>">
 			<a class="<?php echo $index;?>"href="homepage.php">Home</a>
 		</div>
 
-		<div class="col-lg-2 <?php echo $myquestions;?>">
-			<a class="<?php echo $myquestions;?>"href="myquestions.php">Questions</a>
-		</div>
-
-		<div class="col-lg-2 <?php echo $favorites;?>">
-			<a class="<?php echo $favorites;?>"href="favorites.php">Favorites</a>
-		</div>
-
-		<div class="col-lg-2 <?php echo $about;?>">
+		<div class="col-lg-4 <?php echo $about;?>">
 			<a class="<?php echo $about;?>"href="about.php">About</a>
 		</div>
 
@@ -106,6 +99,7 @@
 	  				<div class="dropdown-content">
 	    				<a href="profile.php">My Profile</a>
 	    				<a href="myquestions.php">My Questions</a>
+	    				<a href="favorites.php">Favorites</a>
 	    				<a href="logout.php">Logout</a>
 	  				</div>
 				</div>
