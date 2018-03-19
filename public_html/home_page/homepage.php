@@ -21,7 +21,7 @@
 
         $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
-   		$result = mysqli_query($con,"SELECT questions.*, accounts.username FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY upvotes DESC, downvotes");
+   		$result = mysqli_query($con,"SELECT questions.*, accounts.username FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY date DESC, upvotes DESC, downvotes");
         try{
             $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -41,6 +41,7 @@
       echo "<main>";
       if(isset($_SESSION['userid'])){
       	echo "
+          <br>
       		<form>
         		<div class='container'  ng-app='myApp' ng-controller='mainCtrl'>
           			<div class='form-control space'>
@@ -50,7 +51,7 @@
       		</form>";
       	}
       
-      //<!--Outputting the items in the database-->
+      // Outputting the items in the database
       echo "<br><div class='container'>"; 
 
  		 while($info = mysqli_fetch_array($result,MYSQLI_ASSOC)) {        
@@ -61,34 +62,35 @@
 	        }else{
 	          $vote_class=Vote::getClass(false);
 	        }
+
+          // Output the like and dislike buttons
 	        echo "
 	          <div class='form-group row questionBlock'>
 	            <div class='details vote_btns ".$vote_class." '>
-	            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=1&page=homepage.php' method='POST'>
-	              <button type='submit' class='vote_btn vote_like' ";
-	              if(!isset($_SESSION['userid'])){
-	              	echo "disabled";
-	              }
-	            echo "><i class='fa fa-thumbs-up'> ". $info['upvotes'] . "</i></button>
-	            </form>
-	            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=-1&page=homepage.php' method='POST'>
-	              <button type='submit' class='vote_btn vote_dislike' ";
-	              if(!isset($_SESSION['userid'])){
-	              	echo "disabled";
-	              }
-	            echo "><i class='fa fa-thumbs-down'> ". $info['downvotes'] . "</i></button>
-	              </form>
-	            </div>
-	            <div class='col-md-10 question'>
-	              <div>
-	              <a href='questionThread.php?questionid=".$info['id']."'>
-	                <h3><strong>" . $info['header'] . "</strong></h3></a>
-	              </div>
-	              <p>" . $info['content'] . "
-	              </p>
-	              <span> Asked By: " .$info['username']. "</span><br>
-	              <span class = 'time'>Posted on: " . $info['date'] . "</span>
-
+  	            <form action= '..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=1&page=homepage.php' method='POST'>
+  	              <button type='submit' class='vote_btn vote_like' ";
+  	              if(!isset($_SESSION['userid'])){
+  	              	echo "disabled";
+  	              }
+  	            echo "><i class='fa fa-thumbs-up'> ". $info['upvotes'] . "</i></button>
+  	            </form>
+  	            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=-1&page=homepage.php' method='POST'>
+  	              <button type='submit' class='vote_btn vote_dislike' ";
+  	              if(!isset($_SESSION['userid'])){
+  	              	echo "disabled";
+  	              }
+  	            echo "><i class='fa fa-thumbs-down'> ". $info['downvotes'] . "</i></button>
+  	              </form>
+  	            </div>
+  	            <div class=' question'>
+  	              <div>
+  	              <a href='questionThread.php?questionid=".$info['id']."'>
+  	                <h3><strong>" . $info['header'] . "</strong></h3></a>
+  	              </div>
+  	              <p>" . $info['content'] . "
+  	              </p>
+  	              <span class = questionByDetail>Asked By: " .$info['username']. "<br>
+  	              Posted on: " . $info['date'] . "</span>
 	            </div>
 	          </div><br>";
       		}
