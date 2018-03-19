@@ -30,39 +30,47 @@
 								$file_path = $_SESSION['name'];
 							} else {
 								$file_path = "..\img\avatar2.png";
-							}		
+							}
+
 							echo "<img src=\"".$file_path."\" width = \"150\" height = \"150\">";
 						}
 						
 						?>
-						<p id = "demo"> 
-
-						<input type=submit id = "button" onclick = "shiet()" value="Change profile picture" style = "font-size: 18px"/>
-						
-						</p>
+						<p id = "changePic"> </p>
 
 						<script>
-							function shiet() {
-								document.getElementById("button").outerHTML = "";
-								document.getElementById("demo").innerHTML = '<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding-bottom: 2%"><input type="hidden"/><input name="userfile" type="file" style = "font-size: 18px; width: 50%"/><input type=submit name = "modify" value="Modify" onclick = "noshiet()" style = "font-size: 18px"/></form>';
+							function changePicture() {
+								document.getElementById("ChangePass").innerHTML = "";
+								document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding-bottom: 2%"><input type="hidden"/><input name="userfile" type="file" style = "font-size: 18px; width: 50%"/><input type=submit name = "modify" value="Modify" onclick = "noshiet()" style = "font-size: 18px"/></form>';
 							}
 
-							function noshiet() {
-								document.getElementById("demo").outterHTML = "";
-								document.getElementById("button").innerHTML = '<input type=submit id = "button" onclick = "shiet()" value="Change profile picture" style = "font-size: 18px"/>';
-								
+							function pictureChanged() {
+								document.getElementById("changePic").outterHTML = "";
 							}
+
+							function changePassword() {
+								document.getElementById("changePic").innerHTML = "";
+								document.getElementById("ChangePass").innerHTML = 'Current Password <input type = "text" id = "ChangePass" placeholder = "Password"><br> New Password <input type = "text" id = "changePass" placeholder = "Password"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/>';
+							}
+
+							function cancelPass() {
+								document.getElementById("ChangePass").innerHTML = "";
+							}
+
 						</script>
 
-						<!--<p> First Name <input type = "text" onfocus = "this.value=''" value = "Enter your First name" >  
-						</p>
-						<p> Last Name <input type = "text" onfocus = "this.value=''" value = "Enter your last name" >  
-						</p>
-						<input type="submit" value="Submit Changes">-->
 					</div>
 
-					<div class = "column2">
-						blabla
+					<div class = "column2">	 
+							<p id = "ChangePass"></p>
+							<li id = "option1">								
+								<input type="submit" id = "password" onclick = "changePassword()" value = "Change Password"/>
+									
+							</li>
+							<li id = "option2">
+								<input type=submit id = "button" onclick = "changePicture()" value="Change profile picture"/>
+							</li>
+
 					</div>
 
 				</div>

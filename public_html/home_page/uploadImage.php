@@ -9,7 +9,9 @@ if($status == PHP_SESSION_NONE){
 $uploaddir = '../img/accounts/';
 $newfilename = $_SESSION['username'];
 $uploadfile =  $uploaddir. $newfilename. '.png';
-$_SESSION['name'] =  $uploadfile;
+$_SESSION['name'] = $uploadfile;
+
+//
 
 echo "<p>";
 

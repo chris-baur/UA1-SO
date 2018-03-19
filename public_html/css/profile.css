@@ -14,7 +14,9 @@ body {
 
 .columns {
 	display: flex;
-	position: relative;	
+	position: relative;
+	font-size: 26px;
+	text-transform: none;	
 	width: 100%;
 	padding-top: 2%;
 }
@@ -22,23 +24,56 @@ body {
 .column1{
 	position: relative;
 	text-align: center;
-	font-size: 26px;
-	text-transform: none;
 	width: 50%;
-	
 }
 
 
 .column2{
 	position: relative;
-	text-align: center;
-	font-size: 26px;
-	text-transform: none;
+	text-align: left;
 	width:50%;
 	
 }
 
+#password  {
+	font-size: 18px; 
+	padding: 1%; 
+	border: none;
+	background: none;
+}
 
+#password:hover  {
+	text-decoration:underline;
+}
+
+#button  {
+	font-size: 18px; 
+	padding: 1%; 
+	border: none;
+	background: none;
+}
+
+#button:hover  {
+	text-decoration:underline;
+}
+
+#ChangePass {
+	font-size: 18px;
+	text-transform: none;
+	padding:0.5%;
+}
+
+#subChange {
+	font-size: 18px;
+	text-transform: none;
+	margin-top: 2%;
+}
+
+#subCancel {
+	font-size: 18px;
+	text-transform: none;
+	margin-left: 1%;
+}
 
 
 
