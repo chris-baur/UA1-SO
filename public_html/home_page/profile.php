@@ -54,7 +54,7 @@
 
 							function changePassword() {
 								document.getElementById("changePic").innerHTML = "";
-								document.getElementById("ChangePass").innerHTML = 'Current Password <input type = "text" id = "ChangePass" placeholder = "Password"><br> New Password <input type = "text" id = "changePass" placeholder = "Password"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/>';
+								document.getElementById("ChangePass").innerHTML = '<form action="changePassword.php" method="POST">Current Password <input type = "text" id = "ChangePass" placeholder = "Password"><br> New Password <input type = "text" id = "changePass" placeholder = "Password"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/></form>';
 							}
 
 							function cancelPass() {
@@ -71,13 +71,13 @@
 
 					<div class = "column2">	 
 							<p id = "ChangePass"></p>
-							<li id = "option1">								
-								<input type="submit" id = "password" onclick = "changePassword()" value = "Change Password"/>
-									
+							<li>		
+								<input type="submit" id = "password" onclick = "changePassword()" value = "Change Password"/>	
 							</li>
-							<li id = "option2">
+							<li>
 								<input type=submit id = "button" onclick = "changePicture()" value="Change profile picture"/>
 							</li>
+							
 
 					</div>
 
