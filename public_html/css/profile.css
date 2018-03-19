@@ -1,0 +1,39 @@
+body {
+	background: #FAEBD7;
+}
+
+.title {
+	position: relative;
+	text-align: center;
+	padding-top: 2%;
+	font-size: 32px;
+	font-weight: bold;
+	margin-right: 25%;
+	margin-left: 25%;
+}
+
+.columns {
+	display: flex;
+	position: relative;	
+	width: 100%;
+	padding-top: 2%;
+}
+
+.column1{
+	position: relative;
+	width: 50%;
+	text-align: center;
+}
+
+.column2{
+	position: relative;
+	width:50%;
+	text-align: center;
+}
+
+
+
+
+
+
+
