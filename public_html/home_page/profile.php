@@ -23,7 +23,8 @@
 
 					<div class = "column1">
 
-					<?php
+					<?php 
+			
 						if(isset($_SESSION['username'])) {
 							if(isset($_SESSION['name'])) {
 								$file_path = $_SESSION['name'];
@@ -32,12 +33,26 @@
 							}		
 							echo "<img src=\"".$file_path."\" width = \"150\" height = \"150\">";
 						}
-					?>	
-						<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding: 1%">
-		    				<input type="hidden"/>
-		    				Send this file: <input name="userfile" type="file" />
-		    				<input type="submit" value="Send File"/>
-						</form>
+						
+						?>
+						<p id = "demo"> 
+
+						<input type=submit id = "button" onclick = "shiet()" value="Change profile picture" style = "font-size: 18px"/>
+						
+						</p>
+
+						<script>
+							function shiet() {
+								document.getElementById("button").outerHTML = "";
+								document.getElementById("demo").innerHTML = '<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding-bottom: 2%"><input type="hidden"/><input name="userfile" type="file" style = "font-size: 18px; width: 50%"/><input type=submit name = "modify" value="Modify" onclick = "noshiet()" style = "font-size: 18px"/></form>';
+							}
+
+							function noshiet() {
+								document.getElementById("demo").outterHTML = "";
+								document.getElementById("button").innerHTML = '<input type=submit id = "button" onclick = "shiet()" value="Change profile picture" style = "font-size: 18px"/>';
+								
+							}
+						</script>
 
 						<!--<p> First Name <input type = "text" onfocus = "this.value=''" value = "Enter your First name" >  
 						</p>

@@ -21,14 +21,21 @@ body {
 
 .column1{
 	position: relative;
-	width: 50%;
 	text-align: center;
+	font-size: 26px;
+	text-transform: none;
+	width: 50%;
+	
 }
+
 
 .column2{
 	position: relative;
-	width:50%;
 	text-align: center;
+	font-size: 26px;
+	text-transform: none;
+	width:50%;
+	
 }
 
 
