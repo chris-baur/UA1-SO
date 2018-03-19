@@ -35,6 +35,9 @@ main{
 	padding-top: 3.2%;
 	padding-bottom: 3%;
 }
+.vote_btns form{
+	display: inline-block;
+}
 .vote_btn{
 	border: none;
 	padding: 0;
@@ -43,10 +46,11 @@ main{
 	cursor:pointer;
 	background: transparent;
 }
-.vote_like:hover{
+.vote_like:hover, .is-liked .vote_like{
 	color:green;
 }
-.vote_dislike:hover{
+
+.vote_dislike:hover, .is-disliked .vote_dislike{
 	color:#cc0000;
 }
 
