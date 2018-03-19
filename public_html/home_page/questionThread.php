@@ -1,7 +1,3 @@
-<style>
-<?php include '..\..\public_html\css\homepage.css'?>
-</style>
-
 
 <?php
 	// connection details
@@ -13,45 +9,40 @@
 	include('header.php');
 	include_once('..\..\private\controllers\question_controller.php');
 	include_once("..\..\private\models\Question.php");
-
+	echo "<link rel='stylesheet' type='text/css' href='../css/homepage.css'>";
 
 	// gets the questionid from the page before enterring this page and prints out the question, answers, and comments
 	if (isset($_GET['questionid'])){
 		$row = getQuestionsById($_GET['questionid']);
-?>
 
-<!-- print out question block -->
-<br>
-	<div class= "questionBlock">
-        <div class= "details">
-            <!-- Output of the details of the comment and commenter -->
+	// print out question block 
+	$con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
+	$questid= $_GET['questionid'];
+	$result = mysqli_query($con,"SELECT accounts.username, questions.id FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id WHERE questions.id LIKE $questid");
+	$acc = mysqli_fetch_array($result,MYSQLI_ASSOC);
+	
+	// Output of the details of the question requested
+	echo "
+		<br>
+		<div class= 'questionBlock'>
 
-            <?php // connection to database
-			    $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
-			    $questid= $_GET['questionid'];
-			    $result = mysqli_query($con,"SELECT accounts.username, questions.id FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id WHERE questions.id LIKE $questid");
-			    $acc = mysqli_fetch_array($result,MYSQLI_ASSOC);
-			?>
+			<!-- left column of question block -->
+	        <div class= 'details'>
+				Upvotes: ".$row[0]->get_upvotes().
+				  "Downvotes: ".$row[0]->get_downvotes()."
+			</div>
 
-            <?php echo "Asked By: ".$acc["username"]?><br>
-            <?php echo "Posted on: ".$row[0]->get_date()?><br>
-            <?php echo "Upvotes: ".$row[0]->get_upvotes()?>
-            <?php echo "Downvotes: ".$row[0]->get_downvotes()?>
+			<!-- right column of question block -->
+	        <div class='question'>
+	            <h3><strong>".$row[0]->get_header()."</strong></h3>
+	            <p>".$row[0]->get_content()."</p>
+	            <span class ='questionByDetail'>
+		            Asked By: ".$acc["username"]."<br>
+				  	Posted On: ".$row[0]->get_date()."<br>
+	            </span>
+	        </div>
+    	</div><br>";
 
-        </div>
-        <div class="question">
-            <h5><strong><?php echo $row[0]->get_header()?></strong></h5>
-            <?php echo $row[0]->get_content()?><br>
-        </div>
-    </div>  
-     
-    <br>
-
-
-
-
-
-<?php
 	}
 
 	else{
