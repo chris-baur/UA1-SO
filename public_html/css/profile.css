@@ -1,5 +1,5 @@
 body {
-	background: #FAEBD7;
+	background: #FFDEAD;
 }
 
 .title {
@@ -11,10 +11,15 @@ body {
 	margin-right: 25%;
 	margin-left: 25%;
 }
-
+#titleName {
+	font-size: 21px;
+	text-align: center;
+}
 .columns {
 	display: flex;
 	position: relative;
+	border-radius: 25px;
+	background-color: #FAEBD7;
 	font-size: 26px;
 	text-transform: none;	
 	width: 100%;
@@ -27,13 +32,14 @@ body {
 	width: 50%;
 }
 
-
 .column2{
 	position: relative;
 	text-align: left;
 	width:50%;
 	
 }
+
+
 
 #password  {
 	font-size: 18px; 

@@ -18,7 +18,8 @@
 			?>
 
 			<div class = "title"> Account Settings
-
+				<br>
+				<a id = "titleName"><?php echo $_SESSION['username']?>'s profile </a>
 				<div class = "columns">
 
 					<div class = "column1">
@@ -32,6 +33,9 @@
 								$file_path = "..\img\avatar2.png";
 							}
 
+							
+								
+							 
 							echo "<img src=\"".$file_path."\" width = \"150\" height = \"150\">";
 						}
 						
@@ -41,7 +45,7 @@
 						<script>
 							function changePicture() {
 								document.getElementById("ChangePass").innerHTML = "";
-								document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding-bottom: 2%"><input type="hidden"/><input name="userfile" type="file" style = "font-size: 18px; width: 50%"/><input type=submit name = "modify" value="Modify" onclick = "noshiet()" style = "font-size: 18px"/></form>';
+								document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding-bottom: 2%"><input name="userfile" type="file" style = "font-size: 18px; width: 50%"/><input type=submit name = "modify" value="Modify" onclick = "noshiet()" style = "font-size: 18px"/></form><input type=submit value="Cancel" onclick = "cancelChange()" style = "font-size: 18px"/>';
 							}
 
 							function pictureChanged() {
@@ -55,6 +59,10 @@
 
 							function cancelPass() {
 								document.getElementById("ChangePass").innerHTML = "";
+							}
+
+							function cancelChange() {
+								document.getElementById("changePic").innerHTML = "";
 							}
 
 						</script>
