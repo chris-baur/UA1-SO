@@ -34,17 +34,17 @@
 			<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
 			<!-- left column of question block -->
 		    <div class= 'details'>
-				Upvotes: ".$row[0]->get_upvotes().
-				"Downvotes: ".$row[0]->get_downvotes()."
+				Upvotes: ".$row[0]->getUpvotes().
+				"Downvotes: ".$row[0]->getDownvotes()."
 			</div>
 
 			<!-- right column of question block -->
 		    <div class='question'>
-		        <h3><strong>".$row[0]->get_header()."</strong></h3>
-		        <p>".$row[0]->get_content()."</p>
+		        <h3><strong>".$row[0]->getHeader()."</strong></h3>
+		        <p>".$row[0]->getContent()."</p>
 		        <span class ='questionByDetail'>
 			        Asked By: ".$acc["username"]."<br>
-				  	Posted On: ".$row[0]->get_date()."<br>
+				  	Posted On: ".$row[0]->getDate()."<br>
 		        </span>
 		    </div>
 	    </div><br>";
@@ -61,22 +61,22 @@
 				<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
 				<!-- left column of question block -->
 		        <div class= 'details'>
-					Upvotes: ".$info->get_upvotes().
-					  "Downvotes: ".$info->get_downvotes()."
+					Upvotes: ".$info->getUpvotes().
+					  "Downvotes: ".$info->getDownvotes()."
 				</div>
 
 				<!-- right column of question block -->
 		        <div class='question'>
-		            <p>".$info->get_content()."</p>
+		            <p>".$info->getContent()."</p>
 		            <span class ='questionByDetail'>
 			            Answered By: <br>
-					  	Posted On: ".$info->get_date()."<br>
+					  	Posted On: ".$info->getDate()."<br>
 		            </span>
 		        </div>
 	    	</div><br>";
 
 	    	// Output of the details of the comments requested
-	    	$commentRow = getCommentsByAnswerQuestionId($info->get_id(), $questid);
+	    	$commentRow = getCommentsByAnswerQuestionId($info->getId(), $questid);
 	    	foreach ($commentRow as $commentInfo){
 	    		echo "
 			<br>
@@ -85,16 +85,16 @@
 				<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
 				<!-- left column of question block -->
 		        <div class= 'details'>
-					Upvotes: ".$commentInfo->get_upvotes().
-					  "Downvotes: ".$commentInfo->get_downvotes()."
+					Upvotes: ".$commentInfo->getUpvotes().
+					  "Downvotes: ".$commentInfo->getDownvotes()."
 				</div>
 
 				<!-- right column of question block -->
 		        <div class='question'>
-		            <p>".$commentInfo->get_content()."</p>
+		            <p>".$commentInfo->getContent()."</p>
 		            <span class ='questionByDetail'>
 			            Commented By: <br>
-					  	Posted On: ".$commentInfo->get_date()."<br>
+					  	Posted On: ".$commentInfo->getDate()."<br>
 		            </span>
 		        </div>
 	    	</div><br>";

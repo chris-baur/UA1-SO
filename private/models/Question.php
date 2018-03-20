@@ -27,30 +27,30 @@
 			
 		}
 		
-		function get_id(){
+		function getId(){
 			return $this->id;
 		}
 		
-		function get_accountId(){
+		function getAccountId(){
 			return $this->account_id;
 		}
 		
-		function get_header(){
+		function getHeader(){
 			return $this->header;
 		}
 		
-		function get_content(){
+		function getContent(){
 			return $this->content;
 		}
 		
-		function get_date(){
+		function getDate(){
 			return $this->date;
 		}
 		
-		function get_upvotes(){
+		function getUpvotes(){
 			return $this->upvotes;
 		}
-		function get_downvotes(){
+		function getDownvotes(){
 			return $this->downvotes;
 		}
 
@@ -58,26 +58,26 @@
 			return $this->tags;
 		}
 		
-		function set_id($new_id){
+		function setId($new_id){
 			$this->id = $new_id;
 		}
 		
-		function set_accountId($new_accountID){
+		function setAccountId($new_accountID){
 			$this->account_id = $new_accountID;
 		}
 		
-		function set_content($new_content){
+		function setContent($new_content){
 			$this->content = $new_content;
 		}
 		
-		function set_date($new_date){
+		function setDate($new_date){
 			$this->date = $new_date;
 		}
 		
-		function set_upvotes($new_upvotes){
+		function setUpvotes($new_upvotes){
 			$this->upvotes = $new_upvotes;
 		}
-		function set_downvotes($new_downvotes){
+		function setDownvotes($new_downvotes){
 			$this->downvotes = $new_downvotes;
 		}
 		

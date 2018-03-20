@@ -97,11 +97,11 @@
   include '..\..\private\util\logging.php';
 
   $sets = new Sets();
-  $sets = json_decode(file_get_contents('../../sets.txt', true));
+  $sets = json_decode(file_getContents('../../sets.txt', true));
   $log = new Logging();
   $log->lwrite('in login register ');
 
-  //$s = $sets->to_string_genders();
+  //$s = $sets->toStringGenders();
   $s1Array = $sets->security_one;
   $s2Array = $sets->security_two;
   $professionArray = $sets->professions;

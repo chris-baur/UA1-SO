@@ -30,10 +30,10 @@ $sets = new Sets();
                 :account_id, :question_id, :answer_id);');
                 //@TODO complete function
 										
-			$stmt -> bindParam(':id', $favourite->get_id());
-			$stmt -> bindParam(':account_id', $favourite->get_accountId());
-			$stmt -> bindParam(':question_id', $favourite->get_questionId());
-            $stmt -> bindParam(':answer_id', $favourite->get_answerId());
+			$stmt -> bindParam(':id', $favourite->getId());
+			$stmt -> bindParam(':account_id', $favourite->getAccountId());
+			$stmt -> bindParam(':question_id', $favourite->getQuestionId());
+            $stmt -> bindParam(':answer_id', $favourite->getAnswerId());
 			
 			$stmt -> execute();
             $favouriteId = $pdo -> lastInsertId();
@@ -67,10 +67,10 @@ $sets = new Sets();
 			
 			// if there is a user with specified username
 			if($result = $stmt -> fetch()){
-				$favourite->set_id($result[0]);
-                $favourite->set_accountId($result[1]);
-                $favourite->set_questionId($result[2]);
-                $favourite->set_answerId($result[3]);
+				$favourite->setId($result[0]);
+                $favourite->setAccountId($result[1]);
+                $favourite->setQuestionId($result[2]);
+                $favourite->setAnswerId($result[3]);
 			}
 		}
 		catch(PDOException $e){
@@ -105,13 +105,13 @@ $sets = new Sets();
 			while($result = $stmt -> fetch()){
                 $q = new Question();
 
-				$q->set_id($result[0]);
-                $q->set_accountId($result[1]);
+				$q->setId($result[0]);
+                $q->setAccountId($result[1]);
                 $q->set_header($result[2]);
-                $q->set_content($result[3]);
-                $q->set_date($result[4]);
-                $q->set_upvotes($result[5]);
-                $q->set_downvotes($result[6]);
+                $q->setContent($result[3]);
+                $q->setDate($result[4]);
+                $q->setUpvotes($result[5]);
+                $q->setDownvotes($result[6]);
                 $q->set_tags($result[7]);
 
                 $favouritesArray[] = $q;
@@ -149,14 +149,14 @@ $sets = new Sets();
 			while($result = $stmt -> fetch()){
                 $a = new Answer();
 
-				$a->set_id($result[0]);
-                $a->set_accountId($result[1]);
-                $a->set_questionId($result[2]);
-                $a->set_content($result[3]);
-                $a->set_date($result[4]);
-                $a->set_upvotes($result[5]);
-                $a->set_downvotes($result[6]);
-                $a->set_best($result[7]);
+				$a->setId($result[0]);
+                $a->setAccountId($result[1]);
+                $a->setQuestionId($result[2]);
+                $a->setContent($result[3]);
+                $a->setDate($result[4]);
+                $a->setUpvotes($result[5]);
+                $a->setDownvotes($result[6]);
+                $a->setBest($result[7]);
 
                 $favouritesArray[] = $a;
 			}
