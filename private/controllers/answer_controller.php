@@ -135,48 +135,6 @@ $log = new Logging();
 		return $answerArray;
 	}
     
-    /**
-	 * Returns answers with the specified header
-	 *
-	 * @param $header		Answer's header
-	 */
-	function getanswerByHeader($header){
-		global $servername, $username, $password, $dbname, $log;
-        $answerArray = [];
-		
-		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE header LIKE '%:header%';");
-			$stmt -> bindParam(':header', $header);
-		
-			$stmt -> execute();
-			
-			// while there is a answer with specified header
-			while($result = $stmt -> fetch()){
-                $a = new Answer();
-
-				$a->set_id($result[0]);
-                $a->set_accountId($result[1]);
-                $a->set_question_id($result[2]);
-                $a->set_content($result[3]);
-                $a->set_date($result[4]);
-                $a->set_upvotes($result[5]);
-                $a->set_downvotes($result[6]);
-                $a->set_best($result[7]);
-
-                $answerArray[] = $a;
-			}
-		}
-		catch(PDOException $e){
-			$log->lwrite($e -> getMessage());
-		}
-		finally{
-			unset($pdo);
-		}
-		// returns the answers array
-		return $answerArray;
-	}
 
 	/**
 	* Updates an answer in the answer table of the Database

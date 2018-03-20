@@ -22,6 +22,7 @@ $log = new Logging();
 	function addcomment($comment){
 		global $servername, $username, $password, $dbname, $log;
 		$comment_id = 0;
+
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
@@ -49,7 +50,18 @@ $log = new Logging();
 		return $comment_id;
     }
 
-   
+   	function getCommentsByAccount($account){
+		global $servername, $username, $password, $dbname, $log;
+        $commentsArray = [];
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date, upvotes, downvotes FROM comments WHERE account_id = :account_id;");
+			$accountID=$account->get_id();	
+			$stmt -> bindParam(':account_id',$accountID );
+		
+			$stmt -> execute();
 			
 			// while there is a comment with specified account id
 			while($result = $stmt -> fetch()){
@@ -57,12 +69,12 @@ $log = new Logging();
 
 				$c->set_id($result[0]);
                 $c->set_accountId($result[1]);
-                $c->set_header($result[2]);
-                $c->set_content($result[3]);
-                $c->set_date($result[4]);
-                $c->set_upvotes($result[5]);
-                $c->set_downvotes($result[6]);
-                $c->set_tags($result[7]);
+                $c->set_questionId($result[2]);
+                $c->set_answerId($result[3]);
+                $c->set_content($result[4]);
+                $c->set_date($result[5]);
+                $c->set_upvotes($result[6]);
+                $c->set_downvotes($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -77,7 +89,15 @@ $log = new Logging();
 		return $commentArray;
     }
     
-		
+	/**
+	 * Returns answers with the specified content
+	 *
+	 * @param $content		Answer's content
+	 */
+	function getAnswersByContent($content){
+		global $servername, $username, $password, $dbname, $log;
+        $commentArray = [];
+
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
@@ -109,50 +129,6 @@ $log = new Logging();
 			unset($pdo);
 		}
 		// returns the comment array
-		return $commentArray;
-	}
-    
-    /**
-	 * Returns comment with the specified header
-	 *
-	 * @param $header		comment's header
-	 */
-	function getcommentByHeader($header){
-		global $servername, $username, $password, $dbname, $log;
-        $comment = new comment();
-        $commentArray = [];
-		
-		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM comments WHERE header LIKE '%:header%';");						
-			$stmt -> bindParam(':header', $header);
-		
-			$stmt -> execute();
-			
-			// while there is a comment with specified header
-			while($result = $stmt -> fetch()){
-                $c = new Comment();
-
-				$c->set_id($result[0]);
-                $c->set_accountId($result[1]);
-                $c->set_header($result[2]);
-                $c->set_content($result[3]);
-                $c->set_date($result[4]);
-                $c->set_upvotes($result[5]);
-                $c->set_downvotes($result[6]);
-                $c->set_tags($result[7]);
-
-                $commentArray[] = $c;
-			}
-		}
-		catch(PDOException $e){
-			$log->lwrite($e -> getMessage());
-		}
-		finally{
-			unset($pdo);
-		}
-		// returns the comments array
 		return $commentArray;
 	}
 
