@@ -146,7 +146,7 @@ $log = new Logging();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE question_id LIKE :questionId");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE question_id LIKE :questionId ORDER BY upvotes DESC, downvotes, date DESC");						
 			$stmt -> bindParam(':questionId', $questionId);
 		
 			$stmt -> execute();
