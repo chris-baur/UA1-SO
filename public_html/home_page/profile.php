@@ -13,8 +13,25 @@
 				if($status == PHP_SESSION_NONE){
 					//There is no active session
 					session_start();
-					
-				} 
+				}		
+
+				$config = parse_ini_file('../../config.ini');
+				$username = $config['username'];
+				$password = $config['password'];
+				$dbname = $config['dbname'];
+				$servername = $config['servername'];
+
+				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+				$uploaddir = '../img/accounts/';
+				$newfilename = $_SESSION['username'];
+				$uploadfile =  $uploaddir. $newfilename. '.png';
+				$_SESSION['name'] = $uploadfile;
+
+				$stmt = $conn->prepare("UPDATE `accounts` SET `name` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
+				$stmt->bindParam(':name', $uploadfile);
+				$stmt->execute(); 
 			?>
 
 			<div class = "title"> Account Settings
@@ -24,22 +41,12 @@
 
 					<div class = "column1">
 
-					<?php 
-			
-						if(isset($_SESSION['username'])) {
-							if(isset($_SESSION['name'])) {
-								$file_path = $_SESSION['name'];
-							} else {
-								$file_path = "..\img\avatar2.png";
-							}
-
-							
-								
-							 
-							echo "<img src=\"".$file_path."\" width = \"150\" height = \"150\">";
+					<?php $file_path = $_SESSION['name'];
+						if(!file_exists($file_path)) {
+							$file_path = "..\img\avatar2.png";											
 						}
-						
-						?>
+						echo "<img src=\"".$file_path."\" width = \"150\" height = \"150\">";								
+					?>
 						<p id = "changePic"> </p>
 
 						<script>
