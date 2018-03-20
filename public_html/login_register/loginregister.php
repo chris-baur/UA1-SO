@@ -28,6 +28,7 @@
   
   
         <div class='container'>
+
           <label><b>Username</b></label>
             <input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
   
@@ -35,14 +36,15 @@
             <input ng-model='password' type='password' placeholder='Enter Password' name='password' required>
           
           <button type='submit'>Login</button>
-  
-          <label><input type='checkbox' checked='checked'> Remember me</label>
-        </div>
-  
-        <div class='container' style='background-color:#f1f1f1'>
           <button type='button' onclick=" . '"document.getElementById(' . "'login'" . ").style.display='none'" . '"' . "class='cancel'>Cancel</button>
-          <span class='password'>Forgot <a href='#'>password?</a></span>
+
+          <label><input type='checkbox' checked='checked'> Remember me
+          </label>
+          <a href='forgotpassword.html' style = 'text-align: left; padding: 4%'> Forgot password? 
+          </a>
+
         </div>
+  
       </form>
     </div>
   
@@ -81,11 +83,11 @@
           <hr>
           <label><b>Username</b></label>
           <input ng-model='userName' type='text' placeholder='Enter Username' name='username' maxlength='20' required>
-      <span class='alert' ng-if='userName.length<4 && userName.length!=0'>Username enter is too short</span>
+      <span class='alert' ng-if='userName.length<4 && userName.length!=0'>Username enter is too short (Minimum of 4 and maximum of 20 characters)</span>
       <br>
           <label><b>Password</b></label>
           <input ng-model='password' type='password' placeholder='Enter Password' name='password' maxlength='20' required>
-      <span class='alert' ng-if='password.length<4 && password.length!=0'>Password enter is too short</span>
+      <span class='alert' ng-if='password.length<8 && password.length!=0'>Password should have a minimum of 8 characters</span>
       <br>
           <label> <b> Security Question 1 </b>
             <select name = 'SQ1'>
