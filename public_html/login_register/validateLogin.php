@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sets = new Sets();
     $log = new Logging();
     $user = "";
-    $pass = "";
+    $pass = "l";
     $hash = "";
     //$pin = "";
     $validData = true;

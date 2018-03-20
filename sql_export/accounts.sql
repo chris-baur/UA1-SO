@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS `accounts`;
 CREATE TABLE IF NOT EXISTS `accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL DEFAULT 'john117',
-  `password` varchar(500) DEFAULT NULL,
+  `password` varchar(500) NOT NULL DEFAULT '$2y$10$C/uoZeY8TclVBl7UskXJceE7v800lyCnANBNtbTWX6jH7/dtOSqoK',
   `name` varchar(500) NOT NULL DEFAULT 'default name',
   `last_name` varchar(25) NOT NULL DEFAULT 'default  last',
   `gender` set('Male','Female','Other') NOT NULL DEFAULT 'Male',

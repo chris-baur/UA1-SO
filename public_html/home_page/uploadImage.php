@@ -20,8 +20,6 @@ $newfilename = $_SESSION['username'];
 $uploadfile =  $uploaddir. $newfilename. '.png';
 $_SESSION['name'] = $uploadfile;
 
-echo $uploadfile;
-
 $stmt = $conn->prepare("UPDATE `accounts` SET `name` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
 //$stmt = $conn->prepare("UPDATE accounts SET name = $uploadfile");
 $stmt->bindParam(':name', $uploadfile);

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sets = new Sets();
     $log = new Logging();
     $username = "";
-    $password = "";
+    $password = "null";
     $hash = "";
     $name = "null";
     $last_name = "null";

@@ -52,7 +52,7 @@
 					</div>
 
 					<div class = "column2">	 
-							<p id = "ChangePass"></p>
+							
 							<li>		
 								<input type="submit" id = "password" onclick = "changePassword()" value = "Change Password"/>	
 							</li>
@@ -69,6 +69,7 @@
 				</div>					
 
 				<div id = "changeBio"> </div>
+				<div id = "ChangePass"></div>
 				
 		</div>
 
@@ -87,7 +88,7 @@
 			function changePassword() {
 				document.getElementById("changeBio").innerHTML = "";
 				document.getElementById("changePic").innerHTML = "";
-				document.getElementById("ChangePass").innerHTML = '<form action="changePassword.php" method="POST">Current Password <input type = "text" id = "ChangePass" placeholder = "Password"><br> New Password <input type = "text" id = "changePass" placeholder = "Password"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/></form>';
+				document.getElementById("ChangePass").innerHTML = '<br><form action="changePassword.php" method="POST">Current Password <input type = "text" id = "ChangePass" name = "oldpassword" placeholder = "Password"><br> New Password <input type = "text" id = "changePass" name = "newpassword" placeholder = "Password" style = "margin-top: 2%"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/></form>';
 			}
 
 			function changeBio() {
