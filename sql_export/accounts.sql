@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL DEFAULT 'john117',
   `password` varchar(500) DEFAULT NULL,
-  `name` varchar(25) NOT NULL DEFAULT 'default name',
+  `name` varchar(500) NOT NULL DEFAULT 'default name',
   `last_name` varchar(25) NOT NULL DEFAULT 'default  last',
   `gender` set('Male','Female','Other') NOT NULL DEFAULT 'Male',
   `security_one` set('What is the first name of the person you first kissed?','What is the last name of the teacher who gave you your first failing grade?','What is your pets name?','What was the name of your elementary / primary school?','In what city or town does your nearest sibling live?','What was your childhood nickname?','What is the name of your favorite childhood friend?') DEFAULT 'What is the first name of the person you first kissed?',

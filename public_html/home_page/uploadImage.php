@@ -1,5 +1,14 @@
 <?php
 
+$config = parse_ini_file('../../config.ini');
+$username = $config['username'];
+$password = $config['password'];
+$dbname = $config['dbname'];
+$servername = $config['servername'];
+
+$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 $status = session_status();
 if($status == PHP_SESSION_NONE){
 	//There is no active session
@@ -11,7 +20,12 @@ $newfilename = $_SESSION['username'];
 $uploadfile =  $uploaddir. $newfilename. '.png';
 $_SESSION['name'] = $uploadfile;
 
-//
+echo $uploadfile;
+
+$stmt = $conn->prepare("UPDATE `accounts` SET `name` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
+//$stmt = $conn->prepare("UPDATE accounts SET name = $uploadfile");
+$stmt->bindParam(':name', $uploadfile);
+$stmt->execute();	
 
 echo "<p>";
 
