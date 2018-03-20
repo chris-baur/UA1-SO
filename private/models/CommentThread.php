@@ -1,6 +1,6 @@
 <?php
 
-    include_once('\Comment.php');
+    include_once(dirname(__FILE__).'/Comment.php');
     
     class CommentThread{
         var $comment;

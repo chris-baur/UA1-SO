@@ -1,8 +1,7 @@
 <?php
 
-    include_once('\CommentThread.php');
-    include_once('\AnswerThread.php');
-    include_once('\Answer.php');
+    include_once(dirname(__FILE__).'/CommentThread.php');
+    include_once(dirname(__FILE__).'/Answer.php');
     
     
     class AnswerThread{
