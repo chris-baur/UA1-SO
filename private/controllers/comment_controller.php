@@ -149,7 +149,7 @@ $log = new Logging();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date, upvotes, downvotes FROM comments WHERE answer_id LIKE '%:answerId%' AND question_id LIKE '%:questionId%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date, upvotes, downvotes FROM comments WHERE answer_id LIKE :answerId AND question_id LIKE :questionId; ORDER BY date DESC");						
 			$stmt -> bindParam(':answerId', $answerId);
 			$stmt -> bindParam(':questionId', $questionId);
 		
