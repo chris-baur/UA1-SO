@@ -48,7 +48,23 @@ $log = new Logging();
 		return $answer_id;
     }
 
-   
+    /**
+	 * Returns answers with the specified account
+	 *
+	 * @param $account		Answer's account
+	 */
+	function getAnswersByAccount($account){
+		global $servername, $username, $password, $dbname, $log;
+        $answerArray = [];
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE account_id = :account_id;");
+			$accountID=$account->get_id();						
+			$stmt -> bindParam(':account_id',$accountID );
+		
+			$stmt -> execute();
 			
 			// while there is an answer with specified account id
 			while($result = $stmt -> fetch()){
@@ -56,12 +72,12 @@ $log = new Logging();
 
 				$a->set_id($result[0]);
                 $a->set_accountId($result[1]);
-                $a->set_header($result[2]);
+                $a->set_question_id($result[2]);
                 $a->set_content($result[3]);
                 $a->set_date($result[4]);
                 $a->set_upvotes($result[5]);
                 $a->set_downvotes($result[6]);
-                $a->set_tags($result[7]);
+                $a->set_best($result[7]);
 
                 $answerArray[] = $a;
 			}
@@ -76,11 +92,19 @@ $log = new Logging();
 		return $answerArray;
     }
     
+    /**
+	 * Returns answers with the specified content
+	 *
+	 * @param $content		Answer's content
+	 */
+	function getAnswersByContent($content){
+		global $servername, $username, $password, $dbname, $log;
+        $answerArray = [];
 		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM answers WHERE content LIKE '%:content%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE content LIKE '%:content%';");						
 			$stmt -> bindParam(':content', $content);
 		
 			$stmt -> execute();
@@ -91,56 +115,12 @@ $log = new Logging();
 
 				$a->set_id($result[0]);
                 $a->set_accountId($result[1]);
-                $a->set_header($result[2]);
+                $a->set_question_id($result[2]);
                 $a->set_content($result[3]);
                 $a->set_date($result[4]);
                 $a->set_upvotes($result[5]);
                 $a->set_downvotes($result[6]);
-                $a->set_tags($result[7]);
-
-                $answerArray[] = $a;
-			}
-		}
-		catch(PDOException $e){
-			$log->lwrite($e -> getMessage());
-		}
-		finally{
-			unset($pdo);
-		}
-		// returns the answers array
-		return $answerArray;
-	}
-    
-    /**
-	 * Returns answers with the specified header
-	 *
-	 * @param $header		Answer's header
-	 */
-	function getanswerByHeader($header){
-		global $servername, $username, $password, $dbname, $log;
-        $answer = new Answer();
-        $answerArray = [];
-		
-		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM answers WHERE header LIKE '%:header%';");						
-			$stmt -> bindParam(':header', $header);
-		
-			$stmt -> execute();
-			
-			// while there is a answer with specified header
-			while($result = $stmt -> fetch()){
-                $a = new Answer();
-
-				$a->set_id($result[0]);
-                $a->set_accountId($result[1]);
-                $a->set_header($result[2]);
-                $a->set_content($result[3]);
-                $a->set_date($result[4]);
-                $a->set_upvotes($result[5]);
-                $a->set_downvotes($result[6]);
-                $a->set_tags($result[7]);
+                $a->set_best($result[7]);
 
                 $answerArray[] = $a;
 			}
@@ -156,6 +136,50 @@ $log = new Logging();
 	}
 
 	/**
+	 * Returns answers with the specified question_id
+	 *
+	 * @param $content		Answer's question_id
+	 */
+	function getAnswersByQuestionId($questionId){
+		global $servername, $username, $password, $dbname, $log;
+        $answerArray = [];
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE question_id LIKE '%:questionId%';");						
+			$stmt -> bindParam(':questionId', $questionId);
+		
+			$stmt -> execute();
+			
+            // while there is an answer with specified content
+            while($result = $stmt -> fetch()){
+                $a = new Answer();
+
+				$a->set_id($result[0]);
+                $a->set_accountId($result[1]);
+                $a->set_question_id($result[2]);
+                $a->set_content($result[3]);
+                $a->set_date($result[4]);
+                $a->set_upvotes($result[5]);
+                $a->set_downvotes($result[6]);
+                $a->set_best($result[7]);
+
+                $answerArray[] = $a;
+			}
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+		// returns the answers array
+		return $answerArray;
+	}
+    
+
+	/**
 	* Updates an answer in the answer table of the Database
 	*
 	* @param $answer		answer object
@@ -166,14 +190,13 @@ $log = new Logging();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-            $stmt = $pdo -> prepare('UPDATE answers set header = :header, content = :content, upvotes = :upvotes, downvotes = :downvotes, tags = :tags
+            $stmt = $pdo -> prepare('UPDATE answers set content = :content, upvotes = :upvotes, downvotes = :downvotes, best = :best
                 WHERE id = :id;');
 										
-			$stmt -> bindParam(':header', $Answer->get_header());
 			$stmt -> bindParam(':content', $Answer->get_content());
             $stmt -> bindParam(':upvotes', $Answer->get_upvotes());
             $stmt -> bindParam(':downvotes', $Answer->get_downvotes());
-            $stmt -> bindParam(':tags', $Answer->get_tags());
+            $stmt -> bindParam(':best', $Answer->get_best());
             $stmt -> bindParam(':id', $Answer->get_id());
 			
 			$stmt -> execute();
