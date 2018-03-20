@@ -169,19 +169,32 @@ function __construct(){
             $stmt = $pdo -> prepare('UPDATE accounts set password = :password, name = :name, last_name = :last_name, gender = :gender, 
                 security_one = :security_one, security_two = :security_two, answer_one = :answer_one, answer_two = :answer_two,
 				bio = :bio, profession = :profession, pin = :pin WHERE username = :username;');
+
+			$uname = $account->getUsername();
+			$pass = $account->getPassword();
+			$name = $account->getName();
+			$lname = $account->getLastName();
+			$gender = $account->getGender();
+			$s1 = $account->getSecurityOne();
+			$s2 = $account->getSecurityTwo();
+			$a1 = $account->getAnswerOne();
+			$a2 = $account->getAnswerTwo();
+			$bio = $account->getBio();
+			$profession = $account->getProfession();
+			$pin = $account->getPin();
 										
-			$stmt -> bindParam(':username', $account->getUsername());
-			$stmt -> bindParam(':password', $account->getPassword());
-			$stmt -> bindParam(':name', $account->getName());
-            $stmt -> bindParam(':last_name', $account->getLastName());
-            $stmt -> bindParam(':gender', $account->getGender());
-            $stmt -> bindParam(':security_one', $account->getSecurityOne());
-            $stmt -> bindParam(':security_two', $account->getSecurityTwo());
-            $stmt -> bindParam(':answer_one', $account->getAnswerOne());
-            $stmt -> bindParam(':answer_two', $account->getAnswerTwo());
-            $stmt -> bindParam(':bio', $account->getBio());
-            $stmt -> bindParam(':profession', $account->getProfession());
-            $stmt -> bindParam(':pin', $account->getPin());
+			$stmt -> bindParam(':username', $uname);
+			$stmt -> bindParam(':password', $pass);
+			$stmt -> bindParam(':name', $name);
+            $stmt -> bindParam(':last_name', $lname);
+            $stmt -> bindParam(':gender', $gender);
+            $stmt -> bindParam(':security_one', $s1);
+            $stmt -> bindParam(':security_two', $s2);
+            $stmt -> bindParam(':answer_one', $a1);
+            $stmt -> bindParam(':answer_two', $a2);
+            $stmt -> bindParam(':bio', $bio);
+            $stmt -> bindParam(':profession', $profession);
+            $stmt -> bindParam(':pin', $pin);
 			
 			$stmt -> execute();
             $log->lwrite('account updated succesfully. user name: '.$account->getUsername());
