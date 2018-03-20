@@ -48,7 +48,7 @@
 						<tags-input ng-model='tags'></tags-input>
 					</div>
 					<div class='space'>
-						<button type='submit' class='btn btn-primary btn-md'> Ask it! </button>
+						<button ng-disabled='allowSubmit()' type='submit' class='btn btn-primary btn-md'> Ask it! </button>
 					</div>
 				</div>
 			</form>";
