@@ -1,24 +1,19 @@
-#footer {
-	background-color: #DEB887;	
+body {
 	margin:0;
-    padding:0;
-<<<<<<< HEAD
-    position:fixed;
-    bottom: 0px;
-    width: 100%;
-=======
+   	padding:0;
+   	height:100%;
+}
+
+#footer {
 	position: relative;
-    bottom: 0px;
+	background-color: #DEB887;
 	width: 100%;
-	height: 27%;
-	/* position:relative; */
-    
->>>>>>> ee2133ff48eef2d1f9a2d6f23fb96c95878268d4
-    
+	margin-top: 2%;	
+    bottom: 0; 
 }
 
 .container {
-	position: relative;
+	min-height:100%;
   	font-family: helvetica, sans-serif;
 }
 

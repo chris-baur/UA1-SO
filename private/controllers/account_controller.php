@@ -194,7 +194,7 @@ $professions = $sets->to_string_professions();
 		
 
 		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
 			$stmt = $pdo -> prepare('SELECT id, username, password, name, last_name, gender, security_one, security_two, answer_one, answer_two, bio, profession, pin FROM accounts WHERE id=?;');
 			$stmt -> bindParam(1, $id);
