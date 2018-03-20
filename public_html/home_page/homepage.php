@@ -21,7 +21,7 @@
 
         $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
-   		$result = mysqli_query($con,"SELECT questions.*, accounts.username FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY date DESC, upvotes DESC, downvotes");
+   		$result = mysqli_query($con,"SELECT questions.*, accounts.username,accounts.name FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY date DESC, upvotes DESC, downvotes");
         try{
             $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
