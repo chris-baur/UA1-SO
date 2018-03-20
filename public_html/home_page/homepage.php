@@ -66,6 +66,13 @@
           // Output the like and dislike buttons
 	        echo "
 	          <div class='form-group row questionBlock'>
+              <div class='col-md-2 '>";
+                $file_path=$info['name']; 
+                if(!file_exists($file_path)) {
+                $file_path = "..\img\avatar2.png";                      
+                };
+            echo "<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>";
+            echo"
 	            <div class='details vote_btns ".$vote_class." '>
   	            <form action= '..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=1&page=homepage.php' method='POST'>
   	              <button type='submit' class='vote_btn vote_like' ";
@@ -81,6 +88,7 @@
   	              }
   	            echo "><i class='fa fa-thumbs-down'> ". $info['downvotes'] . "</i></button>
   	              </form>
+                  </div>
   	            </div>
   	            <div class=' question'>
   	              <div>
