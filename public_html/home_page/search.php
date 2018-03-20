@@ -31,7 +31,7 @@
 	    $dbname = $config['dbname'];
 
 	    $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
-	    $sql= "SELECT questions.*, accounts.username FROM questions INNER JOIN accounts ON accounts.id=questions.account_id WHERE (header LIKE '%".$search."%') OR (content LIKE '%".$search."%')";
+	    $sql= "SELECT questions.*, accounts.username, accounts.name FROM questions INNER JOIN accounts ON accounts.id=questions.account_id WHERE (header LIKE '%".$search."%') OR (content LIKE '%".$search."%')";
 	    $result=mysqli_query($con,$sql) or die(mysql_error());
 	    try{
             $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -70,15 +70,25 @@
 	        }
 	        echo "
 	          <div class='form-group row questionBlock'>
+            <div class='col-md-2 '>";
+              $file_path=$info['name']; 
+                if(!file_exists($file_path)) {
+                $file_path = "..\img\avatar2.png";                      
+                }
+                ;
+            echo "
+            	<div class='col-md-10'>
+            		<img class='circle_img' src=".$file_path.">
+            	</div>
 	            <div class='details vote_btns ".$vote_class." '>
-	            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=1&page=homepage.php' method='POST'>
+	            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=1&page=search.php?search=".$search."' method='POST'>
 	              <button type='submit' class='vote_btn vote_like' ";
 	              if(!isset($_SESSION['userid'])){
 	              	echo "disabled";
 	              }
 	            echo "><i class='fa fa-thumbs-up'> ". $info['upvotes'] . "</i></button>
 	            </form>
-	            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=-1&page=homepage.php' method='POST'>
+	            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=-1&page=search.php?search=".$search."' method='POST'>
 	              <button type='submit' class='vote_btn vote_dislike' ";
 	              if(!isset($_SESSION['userid'])){
 	              	echo "disabled";
@@ -86,6 +96,7 @@
 	            echo "><i class='fa fa-thumbs-down'> ". $info['downvotes'] . "</i></button>
 	              </form>
 	            </div>
+	        </div>
 	            <div class='col-md-10 question'>
 	              <div>
 	              <a href='questionThread.php?questionid=".$info['id']."'>

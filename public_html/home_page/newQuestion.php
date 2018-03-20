@@ -37,11 +37,11 @@
 					<div class='form-control space'>
 						<span class='col-lg-2'>Tilte  </span>
 						<input class='col-lg-10' type='text' placeholder='Title of your question' name='header' 
-						ng-model='question_title'>		
+						ng-model='question_title' required>		
 					</div>
 					<div class='form-control space'>
 						<textarea class='form-control' rows='10' name='content'
-						ng-model='content'></textarea>
+						ng-model='content' required></textarea>
 					</div>
 					<div class='form-control space'>
 						<label>Tags : </label>
