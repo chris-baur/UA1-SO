@@ -1,9 +1,9 @@
 <?php
-include '..\..\private\util\logging.php';
-include '..\..\private\util\sets.php';
-include '..\..\private\models\Question.php';
-include '..\..\private\models\Account.php';
-include '..\..\private\models\Answer.php';
+include_once '..\..\private\util\logging.php';
+include_once '..\..\private\util\sets.php';
+include_once '..\..\private\models\Question.php';
+include_once '..\..\private\models\Account.php';
+include_once '..\..\private\models\Answer.php';
 $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 $servername = $config['servername'];
@@ -143,11 +143,10 @@ $log = new Logging();
 	function getAnswersByQuestionId($questionId){
 		global $servername, $username, $password, $dbname, $log;
         $answerArray = [];
-		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE question_id LIKE '%:questionId%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE question_id LIKE :questionId");						
 			$stmt -> bindParam(':questionId', $questionId);
 		
 			$stmt -> execute();
@@ -155,10 +154,9 @@ $log = new Logging();
             // while there is an answer with specified content
             while($result = $stmt -> fetch()){
                 $a = new Answer();
-
 				$a->set_id($result[0]);
                 $a->set_accountId($result[1]);
-                $a->set_question_id($result[2]);
+                $a->set_questionId($result[2]);
                 $a->set_content($result[3]);
                 $a->set_date($result[4]);
                 $a->set_upvotes($result[5]);

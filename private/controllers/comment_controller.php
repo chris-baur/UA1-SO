@@ -1,10 +1,10 @@
 <?php
-include '..\..\private\util\logging.php';
-include '..\..\private\util\sets.php';
-include '..\..\private\models\Question.php';
-include '..\..\private\models\Account.php';
-include '..\..\private\models\Answer.php';
-include '..\..\private\models\Comment.php';
+include_once '..\..\private\util\logging.php';
+include_once '..\..\private\util\sets.php';
+include_once '..\..\private\models\Question.php';
+include_once '..\..\private\models\Account.php';
+include_once '..\..\private\models\Answer.php';
+include_once '..\..\private\models\Comment.php';
 $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 $servername = $config['servername'];
