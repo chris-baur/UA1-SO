@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // }
 
     //validate professions
-    if(validateString('profession') && in_array(($_POST['profession']), $sets->get_professions())) {
+    if(validateString('profession') && in_array(($_POST['profession']), $sets->getProfessions())) {
         $profession = htmlentities($_POST['profession']);
         $log->lwrite('Profession option succeeded');
     }else{
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //validate gender
-    if(validateString('gender') && in_array(($_POST['gender']), $sets->get_genders())){
+    if(validateString('gender') && in_array(($_POST['gender']), $sets->getGenders())){
         $gender = htmlentities($_POST['gender']);
         $log->lwrite('Gender option succeeded');
     }else{
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // }
     
     //validate security question one
-    if(validateString('SQ1') && in_array($_POST['SQ1'], $sets->get_security_one())){
+    if(validateString('SQ1') && in_array($_POST['SQ1'], $sets->getSecurityOne())){
             $security_one = htmlentities($_POST['SQ1']);
             $log->lwrite('Security question 1 option succeeded');
     }
@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     //validate security question two
-    if(validateString('SQ2') && in_array($_POST['SQ2'], $sets->get_security_two())){
+    if(validateString('SQ2') && in_array($_POST['SQ2'], $sets->getSecurityTwo())){
             $security_two = htmlentities($_POST['SQ2']);
             $log->lwrite('Security question 2 option succeeded');
         }

@@ -27,13 +27,13 @@ $log = new Logging();
             $stmt = $pdo -> prepare('INSERT INTO answers(account_id, header, content, date, upvotes, downvotes, tags) VALUES(:account_id, :header, :content, :date, :upvotes, :downvotes, :tags);');
                 //@TODO complete function
 										
-			$stmt -> bindParam(':account_id', $answer->get_accountId());
-			$stmt -> bindParam(':header', $answer->get_header());
-			$stmt -> bindParam(':content', $answer->get_content());
-            $stmt -> bindParam(':date', $answer->get_date());
-            $stmt -> bindParam(':upvotes', $answer->get_upvotes());
-            $stmt -> bindParam(':downvotes', $answer->get_downvotes());
-            $stmt -> bindParam(':tags', $answer->get_tags());
+			$stmt -> bindParam(':account_id', $answer->getAccountId());
+			$stmt -> bindParam(':header', $answer->getHeader());
+			$stmt -> bindParam(':content', $answer->getContent());
+            $stmt -> bindParam(':date', $answer->getDate());
+            $stmt -> bindParam(':upvotes', $answer->getUpvotes());
+            $stmt -> bindParam(':downvotes', $answer->getDownvotes());
+            $stmt -> bindParam(':tags', $answer->getTags());
 			
 			$stmt -> execute();
             $answer_id = $pdo -> lastInsertId();
@@ -61,7 +61,7 @@ $log = new Logging();
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE account_id = :account_id;");
-			$accountID=$account->get_id();						
+			$accountID=$account->getId();						
 			$stmt -> bindParam(':account_id',$accountID );
 		
 			$stmt -> execute();
@@ -70,14 +70,14 @@ $log = new Logging();
 			while($result = $stmt -> fetch()){
                 $a = new Answer();
 
-				$a->set_id($result[0]);
-                $a->set_accountId($result[1]);
-                $a->set_question_id($result[2]);
-                $a->set_content($result[3]);
-                $a->set_date($result[4]);
-                $a->set_upvotes($result[5]);
-                $a->set_downvotes($result[6]);
-                $a->set_best($result[7]);
+				$a->setId($result[0]);
+                $a->setAccountId($result[1]);
+                $a->setQuestionId($result[2]);
+                $a->setContent($result[3]);
+                $a->setDate($result[4]);
+                $a->setUpvotes($result[5]);
+                $a->setDownvotes($result[6]);
+                $a->settBest($result[7]);
 
                 $answerArray[] = $a;
 			}
@@ -113,14 +113,14 @@ $log = new Logging();
             while($result = $stmt -> fetch()){
                 $a = new Answer();
 
-				$a->set_id($result[0]);
-                $a->set_accountId($result[1]);
-                $a->set_question_id($result[2]);
-                $a->set_content($result[3]);
-                $a->set_date($result[4]);
-                $a->set_upvotes($result[5]);
-                $a->set_downvotes($result[6]);
-                $a->set_best($result[7]);
+				$a->setId($result[0]);
+                $a->setAccountId($result[1]);
+                $a->setQuestionId($result[2]);
+                $a->setContent($result[3]);
+                $a->setDate($result[4]);
+                $a->setUpvotes($result[5]);
+                $a->setDownvotes($result[6]);
+                $a->settBest($result[7]);
 
                 $answerArray[] = $a;
 			}
@@ -156,14 +156,14 @@ $log = new Logging();
             while($result = $stmt -> fetch()){
                 $a = new Answer();
 
-				$a->set_id($result[0]);
-                $a->set_accountId($result[1]);
-                $a->set_question_id($result[2]);
-                $a->set_content($result[3]);
-                $a->set_date($result[4]);
-                $a->set_upvotes($result[5]);
-                $a->set_downvotes($result[6]);
-                $a->set_best($result[7]);
+				$a->setId($result[0]);
+                $a->setAccountId($result[1]);
+                $a->setQuestionId($result[2]);
+                $a->setContent($result[3]);
+                $a->setDate($result[4]);
+                $a->setUpvotes($result[5]);
+                $a->setDownvotes($result[6]);
+                $a->settBest($result[7]);
 
                 $answerArray[] = $a;
 			}
@@ -193,11 +193,11 @@ $log = new Logging();
             $stmt = $pdo -> prepare('UPDATE answers set content = :content, upvotes = :upvotes, downvotes = :downvotes, best = :best
                 WHERE id = :id;');
 										
-			$stmt -> bindParam(':content', $Answer->get_content());
-            $stmt -> bindParam(':upvotes', $Answer->get_upvotes());
-            $stmt -> bindParam(':downvotes', $Answer->get_downvotes());
-            $stmt -> bindParam(':best', $Answer->get_best());
-            $stmt -> bindParam(':id', $Answer->get_id());
+			$stmt -> bindParam(':content', $Answer->getContent());
+            $stmt -> bindParam(':upvotes', $Answer->getUpvotes());
+            $stmt -> bindParam(':downvotes', $Answer->getDownvotes());
+            $stmt -> bindParam(':best', $Answer->getBest());
+            $stmt -> bindParam(':id', $Answer->getId());
 			
 			$stmt -> execute();
             $log->lwrite('Updated Answer succesfully. ID: '.$answer_id);

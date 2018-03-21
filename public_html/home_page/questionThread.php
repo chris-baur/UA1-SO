@@ -34,14 +34,14 @@
 			?>
 
             <?php echo "Asked By: ".$acc["username"]?><br>
-            <?php echo "Posted on: ".$row[0]->get_date()?><br>
-            <?php echo "Upvotes: ".$row[0]->get_upvotes()?>
-            <?php echo "Downvotes: ".$row[0]->get_downvotes()?>
+            <?php echo "Posted on: ".$row[0]->getDate()?><br>
+            <?php echo "Upvotes: ".$row[0]->getUpvotes()?>
+            <?php echo "Downvotes: ".$row[0]->getDownvotes()?>
 
         </div>
         <div class="question">
-            <h5><strong><?php echo $row[0]->get_header()?></strong></h5>
-            <?php echo $row[0]->get_content()?><br>
+            <h5><strong><?php echo $row[0]->getHeader()?></strong></h5>
+            <?php echo $row[0]->getContent()?><br>
         </div>
     </div>  
      

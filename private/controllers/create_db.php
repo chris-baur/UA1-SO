@@ -47,9 +47,9 @@ function createDatabase(){
 }
 // function createDefaultAccount(){
 //     global $servername, $username, $password, $dbname, $log, $sets;
-//     $s1 = strtok($sets->to_string_security_one(), ',');
+//     $s1 = strtok($sets->toStringSecurityOne(), ',');
 //     $s1 = str_replace("'","",$s1);
-//     $s2 = strtok($sets->to_string_security_two(), ',');
+//     $s2 = strtok($sets->toStringSecurityTwo(), ',');
 //     $s2 = str_replace("'","",$s2);
 //     //password is hashed version of 'password'
 //     $a = new Account(-1, 'John118', '$2y$10$C/uoZeY8TclVBl7UskXJceE7v800lyCnANBNtbTWX6jH7/dtOSqoK', 'John', 'Master Chief', 'Male', $s1, $s2, 'Cortana', 'EDZ', 'Last Spartan Alive', 'Gamer', null);
@@ -60,10 +60,10 @@ function createAccountsTable(){
     global $servername, $username, $password, $dbname, $log;
     
     $sets = new Sets();
-    $genders = $sets->to_string_genders();
-    $security_one = $sets->to_string_security_one();
-    $security_two = $sets->to_string_security_two();
-    $professions = $sets->to_string_professions();
+    $genders = $sets->toStringGenders();
+    $security_one = $sets->toStringSecurityOne();
+    $security_two = $sets->toStringSecurityTwo();
+    $professions = $sets->toStringProfessions();
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -78,13 +78,13 @@ function createAccountsTable(){
             `password` varchar(500) DEFAULT NULL,
             `name` varchar(25) NOT NULL DEFAULT 'default name',
             `last_name` varchar(25) NOT NULL DEFAULT 'default  last',
-            `gender` set($genders) NOT NULL DEFAULT '".$sets->get_genders()[0]."',
-            `security_one` set($security_one) DEFAULT '".$sets->get_security_one()[0]."',
-            `security_two` set($security_two) NOT NULL DEFAULT '".$sets->get_security_two()[0]."',
+            `gender` set($genders) NOT NULL DEFAULT '".$sets->getGenders()[0]."',
+            `security_one` set($security_one) DEFAULT '".$sets->getSecurityOne()[0]."',
+            `security_two` set($security_two) NOT NULL DEFAULT '".$sets->getSecurityTwo()[0]."',
             `answer_one` varchar(20) NOT NULL DEFAULT 'a1',
             `answer_two` varchar(20) NOT NULL DEFAULT 'a2',
             `bio` varchar(500) NOT NULL DEFAULT 'Training to be like goku',
-            `profession` set($professions) NOT NULL DEFAULT '".$sets->get_professions()[2]."',
+            `profession` set($professions) NOT NULL DEFAULT '".$sets->getProfessions()[2]."',
             `pin` varchar(4) DEFAULT NULL,
             PRIMARY KEY (`id`),
             UNIQUE KEY `username` (`username`)
