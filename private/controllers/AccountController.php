@@ -30,8 +30,8 @@ function __construct(){
     self::$log = new Logging();
     $sets = new Sets();
     self::$genders = $sets->toStringGenders();
-    self::$security_one = $sets->toStringSecurtiyOne();
-    self::$security_two = $sets->toStringSecurtiyTwo();
+    self::$security_one = $sets->toStringSecurityOne();
+    self::$security_two = $sets->toStringSecurityTwo();
     self::$professions = $sets->toStringProfessions();
 }
 
