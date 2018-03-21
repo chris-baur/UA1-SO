@@ -29,10 +29,10 @@ function __construct(){
 
     self::$log = new Logging();
     $sets = new Sets();
-    self::$genders = $sets->to_string_genders();
-    self::$security_one = $sets->to_string_security_one();
-    self::$security_two = $sets->to_string_security_two();
-    self::$professions = $sets->to_string_professions();
+    self::$genders = $sets->toStringGenders();
+    self::$security_one = $sets->toStringSecurtiyOne();
+    self::$security_two = $sets->toStringSecurtiyTwo();
+    self::$professions = $sets->toStringProfessions();
 }
 
 	/**
