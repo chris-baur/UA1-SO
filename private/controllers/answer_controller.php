@@ -72,7 +72,7 @@ $log = new Logging();
 
 				$a->setId($result[0]);
                 $a->setAccountId($result[1]);
-                $a->set_question_id($result[2]);
+                $a->setQuestionId($result[2]);
                 $a->setContent($result[3]);
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
@@ -115,7 +115,7 @@ $log = new Logging();
 
 				$a->setId($result[0]);
                 $a->setAccountId($result[1]);
-                $a->set_question_id($result[2]);
+                $a->setQuestionId($result[2]);
                 $a->setContent($result[3]);
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
@@ -158,7 +158,7 @@ $log = new Logging();
 
 				$a->setId($result[0]);
                 $a->setAccountId($result[1]);
-                $a->set_question_id($result[2]);
+                $a->setQuestionId($result[2]);
                 $a->setContent($result[3]);
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
