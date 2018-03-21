@@ -213,17 +213,24 @@ class QuestionController{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
             $stmt = $pdo -> prepare('UPDATE questions set header = :header, content = :content, upvotes = :upvotes, downvotes = :downvotes, tags = :tags
-                WHERE id = :id;');
-										
-			$stmt -> bindParam(':header', $question->getHeader());
-			$stmt -> bindParam(':content', $question->getContent());
-            $stmt -> bindParam(':upvotes', $question->getUpvotes());
-            $stmt -> bindParam(':downvotes', $question->getDownvotes());
-            $stmt -> bindParam(':tags', $question->getTags());
-            $stmt -> bindParam(':id', $question->getId());
+				WHERE id = :id;');
+				
+			$header = $question->getHeader();
+			$content = $question->getContent();
+			$upvotes = $question->getUpvotes();
+			$downvotes = $question->getDownvotes();
+			$tags = implode(" ",$question->getTags());
+			$id = $question->getId();
+
+			$stmt -> bindParam(':header', $header);
+			$stmt -> bindParam(':content', $content);
+			$stmt -> bindParam(':upvotes', $upvotes);
+			$stmt -> bindParam(':downvotes', $downvotes);
+			$stmt -> bindParam(':tags', $tags);								
+            $stmt -> bindParam(':id', $id);
 			
 			$stmt -> execute();
-            //$log->lwrite('Updated question succesfully. ID: '. $question->getId());
+            $log->lwrite('Updated question succesfully. ID: '. $id);
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
