@@ -70,6 +70,7 @@
           $vote_class=Vote::getClass(false);
         }
         echo "
+
           <div class='form-group row questionBlock'>                    
             <div class='col-md-2 '>";
               $file_path = "";       
