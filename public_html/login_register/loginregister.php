@@ -97,7 +97,7 @@
   include '..\..\private\util\logging.php';
 
   $sets = new Sets();
-  $sets = json_decode(file_getContents('../../sets.txt', true));
+  $sets = json_decode(file_get_contents('../../sets.txt', true));
   $log = new Logging();
   $log->lwrite('in login register ');
 

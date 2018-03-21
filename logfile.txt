@@ -82,3 +82,11 @@
 [21/Mar/2018:16:31:46] (questionThreadPage) Got all the answer threads. Size of array: 2
 [21/Mar/2018:16:31:46] (questionThreadPage) Got all the comment threads for Type: question with ID: 6. Size of array: 3
 [21/Mar/2018:16:31:46] (questionThreadPage) Got everything for the QuestionThread
+[21/Mar/2018:17:06:31] (questionThreadPage) Got the question with account username: john117
+[21/Mar/2018:17:06:31] (questionThreadPage) Got all the answer threads. Size of array: 0
+[21/Mar/2018:17:06:31] (questionThreadPage) Got all the comment threads for Type: question with ID: 3. Size of array: 0
+[21/Mar/2018:17:06:31] (questionThreadPage) Got everything for the QuestionThread
+[21/Mar/2018:17:06:47] (questionThreadPage) Got the question with account username: john117
+[21/Mar/2018:17:06:47] (questionThreadPage) Got all the answer threads. Size of array: 0
+[21/Mar/2018:17:06:47] (questionThreadPage) Got all the comment threads for Type: question with ID: 2. Size of array: 0
+[21/Mar/2018:17:06:47] (questionThreadPage) Got everything for the QuestionThread

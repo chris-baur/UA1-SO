@@ -33,7 +33,7 @@ $log = new Logging();
             $stmt -> bindParam(':date', $answer->getDate());
             $stmt -> bindParam(':upvotes', $answer->getUpvotes());
             $stmt -> bindParam(':downvotes', $answer->getDownvotes());
-            $stmt -> bindParam(':tags', $answer->get_tags());
+            $stmt -> bindParam(':tags', $answer->getTags());
 			
 			$stmt -> execute();
             $answer_id = $pdo -> lastInsertId();
@@ -72,7 +72,7 @@ $log = new Logging();
 
 				$a->setId($result[0]);
                 $a->setAccountId($result[1]);
-                $a->set_question_id($result[2]);
+                $a->setQuestionId($result[2]);
                 $a->setContent($result[3]);
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
@@ -115,7 +115,7 @@ $log = new Logging();
 
 				$a->setId($result[0]);
                 $a->setAccountId($result[1]);
-                $a->set_question_id($result[2]);
+                $a->setQuestionId($result[2]);
                 $a->setContent($result[3]);
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);

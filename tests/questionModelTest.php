@@ -39,7 +39,7 @@ class questionModelTest extends PHPUnit\Framework\TestCase{
     }
     public function testTags(){
         $q = new Question();
-        $q->set_tags(array('sql','query','mysql','database','db'));
-        $this->assertEquals($q->get_tags(), array('sql','query','mysql','database','db'));
+        $q->setTags(array('sql','query','mysql','database','db'));
+        $this->assertEquals($q->getTags(), array('sql','query','mysql','database','db'));
     }
 }
