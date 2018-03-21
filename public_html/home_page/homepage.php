@@ -91,7 +91,7 @@
   	              </form>
                   </div>
   	            </div>
-  	            <div class=' question'>
+  	            <div class='col-md-10 question'>
   	              <div>
   	              <a href='questionThread.php?questionid=".$info['id']."'>
   	                <h3><strong>" . $info['header'] . "</strong></h3></a>
