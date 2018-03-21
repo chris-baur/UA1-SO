@@ -35,8 +35,6 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `account_id` int(11) DEFAULT NULL,
   `question_id` int(11) DEFAULT NULL,
   `answer_id` int(11) DEFAULT NULL,
-  `upvotes` int (11) DEFAULT NULL,
-  `downvotes` int (11) DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `fk_comments_account_id` (`account_id`),

@@ -27,13 +27,19 @@ $log = new Logging();
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
             $stmt = $pdo -> prepare('INSERT INTO comments(account_id, question_id, answer_id, content, date) VALUES(:account_id, :question_id, :answer_id, :content, :date);');
-                //@TODO complete function
+
+				//@TODO complete function
+			$accountId = $comment->getAccountId();
+			$questionId = $comment->getQuestionId();
+			$answerId = $comment->getAnswerId();
+			$content = $comment->getContent();
+			$date = $comment->getDate();
 										
-			$stmt -> bindParam(':account_id', $comment->getAccountId());
-			$stmt -> bindParam(':question_id', $comment->getQuestionId());
-			$stmt -> bindParam(':answer_id', $comment->getAnswerId());			
-			$stmt -> bindParam(':content', $comment->getContent());
-            $stmt -> bindParam(':date', $comment->getDate());
+			$stmt -> bindParam(':account_id', $accountId);
+			$stmt -> bindParam(':question_id', $questionId);
+			$stmt -> bindParam(':answer_id', $answerId);			
+			$stmt -> bindParam(':content', $content);
+            $stmt -> bindParam(':date', $date);
 			
 			$stmt -> execute();
             $comment_id = $pdo -> lastInsertId();
@@ -143,7 +149,8 @@ $log = new Logging();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id LIKE :answerId AND question_id LIKE :questionId; ORDER BY date DESC");						
+
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id LIKE '%:answerId%' AND question_id LIKE '%:questionId%'; ORDER BY date DESC");
 			$stmt -> bindParam(':answerId', $answerId);
 			$stmt -> bindParam(':questionId', $questionId);
 		
@@ -180,18 +187,20 @@ $log = new Logging();
 	*/
 	function updateComment($comment){
 		global $servername, $username, $password, $dbname, $log;
-		$comment_id = 0;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
             $stmt = $pdo -> prepare('UPDATE comments set content = :content
-                WHERE id = :id;');
-										
-			$stmt -> bindParam(':content', $comment->getContent());
-            $stmt -> bindParam(':id', $comment->getId());
+
+				WHERE id = :id;');
+				
+			$content = $comment->getContent();
+			$id = $comment->getId();			
+			$stmt -> bindParam(':content', $content);
+            $stmt -> bindParam(':id', $id);
 			
 			$stmt -> execute();
-            $log->lwrite('Updated Comment succesfully. ID: '.$comment_id);
+            $log->lwrite('Updated Comment succesfully. ID: '. $id);
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
