@@ -93,18 +93,18 @@
 		}
 		
 		// function to increament the upvotes/downvotes by one
-		function increment_upvotes(){
+		function incrementUpvotes(){
 			$this ->upvotes++;
 		}
 
-		function decrement_upvotes(){
+		function decrementUpvotes(){
 			$this ->upvotes--;
 		}
 		
-		function increment_downvotes(){
+		function incrementDownvotes(){
 			$this ->downvotes++;
 		}
-		function decrement_downvotes(){
+		function decrementDownvotes(){
 			$this ->downvotes--;
 		}
 	}

@@ -51,7 +51,7 @@
 		function getDownvotes(){
 			return $this->downvotes;
 		}
-		function get_best(){
+		function getBest(){
 			return $this->best;
 		}
 		
@@ -82,7 +82,7 @@
 			$this->downvotes = $new_downvotes;
 		}
 
-		function set_best($new_best){
+		function setBest($new_best){
 			$this->best = $new_best;
 		}
 		

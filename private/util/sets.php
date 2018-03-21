@@ -35,23 +35,23 @@
 
         //To string functions used for DB SQL
 
-        public function to_string_security_one(){
-            return $this->to_string($this->getSecurityOne());
+        public function toStringSecurityOne(){
+            return $this->toString($this->getSecurityOne());
         }
 
-        public function to_string_security_two(){
-            return $this->to_string($this->getSecurityTwo());
+        public function toStringSecurityTwo(){
+            return $this->toString($this->getSecurityTwo());
         }
 
-        public function to_string_professions(){
-            return $this->to_string($this->getProfessions());
+        public function toStringProfessions(){
+            return $this->toString($this->getProfessions());
         }
 
-        public function to_string_genders(){
-            return $this->to_string($this->getGenders());
+        public function toStringGenders(){
+            return $this->toString($this->getGenders());
         }
 
-        private function to_string($array){
+        private function toString($array){
             return '\'' . implode('\',\'', $array) . '\'';
         }
     }

@@ -14,10 +14,10 @@ $dbname = $config['dbname'];
 
 $log = new Logging();
 $sets = new Sets();
-$genders = $sets->to_string_genders();
-$security_one = $sets->to_string_security_one();
-$security_two = $sets->to_string_security_two();
-$professions = $sets->to_string_professions();
+$genders = $sets->toStringGenders();
+$security_one = $sets->toStringSecurityOne();
+$security_two = $sets->toStringSecurityTwo();
+$professions = $sets->toStringProfessions();
 
 	/**
 	* Adds an account to the account table in the Database
@@ -170,7 +170,7 @@ $professions = $sets->to_string_professions();
             $stmt -> bindParam(':pin', $account->getPin());
 			
 			$stmt -> execute();
-            $log->lwrite('account updated succesfully. user name: '. $account->getUsername());
+            $log->lwrite('account updated succesfully. user name: '.$account->getUsername());
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
@@ -192,7 +192,7 @@ $professions = $sets->to_string_professions();
 		
 
 		try{
-			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
 			$stmt = $pdo -> prepare('SELECT id, username, password, name, last_name, gender, security_one, security_two, answer_one, answer_two, bio, profession, pin FROM accounts WHERE id=?;');
 			$stmt -> bindParam(1, $id);

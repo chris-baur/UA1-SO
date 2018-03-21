@@ -19,4 +19,4 @@ if($_GET['vote']==1){
 	$vote->dislike('questions',$_GET['ref_id'],$_SESSION['userid']);
 }
 
-header('Location: ../../public_html/home_page/myquestions.php?id='. $_GET['ref_id']);
+header('Location: ../../public_html/home_page/'. $_GET['page']);

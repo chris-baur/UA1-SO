@@ -22,15 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = "";
     $password = "";
     $hash = "";
-    $name = "";
-    $last_name = "";
+    $name = "null";
+    $last_name = "null";
     $gender = "";
     $profession = "";
     $security_one = "";
     $security_two = "";
     $answer_one = "";
     $answer_two = "";
-    $bio = "";
+    $bio = "null";
     $pin = null;
     $validData = true;
     $invalidArray = null;
@@ -164,12 +164,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(strlen($_POST['password']) < 8 ){
             $validData = false;
             $invalidArray['password'] = 'Invalid password length entered. It must be a minimum of 8 characters';
-        $log->lwrite("password is not ok");
+            $log->lwrite("password is not ok");
             
         }
-        else
+        else {
             $hash = password_hash(htmlentities($_POST['password']), PASSWORD_DEFAULT);
             $log->lwrite('Password hashed succeeded');
+        }
     }
     else{
         $validData = false;

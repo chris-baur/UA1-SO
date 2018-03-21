@@ -8,8 +8,12 @@
     <?php $config = parse_ini_file('../../config.ini'); ?>
   </head>
 
-  <body>  
+  <body>
+    <main> 
 
+
+    <!--Outputting the items in the database-->
+    
     <?php
     $username = $config['username'];
     $password = $config['password'];
@@ -19,28 +23,37 @@
     // connection to database
     $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
+    $result = mysqli_query($con,"SELECT questions.*, accounts.username FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY upvotes DESC, downvotes");
 
-
+    ?>
+    
     <!-- goes through each element in the questions table and outputs it. The order of the output is sorted by most upvotes then least downvotes -->
+
+    <br>
     <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {?>
     
-    <div class = "separator">
-    <div class ="comment" align = "left">
-        <h5><strong><?php echo $row["header"]?></strong></h5>
-        <?php echo $row["content"]?><br>
-
-        
-        <!-- Output of the details of the comment and commenter -->
-        <span class = "commentDetails">
-            <?php echo "Created By: ".$row["username"]?><br>
+    <div class= "questionBlock">
+        <div class= "details">
+            <!-- Output of the details of the comment and commenter -->
+            <?php echo "Asked By: ".$row["username"]?><br>
             <?php echo "Posted on: ".$row["date"]?><br>
             <?php echo "Upvotes: ".$row["upvotes"]?>
             <?php echo "Downvotes: ".$row["downvotes"]?>
-        </span>
-    </div>
-    </div>
-    <?php }?>
 
+        </div>
+        <div class="question">
+            <?php $question = $row["id"];?>
+            <a href="questionThread.php?questionid=<?php echo $row['id'];?>"><h5><strong><?php echo $row["header"]?></strong></h5></a>
+            <?php echo $row["content"]?><br>
+        </div>
+    </div>   
+    <br>
+    
+    <?php }?>
+    
+    
+
+</main>
   </body>
 
 </html>
