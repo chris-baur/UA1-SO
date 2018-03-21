@@ -147,8 +147,6 @@
 			        </div>
 		    	";
 
-		    	// --------------------------- put code for comment input ----------------------------
-
 		    	// Output of the details of the comments requested
 		    	echo "<div class='collapse' id='allComments".$counter."'>";
 		    	

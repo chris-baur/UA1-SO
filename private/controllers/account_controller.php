@@ -1,11 +1,11 @@
 <?php
 
-include_once(dirname(__FILE__).'/../util/logging.php');
-include_once(dirname(__FILE__).'/../util/sets.php');
-include_once(dirname(__FILE__).'/../models/Account.php');
-// $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
+include_once '..\..\private\util\logging.php';
+include_once '..\..\private\util\sets.php';
+include_once '..\..\private\models\Account.php';
+$config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
-$config = parse_ini_file(dirname(__FILE__).'/../../config.ini');
+$config = parse_ini_file('..\..\config.ini');
 
 $servername = $config['servername'];
 $username = $config['username'];
@@ -148,6 +148,7 @@ $professions = $sets->toStringProfessions();
 	*/
 	function updateAccount($account){
 		global $servername, $username, $password, $dbname, $log;
+		$user_id = 0;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
@@ -158,7 +159,7 @@ $professions = $sets->toStringProfessions();
 										
 			$stmt -> bindParam(':username', $account->getUsername());
 			$stmt -> bindParam(':password', $account->getPassword());
-			$stmt -> bindParam(':name', $account->getName());
+			$stmt -> bindParam(':name', $account->getUsername());
             $stmt -> bindParam(':last_name', $account->getLastName());
             $stmt -> bindParam(':gender', $account->getGender());
             $stmt -> bindParam(':security_one', $account->getSecurityOne());
@@ -178,6 +179,7 @@ $professions = $sets->toStringProfessions();
 		finally{
 			unset($pdo);
 		}
+		return $user_id;
     }
 
     /**

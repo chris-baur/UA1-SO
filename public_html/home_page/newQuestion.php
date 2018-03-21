@@ -33,7 +33,7 @@
 		 
 		 echo "<!--Body-->
 			<form method='post' action='?'>
-				<div class='container' ng-app='newQuestion' ng-controller='QuestionController'>
+				<div class='container' ng-app='newQuestion' ng-controller='questionController'>
 					<div class='form-control space'>
 						<span class='col-lg-2'>Tilte  </span>
 						<input class='col-lg-10' type='text' placeholder='Title of your question' name='header' 
