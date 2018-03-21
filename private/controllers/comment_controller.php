@@ -27,13 +27,18 @@ $log = new Logging();
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
             $stmt = $pdo -> prepare('INSERT INTO comments(account_id, question_id, answer_id, content, date) VALUES(:account_id, :question_id, :answer_id, :content, :date);');
-                //@TODO complete function
+				//@TODO complete function
+			$accountId = $comment->getAccountId();
+			$questionId = $comment->getQuestionId();
+			$answerId = $comment->getAnswerId();
+			$content = $comment->getContent();
+			$date = $comment->getDate();
 										
-			$stmt -> bindParam(':account_id', $comment->getAccountId());
-			$stmt -> bindParam(':question_id', $comment->getQuestionId());
-			$stmt -> bindParam(':answer_id', $comment->getAnswerId());			
-			$stmt -> bindParam(':content', $comment->getContent());
-            $stmt -> bindParam(':date', $comment->getDate());
+			$stmt -> bindParam(':account_id', $accountId);
+			$stmt -> bindParam(':question_id', $questionId);
+			$stmt -> bindParam(':answer_id', $answerId);			
+			$stmt -> bindParam(':content', $content);
+            $stmt -> bindParam(':date', $date);
 			
 			$stmt -> execute();
             $comment_id = $pdo -> lastInsertId();
