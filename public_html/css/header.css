@@ -30,24 +30,27 @@
 }
 .search-container {
   float: left;
+  padding: 0;
+}
+.search-container form{
+  width: 100%;
 }
 
 .search-container input[type=text] {
   font-size: 17px;
   border: none;
-  width: 50%;
+  width: 85%;
   height: 30px;
 }
 
 .search-container button {
   float: right;
-  padding: 6px 10px;
   background: #ddd;
   font-size: 17px;
   border: none;
   cursor: pointer;
   height: 30px;
-  width: 40px;
+  width: 15%;
 }
 
 .container .search-container button:hover {
