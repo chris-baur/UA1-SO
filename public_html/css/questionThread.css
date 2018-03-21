@@ -8,19 +8,30 @@
 	-webkit-box-shadow: 1px 1px 3px 3px #D2B48C;
 	box-shadow: 1px 1px 3px 3px #D2B48C;
 	
-	order: 3;
+	flex-wrap: wrap;
 }
 
 .commentBlock{
 	background-color: #dcbfa3;
-	display: flex;
+	order: 4;
 	flex-direction: row;
 	justify-content: space-between;
 	max-width: 1100px;
 	margin: auto;
 	-webkit-box-shadow: 1px 1px 3px 3px #D2B48C;
 	box-shadow: 1px 1px 3px 3px #D2B48C;
-	margin-left: 50px;
-	order: 4;
+	margin-left: 10%;
 	margin-top: 12px;
+}
+
+.comment{
+	order: 2;
+	width: 100%;
+	background-color: #F0E5D7;
+	padding:10px;
+}
+
+.commentButton{
+	padding: 0px;
+	font-size: 15px;
 }

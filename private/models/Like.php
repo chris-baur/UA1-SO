@@ -14,9 +14,9 @@ if($_SERVER['REQUEST_METHOD'] != 'POST'){
 require 'Vote.php';
 $vote= new Vote();
 if($_GET['vote']==1){
-	$vote ->like('questions',$_GET['ref_id'],$_SESSION['userid']);
+	$vote ->like($_GET['ref'],$_GET['ref_id'],$_SESSION['userid']);
 }else{
-	$vote->dislike('questions',$_GET['ref_id'],$_SESSION['userid']);
+	$vote->dislike($_GET['ref'],$_GET['ref_id'],$_SESSION['userid']);
 }
 
 header('Location: ../../public_html/home_page/'. $_GET['page']);

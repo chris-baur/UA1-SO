@@ -22,7 +22,8 @@
 	if (isset($_GET['questionid'])){
 
 		$questId= $_GET['questionid'];
-		$votes=[];
+		$votesQ=[];
+		$votesA=[];
 
 		$qtc = new QuestionThreadController();
 		$questionThread = $qtc::getQuestionThread($questId);
@@ -41,14 +42,18 @@
             $req = $pdo -> prepare("SELECT * FROM votes WHERE ref=? AND user_id=?");
             $req->execute (['questions',$_SESSION['userid']]);
             while($vote=$req->fetch()){
-              array_push($votes, $vote);
+              array_push($votesQ, $vote);
+        	}
+        	$req->execute (['answers',$_SESSION['userid']]);
+            while($vote=$req->fetch()){
+              array_push($votesA, $vote);
         	}
         }
 		
 		echo "<div class = 'container'>";
 		// Output of the details of the question requested
 
-		$vote=getVote($votes,$row->getId());
+		$vote=getVote($votesQ,$row->getId());
 
 	    if($questId==$vote['ref_id'])
 	    	$vote_class=Vote::getClass($vote);
@@ -90,33 +95,61 @@
 		// Output all answers corresponding to question
 	    
 		$answerRow = $questionThread->getAnswerThreadArray();
+		$counter=0;
 		if($answerRow != null){
 			foreach ($answerRow as $info){
-				// Output of the details of the answers requested
+				echo "<div class = 'block'>";
 				$answerInfo = $info->getAnswer();
+				$voteA=getVote($votesA,$answerInfo->getId());				
+
+				if($answerInfo->getId()==$voteA['ref_id'])
+	    			$vote_class=Vote::getClass($voteA);
+	    		else
+	    			$vote_class=Vote::getClass(false);
+				// Output of the details of the answers requested
+				// get the array of comments
+				$commentRow = $questionThread->getCommentThreadArray();
+				
 				echo "
 				<br>
 				<div class= 'answerBlock'>
 
-					<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
-					<!-- left column of question block -->
-			        <div class= 'details'>
-						Upvotes: ".$answerInfo->getUpvotes().
-						  "Downvotes: ".$answerInfo->getDownvotes()."
-					</div>
+					<! ---------------------------- Left side of the Question Block ------------------------ -->
+	            <div class='details vote_btns ".$vote_class." '>
+  	            <form action= '..\..\private\models\Like.php?ref=answers&ref_id=".$answerInfo->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."'' method='POST'>
+  	              <button type='submit' class='vote_btn vote_like' ";
+  	              if(!isset($_SESSION['userid'])){
+  	              	echo "disabled";
+  	              }
+  	            echo "><i class='fa fa-thumbs-up'> ". $answerInfo->getUpvotes() . "</i></button>
+  	            </form>
+  	            <form action='..\..\private\models\Like.php?ref=answers&ref_id=".$answerInfo->getId()."&vote=-1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
+  	              <button type='submit' class='vote_btn vote_dislike' ";
+  	              if(!isset($_SESSION['userid'])){
+  	              	echo "disabled";
+  	              }
+  	            echo "><i class='fa fa-thumbs-down'> ". $answerInfo->getDownvotes() . "</i></button>
+  	              </form>
+  	            </div>";
 
-					<!-- right column of question block -->
+  	            echo "<!-- --------------------- right column of answer block ------------------------------- -->
 			        <div class='question'>
 			            <p>".$answerInfo->getContent()."</p>
 			            <span class ='questionByDetail'>
 				            Answered By: ".$info->getAnswerName()."<br>
-						  	Posted On: ".$answerInfo->getDate()."<br>
+						  	Posted On: ".$answerInfo->getDate()."
+						  	<a class='btn btn-link commentButton' data-toggle='collapse' href='#allComments".$counter."' role='button' aria-expanded='false' aria-controls='allComments".$counter."'>
+						  	".sizeof($commentRow)."
+							Comments
+							</a>
 			            </span>
 			        </div>
-		    	</div>";
+			        </div>
+		    	";
 
 		    	// Output of the details of the comments requested
-		    	$commentRow = $questionThread->getCommentThreadArray();
+		    	echo "<div class='collapse' id='allComments".$counter."'>";
+		    	
 		    	if ($commentRow != null){
 			    	foreach ($commentRow as $commentArrayInfo){
 			    		$commentInfo = $commentArrayInfo->getComment();
@@ -124,15 +157,8 @@
 						
 						<div class= 'commentBlock'>
 
-							<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
-							<!-- left column of question block -->
-					        <div class= 'details'>
-								Upvotes: ".$commentInfo->getUpvotes().
-								  "Downvotes: ".$commentInfo->getDownvotes()."
-							</div>
-
-							<!-- right column of question block -->
-					        <div class='question'>
+							<!-- right column of comment block -->
+					        <div class='comment'>
 					            <p>".$commentInfo->getContent()."</p>
 					            <span class ='questionByDetail'>
 						            Commented By: ".$commentArrayInfo->getCommentName()."<br>
@@ -142,10 +168,14 @@
 				    	</div>";
 			    	}
 			    }
-		    	echo "<br>";
+		    	echo "</div></div><br>";
+		    	$counter++;
+
 			}
+			// put input code here
 		}
 		
+		// put input answer code here
 	}
 	else
 		echo "Question not found";
