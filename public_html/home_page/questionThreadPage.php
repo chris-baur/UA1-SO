@@ -53,66 +53,66 @@
 		// Output all answers corresponding to question
 	    
 		$answerRow = $questionThread->getAnswerThreadArray();
-		foreach ($answerRow as $info){
-			// Output of the details of the answers requested
-			$answerInfo = $info->getAnswer();
-			echo "
-			<br>
-			<div class= 'answerBlock'>
-
-				<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
-				<!-- left column of question block -->
-		        <div class= 'details'>
-					Upvotes: ".$answerInfo->getUpvotes().
-					  "Downvotes: ".$answerInfo->getDownvotes()."
-				</div>
-
-				<!-- right column of question block -->
-		        <div class='question'>
-		            <p>".$answerInfo->getContent()."</p>
-		            <span class ='questionByDetail'>
-			            Answered By: ".$info->getAnswerName()."<br>
-					  	Posted On: ".$answerInfo->getDate()."<br>
-		            </span>
-		        </div>
-	    	</div>";
-
-	    	// Output of the details of the comments requested
-	    	$commentRow = $questionThread->getCommentThreadArray();
-	    	foreach ($commentRow as $commentArrayInfo){
-	    		$commentInfo = $commentArrayInfo->getComment();
-	    		echo "
-				
-				<div class= 'commentBlock'>
+		if($answerRow != null){
+			foreach ($answerRow as $info){
+				// Output of the details of the answers requested
+				$answerInfo = $info->getAnswer();
+				echo "
+				<br>
+				<div class= 'answerBlock'>
 
 					<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
 					<!-- left column of question block -->
 			        <div class= 'details'>
-						Upvotes: ".$commentInfo->getUpvotes().
-						  "Downvotes: ".$commentInfo->getDownvotes()."
+						Upvotes: ".$answerInfo->getUpvotes().
+						  "Downvotes: ".$answerInfo->getDownvotes()."
 					</div>
 
 					<!-- right column of question block -->
 			        <div class='question'>
-			            <p>".$commentInfo->getContent()."</p>
+			            <p>".$answerInfo->getContent()."</p>
 			            <span class ='questionByDetail'>
-				            Commented By: ".$commentArrayInfo->getCommentName()."<br>
-						  	Posted On: ".$commentInfo->getDate()."<br>
+				            Answered By: ".$info->getAnswerName()."<br>
+						  	Posted On: ".$answerInfo->getDate()."<br>
 			            </span>
 			        </div>
 		    	</div>";
-	    	}
-	    	echo "<br>";
+
+		    	// Output of the details of the comments requested
+		    	$commentRow = $questionThread->getCommentThreadArray();
+		    	if ($commentRow != null){
+			    	foreach ($commentRow as $commentArrayInfo){
+			    		$commentInfo = $commentArrayInfo->getComment();
+			    		echo "
+						
+						<div class= 'commentBlock'>
+
+							<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
+							<!-- left column of question block -->
+					        <div class= 'details'>
+								Upvotes: ".$commentInfo->getUpvotes().
+								  "Downvotes: ".$commentInfo->getDownvotes()."
+							</div>
+
+							<!-- right column of question block -->
+					        <div class='question'>
+					            <p>".$commentInfo->getContent()."</p>
+					            <span class ='questionByDetail'>
+						            Commented By: ".$commentArrayInfo->getCommentName()."<br>
+								  	Posted On: ".$commentInfo->getDate()."<br>
+					            </span>
+					        </div>
+				    	</div>";
+			    	}
+			    }
+		    	echo "<br>";
+			}
 		}
-
-		echo "</div>";
-
+		
 	}
-
-	else{
+	else
 		echo "Question not found";
-	}
-
+	echo "</div>"; // div that closes the container class div
 
 
 
