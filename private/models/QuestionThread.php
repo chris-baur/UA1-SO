@@ -23,7 +23,7 @@
         }
 
         function getQuestionName(){
-            return $this->getQuestionName;
+            return $this->questionName;
         }
 
         function getAnswerThreadArray(){

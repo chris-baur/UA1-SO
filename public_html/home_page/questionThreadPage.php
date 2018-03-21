@@ -13,18 +13,19 @@
 	include_once('..\..\private\models\Question.php');
 	include_once('..\..\private\models\Answer.php');
 	include_once('..\..\private\models\Comment.php');
+	include_once('..\..\private\controllers\QuestionThreadController.php');
 	echo "<link rel='stylesheet' type='text/css' href='../css/homepage.css'>
 		<link rel='stylesheet' type='text/css' href='../css/questionThread.css'>";
 
 	// gets the questionid from the page before enterring this page and prints out the question, answers, and comments
 	if (isset($_GET['questionid'])){
-		$row = getQuestionsById($_GET['questionid']);
 
-		// print out question block 
-		$con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
-		$questid= $_GET['questionid'];
-		$result = mysqli_query($con,"SELECT accounts.username, questions.id FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id WHERE questions.id LIKE $questid");
-		$acc = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		$questId= $_GET['questionid'];
+
+		$qtc = new QuestionThreadController();
+		$questionThread = $qtc::getQuestionThread($questId);
+		$row = $questionThread->getQuestion(); 
+
 		
 		echo "<div class = 'container'>";
 		// Output of the details of the question requested
@@ -34,26 +35,27 @@
 			<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
 			<!-- left column of question block -->
 		    <div class= 'details'>
-				Upvotes: ".$row[0]->getUpvotes().
-				"Downvotes: ".$row[0]->getDownvotes()."
+				Upvotes: ".$row->getUpvotes().
+				"Downvotes: ".$row->getDownvotes()."
 			</div>
 
 			<!-- right column of question block -->
 		    <div class='question'>
-		        <h3><strong>".$row[0]->getHeader()."</strong></h3>
-		        <p>".$row[0]->getContent()."</p>
+		        <h3><strong>".$row->getHeader()."</strong></h3>
+		        <p>".$row->getContent()."</p>
 		        <span class ='questionByDetail'>
-			        Asked By: ".$acc["username"]."<br>
-				  	Posted On: ".$row[0]->getDate()."<br>
+			        Asked By: ".$questionThread->getQuestionName()."<br>
+				  	Posted On: ".$row->getDate()."<br>
 		        </span>
 		    </div>
-	    </div><br>";
+	    </div><br><hr>";
 
 		// Output all answers corresponding to question
 	    
-		$answerRow = getAnswersByQuestionId($questid);
+		$answerRow = $questionThread->getAnswerThreadArray();
 		foreach ($answerRow as $info){
 			// Output of the details of the answers requested
+			$answerInfo = $info->getAnswer();
 			echo "
 			<br>
 			<div class= 'answerBlock'>
@@ -61,45 +63,46 @@
 				<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
 				<!-- left column of question block -->
 		        <div class= 'details'>
-					Upvotes: ".$info->getUpvotes().
-					  "Downvotes: ".$info->getDownvotes()."
+					Upvotes: ".$answerInfo->getUpvotes().
+					  "Downvotes: ".$answerInfo->getDownvotes()."
 				</div>
 
 				<!-- right column of question block -->
 		        <div class='question'>
-		            <p>".$info->getContent()."</p>
+		            <p>".$answerInfo->getContent()."</p>
 		            <span class ='questionByDetail'>
-			            Answered By: <br>
-					  	Posted On: ".$info->getDate()."<br>
+			            Answered By: ".$info->getAnswerName()."<br>
+					  	Posted On: ".$answerInfo->getDate()."<br>
 		            </span>
 		        </div>
-	    	</div><br>";
+	    	</div>";
 
 	    	// Output of the details of the comments requested
-	    	$commentRow = getCommentsByAnswerQuestionId($info->getId(), $questid);
-	    	foreach ($commentRow as $commentInfo){
+	    	$commentRow = $questionThread->getCommentThreadArray();
+	    	foreach ($commentRow as $commentArrayInfo){
+	    		$commentInfo = $commentArrayInfo->getComment();
 	    		echo "
-			<br>
-			<div class= 'commentBlock'>
+				
+				<div class= 'commentBlock'>
 
-				<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
-				<!-- left column of question block -->
-		        <div class= 'details'>
-					Upvotes: ".$commentInfo->getUpvotes().
-					  "Downvotes: ".$commentInfo->getDownvotes()."
-				</div>
+					<!-- ------------------------------------- Replace with upvotes and downvotes --------------------------- -->
+					<!-- left column of question block -->
+			        <div class= 'details'>
+						Upvotes: ".$commentInfo->getUpvotes().
+						  "Downvotes: ".$commentInfo->getDownvotes()."
+					</div>
 
-				<!-- right column of question block -->
-		        <div class='question'>
-		            <p>".$commentInfo->getContent()."</p>
-		            <span class ='questionByDetail'>
-			            Commented By: <br>
-					  	Posted On: ".$commentInfo->getDate()."<br>
-		            </span>
-		        </div>
-	    	</div><br>";
+					<!-- right column of question block -->
+			        <div class='question'>
+			            <p>".$commentInfo->getContent()."</p>
+			            <span class ='questionByDetail'>
+				            Commented By: ".$commentArrayInfo->getCommentName()."<br>
+						  	Posted On: ".$commentInfo->getDate()."<br>
+			            </span>
+			        </div>
+		    	</div>";
 	    	}
-
+	    	echo "<br>";
 		}
 
 		echo "</div>";

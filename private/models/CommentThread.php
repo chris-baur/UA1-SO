@@ -16,7 +16,7 @@
         }
 
         function getCommentName(){
-            return $this->getCommentName;
+            return $this->commentName;
         }
 
         function setComment($comment){

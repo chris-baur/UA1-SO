@@ -86,7 +86,7 @@
          */
         private static function getAnswerThread($id){
             global $servername, $username, $password, $dbname, $log;
-            $answerThreadArray[] = new AnswerThread();
+            $answerThreadArray = null;
             
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -117,7 +117,7 @@
                     $answerThreadArray[] = $answerThread;
                     
                 }
-                $size = sizeof($answerThreadArray);
+                $size = isset($answerThreadArray)?sizeof($answerThreadArray):0;
                 $log->lwrite("Got all the answer threads. Size of array: $size");
             }
             catch(PDOException $e){
@@ -138,7 +138,7 @@
          */
         private static function getCommentThread($id, $type){
             global $servername, $username, $password, $dbname, $log;
-            $commentThreadArray[] = new CommentThread;
+            $commentThreadArray = null;
             
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -166,7 +166,7 @@
                     $commentThreadArray[] = $commentThread;
                     
                 }
-                $size = sizeof($commentThreadArray);
+                $size = isset($commentThreadArray)?sizeof($commentThreadArray):0;
                 $log->lwrite("Got all the comment threads for Type: $type with ID: $id. Size of array: $size");
             }
             catch(PDOException $e){

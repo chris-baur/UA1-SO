@@ -20,7 +20,7 @@
         }
 
         function getAnswerName(){
-            return $this->getAnswerName;
+            return $this->answerName;
         }
 
         function getCommentThreadArray(){

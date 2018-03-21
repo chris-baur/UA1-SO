@@ -7,7 +7,8 @@
 	margin: auto;
 	-webkit-box-shadow: 1px 1px 3px 3px #D2B48C;
 	box-shadow: 1px 1px 3px 3px #D2B48C;
-	margin-left: 50px;
+	
+	order: 3;
 }
 
 .commentBlock{
@@ -19,5 +20,7 @@
 	margin: auto;
 	-webkit-box-shadow: 1px 1px 3px 3px #D2B48C;
 	box-shadow: 1px 1px 3px 3px #D2B48C;
-	margin-left: 100px;
+	margin-left: 50px;
+	order: 4;
+	margin-top: 12px;
 }
