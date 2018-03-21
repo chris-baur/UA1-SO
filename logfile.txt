@@ -76,9 +76,222 @@
 [19/Mar/2018:19:29:54] (validateLogin) inside valid user
 [19/Mar/2018:19:29:54] (validateLogin) Password passed prelim validaton
 [19/Mar/2018:19:29:54] (validateLogin) password is valid
+<<<<<<< HEAD
 [21/Mar/2018:16:31:46] (questionThreadPage) Got the question with account username: john117
 [21/Mar/2018:16:31:46] (questionThreadPage) Got all the comment threads for Type: answer with ID: 6. Size of array: 0
 [21/Mar/2018:16:31:46] (questionThreadPage) Got all the comment threads for Type: answer with ID: 6. Size of array: 0
 [21/Mar/2018:16:31:46] (questionThreadPage) Got all the answer threads. Size of array: 2
 [21/Mar/2018:16:31:46] (questionThreadPage) Got all the comment threads for Type: question with ID: 6. Size of array: 3
 [21/Mar/2018:16:31:46] (questionThreadPage) Got everything for the QuestionThread
+=======
+[20/Mar/2018:04:27:54] (loginregister) in login register 
+[20/Mar/2018:04:27:54] (loginregister) Got the arrays
+[20/Mar/2018:04:27:54] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:27:54] (loginregister) Array
+[20/Mar/2018:04:27:54] (loginregister) Array
+[20/Mar/2018:04:27:54] (loginregister) Array
+[20/Mar/2018:04:28:00] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:04:28:00] (validateLogin) Username is: wissem
+[20/Mar/2018:04:28:00] (validateLogin) account exists with given username
+[20/Mar/2018:04:28:00] (validateLogin) inside valid user
+[20/Mar/2018:04:28:00] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:04:28:00] (validateLogin) password is valid
+[20/Mar/2018:04:35:39] (loginregister) in login register 
+[20/Mar/2018:04:35:39] (loginregister) Got the arrays
+[20/Mar/2018:04:35:39] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:35:39] (loginregister) Array
+[20/Mar/2018:04:35:39] (loginregister) Array
+[20/Mar/2018:04:35:39] (loginregister) Array
+[20/Mar/2018:04:35:50] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:04:35:50] (validateLogin) Username is: john117
+[20/Mar/2018:04:35:50] (validateLogin) account exists with given username
+[20/Mar/2018:04:35:50] (validateLogin) inside valid user
+[20/Mar/2018:04:35:50] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:04:35:50] (validateLogin) password is valid
+[20/Mar/2018:04:36:30] (loginregister) in login register 
+[20/Mar/2018:04:36:30] (loginregister) Got the arrays
+[20/Mar/2018:04:36:30] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:36:30] (loginregister) Array
+[20/Mar/2018:04:36:30] (loginregister) Array
+[20/Mar/2018:04:36:30] (loginregister) Array
+[20/Mar/2018:04:36:49] (validationRegistration) in validation registration
+[20/Mar/2018:04:36:49] (validationRegistration) Profession option succeeded
+[20/Mar/2018:04:36:49] (validationRegistration) Gender option succeeded
+[20/Mar/2018:04:36:49] (validationRegistration) Security question 1 option succeeded
+[20/Mar/2018:04:36:49] (validationRegistration) Security question 2 option succeeded
+[20/Mar/2018:04:36:49] (validationRegistration)  answer 1 option succeeded
+[20/Mar/2018:04:36:49] (validationRegistration) Security answer 2 option succeeded
+[20/Mar/2018:04:36:49] (validationRegistration) Password hashed succeeded
+[20/Mar/2018:04:36:49] (validationRegistration) valid data true
+[20/Mar/2018:04:36:49] (validationRegistration) added account succesfully. ID: 18
+[20/Mar/2018:04:36:49] (validationRegistration) valid user true
+[20/Mar/2018:04:36:49] (validationRegistration) valid username true
+[20/Mar/2018:04:36:49] (loginregister) in login register 
+[20/Mar/2018:04:36:49] (loginregister) Got the arrays
+[20/Mar/2018:04:36:49] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:36:49] (loginregister) Array
+[20/Mar/2018:04:36:49] (loginregister) Array
+[20/Mar/2018:04:36:49] (loginregister) Array
+[20/Mar/2018:04:36:59] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:04:36:59] (validateLogin) Username is: boby
+[20/Mar/2018:04:36:59] (validateLogin) account exists with given username
+[20/Mar/2018:04:36:59] (validateLogin) inside valid user
+[20/Mar/2018:04:36:59] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:04:36:59] (validateLogin) Password incorrect.
+[20/Mar/2018:04:36:59] (validateLogin) Showing user error
+[20/Mar/2018:04:36:59] (loginregister) in login register 
+[20/Mar/2018:04:36:59] (loginregister) Got the arrays
+[20/Mar/2018:04:36:59] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:36:59] (loginregister) Array
+[20/Mar/2018:04:36:59] (loginregister) Array
+[20/Mar/2018:04:36:59] (loginregister) Array
+[20/Mar/2018:04:37:07] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:04:37:07] (validateLogin) Username is: boby
+[20/Mar/2018:04:37:07] (validateLogin) account exists with given username
+[20/Mar/2018:04:37:07] (validateLogin) inside valid user
+[20/Mar/2018:04:37:07] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:04:37:07] (validateLogin) password is valid
+[20/Mar/2018:04:37:31] (loginregister) in login register 
+[20/Mar/2018:04:37:31] (loginregister) Got the arrays
+[20/Mar/2018:04:37:31] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:37:31] (loginregister) Array
+[20/Mar/2018:04:37:31] (loginregister) Array
+[20/Mar/2018:04:37:31] (loginregister) Array
+[20/Mar/2018:04:37:37] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:04:37:37] (validateLogin) Username is: boby
+[20/Mar/2018:04:37:37] (validateLogin) account exists with given username
+[20/Mar/2018:04:37:37] (validateLogin) inside valid user
+[20/Mar/2018:04:37:37] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:04:37:37] (validateLogin) password is valid
+[20/Mar/2018:04:43:17] (loginregister) in login register 
+[20/Mar/2018:04:43:17] (loginregister) Got the arrays
+[20/Mar/2018:04:43:17] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:43:17] (loginregister) Array
+[20/Mar/2018:04:43:17] (loginregister) Array
+[20/Mar/2018:04:43:17] (loginregister) Array
+[20/Mar/2018:04:43:23] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:04:43:23] (validateLogin) Username is: boby
+[20/Mar/2018:04:43:23] (validateLogin) account exists with given username
+[20/Mar/2018:04:43:23] (validateLogin) inside valid user
+[20/Mar/2018:04:43:23] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:04:43:23] (validateLogin) password is valid
+[20/Mar/2018:04:46:12] (loginregister) in login register 
+[20/Mar/2018:04:46:12] (loginregister) Got the arrays
+[20/Mar/2018:04:46:12] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:46:12] (loginregister) Array
+[20/Mar/2018:04:46:12] (loginregister) Array
+[20/Mar/2018:04:46:12] (loginregister) Array
+[20/Mar/2018:04:47:02] (validationRegistration) in validation registration
+[20/Mar/2018:04:47:02] (validationRegistration) Profession option succeeded
+[20/Mar/2018:04:47:02] (validationRegistration) Gender option succeeded
+[20/Mar/2018:04:47:02] (validationRegistration) Security question 1 option succeeded
+[20/Mar/2018:04:47:02] (validationRegistration) Security question 2 option succeeded
+[20/Mar/2018:04:47:02] (validationRegistration)  answer 1 option succeeded
+[20/Mar/2018:04:47:02] (validationRegistration) Security answer 2 option succeeded
+[20/Mar/2018:04:47:02] (validationRegistration) Password hashed succeeded
+[20/Mar/2018:04:47:02] (validationRegistration) valid data true
+[20/Mar/2018:04:47:02] (validationRegistration) SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null
+[20/Mar/2018:04:47:02] (validationRegistration) valid user true
+[20/Mar/2018:04:47:02] (validationRegistration) valid username true
+[20/Mar/2018:04:47:02] (loginregister) in login register 
+[20/Mar/2018:04:47:02] (loginregister) Got the arrays
+[20/Mar/2018:04:47:02] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:47:02] (loginregister) Array
+[20/Mar/2018:04:47:02] (loginregister) Array
+[20/Mar/2018:04:47:02] (loginregister) Array
+[20/Mar/2018:04:47:30] (validationRegistration) in validation registration
+[20/Mar/2018:04:47:30] (validationRegistration) Profession option succeeded
+[20/Mar/2018:04:47:30] (validationRegistration) Gender option succeeded
+[20/Mar/2018:04:47:30] (validationRegistration) Security question 1 option succeeded
+[20/Mar/2018:04:47:30] (validationRegistration) Security question 2 option succeeded
+[20/Mar/2018:04:47:30] (validationRegistration)  answer 1 option succeeded
+[20/Mar/2018:04:47:30] (validationRegistration) Security answer 2 option succeeded
+[20/Mar/2018:04:47:30] (validationRegistration) Password hashed succeeded
+[20/Mar/2018:04:47:30] (validationRegistration) valid data true
+[20/Mar/2018:04:47:30] (validationRegistration) SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null
+[20/Mar/2018:04:47:30] (validationRegistration) valid user true
+[20/Mar/2018:04:47:30] (validationRegistration) valid username true
+[20/Mar/2018:04:47:30] (loginregister) in login register 
+[20/Mar/2018:04:47:30] (loginregister) Got the arrays
+[20/Mar/2018:04:47:30] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:47:30] (loginregister) Array
+[20/Mar/2018:04:47:30] (loginregister) Array
+[20/Mar/2018:04:47:30] (loginregister) Array
+[20/Mar/2018:04:47:47] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:04:47:47] (validateLogin) Username is: ayoub
+[20/Mar/2018:04:47:47] (validateLogin) account does not exist with given username
+[20/Mar/2018:04:47:47] (validateLogin) invalid username. Valid data is false
+[20/Mar/2018:04:47:47] (validateLogin) Showing user error
+[20/Mar/2018:04:47:47] (loginregister) in login register 
+[20/Mar/2018:04:47:47] (loginregister) Got the arrays
+[20/Mar/2018:04:47:47] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:47:47] (loginregister) Array
+[20/Mar/2018:04:47:47] (loginregister) Array
+[20/Mar/2018:04:47:47] (loginregister) Array
+[20/Mar/2018:04:49:34] (loginregister) in login register 
+[20/Mar/2018:04:49:34] (loginregister) Got the arrays
+[20/Mar/2018:04:49:34] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:49:34] (loginregister) Array
+[20/Mar/2018:04:49:34] (loginregister) Array
+[20/Mar/2018:04:49:34] (loginregister) Array
+[20/Mar/2018:04:50:34] (validationRegistration) in validation registration
+[20/Mar/2018:04:50:34] (validationRegistration) Profession option succeeded
+[20/Mar/2018:04:50:34] (validationRegistration) Gender option succeeded
+[20/Mar/2018:04:50:34] (validationRegistration) Security question 1 option succeeded
+[20/Mar/2018:04:50:34] (validationRegistration) Security question 2 option succeeded
+[20/Mar/2018:04:50:34] (validationRegistration)  answer 1 option succeeded
+[20/Mar/2018:04:50:34] (validationRegistration) Security answer 2 option succeeded
+[20/Mar/2018:04:50:34] (validationRegistration) Password hashed succeeded
+[20/Mar/2018:04:50:34] (validationRegistration) valid data true
+[20/Mar/2018:04:50:34] (validationRegistration) added account succesfully. ID: 19
+[20/Mar/2018:04:50:34] (validationRegistration) valid user true
+[20/Mar/2018:04:50:34] (validationRegistration) valid username true
+[20/Mar/2018:04:50:34] (loginregister) in login register 
+[20/Mar/2018:04:50:34] (loginregister) Got the arrays
+[20/Mar/2018:04:50:34] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:50:34] (loginregister) Array
+[20/Mar/2018:04:50:34] (loginregister) Array
+[20/Mar/2018:04:50:34] (loginregister) Array
+[20/Mar/2018:04:51:18] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:04:51:18] (validateLogin) Username is: ayoub
+[20/Mar/2018:04:51:18] (validateLogin) account exists with given username
+[20/Mar/2018:04:51:18] (validateLogin) inside valid user
+[20/Mar/2018:04:51:18] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:04:51:18] (validateLogin) password is valid
+[20/Mar/2018:04:51:39] (loginregister) in login register 
+[20/Mar/2018:04:51:39] (loginregister) Got the arrays
+[20/Mar/2018:04:51:39] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:04:51:39] (loginregister) Array
+[20/Mar/2018:04:51:39] (loginregister) Array
+[20/Mar/2018:04:51:39] (loginregister) Array
+[20/Mar/2018:04:51:44] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:04:51:44] (validateLogin) Username is: ayoub
+[20/Mar/2018:04:51:44] (validateLogin) account exists with given username
+[20/Mar/2018:04:51:44] (validateLogin) inside valid user
+[20/Mar/2018:04:51:44] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:04:51:44] (validateLogin) password is valid
+[20/Mar/2018:05:00:24] (loginregister) in login register 
+[20/Mar/2018:05:00:24] (loginregister) Got the arrays
+[20/Mar/2018:05:00:24] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:05:00:24] (loginregister) Array
+[20/Mar/2018:05:00:24] (loginregister) Array
+[20/Mar/2018:05:00:24] (loginregister) Array
+[20/Mar/2018:05:00:32] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:05:00:32] (validateLogin) Username is: ayoub
+[20/Mar/2018:05:00:32] (validateLogin) account exists with given username
+[20/Mar/2018:05:00:32] (validateLogin) inside valid user
+[20/Mar/2018:05:00:32] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:05:00:32] (validateLogin) password is valid
+[20/Mar/2018:05:01:50] (loginregister) in login register 
+[20/Mar/2018:05:01:50] (loginregister) Got the arrays
+[20/Mar/2018:05:01:50] (loginregister) In what city or town did your mother and father meet?
+[20/Mar/2018:05:01:50] (loginregister) Array
+[20/Mar/2018:05:01:50] (loginregister) Array
+[20/Mar/2018:05:01:50] (loginregister) Array
+[20/Mar/2018:05:02:02] (validateLogin) Form has requested a post for File: validateLogin.php
+[20/Mar/2018:05:02:02] (validateLogin) Username is: ayoub
+[20/Mar/2018:05:02:02] (validateLogin) account exists with given username
+[20/Mar/2018:05:02:02] (validateLogin) inside valid user
+[20/Mar/2018:05:02:02] (validateLogin) Password passed prelim validaton
+[20/Mar/2018:05:02:02] (validateLogin) password is valid
+>>>>>>> master

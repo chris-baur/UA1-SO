@@ -30,6 +30,10 @@
 }
 .search-container {
   float: left;
+  padding: 0;
+}
+.search-container form{
+  width: 100%;
 }
 
 .search-container input[type=text] {

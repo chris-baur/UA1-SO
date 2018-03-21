@@ -33,7 +33,11 @@ $log = new Logging();
 			$date =	$question->getDate();
 			$upvotes=$question->getUpvotes();
 			$downvotes=$question->getDownvotes();
+<<<<<<< HEAD
 			$tags=  implode(" ",$question->get_tags());
+=======
+			$tags=  implode(" ",$question->getTags());
+>>>>>>> master
 
 			$stmt -> bindParam(':account_id', $account_id);
 			$stmt -> bindParam(':header', $header );
@@ -81,12 +85,20 @@ $log = new Logging();
 
 				$q->setId($result[0]);
                 $q->setAccountId($result[1]);
+<<<<<<< HEAD
                 $q->set_header($result[2]);
+=======
+                $q->setHeader($result[2]);
+>>>>>>> master
                 $q->setContent($result[3]);
                 $q->setDate($result[4]);
                 $q->setUpvotes($result[5]);
                 $q->setDownvotes($result[6]);
+<<<<<<< HEAD
                 $q->set_tags($result[7]);
+=======
+                $q->setTags($result[7]);
+>>>>>>> master
 
                 $questionArray[] = $q;
 			}
@@ -124,12 +136,20 @@ $log = new Logging();
 
 				$q->setId($result[0]);
                 $q->setAccountId($result[1]);
+<<<<<<< HEAD
                 $q->set_header($result[2]);
+=======
+                $q->setHeader($result[2]);
+>>>>>>> master
                 $q->setContent($result[3]);
                 $q->setDate($result[4]);
                 $q->setUpvotes($result[5]);
                 $q->setDownvotes($result[6]);
+<<<<<<< HEAD
                 $q->set_tags($result[7]);
+=======
+                $q->setTags($result[7]);
+>>>>>>> master
 
                 $questionArray[] = $q;
 			}
@@ -168,12 +188,20 @@ $log = new Logging();
 
 				$q->setId($result[0]);
                 $q->setAccountId($result[1]);
+<<<<<<< HEAD
                 $q->set_header($result[2]);
+=======
+                $q->setHeader($result[2]);
+>>>>>>> master
                 $q->setContent($result[3]);
                 $q->setDate($result[4]);
                 $q->setUpvotes($result[5]);
                 $q->setDownvotes($result[6]);
+<<<<<<< HEAD
                 $q->set_tags($result[7]);
+=======
+                $q->setTags($result[7]);
+>>>>>>> master
 
                 $questionArray[] = $q;
 			}
@@ -212,12 +240,20 @@ $log = new Logging();
 
 				$q->setId($result[0]);
                 $q->setAccountId($result[1]);
+<<<<<<< HEAD
                 $q->set_header($result[2]);
+=======
+                $q->setHeader($result[2]);
+>>>>>>> master
                 $q->setContent($result[3]);
                 $q->setDate($result[4]);
                 $q->setUpvotes($result[5]);
                 $q->setDownvotes($result[6]);
+<<<<<<< HEAD
                 $q->set_tags($result[7]);
+=======
+                $q->setTags($result[7]);
+>>>>>>> master
 
 
 
@@ -254,7 +290,11 @@ $log = new Logging();
 			$stmt -> bindParam(':content', $question->getContent());
             $stmt -> bindParam(':upvotes', $question->getUpvotes());
             $stmt -> bindParam(':downvotes', $question->getDownvotes());
+<<<<<<< HEAD
             $stmt -> bindParam(':tags', $question->get_tags());
+=======
+            $stmt -> bindParam(':tags', $question->getTags());
+>>>>>>> master
             $stmt -> bindParam(':id', $question->getId());
 			
 			$stmt -> execute();

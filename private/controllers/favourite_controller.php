@@ -107,12 +107,20 @@ $sets = new Sets();
 
 				$q->setId($result[0]);
                 $q->setAccountId($result[1]);
+<<<<<<< HEAD
                 $q->set_header($result[2]);
+=======
+                $q->setHeader($result[2]);
+>>>>>>> master
                 $q->setContent($result[3]);
                 $q->setDate($result[4]);
                 $q->setUpvotes($result[5]);
                 $q->setDownvotes($result[6]);
+<<<<<<< HEAD
                 $q->set_tags($result[7]);
+=======
+                $q->setTags($result[7]);
+>>>>>>> master
 
                 $favouritesArray[] = $q;
 			}
@@ -156,7 +164,11 @@ $sets = new Sets();
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
                 $a->setDownvotes($result[6]);
+<<<<<<< HEAD
                 $a->setBest($result[7]);
+=======
+                $a->settBest($result[7]);
+>>>>>>> master
 
                 $favouritesArray[] = $a;
 			}

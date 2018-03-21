@@ -82,7 +82,11 @@
 			$this->downvotes = $new_downvotes;
 		}
 
+<<<<<<< HEAD
 		function setBest($new_best){
+=======
+		function settBest($new_best){
+>>>>>>> master
 			$this->best = $new_best;
 		}
 		
