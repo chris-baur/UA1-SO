@@ -12,7 +12,7 @@
     include_once('..\..\private\controllers\question_controller.php');
     include_once('..\..\private\models\Account.php');
 
-    echo "<link rel='stylesheet' type='text/css' href='../css/questions_page.css'>";
+    echo "<link rel='stylesheet' type='text/css' href='../css/homepage.css'>";
   
     if( !isset($_SESSION['username']) || !isset($_SESSION['userid'])){
       $log->lwrite("User is not logged in. @myquestions.php");     
@@ -51,7 +51,8 @@
         </div>  
       </form>";
       //<!--Outputting the items in the database-->
-      echo "<div class='container'>"; 
+      echo "<br>
+            <div class='container'>"; 
 
       $userName = $_SESSION['username'];
       $id = $_SESSION['userid'];
@@ -69,25 +70,37 @@
           $vote_class=Vote::getClass(false);
         }
         echo "
-          <div class='form-group row questionBox'>
-            <div class='col-md-2 vote_btns ".$vote_class." '>
-            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=1&page=myquestions.php' method='POST'>
-              <button type='submit' class='vote_btn vote_like'><i class='fa fa-thumbs-up'> ". $info->get_upvotes() . "</i></button>
-            </form>
-            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=-1&page=myquestions.php' method='POST'>
-              <button type='submit' class='vote_btn vote_dislike'><i class='fa fa-thumbs-down'> ". $info->get_downvotes() . "</i></button>
+
+          <div class='form-group row questionBlock'>                    
+            <div class='col-md-2 '>";
+              $file_path = "";       
+              if(isset($_SESSION['name'])) {
+                $file_path = $_SESSION['name'];
+              } 
+              if(!file_exists($file_path)) {
+              $file_path = "..\img\avatar2.png";                      
+              };
+          echo "<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>";
+          echo "
+            <div class='details vote_btns ".$vote_class."'>
+              <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=1&page=myquestions.php' method='POST'>
+                <button type='submit' class='vote_btn vote_like'><i class='fa fa-thumbs-up'> ". $info->get_upvotes() . "</i></button>
               </form>
+              <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=-1&page=myquestions.php' method='POST'>
+                <button type='submit' class='vote_btn vote_dislike'><i class='fa fa-thumbs-down'> ". $info->get_downvotes() . "</i></button>
+                </form>
+             </div>   
             </div>
-            <span class = 'questionBody'>
-            <div class='col-md-10 '>
+            
+            <div class='col-md-10 question'>
               <div>
-                <h3><strong>" . $info->get_header() . "</strong></h3>
+                <a href='questionThread.php?questionid=".$info->get_id()."'>
+                <h3><strong>" . $info->get_header() . "</strong></h3></a>
               </div>
               <p>" . $info->get_content() . "
               </p>
               <span class = 'time'>Posted on: " . $info->get_date() . "</span>
             </div>
-            </span>
           </div><br>";
       }
       echo '</div></main>';
