@@ -3,7 +3,7 @@ var app = angular.module('newQuestion', ['ngTagsInput']);
 /* $http ajax calls really belongs in a service, 
 but I'll be using them inside the controller for this demo */ 
 
-app.controller('questionController', function($scope, $http) {
+app.controller('QuestionController', function($scope, $http) {
     $scope.question_title="";
     $scope.content="";
     $scope.tags=[];

@@ -156,7 +156,7 @@ $sets = new Sets();
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
                 $a->setDownvotes($result[6]);
-                $a->settBest($result[7]);
+                $a->setBest($result[7]);
 
                 $favouritesArray[] = $a;
 			}
