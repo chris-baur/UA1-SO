@@ -28,7 +28,7 @@
     	}
     	else{
 	    	foreach ($rows as $info) {
-	    		$questionAccount = getAccountById($info->getAccountId());
+	    		$questionAccount = getAccountById($info->get_accountid());
 	      		echo "
 	        	<div class='form-group row questionBox'>
 	        		<div class='col-md-2 userBox'>
@@ -56,7 +56,7 @@
     	// }
     	// else{
 	    // 	foreach ($rows as $info) {
-	    // 		$questionAccount = getAccountById($info->getAccountId());
+	    // 		$questionAccount = getAccountById($info->get_accountid());
 	    //   		echo "
 	    //     	<div class='form-group row questionBox'>
 	    //     		<div class='col-md-2 userBox'>

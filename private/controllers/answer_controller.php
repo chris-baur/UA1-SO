@@ -33,11 +33,7 @@ $log = new Logging();
             $stmt -> bindParam(':date', $answer->getDate());
             $stmt -> bindParam(':upvotes', $answer->getUpvotes());
             $stmt -> bindParam(':downvotes', $answer->getDownvotes());
-<<<<<<< HEAD
             $stmt -> bindParam(':tags', $answer->get_tags());
-=======
-            $stmt -> bindParam(':tags', $answer->getTags());
->>>>>>> master
 			
 			$stmt -> execute();
             $answer_id = $pdo -> lastInsertId();
@@ -76,20 +72,12 @@ $log = new Logging();
 
 				$a->setId($result[0]);
                 $a->setAccountId($result[1]);
-<<<<<<< HEAD
                 $a->set_question_id($result[2]);
-=======
-                $a->setQuestionId($result[2]);
->>>>>>> master
                 $a->setContent($result[3]);
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
                 $a->setDownvotes($result[6]);
-<<<<<<< HEAD
                 $a->setBest($result[7]);
-=======
-                $a->settBest($result[7]);
->>>>>>> master
 
                 $answerArray[] = $a;
 			}
@@ -127,20 +115,12 @@ $log = new Logging();
 
 				$a->setId($result[0]);
                 $a->setAccountId($result[1]);
-<<<<<<< HEAD
                 $a->set_question_id($result[2]);
-=======
-                $a->setQuestionId($result[2]);
->>>>>>> master
                 $a->setContent($result[3]);
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
                 $a->setDownvotes($result[6]);
-<<<<<<< HEAD
                 $a->setBest($result[7]);
-=======
-                $a->settBest($result[7]);
->>>>>>> master
 
                 $answerArray[] = $a;
 			}
@@ -174,10 +154,6 @@ $log = new Logging();
             // while there is an answer with specified content
             while($result = $stmt -> fetch()){
                 $a = new Answer();
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 				$a->setId($result[0]);
                 $a->setAccountId($result[1]);
                 $a->setQuestionId($result[2]);
@@ -185,11 +161,7 @@ $log = new Logging();
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
                 $a->setDownvotes($result[6]);
-<<<<<<< HEAD
                 $a->setBest($result[7]);
-=======
-                $a->settBest($result[7]);
->>>>>>> master
 
                 $answerArray[] = $a;
 			}

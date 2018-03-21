@@ -30,19 +30,11 @@ $log = new Logging();
                 //@TODO complete function
 										
 			$stmt -> bindParam(':account_id', $comment->getAccountId());
-<<<<<<< HEAD
-=======
-			$stmt -> bindParam(':header', $comment->getHeader());
->>>>>>> master
 			$stmt -> bindParam(':content', $comment->getContent());
             $stmt -> bindParam(':date', $comment->getDate());
             $stmt -> bindParam(':upvotes', $comment->getUpvotes());
             $stmt -> bindParam(':downvotes', $comment->getDownvotes());
-<<<<<<< HEAD
             $stmt -> bindParam(':tags', $comment->get_tags());
-=======
-            $stmt -> bindParam(':tags', $comment->getTags());
->>>>>>> master
 			
 			$stmt -> execute();
             $comment_id = $pdo -> lastInsertId();
@@ -202,20 +194,11 @@ $log = new Logging();
             $stmt = $pdo -> prepare('UPDATE comments set content = :content, upvotes = :upvotes, downvotes = :downvotes, tags = :tags
                 WHERE id = :id;');
 										
-<<<<<<< HEAD
 			$stmt -> bindParam(':content', $comment->getContent());
             $stmt -> bindParam(':upvotes', $comment->getUpvotes());
             $stmt -> bindParam(':downvotes', $comment->getDownvotes());
             $stmt -> bindParam(':tags', $comment->get_tags());
             $stmt -> bindParam(':id', $comment->getId());
-=======
-			$stmt -> bindParam(':header', $Comment->getHeader());
-			$stmt -> bindParam(':content', $Comment->getContent());
-            $stmt -> bindParam(':upvotes', $Comment->getUpvotes());
-            $stmt -> bindParam(':downvotes', $Comment->getDownvotes());
-            $stmt -> bindParam(':tags', $Comment->getTags());
-            $stmt -> bindParam(':id', $Comment->getId());
->>>>>>> master
 			
 			$stmt -> execute();
             $log->lwrite('Updated Comment succesfully. ID: '.$comment_id);

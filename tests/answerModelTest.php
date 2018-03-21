@@ -44,11 +44,7 @@ class answerModelTest extends PHPUnit\Framework\TestCase{
     }
     public function testBest(){
         $a = new Answer();
-<<<<<<< HEAD
         $a->setBest(true);
-=======
-        $a->settBest(true);
->>>>>>> master
         $this->assertTrue($a->getBest());
     }
 }
