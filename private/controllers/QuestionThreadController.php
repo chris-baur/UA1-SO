@@ -1,12 +1,12 @@
 <?php
 
-    include_once(dirname(__FILE__).'/QuestionThread.php');
-    include_once(dirname(__FILE__).'/AnswerThread.php');
-    include_once(dirname(__FILE__).'/CommentThread.php');
+    include_once(dirname(__FILE__).'\..\models\QuestionThread.php');
+    include_once(dirname(__FILE__).'\..\models\AnswerThread.php');
+    include_once(dirname(__FILE__).'\..\models\CommentThread.php');
 
-    include_once(dirname(__FILE__).'/../util/logging.php');
-    include_once(dirname(__FILE__).'/../util/sets.php');
-    include_once(dirname(__FILE__).'/../models/Account.php');
+    include_once(dirname(__FILE__).'\..\util\logging.php');
+    include_once(dirname(__FILE__).'\..\util\sets.php');
+    include_once(dirname(__FILE__).'\..\models\Account.php');
 
     class QuestionThreadController{
 
@@ -56,15 +56,15 @@
                     $q->setUpvotes($result[5]);
                     $q->setDownvotes($result[6]);
                     $q->setTags($result[7]);
-                    $uname = $result[8]
+                    $uname = $result[8];
                     $questionThread->setQuestion($q);
                     $questionThread->setQuestionName($uname);
 
                     $log->lwrite("Got the question with account username: $uname");                 
                     
                     //get other objects from questoinThread
-                    $questionThread->setAnswerThreadArray(getAnswerThread($id));
-                    $questionThread->setCommentThreadArray(getCommentThread($id, 'question')); 
+                    $questionThread->setAnswerThreadArray(self::getAnswerThread($id));
+                    $questionThread->setCommentThreadArray(self::getCommentThread($id, 'question')); 
                     
                     $log->lwrite('Got everything for the QuestionThread');                 
                 }
@@ -86,7 +86,7 @@
          */
         private static function getAnswerThread($id){
             global $servername, $username, $password, $dbname, $log;
-            $answerThreadArray;
+            $answerThreadArray[] = new AnswerThread();
             
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -113,7 +113,7 @@
                     $answerThread->setAnswerName($result[8]);
 
                     //get comment thread for this answer
-                    $answerThread->setCommentThreadArray(getCommentThread($id, 'answer'));
+                    $answerThread->setCommentThreadArray(self::getCommentThread($id, 'answer'));
                     $answerThreadArray[] = $answerThread;
                     
                 }
@@ -138,7 +138,7 @@
          */
         private static function getCommentThread($id, $type){
             global $servername, $username, $password, $dbname, $log;
-            $commentThreadArray;
+            $commentThreadArray[] = new CommentThread;
             
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

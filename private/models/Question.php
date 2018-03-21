@@ -54,7 +54,7 @@
 			return $this->downvotes;
 		}
 
-		function get_tags(){
+		function getTags(){
 			return $this->tags;
 		}
 		
@@ -81,10 +81,10 @@
 			$this->downvotes = $new_downvotes;
 		}
 		
-		function set_tags($new_tags){
+		function setTags($new_tags){
 			$this->tags = $new_tags;
 		}
-		function set_header($new_header){
+		function setHeader($new_header){
 			$this->header=$new_header;
 		}
 
