@@ -57,13 +57,13 @@
       $id = $_SESSION['userid'];
       $log->lwrite("ID retrieved from session: $id");
       $account = new Account();
-      $account->set_id($id);
-      $log->lwrite('ID in account object: ' . $account->get_id());
+      $account->setId($id);
+      $log->lwrite('ID in account object: ' . $account->getId());
       $rows = getQuestionsByAccount($account);
       $log->lwrite('Number of rows retrieved: ' . sizeof($rows));
       foreach ($rows as $info) {
-        $vote=getVote($votes,$info->get_id());
-        if($info->get_id()==$vote['ref_id']){
+        $vote=getVote($votes,$info->getId());
+        if($info->getId()==$vote['ref_id']){
           $vote_class=Vote::getClass($vote);
         }else{
           $vote_class=Vote::getClass(false);
@@ -71,21 +71,21 @@
         echo "
           <div class='form-group row questionBox'>
             <div class='col-md-2 vote_btns ".$vote_class." '>
-            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=1' method='POST'>
-              <button type='submit' class='vote_btn vote_like'><i class='fa fa-thumbs-up'> ". $info->get_upvotes() . "</i></button>
+            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->getId()."&vote=1' method='POST'>
+              <button type='submit' class='vote_btn vote_like'><i class='fa fa-thumbs-up'> ". $info->getUpvotes() . "</i></button>
             </form>
-            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->get_id()."&vote=-1' method='POST'>
-              <button type='submit' class='vote_btn vote_dislike'><i class='fa fa-thumbs-down'> ". $info->get_downvotes() . "</i></button>
+            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->getId()."&vote=-1' method='POST'>
+              <button type='submit' class='vote_btn vote_dislike'><i class='fa fa-thumbs-down'> ". $info->getDownvotes() . "</i></button>
               </form>
             </div>
             <span class = 'questionBody'>
             <div class='col-md-10 '>
               <div>
-                <h3><strong>" . $info->get_header() . "</strong></h3>
+                <h3><strong>" . $info->getHeader() . "</strong></h3>
               </div>
-              <p>" . $info->get_content() . "
+              <p>" . $info->getContent() . "
               </p>
-              <span class = 'time'>Posted on: " . $info->get_date() . "</span>
+              <span class = 'time'>Posted on: " . $info->getDate() . "</span>
             </div>
             </span>
           </div><br>";

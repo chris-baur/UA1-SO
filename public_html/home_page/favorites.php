@@ -16,7 +16,7 @@
   		echo "<main><div class='container'>";  
     	$userName = $_SESSION['username'];
     	$account= getAccountByUsername($userName);
-    	$rows = getFavouriteQuestions($account->get_id());
+    	$rows = getFavouriteQuestions($account->getId());
     	$hasFavorite = false;
 
 
@@ -32,17 +32,17 @@
 	      		echo "
 	        	<div class='form-group row questionBox'>
 	        		<div class='col-md-2 userBox'>
-	        			<label class ='username'>".$questionAccount->get_username()."</label><br>
-		          		<button class='btn btn-like'><i class='fa fa-thumbs-o-up'></i></button>". $info->get_upvotes() . "
-		          		<button class='btn btn-like'><i class='fa fa-thumbs-o-down'></i></button>". $info->get_downvotes() . "
+	        			<label class ='username'>".$questionAccount->getUsername()."</label><br>
+		          		<button class='btn btn-like'><i class='fa fa-thumbs-o-up'></i></button>". $info->getUpvotes() . "
+		          		<button class='btn btn-like'><i class='fa fa-thumbs-o-down'></i></button>". $info->getDownvotes() . "
 	        		</div>
 		        	<span class = 'questionBody'>
 		        		<div class='col-md-10 '>
 		          			<div>
-		          				<h3><strong>" . $info->get_header() . "</strong></h3>
+		          				<h3><strong>" . $info->getHeader() . "</strong></h3>
 		        			</div>
-		          			<p>" . $info->get_content() . "</p>
-		          			<span class = 'time'>Posted on: " . $info->get_date() . "</span>
+		          			<p>" . $info->getContent() . "</p>
+		          			<span class = 'time'>Posted on: " . $info->getDate() . "</span>
 		        		</div>
 		        	</span>
 	      		</div><br>";
@@ -51,7 +51,7 @@
 	    	$hasFavorite = true;
 		}
 
-    	// $rows = getFavouriteAnswers($account->get_id());
+    	// $rows = getFavouriteAnswers($account->getId());
     	// if($hasFavorite == false){
     	// }
     	// else{
@@ -60,17 +60,17 @@
 	    //   		echo "
 	    //     	<div class='form-group row questionBox'>
 	    //     		<div class='col-md-2 userBox'>
-	    //     			<label class ='username'>".$questionAccount->get_username()."</label><br>
-	    //       			<button class='btn btn-like'><i class='fa fa-thumbs-o-up'></i></button>". $info->get_upvotes() . "
-	    //       			<button class='btn btn-like'><i class='fa fa-thumbs-o-down'></i></button>". $info->get_downvotes() . "
+	    //     			<label class ='username'>".$questionAccount->getUsername()."</label><br>
+	    //       			<button class='btn btn-like'><i class='fa fa-thumbs-o-up'></i></button>". $info->getUpvotes() . "
+	    //       			<button class='btn btn-like'><i class='fa fa-thumbs-o-down'></i></button>". $info->getDownvotes() . "
 	    //     		</div>
 	    //     	<span class = 'questionBody'>
 	    //     		<div class='col-md-10 '>
 	    //       			<div>
-	    //       				<h3><strong>" . $info->get_header() . "</strong></h3>
+	    //       				<h3><strong>" . $info->getHeader() . "</strong></h3>
 	    //     			</div>
-	    //       			<p>" . $info->get_content() . "</p>
-	    //       			<span class = 'time'>Posted on: " . $info->get_date() . "</span>
+	    //       			<p>" . $info->getContent() . "</p>
+	    //       			<span class = 'time'>Posted on: " . $info->getDate() . "</span>
 	    //     		</div>
 	    //     	</span>
 	    //   		</div><br>";

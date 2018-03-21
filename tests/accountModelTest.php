@@ -7,70 +7,70 @@ class accountModelTest extends PHPUnit\Framework\TestCase{
     }
     public function testId(){
         $a = new Account();
-        $a->set_id('1');
-        $this->assertEquals($a->get_id(), '1');
+        $a->setId('1');
+        $this->assertEquals($a->getId(), '1');
     }
 
     public function testUsername(){
         $a = new Account();
-        $a->set_username('sxephil');
-        $this->assertEquals($a->get_username(), 'sxephil');
+        $a->setUsername('sxephil');
+        $this->assertEquals($a->getUsername(), 'sxephil');
     }
 
     public function testPassword(){
         $a = new Account();
-        $a->set_password('$2y$10$tLoj.N4SayWqMJvAJsEq3Om0w8mHwLllj7ddUgJpd/5gTeD6bGJvq');
-        $this->assertEquals($a->get_password(), '$2y$10$tLoj.N4SayWqMJvAJsEq3Om0w8mHwLllj7ddUgJpd/5gTeD6bGJvq');
+        $a->setPassword('$2y$10$tLoj.N4SayWqMJvAJsEq3Om0w8mHwLllj7ddUgJpd/5gTeD6bGJvq');
+        $this->assertEquals($a->getPassword(), '$2y$10$tLoj.N4SayWqMJvAJsEq3Om0w8mHwLllj7ddUgJpd/5gTeD6bGJvq');
     }
     public function testName(){
         $a = new Account();
-        $a->set_name('boomer');
-        $this->assertEquals($a->get_name(), 'boomer');
+        $a->setName('boomer');
+        $this->assertEquals($a->getName(), 'boomer');
     }
     public function testLastName(){
         $a = new Account();
-        $a->set_last_name('The Pug');
-        $this->assertEquals($a->get_last_name(), 'The Pug');
+        $a->setLastName('The Pug');
+        $this->assertEquals($a->getLastName(), 'The Pug');
     }
     public function testGender(){
         $a = new Account();
-        $a->set_gender('male');
-        $this->assertEquals($a->get_gender(), 'male');
+        $a->setGender('male');
+        $this->assertEquals($a->getGender(), 'male');
     }
     public function testSecurityOne(){
         $a = new Account();
-        $a->set_security_one('How now brown cow');
-        $this->assertEquals($a->get_security_one(), 'How now brown cow');
+        $a->setSecurityOne('How now brown cow');
+        $this->assertEquals($a->getSecurityOne(), 'How now brown cow');
     }
     public function testSecurityTwo(){
         $a = new Account();
-        $a->set_security_two('How much wood can a woodchuck chuck');
-        $this->assertEquals($a->get_security_two(), 'How much wood can a woodchuck chuck');
+        $a->setSecurityTwo('How much wood can a woodchuck chuck');
+        $this->assertEquals($a->getSecurityTwo(), 'How much wood can a woodchuck chuck');
     }
     public function testAnswerOne(){
         $a = new Account();
-        $a->set_answer_one('I am ok');
-        $this->assertEquals($a->get_answer_one(), 'I am ok');
+        $a->setAnswerOne('I am ok');
+        $this->assertEquals($a->getAnswerOne(), 'I am ok');
     }
     
     public function testAnswerTwo(){
         $a = new Account();
-        $a->set_answer_two('A lot of wood');
-        $this->assertEquals($a->get_answer_two(), 'A lot of wood');
+        $a->setAnswerTwo('A lot of wood');
+        $this->assertEquals($a->getAnswerTwo(), 'A lot of wood');
     }
     public function testBio(){
         $a = new Account();
-        $a->set_bio('male');
-        $this->assertEquals($a->get_bio(), 'male');
+        $a->setBio('male');
+        $this->assertEquals($a->getBio(), 'male');
     } 
     public function testProfession(){
         $a = new Account();
-        $a->set_profession('poor student');
-        $this->assertEquals($a->get_profession(), 'poor student');
+        $a->setProfession('poor student');
+        $this->assertEquals($a->getProfession(), 'poor student');
     }
     public function testPin(){
         $a = new Account();
-        $a->set_pin('0000');
-        $this->assertEquals($a->get_pin(), '0000');
+        $a->setPin('0000');
+        $this->assertEquals($a->getPin(), '0000');
     }
 }

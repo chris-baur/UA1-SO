@@ -55,10 +55,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(validateString('password') && strlen($_POST['password']) >= 6){
             $log->lwrite('Password passed prelim validaton');
             $pass = htmlentities($_POST['password']);
-            if (password_verify($pass, $account -> get_password())){
+            if (password_verify($pass, $account -> getPassword())){
                 $log->lwrite('password is valid');
-                $_SESSION['userid'] = $account -> get_id();
-                $_SESSION['username'] = $account -> get_username();
+                $_SESSION['userid'] = $account -> getId();
+                $_SESSION['username'] = $account -> getUsername();
                 session_regenerate_id();
                 // redirect to user home page
                 header('Location: ..\home_page\homepage.php');

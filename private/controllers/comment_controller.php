@@ -29,13 +29,13 @@ $log = new Logging();
             $stmt = $pdo -> prepare('INSERT INTO comments(account_id, header, content, date, upvotes, downvotes, tags) VALUES(:account_id, :header, :content, :date, :upvotes, :downvotes, :tags);');
                 //@TODO complete function
 										
-			$stmt -> bindParam(':account_id', $comment->get_accountId());
-			$stmt -> bindParam(':header', $comment->get_header());
-			$stmt -> bindParam(':content', $comment->get_content());
-            $stmt -> bindParam(':date', $comment->get_date());
-            $stmt -> bindParam(':upvotes', $comment->get_upvotes());
-            $stmt -> bindParam(':downvotes', $comment->get_downvotes());
-            $stmt -> bindParam(':tags', $comment->get_tags());
+			$stmt -> bindParam(':account_id', $comment->getAccountId());
+			$stmt -> bindParam(':header', $comment->getHeader());
+			$stmt -> bindParam(':content', $comment->getContent());
+            $stmt -> bindParam(':date', $comment->getDate());
+            $stmt -> bindParam(':upvotes', $comment->getUpvotes());
+            $stmt -> bindParam(':downvotes', $comment->getDownvotes());
+            $stmt -> bindParam(':tags', $comment->getTags());
 			
 			$stmt -> execute();
             $comment_id = $pdo -> lastInsertId();
@@ -63,7 +63,7 @@ $log = new Logging();
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date, upvotes, downvotes FROM comments WHERE account_id = :account_id;");
-			$accountID=$account->get_id();	
+			$accountID=$account->getId();	
 			$stmt -> bindParam(':account_id',$accountID );
 		
 			$stmt -> execute();
@@ -72,14 +72,14 @@ $log = new Logging();
 			while($result = $stmt -> fetch()){
                 $c = new comment();
 
-				$c->set_id($result[0]);
-                $c->set_accountId($result[1]);
-                $c->set_questionId($result[2]);
-                $c->set_answerId($result[3]);
-                $c->set_content($result[4]);
-                $c->set_date($result[5]);
-                $c->set_upvotes($result[6]);
-                $c->set_downvotes($result[7]);
+				$c->setId($result[0]);
+                $c->setAccountId($result[1]);
+                $c->setQuestionId($result[2]);
+                $c->setAnswerId($result[3]);
+                $c->setContent($result[4]);
+                $c->setDate($result[5]);
+                $c->setUpvotes($result[6]);
+                $c->setDownvotes($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -115,14 +115,14 @@ $log = new Logging();
             while($result = $stmt -> fetch()){
                 $c = new Comment();
 
-				$c->set_id($result[0]);
-                $c->set_accountId($result[1]);
-                $c->set_questionId($result[2]);
-                $c->set_answerId($result[3]);
-                $c->set_content($result[4]);
-                $c->set_date($result[5]);
-                $c->set_upvotes($result[6]);
-                $c->set_downvotes($result[7]);
+				$c->setId($result[0]);
+                $c->setAccountId($result[1]);
+                $c->setQuestionId($result[2]);
+                $c->setAnswerId($result[3]);
+                $c->setContent($result[4]);
+                $c->setDate($result[5]);
+                $c->setUpvotes($result[6]);
+                $c->setDownvotes($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -159,14 +159,14 @@ $log = new Logging();
             while($result = $stmt -> fetch()){
                 $c = new Comment();
 
-				$c->set_id($result[0]);
-                $c->set_accountId($result[1]);
-                $c->set_questionId($result[2]);
-                $c->set_answerId($result[3]);
-                $c->set_content($result[4]);
-                $c->set_date($result[5]);
-                $c->set_upvotes($result[6]);
-                $c->set_downvotes($result[7]);
+				$c->setId($result[0]);
+                $c->setAccountId($result[1]);
+                $c->setQuestionId($result[2]);
+                $c->setAnswerId($result[3]);
+                $c->setContent($result[4]);
+                $c->setDate($result[5]);
+                $c->setUpvotes($result[6]);
+                $c->setDownvotes($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -195,12 +195,12 @@ $log = new Logging();
             $stmt = $pdo -> prepare('UPDATE comments set header = :header, content = :content, upvotes = :upvotes, downvotes = :downvotes, tags = :tags
                 WHERE id = :id;');
 										
-			$stmt -> bindParam(':header', $Comment->get_header());
-			$stmt -> bindParam(':content', $Comment->get_content());
-            $stmt -> bindParam(':upvotes', $Comment->get_upvotes());
-            $stmt -> bindParam(':downvotes', $Comment->get_downvotes());
-            $stmt -> bindParam(':tags', $Comment->get_tags());
-            $stmt -> bindParam(':id', $Comment->get_id());
+			$stmt -> bindParam(':header', $Comment->getHeader());
+			$stmt -> bindParam(':content', $Comment->getContent());
+            $stmt -> bindParam(':upvotes', $Comment->getUpvotes());
+            $stmt -> bindParam(':downvotes', $Comment->getDownvotes());
+            $stmt -> bindParam(':tags', $Comment->getTags());
+            $stmt -> bindParam(':id', $Comment->getId());
 			
 			$stmt -> execute();
             $log->lwrite('Updated Comment succesfully. ID: '.$comment_id);
