@@ -1,5 +1,7 @@
 <?php
 
+include_once '../../private/controllers/account_controller.php';
+
 $config = parse_ini_file('../../config.ini');
 $username = $config['username'];
 $password = $config['password'];
@@ -16,25 +18,20 @@ if($status == PHP_SESSION_NONE){
 }		 
 
 $user = $_SESSION['username'];
-$old_password = $_POST['oldpassword'];
 
-$stmt = $conn->prepare("SELECT `password` FROM `accounts` WHERE `accounts`.`username` = '$user'");
+$account = getAccountByUsername($user);
+$account_pass = $account->get_password();
+
+//$old_password = $_POST['oldpassword'];
+
+//if(password_verify($old_password, "SELECT `password` FROM `accounts` WHERE `accounts`.`username` = '$user'")) {
+$_SESSION['password'];
+
+$new_password = password_hash($_POST['newpassword'], PASSWORD_DEFAULT);
+$stmt = $conn->prepare("UPDATE `accounts` SET `password` = '$new_password' WHERE `accounts`.`username` = '$user'");
+$stmt->bindParam(':password', $new_password);
 $stmt->execute();
-$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
 
-echo $result;
+header('Location: profile.php'); 
 
-foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
-        echo $v;
-    }
-
-if(password_verify($old_password, htmlentities($_SESSION['password']))) {
-	$new_password = password_hash($_POST['newpassword'], PASSWORD_DEFAULT);
-
-	$stmt = $conn->prepare("UPDATE `accounts` SET `password` = '$new_password' WHERE `accounts`.`username` = '$user'");
-	$stmt->bindParam(':password', $new_password);
-	$stmt->execute();
-} else {
-	echo "ERROOOOOOR";
-}
 ?>

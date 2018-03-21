@@ -88,7 +88,8 @@
 			function changePassword() {
 				document.getElementById("changeBio").innerHTML = "";
 				document.getElementById("changePic").innerHTML = "";
-				document.getElementById("ChangePass").innerHTML = '<br><form action="changePassword.php" method="POST">Current Password <input type = "text" id = "ChangePass" name = "oldpassword" placeholder = "Password"><br> New Password <input type = "text" id = "changePass" name = "newpassword" placeholder = "Password" style = "margin-top: 2%"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/></form>';
+				document.getElementById("ChangePass").innerHTML = '<br><form action="changePassword.php" method="POST"> New Password <input type = "password" id = "changePass" name = "newpassword" placeholder = "Password" style = "margin-top: 2%"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/></form>';
+				//Current Password <input type = "text" id = "ChangePass" name = "oldpassword" placeholder = "Password"><br>
 			}
 
 			function changeBio() {
