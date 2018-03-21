@@ -33,22 +33,22 @@
 		 
 		 echo "<!--Body-->
 			<form method='post' action='?'>
-				<div class='container' ng-app='newQuestion' ng-controller='QuestionController'>
+				<div class='container' ng-app='newQuestion' ng-controller='questionController'>
 					<div class='form-control space'>
 						<span class='col-lg-2'>Tilte  </span>
 						<input class='col-lg-10' type='text' placeholder='Title of your question' name='header' 
-						ng-model='question_title' required>		
+						ng-model='question_title'>		
 					</div>
 					<div class='form-control space'>
 						<textarea class='form-control' rows='10' name='content'
-						ng-model='content' required></textarea>
+						ng-model='content'></textarea>
 					</div>
 					<div class='form-control space'>
 						<label>Tags : </label>
 						<tags-input ng-model='tags'></tags-input>
 					</div>
 					<div class='space'>
-						<button ng-disabled='allowSubmit()' type='submit' class='btn btn-primary btn-md'> Ask it! </button>
+						<button type='submit' class='btn btn-primary btn-md'> Ask it! </button>
 					</div>
 				</div>
 			</form>";

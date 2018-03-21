@@ -26,17 +26,14 @@ $sets = new Sets();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-            $stmt = $pdo -> prepare('INSERT INTO favourites(account_id, question_id, answer_id) VALUES( 
+            $stmt = $pdo -> prepare('INSERT INTO favourites(id, account_id, question_id, answer_id) VALUES(:id, 
                 :account_id, :question_id, :answer_id);');
-				//@TODO complete function
-				
-			$accountId = $favourite->getAccountId();
-			$questionId = $favourite->getQuestionId();
-			$answerId = $favourite->getAnswerId();
+                //@TODO complete function
 										
-			$stmt -> bindParam(':account_id', $accountId);
-			$stmt -> bindParam(':question_id', $questionId);
-			$stmt -> bindParam(':answer_id', $answerId);			
+			$stmt -> bindParam(':id', $favourite->getId());
+			$stmt -> bindParam(':account_id', $favourite->getAccountId());
+			$stmt -> bindParam(':question_id', $favourite->getQuestionId());
+            $stmt -> bindParam(':answer_id', $favourite->getAnswerId());
 			
 			$stmt -> execute();
             $favouriteId = $pdo -> lastInsertId();

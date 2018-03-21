@@ -1,9 +1,9 @@
 <?php
-include '..\..\private\util\logging.php';
-include '..\..\private\util\sets.php';
-include '..\..\private\models\Question.php';
-include '..\..\private\models\Account.php';
-include '..\..\private\models\Answer.php';
+include_once '..\..\private\util\logging.php';
+include_once '..\..\private\util\sets.php';
+include_once '..\..\private\models\Question.php';
+include_once '..\..\private\models\Account.php';
+include_once '..\..\private\models\Answer.php';
 $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 $servername = $config['servername'];
@@ -18,30 +18,22 @@ $log = new Logging();
 	*
 	* @param $answer		answer object
 	*/
-	function addAnswer($answer){
+	function addAnswer($Answer){
 		global $servername, $username, $password, $dbname, $log;
 		$answer_id = 0;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-            $stmt = $pdo -> prepare('INSERT INTO answers(account_id, question_id, content, date, upvotes, downvotes, best) VALUES(:account_id, :question_id, :content, :date, :upvotes, :downvotes, :best);');
-				//@TODO complete function
-				
-			$accountId = $answer->getAccountId();
-			$questionId = $answer->getQuestionId();
-			$content = $answer->getContent();
-			$date = $answer->getDate();
-			$up = $answer->getUpvotes();
-			$down = $answer->getDownvotes();
-			$best = $answer->getBest();
+            $stmt = $pdo -> prepare('INSERT INTO answers(account_id, header, content, date, upvotes, downvotes, tags) VALUES(:account_id, :header, :content, :date, :upvotes, :downvotes, :tags);');
+                //@TODO complete function
 										
-			$stmt -> bindParam(':account_id', $accountId);
-			$stmt -> bindParam(':question_id', $questionId);
-			$stmt -> bindParam(':content', $content);
-            $stmt -> bindParam(':date', $date);
-            $stmt -> bindParam(':upvotes', $up);
-            $stmt -> bindParam(':downvotes', $down);
-            $stmt -> bindParam(':best', $best);
+			$stmt -> bindParam(':account_id', $answer->getAccountId());
+			$stmt -> bindParam(':header', $answer->getHeader());
+			$stmt -> bindParam(':content', $answer->getContent());
+            $stmt -> bindParam(':date', $answer->getDate());
+            $stmt -> bindParam(':upvotes', $answer->getUpvotes());
+            $stmt -> bindParam(':downvotes', $answer->getDownvotes());
+            $stmt -> bindParam(':tags', $answer->getTags());
 			
 			$stmt -> execute();
             $answer_id = $pdo -> lastInsertId();
@@ -151,11 +143,10 @@ $log = new Logging();
 	function getAnswersByQuestionId($questionId){
 		global $servername, $username, $password, $dbname, $log;
         $answerArray = [];
-		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE question_id LIKE '%:questionId%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE question_id LIKE :questionId ORDER BY upvotes DESC, downvotes, date DESC");						
 			$stmt -> bindParam(':questionId', $questionId);
 		
 			$stmt -> execute();
@@ -163,7 +154,6 @@ $log = new Logging();
             // while there is an answer with specified content
             while($result = $stmt -> fetch()){
                 $a = new Answer();
-
 				$a->setId($result[0]);
                 $a->setAccountId($result[1]);
                 $a->setQuestionId($result[2]);
@@ -194,27 +184,21 @@ $log = new Logging();
 	*/
 	function updateAnswer($answer){
 		global $servername, $username, $password, $dbname, $log;
+		$answer_id = 0;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
             $stmt = $pdo -> prepare('UPDATE answers set content = :content, upvotes = :upvotes, downvotes = :downvotes, best = :best
-				WHERE id = :id;');
-				
-			$content = $answer->getContent();
-			$date = $answer->getDate();
-			$up = $answer->getUpvotes();
-			$down = $answer->getDownvotes();
-			$best = $answer->getBest();
-			$id = $answer->getId();
+                WHERE id = :id;');
 										
-			$stmt -> bindParam(':content', $content);
-            $stmt -> bindParam(':upvotes', $up);
-            $stmt -> bindParam(':downvotes', $down);
-            $stmt -> bindParam(':best', $best);
-            $stmt -> bindParam(':id', $id);
+			$stmt -> bindParam(':content', $Answer->getContent());
+            $stmt -> bindParam(':upvotes', $Answer->getUpvotes());
+            $stmt -> bindParam(':downvotes', $Answer->getDownvotes());
+            $stmt -> bindParam(':best', $Answer->getBest());
+            $stmt -> bindParam(':id', $Answer->getId());
 			
 			$stmt -> execute();
-            $log->lwrite('Updated Answer succesfully. ID: '. $id);
+            $log->lwrite('Updated Answer succesfully. ID: '.$answer_id);
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
