@@ -35,3 +35,70 @@
 	padding: 0px;
 	font-size: 15px;
 }
+
+.utilities_btns {
+	float:right;	
+	padding-top: 0%;
+	padding-bottom: 0%;	
+}
+
+.utilities_btns form {
+	display: inline-block;
+}
+.delete_btn{
+	border: none;
+	cursor:pointer;
+	background: transparent;
+}
+.delete_btn :hover{
+	color: #cc0000;
+}
+
+.answerForm{
+	width: 100%;
+	min-height: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.newCommentButton{
+	background-color: transparent;
+	color: #808080;
+	border: none;
+	padding: 0px;
+	outline: none;
+	cursor: pointer;
+	padding-top: 5px;
+}
+
+.newCommentButton:focus{
+	outline:none;
+}
+
+.hasComment{
+	margin-left: 10%;
+	width: 90%;
+}
+
+.subButton{
+	background-color: #A48963;
+	color: white;
+}
+
+.inside{
+	margin-left: 10%;
+}
+
+.newAnswerButton{
+	background-color: transparent;
+	color: #808080;
+	border: none;
+	padding: 0px;
+	outline: none;
+	cursor: pointer;
+	padding-top: 5px;
+}
+
+.newAnswerButton:focus{
+	outline: none;
+}

@@ -94,7 +94,7 @@
                 $stmt = $pdo -> prepare("SELECT A.id, A.account_id, A.question_id, A.content, A.date, A.upvotes, A.downvotes, A.best, AC.username, AC.name FROM answers A 
                     JOIN accounts AC ON AC.id = A.account_id 
                     WHERE A.question_id = :id
-                    ORDER BY A.upvotes DESC, A.downvotes, A.date;");						
+                    ORDER BY A.upvotes DESC, A.downvotes, A.date DESC;");						
                 $stmt -> bindParam(':id', $id);
             
                 $stmt -> execute();

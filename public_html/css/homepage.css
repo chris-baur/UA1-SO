@@ -56,3 +56,14 @@
 	 border-radius: 50%;
 	 padding: 5%;
 }
+
+.newQuestionButton{
+	background-color: #7a5720;
+	color: white;
+	border: none;
+	padding: 0px;
+	outline: none;
+	cursor: pointer;
+	padding: 5px;
+	border-color: black;
+}
