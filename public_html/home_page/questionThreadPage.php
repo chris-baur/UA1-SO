@@ -118,9 +118,16 @@
 	    		else
 	    			$vote_class=Vote::getClass(false);
 				// Output of the details of the answers requested
-				// get the array of comments
-				$commentRow = $questionThread->getCommentThreadArray();
 				
+	    		$commentRow=[];
+	    		$allComments=$questionThread->getCommentThreadArray();
+	    		// get the array of comments for current answer
+				for($id=0;$id<sizeof($allComments);$id++){
+					if(($allComments[$id]->getComment()->getAnswerId())==$answerInfo->getId()){
+						$comment=$allComments[$id];
+						array_push($commentRow,$comment);
+					}
+				}
 				echo "
 				<br>
 				<div class= 'answerBlock'>
