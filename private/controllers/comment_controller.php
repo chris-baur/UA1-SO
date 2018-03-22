@@ -19,7 +19,7 @@ $log = new Logging();
 	*
 	* @param $comment		comment object
 	*/
-	function addcomment($comment){
+	function addComment($comment){
 		global $servername, $username, $password, $dbname, $log;
 		$comment_id = 0;
 

@@ -103,6 +103,30 @@
 		    </div>
 	    </div><br><hr>";
 
+	    // Adding Answers
+	    if(isset($_SESSION['username'])){
+		    echo"
+		    <button class='newAnswerButton' type='button' data-toggle='collapse' data-target='#newAnswer' aria-expanded='false' aria-controls='newAnswer'>
+	    	Answer Question
+	  		</button>";
+
+	  		// Contents inside the Add Answer Button
+		  	echo"	
+		  	<div class='collapse' id='newAnswer'>
+		  	
+		  	<form method='post' action = 'newAnswer.php'>
+		  		<input class = 'answerForm' type='text' name = 'answerContent' required><br>
+		  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
+		  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+
+		  		<button type='submit' class='subButton'>Submit Answer</button>
+		  	</form>
+
+			</div>";
+		}
+
+
+
 		// Output all answers corresponding to question
 	    
 		$answerRow = $questionThread->getAnswerThreadArray();
@@ -122,10 +146,12 @@
 	    		$commentRow=[];
 	    		$allComments=$questionThread->getCommentThreadArray();
 	    		// get the array of comments for current answer
-				for($id=0;$id<sizeof($allComments);$id++){
-					if(($allComments[$id]->getComment()->getAnswerId())==$answerInfo->getId()){
-						$comment=$allComments[$id];
-						array_push($commentRow,$comment);
+	    		if(isset($allComments)){
+					for($id=0;$id<sizeof($allComments);$id++){
+						if(($allComments[$id]->getComment()->getAnswerId())==$answerInfo->getId()){
+							$comment=$allComments[$id];
+							array_push($commentRow,$comment);
+						}
 					}
 				}
 				echo "
@@ -212,15 +238,68 @@
 					        	</div>
 				    	</div>";
 			    	}
+			    	// new question
+			    	if(isset($_SESSION['username'])){
+					    echo"
+					    <span class= 'hasComment'>
+					    <button class='newCommentButton' type='button' data-toggle='collapse' data-target='#newComment".$counter."' aria-expanded='false' aria-controls='newComment".$counter."'>
+					    Add Comment
+				  		</button>";
+
+
+				  		// Contents inside the Add Answer Button
+					  	echo"	
+					  	<div class='collapse' id='newComment".$counter."'>
+					  	
+					  	<form method='post' action = 'newComment.php'>
+					  		<input class = 'answerForm hasComment' type='text' name = 'commentContent' required><br>
+					  		<input type='hidden' name='questionId' value = ".$row->getId()." >
+					  		<input type='hidden' name='accountId' value = ".$_SESSION['userid']." >
+					  		<input type='hidden' name='answerId' value = ".$answerInfo->getId().">
+
+
+					  		<button type='submit' class='subButton inside'>Submit Comment</button>
+					  	</form>
+
+						</div>
+						</span>";
+					}
+
+			    }
+
+			    // if there is no comment, the new question button will be here
+			    else{
+			    	if(isset($_SESSION['username'])){
+					    echo"
+					    <button class='newCommentButton' type='button' data-toggle='collapse' data-target='#newComment".$counter."' aria-expanded='false' aria-controls='newComment".$counter."'>
+				    	Add Comment
+				  		</button>";
+
+
+				  		// Contents inside the Add Answer Button
+					  	echo"	
+					  	<div class='collapse' id='newComment".$counter."'>
+					  	
+					  	<form method='post' action = 'newComment.php'>
+					  		<input class = 'answerForm' type='text' name = 'commentContent' required><br>
+					  		<input type='hidden' name='questionId' value = ".$row->getId()." >
+					  		<input type='hidden' name='accountId' value = ".$_SESSION['userid']." >
+					  		<input type='hidden' name='answerId' value = ".$answerInfo->getId().">
+
+
+					  		<button ng-disabled='allowSubmit()' type='submit' class='subButton'>Submit Comment</button>
+					  	</form>
+
+						</div>";
+					}
+
 			    }
 		    	echo "</div></div><br>";
 		    	$counter++;
 
 			}
-			// put input code here
 		}
 		
-		// put input answer code here
 	}
 	else
 		echo "Question not found";
