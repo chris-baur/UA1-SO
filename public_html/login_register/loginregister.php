@@ -197,19 +197,18 @@
 <p style='text-align: center;'> © All Rights Reserved 2018 </p>";
 
 
-if(isset($_SESSION['invalidLogin'])){
-  $log->lwrite('in invalid login isset');
+if(isset($_SESSION['invalidLogin']) || isset($_SESSION['validRegister'])){
+  $log->lwrite('in simulating login form button click');
   
-  $invalid = $_SESSION['invalidLogin'];
   echo '<script>
-  window.addEventListener("load", function(event) {
-      document.getElementById("loginButton").click();
-  });
-</script>
-</body>
-</html>';
-  $log->lwrite('echoed script for on click');
+    window.addEventListener("load", function(event) {
+        document.getElementById("loginButton").click();
+    });
+  </script>
+  </body>
+  </html>';
   unset($_SESSION['invalidLogin']);
+  unset($_SESSION['validRegister']);
   $log->lwrite('unsset invalidLogin session');
 }
 else if(isset($_SESSION['invalidRegister'])){

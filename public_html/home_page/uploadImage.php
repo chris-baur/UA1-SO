@@ -22,7 +22,7 @@ $_SESSION['name'] = $uploadfile;
 
 echo $uploadfile;
 
-$stmt = $conn->prepare("UPDATE `accounts` SET `name` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
+$stmt = $conn->prepare("UPDATE `accounts` SET `profile_picture_path` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
 //$stmt = $conn->prepare("UPDATE accounts SET name = $uploadfile");
 $stmt->bindParam(':name', $uploadfile);
 $stmt->execute();	

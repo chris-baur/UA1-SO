@@ -1,97 +1,52 @@
-[09/Mar/2018:17:12:13] (validationRegistration) in validation registration
-[09/Mar/2018:17:12:13] (validationRegistration) Profession option succeeded
-[09/Mar/2018:17:12:13] (validationRegistration) Gender option succeeded
-[09/Mar/2018:17:12:13] (validationRegistration) Security question 1 option succeeded
-[09/Mar/2018:17:12:13] (validationRegistration) Security question 2 option succeeded
-[09/Mar/2018:17:12:13] (validationRegistration)  answer 1 option succeeded
-[09/Mar/2018:17:12:13] (validationRegistration) Security answer 2 option succeeded
-[09/Mar/2018:17:12:13] (validationRegistration) Password hashed succeeded
-[09/Mar/2018:17:12:13] (validationRegistration) valid data true
-[09/Mar/2018:17:12:13] (validationRegistration) added account succesfully. ID: 3
-[09/Mar/2018:17:12:13] (validationRegistration) valid user true
-[09/Mar/2018:17:12:13] (validationRegistration) valid username true
-[09/Mar/2018:17:12:13] (loginregister) in login register 
-[09/Mar/2018:17:12:13] (loginregister) Got the arrays
-[09/Mar/2018:17:12:13] (loginregister) In what city or town did your mother and father meet?
-[09/Mar/2018:17:12:13] (loginregister) Array
-[09/Mar/2018:17:12:14] (loginregister) Array
-[09/Mar/2018:17:12:14] (loginregister) Array
-[09/Mar/2018:17:13:54] (loginregister) in login register 
-[09/Mar/2018:17:13:54] (loginregister) Got the arrays
-[09/Mar/2018:17:13:54] (loginregister) In what city or town did your mother and father meet?
-[09/Mar/2018:17:13:54] (loginregister) Array
-[09/Mar/2018:17:13:54] (loginregister) Array
-[09/Mar/2018:17:13:54] (loginregister) Array
-[09/Mar/2018:17:14:02] (validateLogin) Form has requested a post for File: validateLogin.php
-[09/Mar/2018:17:14:02] (validateLogin) Username is: password
-[09/Mar/2018:17:14:02] (validateLogin) account exists with given username
-[09/Mar/2018:17:14:02] (validateLogin) inside valid user
-[09/Mar/2018:17:14:02] (validateLogin) Password passed prelim validaton
-[09/Mar/2018:17:14:03] (validateLogin) password is valid
-[09/Mar/2018:17:14:19] (newQuestion) Form has requested a post for File: validateLogin.php
-[09/Mar/2018:17:14:19] (newQuestion) Username provided is not a valid string
-[09/Mar/2018:17:14:19] (newQuestion) invalid username. Valid data is false
-[09/Mar/2018:17:14:19] (newQuestion) Showing user error
-[16/Mar/2018:02:29:48] (myquestions) User is not logged in. @myquestions.php
-[16/Mar/2018:02:30:04] (loginregister) in login register 
-[16/Mar/2018:02:30:04] (loginregister) Got the arrays
-[16/Mar/2018:02:30:04] (loginregister) In what city or town did your mother and father meet?
-[16/Mar/2018:02:30:04] (loginregister) Array
-[16/Mar/2018:02:30:04] (loginregister) Array
-[16/Mar/2018:02:30:04] (loginregister) Array
-[16/Mar/2018:02:35:15] (create_db) Connected successfully
-[16/Mar/2018:02:35:16] (create_db) Table accounts created successfully
-[16/Mar/2018:02:35:16] (create_db) Connected successfully
-[16/Mar/2018:02:35:17] (create_db) Questions Table created successfully
-[16/Mar/2018:02:35:17] (create_db) Connected successfully
-[16/Mar/2018:02:35:19] (create_db) Answers Table created successfully
-[16/Mar/2018:02:35:19] (create_db) Connected successfully
-[16/Mar/2018:02:35:20] (create_db) Comments Table created successfully
-[16/Mar/2018:02:35:20] (create_db) Connected successfully
-[16/Mar/2018:02:35:21] (create_db) Favourites Table created successfully
-[16/Mar/2018:02:35:55] (create_db) Connected successfully
-[16/Mar/2018:02:35:55] (create_db) Table accounts created successfully
-[16/Mar/2018:02:35:55] (create_db) Connected successfully
-[16/Mar/2018:02:35:56] (create_db) Questions Table created successfully
-[16/Mar/2018:02:35:56] (create_db) Connected successfully
-[16/Mar/2018:02:35:57] (create_db) Answers Table created successfully
-[16/Mar/2018:02:35:57] (create_db) Connected successfully
-[16/Mar/2018:02:35:58] (create_db) Comments Table created successfully
-[16/Mar/2018:02:35:58] (create_db) Connected successfully
-[16/Mar/2018:02:35:59] (create_db) Favourites Table created successfully
-[16/Mar/2018:04:48:18] (loginregister) in login register 
-[16/Mar/2018:04:48:18] (loginregister) Got the arrays
-[16/Mar/2018:04:48:18] (loginregister) In what city or town did your mother and father meet?
-[16/Mar/2018:04:48:18] (loginregister) Array
-[16/Mar/2018:04:48:18] (loginregister) Array
-[16/Mar/2018:04:48:18] (loginregister) Array
-[16/Mar/2018:14:30:33] (loginregister) in login register 
-[16/Mar/2018:14:30:33] (loginregister) Got the arrays
-[16/Mar/2018:14:30:33] (loginregister) In what city or town did your mother and father meet?
-[16/Mar/2018:14:30:33] (loginregister) Array
-[16/Mar/2018:14:30:33] (loginregister) Array
-[16/Mar/2018:14:30:33] (loginregister) Array
-[16/Mar/2018:14:31:00] (validationRegistration) in validation registration
-[16/Mar/2018:14:31:00] (validationRegistration) Profession option succeeded
-[16/Mar/2018:14:31:00] (validationRegistration) Gender option succeeded
-[16/Mar/2018:14:31:00] (validationRegistration) Security question 1 option succeeded
-[16/Mar/2018:14:31:00] (validationRegistration) Security question 2 option succeeded
-[16/Mar/2018:14:31:00] (validationRegistration)  answer 1 option succeeded
-[16/Mar/2018:14:31:00] (validationRegistration) Security answer 2 option succeeded
-[16/Mar/2018:14:31:00] (validationRegistration) Password hashed succeeded
-[16/Mar/2018:14:31:00] (validationRegistration) valid data true
-[16/Mar/2018:14:31:00] (validationRegistration) added account succesfully. ID: 5
-[16/Mar/2018:14:31:00] (validationRegistration) valid user true
-[16/Mar/2018:14:31:00] (validationRegistration) valid username true
-[16/Mar/2018:14:31:00] (loginregister) in login register 
-[16/Mar/2018:14:31:00] (loginregister) Got the arrays
-[16/Mar/2018:14:31:00] (loginregister) In what city or town did your mother and father meet?
-[16/Mar/2018:14:31:00] (loginregister) Array
-[16/Mar/2018:14:31:00] (loginregister) Array
-[16/Mar/2018:14:31:00] (loginregister) Array
-[16/Mar/2018:14:31:09] (validateLogin) Form has requested a post for File: validateLogin.php
-[16/Mar/2018:14:31:09] (validateLogin) Username is: hellonow
-[16/Mar/2018:14:31:09] (validateLogin) account exists with given username
-[16/Mar/2018:14:31:09] (validateLogin) inside valid user
-[16/Mar/2018:14:31:09] (validateLogin) Password passed prelim validaton
-[16/Mar/2018:14:31:09] (validateLogin) password is valid
+[22/Mar/2018:20:09:28] (loginregister) in login register
+[22/Mar/2018:20:09:28] (loginregister) Got the arrays
+[22/Mar/2018:20:09:28] (loginregister) no session errors
+[22/Mar/2018:20:10:03] (validationRegistration) in validation registration
+[22/Mar/2018:20:10:03] (validationRegistration) Profession option succeeded
+[22/Mar/2018:20:10:03] (validationRegistration) Gender option succeeded
+[22/Mar/2018:20:10:03] (validationRegistration) Security question 1 option succeeded
+[22/Mar/2018:20:10:03] (validationRegistration) Security question 2 option succeeded
+[22/Mar/2018:20:10:03] (validationRegistration)  answer 1 option succeeded
+[22/Mar/2018:20:10:03] (validationRegistration) Security answer 2 option succeeded
+[22/Mar/2018:20:10:04] (validationRegistration) Password hashed succeeded
+[22/Mar/2018:20:10:04] (validationRegistration) valid data true
+[22/Mar/2018:20:10:04] (validationRegistration) added account succesfully. ID: 6
+[22/Mar/2018:20:10:04] (validationRegistration) valid user true
+[22/Mar/2018:20:10:04] (validationRegistration) valid username true
+[22/Mar/2018:20:10:04] (loginregister) in login register
+[22/Mar/2018:20:10:04] (loginregister) Got the arrays
+[22/Mar/2018:20:10:04] (loginregister) in invalid register isset
+[22/Mar/2018:20:10:04] (loginregister) echoed script for on click
+[22/Mar/2018:20:10:04] (loginregister) unsset invalidRegister session
+[22/Mar/2018:20:32:54] (loginregister) in login register
+[22/Mar/2018:20:32:54] (loginregister) Got the arrays
+[22/Mar/2018:20:32:54] (loginregister) in simulating login form button click
+[22/Mar/2018:20:32:54] (loginregister) unsset invalidLogin session
+[22/Mar/2018:20:32:56] (loginregister) in login register
+[22/Mar/2018:20:32:56] (loginregister) Got the arrays
+[22/Mar/2018:20:32:56] (loginregister) no session errors
+[22/Mar/2018:20:33:20] (validationRegistration) in validation registration
+[22/Mar/2018:20:33:20] (validationRegistration) Profession option succeeded
+[22/Mar/2018:20:33:20] (validationRegistration) Gender option succeeded
+[22/Mar/2018:20:33:20] (validationRegistration) Security question 1 option succeeded
+[22/Mar/2018:20:33:20] (validationRegistration) Security question 2 option succeeded
+[22/Mar/2018:20:33:20] (validationRegistration)  answer 1 option succeeded
+[22/Mar/2018:20:33:20] (validationRegistration) Security answer 2 option succeeded
+[22/Mar/2018:20:33:20] (validationRegistration) Password hashed succeeded
+[22/Mar/2018:20:33:20] (validationRegistration) valid data true
+[22/Mar/2018:20:33:20] (validationRegistration) added account succesfully. ID: 7
+[22/Mar/2018:20:33:20] (validationRegistration) valid user true
+[22/Mar/2018:20:33:20] (validationRegistration) valid username true
+[22/Mar/2018:20:33:20] (loginregister) in login register
+[22/Mar/2018:20:33:20] (loginregister) Got the arrays
+[22/Mar/2018:20:33:20] (loginregister) in simulating login form button click
+[22/Mar/2018:20:33:20] (loginregister) unsset invalidLogin session
+[22/Mar/2018:20:33:30] (validateLogin) Form has requested a post for File: validateLogin.php
+[22/Mar/2018:20:33:30] (validateLogin) Username is: henrykitty
+[22/Mar/2018:20:33:30] (validateLogin) account exists with given username
+[22/Mar/2018:20:33:30] (validateLogin) inside valid user
+[22/Mar/2018:20:33:30] (validateLogin) Password passed prelim validaton
+[22/Mar/2018:20:33:30] (validateLogin) password is valid
+[22/Mar/2018:20:34:16] (myquestions) ID retrieved from session: 7
+[22/Mar/2018:20:34:16] (myquestions) ID in account object: 7
+[22/Mar/2018:20:34:16] (myquestions) Number of rows retrieved: 0

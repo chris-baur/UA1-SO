@@ -86,6 +86,7 @@ function createAccountsTable(){
             `bio` varchar(500) NOT NULL DEFAULT 'Training to be like goku',
             `profession` set($professions) NOT NULL DEFAULT '".$sets->getProfessions()[2]."',
             `pin` varchar(4) DEFAULT NULL,
+            `profile_picture_path` varchar(500) NOT NULL DEFAULT '../img/avatar2.png',
             PRIMARY KEY (`id`),
             UNIQUE KEY `username` (`username`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1;INSERT INTO `accounts` (`username`, `password`, `name`, `last_name`, `gender`, `security_one`, `security_two`, `answer_one`, `answer_two`, `bio`, `profession`, `pin`) VALUES

@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if($validData){
         // verify password
-        if(validateString('password') && strlen($_POST['password']) >= 6){
+        if(validateString('password') && strlen($_POST['password']) >= 8){
             $log->lwrite('Password passed prelim validaton');
             $pass = htmlentities($_POST['password']);
             if (password_verify($pass, $account -> getPassword())){

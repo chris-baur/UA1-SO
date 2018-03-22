@@ -166,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //password TO BE HASHED
     // validate password 
     if(validateString('password')){
-        if(strlen($_POST['password']) < 6 ){
+        if(strlen($_POST['password']) < 8 ){
             $validData = false;
             $invalidRegister[] = 'Invalid password length entered. It must be a minimum of 6 characters';
             $log->lwrite("password is not ok");
@@ -192,6 +192,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // redirect to login page
                 //setcookie('invalidArray', 'false', time() + 30);
                 $log->lwrite('valid username true');
+                $_SESSION['validRegister'] = true;
                 header('Location: loginregister.php');
             }
             else{

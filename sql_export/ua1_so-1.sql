@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `bio` varchar(500) NOT NULL DEFAULT 'Training to be like goku',
   `profession` set('Gamer','Student','Potatoe','Teacher','Professor','Hipster','Trainer','Sloth') NOT NULL DEFAULT 'Potatoe',
   `pin` varchar(4) DEFAULT NULL,
+  `profile_picture_path` varchar(500) NOT NULL DEFAULT '../img/avatar2.png',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;

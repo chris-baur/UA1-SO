@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS `accounts`;
 CREATE TABLE IF NOT EXISTS `accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL DEFAULT 'john117',
-  `password` varchar(500) DEFAULT NULL,
+  `password` varchar(25) DEFAULT NULL,
   `name` varchar(500) NOT NULL DEFAULT 'default name',
   `last_name` varchar(25) NOT NULL DEFAULT 'default  last',
   `gender` set('Male','Female','Other') NOT NULL DEFAULT 'Male',
@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `bio` varchar(500) NOT NULL DEFAULT 'Training to be like goku',
   `profession` set('Gamer','Student','Potatoe','Teacher','Professor','Hipster','Trainer','Sloth') NOT NULL DEFAULT 'Potatoe',
   `pin` varchar(4) DEFAULT NULL,
+  `profile_picture_path` varchar(500) NOT NULL DEFAULT '../img/avatar2.png',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
