@@ -35,3 +35,21 @@
 	padding: 0px;
 	font-size: 15px;
 }
+
+.utilities_btns {
+	float:right;	
+	padding-top: 0%;
+	padding-bottom: 0%;	
+}
+
+.utilities_btns form {
+	display: inline-block;
+}
+.delete_btn{
+	border: none;
+	cursor:pointer;
+	background: transparent;
+}
+.delete_btn :hover{
+	color: #cc0000;
+}
