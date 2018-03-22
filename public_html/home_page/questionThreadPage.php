@@ -103,6 +103,30 @@
 		    </div>
 	    </div><br><hr>";
 
+	    // Adding Answers
+	    if(isset($_SESSION['username'])){
+		    echo"
+		    <button class='newAnswerButton' type='button' data-toggle='collapse' data-target='#newAnswer' aria-expanded='false' aria-controls='newAnswer'>
+	    	Answer Question
+	  		</button>";
+
+	  		// Contents inside the Add Answer Button
+		  	echo"	
+		  	<div class='collapse' id='newAnswer'>
+		  	
+		  	<form method='post' action = 'newAnswer.php'>
+		  		<input class = 'answerForm' type='text' name = 'answerContent' required><br>
+		  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
+		  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+
+		  		<button type='submit' class='subButton'>Submit Answer</button>
+		  	</form>
+
+			</div>";
+		}
+
+
+
 		// Output all answers corresponding to question
 	    
 		$answerRow = $questionThread->getAnswerThreadArray();
@@ -118,9 +142,18 @@
 	    		else
 	    			$vote_class=Vote::getClass(false);
 				// Output of the details of the answers requested
-				// get the array of comments
-				$commentRow = $questionThread->getCommentThreadArray();
 				
+	    		$commentRow=[];
+	    		$allComments=$questionThread->getCommentThreadArray();
+	    		// get the array of comments for current answer
+	    		if(isset($allComments)){
+					for($id=0;$id<sizeof($allComments);$id++){
+						if(($allComments[$id]->getComment()->getAnswerId())==$answerInfo->getId()){
+							$comment=$allComments[$id];
+							array_push($commentRow,$comment);
+						}
+					}
+				}
 				echo "
 				<br>
 				<div class= 'answerBlock'>
@@ -133,7 +166,7 @@
 
 				<! ---------------------------- Left column of the Answer Block ------------------------ -->
 	            <div class='details vote_btns ".$vote_class." '>
-  	            <form action= '..\..\private\models\Like.php?ref=answers&ref_id=".$answerInfo->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."'' method='POST'>
+  	            <form action= '..\..\private\models\Like.php?ref=answers&ref_id=".$answerInfo->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
   	              <button type='submit' class='vote_btn vote_like' ";
   	              if(!isset($_SESSION['userid'])){
   	              	echo "disabled";
@@ -173,24 +206,100 @@
 			    		echo "
 						
 						<div class= 'commentBlock'>
-					        <div class='comment'>
-					            <p>".$commentInfo->getContent()."</p>
+					        <div class='comment'> 
+					        	<div>";
+					            if(isset($_SESSION['username'])){
+					            	if($_SESSION['username']==$commentArrayInfo->getCommentName()){
+					            	echo "
+						            <div class='utilities_btns'>
+								            <button type='button' data-toggle='tooltip' title='Delete' 
+								            		class='delete_btn' type='submit' name='Delete' value='Delete'
+								            		onClick='deleteElement(".$commentInfo->getId().")'>
+								            	<i class='fa fa-trash'></i>
+								            </button>
+						            </div>
+						            <script language='javascript'>
+						            function deleteElement(elementId){
+						            	if(confirm('Do you want to delete!')){
+						            		window.location.href='delete.php?del_id='+elementId+'&page=questionThreadPage.php?questionid=".$row->getId()."';
+						            		return true;
+						            	}
+						            }
+						            </script>";
+						        	}
+						        }
+						        echo $commentInfo->getContent();
+						    	echo "
+						    	</div>
 					            <span class ='questionByDetail'>
 						            Commented By: ".$commentArrayInfo->getCommentName()."<br>
 								  	Posted On: ".$commentInfo->getDate()."<br>
 					            </span>
-					        </div>
+					        	</div>
 				    	</div>";
 			    	}
+			    	// new question
+			    	if(isset($_SESSION['username'])){
+					    echo"
+					    <span class= 'hasComment'>
+					    <button class='newCommentButton' type='button' data-toggle='collapse' data-target='#newComment".$counter."' aria-expanded='false' aria-controls='newComment".$counter."'>
+					    Add Comment
+				  		</button>";
+
+
+				  		// Contents inside the Add Answer Button
+					  	echo"	
+					  	<div class='collapse' id='newComment".$counter."'>
+					  	
+					  	<form method='post' action = 'newComment.php'>
+					  		<input class = 'answerForm hasComment' type='text' name = 'commentContent' required><br>
+					  		<input type='hidden' name='questionId' value = ".$row->getId()." >
+					  		<input type='hidden' name='accountId' value = ".$_SESSION['userid']." >
+					  		<input type='hidden' name='answerId' value = ".$answerInfo->getId().">
+
+
+					  		<button type='submit' class='subButton inside'>Submit Comment</button>
+					  	</form>
+
+						</div>
+						</span>";
+					}
+
+			    }
+
+			    // if there is no comment, the new question button will be here
+			    else{
+			    	if(isset($_SESSION['username'])){
+					    echo"
+					    <button class='newCommentButton' type='button' data-toggle='collapse' data-target='#newComment".$counter."' aria-expanded='false' aria-controls='newComment".$counter."'>
+				    	Add Comment
+				  		</button>";
+
+
+				  		// Contents inside the Add Answer Button
+					  	echo"	
+					  	<div class='collapse' id='newComment".$counter."'>
+					  	
+					  	<form method='post' action = 'newComment.php'>
+					  		<input class = 'answerForm' type='text' name = 'commentContent' required><br>
+					  		<input type='hidden' name='questionId' value = ".$row->getId()." >
+					  		<input type='hidden' name='accountId' value = ".$_SESSION['userid']." >
+					  		<input type='hidden' name='answerId' value = ".$answerInfo->getId().">
+
+
+					  		<button ng-disabled='allowSubmit()' type='submit' class='subButton'>Submit Comment</button>
+					  	</form>
+
+						</div>";
+					}
+
 			    }
 		    	echo "</div></div><br>";
 		    	$counter++;
 
 			}
-			// put input code here
 		}
 		
-		// put input answer code here
 	}
 	else
 		echo "Question not found";
