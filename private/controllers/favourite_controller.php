@@ -26,14 +26,17 @@ $sets = new Sets();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-            $stmt = $pdo -> prepare('INSERT INTO favourites(id, account_id, question_id, answer_id) VALUES(:id, 
+            $stmt = $pdo -> prepare('INSERT INTO favourites(account_id, question_id, answer_id) VALUES( 
                 :account_id, :question_id, :answer_id);');
-                //@TODO complete function
+				//@TODO complete function
+				
+			$accountId = $favourite->getAccountId();
+			$questionId = $favourite->getQuestionId();
+			$answerId = $favourite->getAnswerId();
 										
-			$stmt -> bindParam(':id', $favourite->getId());
-			$stmt -> bindParam(':account_id', $favourite->getAccountId());
-			$stmt -> bindParam(':question_id', $favourite->getQuestionId());
-            $stmt -> bindParam(':answer_id', $favourite->getAnswerId());
+			$stmt -> bindParam(':account_id', $accountId);
+			$stmt -> bindParam(':question_id', $questionId);
+			$stmt -> bindParam(':answer_id', $answerId);			
 			
 			$stmt -> execute();
             $favouriteId = $pdo -> lastInsertId();
@@ -156,7 +159,7 @@ $sets = new Sets();
                 $a->setDate($result[4]);
                 $a->setUpvotes($result[5]);
                 $a->setDownvotes($result[6]);
-                $a->settBest($result[7]);
+                $a->setBest($result[7]);
 
                 $favouritesArray[] = $a;
 			}

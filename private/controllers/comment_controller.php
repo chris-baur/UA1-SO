@@ -1,10 +1,10 @@
 <?php
-include '..\..\private\util\logging.php';
-include '..\..\private\util\sets.php';
-include '..\..\private\models\Question.php';
-include '..\..\private\models\Account.php';
-include '..\..\private\models\Answer.php';
-include '..\..\private\models\Comment.php';
+include_once '..\..\private\util\logging.php';
+include_once '..\..\private\util\sets.php';
+include_once '..\..\private\models\Question.php';
+include_once '..\..\private\models\Account.php';
+include_once '..\..\private\models\Answer.php';
+include_once '..\..\private\models\Comment.php';
 $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 
 $servername = $config['servername'];
@@ -26,16 +26,19 @@ $log = new Logging();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-            $stmt = $pdo -> prepare('INSERT INTO comments(account_id, header, content, date, upvotes, downvotes, tags) VALUES(:account_id, :header, :content, :date, :upvotes, :downvotes, :tags);');
-                //@TODO complete function
+            $stmt = $pdo -> prepare('INSERT INTO comments(account_id, question_id, answer_id, content, date) VALUES(:account_id, :question_id, :answer_id, :content, :date);');
+				//@TODO complete function
+			$accountId = $comment->getAccountId();
+			$questionId = $comment->getQuestionId();
+			$answerId = $comment->getAnswerId();
+			$content = $comment->getContent();
+			$date = $comment->getDate();
 										
-			$stmt -> bindParam(':account_id', $comment->getAccountId());
-			$stmt -> bindParam(':header', $comment->getHeader());
-			$stmt -> bindParam(':content', $comment->getContent());
-            $stmt -> bindParam(':date', $comment->getDate());
-            $stmt -> bindParam(':upvotes', $comment->getUpvotes());
-            $stmt -> bindParam(':downvotes', $comment->getDownvotes());
-            $stmt -> bindParam(':tags', $comment->getTags());
+			$stmt -> bindParam(':account_id', $accountId);
+			$stmt -> bindParam(':question_id', $questionId);
+			$stmt -> bindParam(':answer_id', $answerId);			
+			$stmt -> bindParam(':content', $content);
+            $stmt -> bindParam(':date', $date);
 			
 			$stmt -> execute();
             $comment_id = $pdo -> lastInsertId();
@@ -62,7 +65,7 @@ $log = new Logging();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date, upvotes, downvotes FROM comments WHERE account_id = :account_id;");
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE account_id = :account_id;");
 			$accountID=$account->getId();	
 			$stmt -> bindParam(':account_id',$accountID );
 		
@@ -78,8 +81,6 @@ $log = new Logging();
                 $c->setAnswerId($result[3]);
                 $c->setContent($result[4]);
                 $c->setDate($result[5]);
-                $c->setUpvotes($result[6]);
-                $c->setDownvotes($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -106,7 +107,7 @@ $log = new Logging();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date, upvotes, downvotes FROM comments WHERE content LIKE '%:content%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE content LIKE '%:content%';");						
 			$stmt -> bindParam(':content', $content);
 		
 			$stmt -> execute();
@@ -121,8 +122,6 @@ $log = new Logging();
                 $c->setAnswerId($result[3]);
                 $c->setContent($result[4]);
                 $c->setDate($result[5]);
-                $c->setUpvotes($result[6]);
-                $c->setDownvotes($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -149,7 +148,7 @@ $log = new Logging();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date, upvotes, downvotes FROM comments WHERE answer_id LIKE '%:answerId%' AND question_id LIKE '%:questionId%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id LIKE '%:answerId%' AND question_id LIKE '%:questionId%';");						
 			$stmt -> bindParam(':answerId', $answerId);
 			$stmt -> bindParam(':questionId', $questionId);
 		
@@ -165,8 +164,6 @@ $log = new Logging();
                 $c->setAnswerId($result[3]);
                 $c->setContent($result[4]);
                 $c->setDate($result[5]);
-                $c->setUpvotes($result[6]);
-                $c->setDownvotes($result[7]);
 
                 $commentArray[] = $c;
 			}
@@ -188,22 +185,19 @@ $log = new Logging();
 	*/
 	function updateComment($comment){
 		global $servername, $username, $password, $dbname, $log;
-		$comment_id = 0;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-            $stmt = $pdo -> prepare('UPDATE comments set header = :header, content = :content, upvotes = :upvotes, downvotes = :downvotes, tags = :tags
-                WHERE id = :id;');
-										
-			$stmt -> bindParam(':header', $Comment->getHeader());
-			$stmt -> bindParam(':content', $Comment->getContent());
-            $stmt -> bindParam(':upvotes', $Comment->getUpvotes());
-            $stmt -> bindParam(':downvotes', $Comment->getDownvotes());
-            $stmt -> bindParam(':tags', $Comment->getTags());
-            $stmt -> bindParam(':id', $Comment->getId());
+            $stmt = $pdo -> prepare('UPDATE comments set content = :content
+				WHERE id = :id;');
+				
+			$content = $comment->getContent();
+			$id = $comment->getId();			
+			$stmt -> bindParam(':content', $content);
+            $stmt -> bindParam(':id', $id);
 			
 			$stmt -> execute();
-            $log->lwrite('Updated Comment succesfully. ID: '.$comment_id);
+            $log->lwrite('Updated Comment succesfully. ID: '. $id);
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());

@@ -94,7 +94,7 @@
             
             <div class='col-md-10 question'>
               <div>
-                <a href='questionThread.php?questionid=".$info->getId()."'>
+                <a href='questionThreadPage.php?questionid=".$info->getId()."'>
                 <h3><strong>" . $info->getHeader() . "</strong></h3></a>
               </div>
               <p>" . $info->getContent() . "

@@ -19,7 +19,7 @@
 		var $profession;
 		var $pin;
 		
-		function __construct($id = 0, $username = 'username', $password = 'password', $name = 'name', $last_name = 'last name', $gender = 'other', $security_one = 'default',
+		function __construct($id = 0, $username = 'username', $password = 'password', $name = 'default name', $last_name = 'last name', $gender = 'other', $security_one = 'default',
 			$security_two = 'default 2', $answer_one = 'answer one', $answer_two = 'answer two', $bio = 'my bio', $profession = 'profession', $pin = '0000'){
 			
 			$this->id = $id;
