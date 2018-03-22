@@ -16,7 +16,8 @@ echo "
 "
 ;
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
     $log->lwrite("POST METHOD. for forgotpassword.php");
     
  $servername = $config['servername'];
@@ -27,6 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
       $result = mysqli_query($con,"SELECT username, security_one, security_two, answer_one, answer_two FROM `accounts` WHERE 1 ");
+    }
 echo "
 <label> <b> Enter username </b>
 <input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
