@@ -103,7 +103,7 @@ function __construct(){
 	 */
 	static function accountExists($username){
 		$exists = false;
-		$account = getAccountByUsername($username);
+		$account = self::getAccountByUsername($username);
 		
 		// user id will be we be 0 if there is no such user
 		if ($account -> getId() != 0){
