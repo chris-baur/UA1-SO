@@ -82,6 +82,31 @@ CREATE TABLE IF NOT EXISTS `answers` (
   KEY `fk_answers_question_id` (`question_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `answers`
+--
+
+INSERT INTO `answers` (`id`, `account_id`, `question_id`, `content`, `date`, `upvotes`, `downvotes`, `best`) VALUES
+(1, 1, 6, 'Gold on the Ceiling', '2018-03-20 16:29:28', 0, 0, NULL),
+(2, 1, 6, 'Lonely Boy', '2018-03-20 16:47:26', 1, 0, NULL),
+(3, 1, 5, 'noob did not answer', '2018-03-22 17:52:45', 0, 0, NULL),
+(4, 1, 5, 'This is my answer', '2011-08-08 04:00:00', 0, 0, 0),
+(5, 1, 5, 'new', '2011-08-08 04:00:00', 0, 0, 0),
+(6, 1, 7, 'hjdhf', '2011-08-08 04:00:00', 0, 0, 0),
+(7, 1, 7, 'safas', '2011-08-08 04:00:00', 0, 0, 0),
+(8, 1, 5, '', '2011-08-08 04:00:00', 0, 0, 0),
+(9, 1, 5, 'ds.fkmd', '2011-08-08 04:00:00', 0, 0, 0),
+(10, 1, 7, 'kljdfd', '2011-08-08 04:00:00', 0, 0, 0),
+(11, 1, 7, 'New Answer', '2011-08-08 04:00:00', 0, 0, 0),
+(12, 1, 7, 'dsfd', '2011-08-08 04:00:00', 0, 0, 0),
+(13, 1, 7, 'Im here', '2011-08-08 04:00:00', 0, 0, 0),
+(14, 1, 7, 'New Answer', '2011-08-08 04:00:00', 0, 0, 0),
+(15, 1, 7, 'df', '2018-03-23 01:52:16', 0, 0, 0),
+(16, 1, 1, 'lkj', '2018-03-23 01:56:34', 0, 0, 0),
+(17, 1, 7, 'jks', '2018-03-23 02:13:50', 0, 0, 0),
+(18, 1, 7, 'New Question', '2018-03-23 02:18:34', 0, 0, 0),
+(19, 1, 7, 'Working', '2018-03-23 02:26:50', 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -102,6 +127,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   KEY `fk_comments_answer_id` (`answer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 -- --------------------------------------------------------
 
 --
@@ -119,6 +145,14 @@ CREATE TABLE IF NOT EXISTS `favourites` (
   KEY `fk_favourites_question_id` (`question_id`),
   KEY `fk_favourites_answer_id` (`answer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `favourites`
+--
+
+INSERT INTO `favourites` (`id`, `account_id`, `question_id`, `answer_id`) VALUES
+(1, 1, 4, NULL),
+(2, 1, 4, 13);
 
 -- --------------------------------------------------------
 
@@ -145,10 +179,37 @@ CREATE TABLE IF NOT EXISTS `questions` (
 --
 
 INSERT INTO `questions` (`id`, `account_id`, `header`, `content`, `date`, `upvotes`, `downvotes`, `tags`) VALUES
-(1, 1, 'How many fingers does a gopher have?', 'I cant seem to find the information on google. can anyone help ?', '2018-03-16 02:39:48', 0, 0, 'animal, silly'),
-(2, 1, 'Where can you go to the bathroom legally?', 'Im asking about the non usual places? for Science reasons. ', '2018-03-16 02:39:48', 0, 0, 'potty, bathroom'),
-(3, 1, 'Aint it Fun?', 'Riot! or Self titled is better?\r\n\r\npersonally Riot! is the best', '2018-03-16 02:43:34', 0, 0, 'Paramore. album, music'),
-(4, NULL, 'How now brown cow', 'Testing question with no account id (i.e. account was removed)', '2018-03-16 02:43:34', 0, 0, 'removed, test');
+(1, 1, 'Ain\'t it Fun', 'Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring', '2018-03-07 16:14:11', 1, 0, 'noob'),
+(4, 1, 'The Pretender', 'Foo FIghters\r\n', '2018-03-07 16:14:44', 1, 0, 'rock'),
+(5, 1, 'Gooey', 'Glass Animals', '2018-03-08 10:39:16', 1, 0, 'java default'),
+(6, 1, 'Tighten Up', 'The Black Keys', '2018-03-20 02:33:58', 0, 0, 'java default'),
+(7, 1, 'LA Devotee', 'Panic at the disco', '2018-03-22 22:19:25', 0, 0, 'java default');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `votes`
+--
+
+CREATE TABLE `votes` (
+  `id` int(11) NOT NULL,
+  `ref_id` int(11) DEFAULT NULL,
+  `ref` varchar(50) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `vote` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `votes`
+--
+
+INSERT INTO `votes` (`id`, `ref_id`, `ref`, `user_id`, `vote`) VALUES
+(35, 5, 'questions', 1, 1),
+(36, 1, 'questions', 1, 1),
+(42, 4, 'questions', 1, 1),
+(40, 2, 'answers', 1, 1);
+
+-- --------------------------------------------------------
 
 --
 -- Constraints for dumped tables
