@@ -18,9 +18,10 @@
 		var $bio;
 		var $profession;
 		var $pin;
+		var $profile_picture_path;
 		
 		function __construct($id = 0, $username = 'username', $password = 'password', $name = 'default name', $last_name = 'last name', $gender = 'other', $security_one = 'default',
-			$security_two = 'default 2', $answer_one = 'answer one', $answer_two = 'answer two', $bio = 'my bio', $profession = 'profession', $pin = '0000'){
+			$security_two = 'default 2', $answer_one = 'answer one', $answer_two = 'answer two', $bio = 'my bio', $profession = 'profession', $pin = '0000', $profile_picture_path = '../img/avatar2.png'){
 			
 			$this->id = $id;
 			$this->username = $username;
@@ -35,6 +36,7 @@
 			$this->bio = $bio;
 			$this->profession = $profession;
 			$this->pin = $pin;
+			$this->profile_picture_path = $profile_picture_path;
 		}
 				
 		function getId(){
@@ -88,6 +90,10 @@
 		function getPin(){
 			return $this->pin;
 		}
+
+		function getProfilePicturePath(){
+			return $this->profile_picture_path;
+		}
 		
 		function setId($new_id){
 			$this->id = $new_id;
@@ -139,6 +145,9 @@
 		
 		function setPin($new_pin){
 			$this->pin = $new_pin;
+		}
+		function setProfilePicturePath($path){
+			$this->profile_picture_path = $path;
 		}
 	}
 ?>

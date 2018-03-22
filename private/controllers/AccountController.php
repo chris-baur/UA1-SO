@@ -51,9 +51,9 @@ function __construct(){
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $stmt = $pdo -> prepare('INSERT INTO accounts(username, password, name, last_name, gender, 
-                security_one, security_two, answer_one, answer_two, bio, profession, pin) VALUES(:username, 
+                security_one, security_two, answer_one, answer_two, bio, profession, pin, profile_picture_path) VALUES(:username, 
                 :password, :name, :last_name, :gender, :security_one, :security_two, :answer_one, :answer_two, 
-                :bio, :profession, :pin);');
+                :bio, :profession, :pin, :profile_pic);');
 				
 			$user = $account->getUsername();
 			$pass = $account->getPassword();
@@ -67,6 +67,7 @@ function __construct(){
 			$bio = $account->getBio();
 			$profession = $account->getProfession();
 			$pin = $account->getPin();
+			$pic = $account->getProfilePicturePath();
 										
 			$stmt -> bindParam(':username', $user);
 			$stmt -> bindParam(':password', $pass);
@@ -80,7 +81,8 @@ function __construct(){
             $stmt -> bindParam(':bio', $bio);
             $stmt -> bindParam(':profession', $profession);
             $stmt -> bindParam(':pin', $pin);
-			
+			$stmt -> bindParam(':profile_pic', $pic);			
+
 			$stmt -> execute();
             $user_id = $pdo -> lastInsertId();
             $log->lwrite('added account succesfully. ID: '.$user_id);
@@ -124,7 +126,7 @@ function __construct(){
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)"); //hardcoded
 
-			$stmt = $pdo -> prepare('SELECT id, username, password, name, last_name, gender, security_one, security_two, answer_one, answer_two, bio, profession, pin FROM accounts WHERE username=?;');						
+			$stmt = $pdo -> prepare('SELECT id, username, password, name, last_name, gender, security_one, security_two, answer_one, answer_two, bio, profession, pin, profile_picture_path FROM accounts WHERE username=?;');						
 			$stmt -> bindParam(1, $user);
 		
 			$stmt -> execute();
@@ -143,7 +145,8 @@ function __construct(){
                 $account->setAnswerTwo($result[9]);
                 $account->setBio($result[10]);
                 $account->setProfession($result[11]);
-                $account->setPin($result[12]);
+				$account->setPin($result[12]);
+				$account->setProfilePicturePath($result[13]);				
 			}
 		}
 		catch(PDOException $e){
@@ -168,7 +171,7 @@ function __construct(){
 
             $stmt = $pdo -> prepare('UPDATE accounts set password = :password, name = :name, last_name = :last_name, gender = :gender, 
                 security_one = :security_one, security_two = :security_two, answer_one = :answer_one, answer_two = :answer_two,
-				bio = :bio, profession = :profession, pin = :pin WHERE username = :username;');
+				bio = :bio, profession = :profession, pin = :pin, profile_picture_path = :profile_pic WHERE username = :username;');
 
 			$uname = $account->getUsername();
 			$pass = $account->getPassword();
@@ -182,7 +185,8 @@ function __construct(){
 			$bio = $account->getBio();
 			$profession = $account->getProfession();
 			$pin = $account->getPin();
-										
+			$pic = $account->getProfilePicturePath();			
+				
 			$stmt -> bindParam(':username', $uname);
 			$stmt -> bindParam(':password', $pass);
 			$stmt -> bindParam(':name', $name);
@@ -194,7 +198,8 @@ function __construct(){
             $stmt -> bindParam(':answer_two', $a2);
             $stmt -> bindParam(':bio', $bio);
             $stmt -> bindParam(':profession', $profession);
-            $stmt -> bindParam(':pin', $pin);
+			$stmt -> bindParam(':pin', $pin);
+			$stmt -> bindParam(':profile_pic', $pic);						
 			
 			$stmt -> execute();
             $log->lwrite('account updated succesfully. user name: '.$account->getUsername());
@@ -221,7 +226,7 @@ function __construct(){
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare('SELECT id, username, password, name, last_name, gender, security_one, security_two, answer_one, answer_two, bio, profession, pin FROM accounts WHERE id=?;');
+			$stmt = $pdo -> prepare('SELECT id, username, password, name, last_name, gender, security_one, security_two, answer_one, answer_two, bio, profession, pin, profile_picture_path FROM accounts WHERE id=?;');
 			$stmt -> bindParam(1, $id);
 		
 			$stmt -> execute();
@@ -240,7 +245,8 @@ function __construct(){
                 $account->setAnswerTwo($result[9]);
                 $account->setBio($result[10]);
                 $account->setProfession($result[11]);
-                $account->setPin($result[12]);
+				$account->setPin($result[12]);
+				$account->setProfilePicturePath($result[13]);
 			}
 		}
 		catch(PDOException $e){
