@@ -81,6 +81,15 @@ body {
 	margin-left: 1%;
 }
 
+.circle_img{
+	border-radius: 50%;
+	padding: 5%;
+}
+
+li{
+	list-style-type: none;
+}
+
 
 
 

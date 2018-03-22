@@ -21,7 +21,7 @@
 
         $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
-   		$result = mysqli_query($con,"SELECT questions.*, accounts.username,accounts.name FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY date DESC, upvotes DESC, downvotes");
+   		$result = mysqli_query($con,"SELECT questions.*, accounts.username,accounts.profile_picture_path FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY date DESC, upvotes DESC, downvotes");
 
         try{
             $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -68,7 +68,7 @@
 	        echo "
 	          <div class='form-group row questionBlock'>
               <div class='col-md-2 '>";
-                $file_path=$info['name']; 
+                $file_path=$info['profile_picture_path']; 
                 if(!file_exists($file_path)) {
                 $file_path = "..\img\avatar2.png";                      
                 };

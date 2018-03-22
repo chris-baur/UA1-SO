@@ -45,7 +45,7 @@
 						if(!file_exists($file_path)) {
 							$file_path = "..\img\avatar2.png";											
 						}
-						echo "<img src=\"".$file_path."\" width = \"150\" height = \"150\">";								
+						echo "<img class='circle_img' src=\"".$file_path."\" width = \"150\" height = \"150\">";								
 					?>
 						<p id = "changePic"> </p>
 
@@ -61,7 +61,7 @@
 
 							function changePassword() {
 								document.getElementById("changePic").innerHTML = "";
-								document.getElementById("ChangePass").innerHTML = '<form action="changePassword.php" method="POST">Current Password <input type = "text" id = "ChangePass" placeholder = "Password"><br> New Password <input type = "text" id = "changePass" placeholder = "Password"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/></form>';
+								document.getElementById("ChangePass").innerHTML = '<form action="changePassword.php" method="POST">Current Password <input type = "password" id = "ChangePass" placeholder = "Password"><br> New Password <input type = "password" id = "changePass" placeholder = "Password"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/></form>';
 							}
 
 							function cancelPass() {

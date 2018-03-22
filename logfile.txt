@@ -50,3 +50,49 @@
 [22/Mar/2018:20:34:16] (myquestions) ID retrieved from session: 7
 [22/Mar/2018:20:34:16] (myquestions) ID in account object: 7
 [22/Mar/2018:20:34:16] (myquestions) Number of rows retrieved: 0
+[22/Mar/2018:22:23:30] (myquestions) ID retrieved from session: 7
+[22/Mar/2018:22:23:30] (myquestions) ID in account object: 7
+[22/Mar/2018:22:23:30] (myquestions) Number of rows retrieved: 0
+[22/Mar/2018:22:23:32] (newQuestion) In new question.php. top of the file
+[22/Mar/2018:22:23:32] (newQuestion) GET METHOD. for newQuestion.php
+[22/Mar/2018:22:23:32] (newQuestion) echoed body of the form
+[22/Mar/2018:22:23:54] (newQuestion) In new question.php. top of the file
+[22/Mar/2018:22:23:54] (newQuestion) POST METHOD. for newQuestion.php
+[22/Mar/2018:22:23:54] (newQuestion) Inside submit question
+[22/Mar/2018:22:23:54] (newQuestion) header and content are set by POST
+[22/Mar/2018:22:23:54] (newQuestion) session user id is set: 7
+[22/Mar/2018:22:23:54] (newQuestion) Question has been made
+[22/Mar/2018:22:23:54] (newQuestion) about to use function in question controller to add the question
+[22/Mar/2018:22:23:54] (newQuestion) added question succesfully. ID: 12
+[22/Mar/2018:22:23:54] (newQuestion) after adding the question to the database. Before redirecting to my questions
+[22/Mar/2018:22:23:54] (myquestions) ID retrieved from session: 7
+[22/Mar/2018:22:23:54] (myquestions) ID in account object: 7
+[22/Mar/2018:22:23:54] (myquestions) Number of rows retrieved: 1
+[22/Mar/2018:22:23:57] (questionThreadPage) Got the question with account username: henrykitty
+[22/Mar/2018:22:23:57] (questionThreadPage) Got all the answer threads. Size of array: 0
+[22/Mar/2018:22:23:57] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[22/Mar/2018:22:23:57] (questionThreadPage) Got everything for the QuestionThread
+[22/Mar/2018:22:24:00] (myquestions) ID retrieved from session: 7
+[22/Mar/2018:22:24:00] (myquestions) ID in account object: 7
+[22/Mar/2018:22:24:00] (myquestions) Number of rows retrieved: 1
+[22/Mar/2018:22:24:45] (questionThreadPage) Got the question with account username: henrykitty
+[22/Mar/2018:22:24:45] (questionThreadPage) Got all the answer threads. Size of array: 0
+[22/Mar/2018:22:24:45] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[22/Mar/2018:22:24:45] (questionThreadPage) Got everything for the QuestionThread
+[22/Mar/2018:22:24:54] (myquestions) ID retrieved from session: 7
+[22/Mar/2018:22:24:54] (myquestions) ID in account object: 7
+[22/Mar/2018:22:24:54] (myquestions) Number of rows retrieved: 1
+[22/Mar/2018:22:25:22] (myquestions) ID retrieved from session: 7
+[22/Mar/2018:22:25:22] (myquestions) ID in account object: 7
+[22/Mar/2018:22:25:22] (myquestions) Number of rows retrieved: 1
+[22/Mar/2018:22:25:41] (myquestions) ID retrieved from session: 7
+[22/Mar/2018:22:25:41] (myquestions) ID in account object: 7
+[22/Mar/2018:22:25:41] (myquestions) Number of rows retrieved: 1
+[22/Mar/2018:22:25:45] (questionThreadPage) Got the question with account username: henrykitty
+[22/Mar/2018:22:25:45] (questionThreadPage) Got all the answer threads. Size of array: 0
+[22/Mar/2018:22:25:45] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[22/Mar/2018:22:25:45] (questionThreadPage) Got everything for the QuestionThread
+[22/Mar/2018:22:30:59] (questionThreadPage) Got the question with account username: henrykitty
+[22/Mar/2018:22:30:59] (questionThreadPage) Got all the answer threads. Size of array: 0
+[22/Mar/2018:22:30:59] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[22/Mar/2018:22:30:59] (questionThreadPage) Got everything for the QuestionThread

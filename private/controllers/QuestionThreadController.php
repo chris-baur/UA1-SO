@@ -38,7 +38,7 @@
             
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                $stmt = $pdo -> prepare("SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags, AC.username, AC.name FROM questions Q 
+                $stmt = $pdo -> prepare("SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags, AC.username, AC.profile_picture_path FROM questions Q 
                     JOIN accounts AC ON AC.id = Q.account_id 
                     WHERE Q.id = :id;");						
                 $stmt -> bindParam(':id', $id);
@@ -91,7 +91,7 @@
             
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                $stmt = $pdo -> prepare("SELECT A.id, A.account_id, A.question_id, A.content, A.date, A.upvotes, A.downvotes, A.best, AC.username, AC.name FROM answers A 
+                $stmt = $pdo -> prepare("SELECT A.id, A.account_id, A.question_id, A.content, A.date, A.upvotes, A.downvotes, A.best, AC.username, AC.profile_picture_path FROM answers A 
                     JOIN accounts AC ON AC.id = A.account_id 
                     WHERE A.question_id = :id
                     ORDER BY A.upvotes DESC, A.downvotes, A.date DESC;");						
@@ -145,7 +145,7 @@
             
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                $sql = "SELECT C.id, C.account_id, C.question_id, C.answer_id, C.content, C.date, AC.username, AC.name FROM comments C 
+                $sql = "SELECT C.id, C.account_id, C.question_id, C.answer_id, C.content, C.date, AC.username FROM comments C 
                 JOIN accounts AC ON AC.id = C.account_id 
                 WHERE C.".$type."_id = :id;";
                 $stmt = $pdo -> prepare($sql);						
