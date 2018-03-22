@@ -58,7 +58,7 @@ $sets = new Sets();
 	 */
 	function getFavouriteById($id){
 		global $servername, $username, $password, $dbname, $log;
-		$favourite = new Favourites();
+		$favourite = new Favourite();
 		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

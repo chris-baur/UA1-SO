@@ -44,9 +44,10 @@
       }
       echo "<main>
       <form>
+      <br>
         <div class='container'  ng-app='myApp' ng-controller='mainCtrl'>
           <div class='form-control space'>
-          <button type='button' class='btn btn-primary btn-md' onclick=" . '"location.href=' . "'newQuestion.php';" . '"'. "/>New Question</button>
+          <button type='button' class='btn-primary btn-md newQuestionButton' onclick=" . '"location.href=' . "'newQuestion.php';" . '"'. "/>New Question</button>
           </div>
         </div>  
       </form>";
