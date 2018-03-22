@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hash = "";
     //$pin = "";
     $validData = true;
-    $invalidArray = null;
+    $invalidLogin = null;
     $log->lwrite('Form has requested a post for File: validateLogin.php');
 
     //validate pin
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             else{
                 //increaseAttemptCounter($userObj);
                 $log->lwrite('Password incorrect.');
-                $invalidArray['password'] = 'Incorrect password entered';
+                $invalidLogin = 'Incorrect password entered';
                 showUserError();
             }
         }
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         else{
             //increaseAttemptCounter($userObj);
             $log->lwrite('Password failed prelim verification');
-            $invalidArray['password'] = 'Incorrect password entered. Check length/syntax';
+            $invalidLogin = 'Incorrect password entered. Check length/syntax';
             showUserError();
         }
     }
@@ -118,7 +118,7 @@ function validateString($string){
  * 
  */
 function validateUser(){
-    global $invalidArray;
+    global $invalidLogin;
     global $log;
     $valid = false;
     $user_name = htmlentities($_POST['username']);
@@ -131,14 +131,14 @@ function validateUser(){
         }
         // user does not exist, show error
         else{
-            $invalidArray['username'] = 'Username does not exist';
+            $invalidLogin = 'Username does not exist';
             $log -> lwrite("account does not exist with given username");
         }
     //username provided is not a valid string
     }
     else{
         $log -> lwrite("Username provided is not a valid string");
-        $invalidArray['username'] = 'Username provided is not a valid string';
+        $invalidLogin = 'Username provided is not a valid string';
     }
     return $valid;
 }
@@ -147,8 +147,9 @@ function validateUser(){
 function showUserError(){
     global $log;
     $log->lwrite('Showing user error');
-    global $invalidArray;
-    setcookie('invalidArray', json_encode($invalidArray), time()+20);
+    global $invalidLogin;
+    // setcookie('invalidLogin', json_encode($invalidLogin), time()+20);
+    $_SESSION['invalidLogin'] = $invalidLogin;
     header('Location: loginregister.php');
 }
 ?>

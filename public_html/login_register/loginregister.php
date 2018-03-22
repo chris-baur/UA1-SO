@@ -1,5 +1,11 @@
 <?php
 
+  $status = session_status();
+	if($status == PHP_SESSION_NONE){
+		//There is no active session
+		session_start();
+	}
+
   echo "<html ng-app='myRegister' ng-controller='myCtrl'>
   <head>
       <title>login</title>
@@ -12,22 +18,22 @@
   <body>
   
     <p><a href='../home_page/homepage.php'><img style='display: block; margin-left: auto; margin-right: auto;' src='../img/newlogo.png' alt='' width='800' height='450' /></a></p>
-    <p>&nbsp;</p>
+    <p>&nbsp;</p>";
   
-  
-    <p style='text-align: center;'><button onclick=" . '"document.getElementById(' . "'login'" . ").style.display='block'" . '"' . "style='width:auto;'>Login</button></p>
-  
-  
+  echo  "<p style='text-align: center;'><button id='loginButton' onclick=" . '"document.getElementById(' . "'login'" . ").style.display='block'" . '"' . "style='width:auto;'>Login</button></p>
     <div id='login' class='modal'>
-    
       <form class='modal-content animate' action='validateLogin.php' method='POST'>
         <div class='imgcontainer'>
           <span onclick=" . '"document.getElementById(' . "'login'" . ").style.display='none'" . '"' . "class='close' title='Close Modal'>&times;</span>
           <img src='../img/avatar.png' alt='Avatar' class='avatar'>
-        </div>
+        </div>";
+
+        if(isset($_SESSION['invalidLogin'])){
+          echo "<p id='invalid'>Error: " . $_SESSION['invalidLogin'] . "</p>";
+        }
   
   
-        <div class='container'>
+        echo "<div class='container'>
 
           <label><b>Username</b></label>
             <input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
@@ -55,9 +61,9 @@
         <div class='imgcontainer'>
           <span onclick=" . '"document.getElementById(' . "'pin_login'" . ").style.display='none'" . '"' . "class='close' title='Close Modal'>&times;</span>
           <img src='../img/avatar.png' alt='Avatar' class='avatar'>
-        </div>
+        </div>";
   
-        <div class='container'>
+        echo "<div class='container'>
             <label><b>Username</b></label>
             <input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
           <label><b>Pin: </b></label>
@@ -71,7 +77,7 @@
       </form>
     </div>
   
-    <p style='text-align: center;'><button onclick=" . '"document.getElementById(' . "'register'" . ").style.display='block'" . '"' . "style='width:auto;' ng-click='newAccount'>Sign Up</button></p>
+    <p style='text-align: center;'><button id='registerButton' onclick=" . '"document.getElementById(' . "'register'" . ").style.display='block'" . '"' . "style='width:auto;' ng-click='newAccount'>Sign Up</button></p>
   
   
     <div id='register' class='modal'>
@@ -79,8 +85,14 @@
       <form class='modal-content' method='POST' action='validationRegistration.php'>
         <div class='container'>
           <h1>Sign Up</h1>
-          <p>Please fill in this form to create an account.</p>
-          <hr>
+          <p>Please fill in this form to create an account.</p>";
+
+          if(isset($_SESSION['invalidRegister'])){
+            for($i=0; $i<sizeof($_SESSION['invalidRegister']);$i++)
+              echo "<p id='invalid'>Error: " . $_SESSION['invalidRegister'][$i] . "</p>";
+          }
+
+          echo "<hr>
           <label><b>Username</b></label>
           <input ng-model='userName' type='text' placeholder='Enter Username' name='username' maxlength='20' required>
       <span class='alert' ng-if='userName.length<4 && userName.length!=0'>Username enter is too short (Minimum of 4 and maximum of 20 characters)</span>
@@ -99,7 +111,7 @@
   $sets = new Sets();
   $sets = json_decode(file_get_contents('../../sets.txt', true));
   $log = new Logging();
-  $log->lwrite('in login register ');
+  $log->lwrite('in login register');
 
   //$s = $sets->toStringGenders();
   $s1Array = $sets->security_one;
@@ -108,10 +120,10 @@
   $genderArray = $sets->genders;
   $aa = $s2Array[0];
   $log->lwrite('Got the arrays');
-  $log->lwrite($aa);
-  $log->lwrite($s2Array);
-  $log->lwrite($professionArray);              
-  $log->lwrite($genderArray);
+  // $log->lwrite($aa);
+  // $log->lwrite($s2Array);
+  // $log->lwrite($professionArray);              
+  // $log->lwrite($genderArray);
   //$log->lwrite(var_dump($s));
   
   
@@ -182,9 +194,42 @@
 </div>
 
 <p>&nbsp;</p>
-<p style='text-align: center;'> © All Rights Reserved 2018 </p>
+<p style='text-align: center;'> © All Rights Reserved 2018 </p>";
+
+
+if(isset($_SESSION['invalidLogin'])){
+  $log->lwrite('in invalid login isset');
+  
+  $invalid = $_SESSION['invalidLogin'];
+  echo '<script>
+  window.addEventListener("load", function(event) {
+      document.getElementById("loginButton").click();
+  });
+</script>
 </body>
-</html>";
+</html>';
+  $log->lwrite('echoed script for on click');
+  unset($_SESSION['invalidLogin']);
+  $log->lwrite('unsset invalidLogin session');
+}
+else if(isset($_SESSION['invalidRegister'])){
+  $log->lwrite('in invalid register isset');
+  echo '<script>
+  window.addEventListener("load", function(event) {
+      document.getElementById("registerButton").click();
+  });
+</script>
+</body>
+</html>';
+  $log->lwrite('echoed script for on click');
+  unset($_SESSION['invalidRegister']);
+  $log->lwrite('unsset invalidRegister session');
+}else{
+  $log->lwrite('no session errors');
+  echo"
+    </body>
+    </html>";
+}
 
 ?>
         
