@@ -7,6 +7,7 @@
     class AnswerThread{
         var $answer;
         var $answerName;
+        var $answerFileName;
         var $commentThreadArray;
 
         function __construct(){
@@ -27,6 +28,10 @@
             return $this->commentThreadArray;
         }
 
+        function getAnswerFileName(){
+            return $this->answerFileName;
+        }
+
         function setAnswer($answer){
             $this->answer = $answer;
         }
@@ -37,6 +42,10 @@
 
         function setCommentThreadArray($commentThreadArray){
             $this->commentThreadArray = $commentThreadArray;
+        }
+
+        function setAnswerFileName($answerFileName){
+            $this->answerFileName = $answerFileName;
         }
     }
 

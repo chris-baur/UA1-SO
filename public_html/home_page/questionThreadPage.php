@@ -63,7 +63,17 @@
 		echo "
 		<br>
 		<div class= 'questionBlock'>
-			<! ---------------------------- Left side of the Question Block ------------------------ -->
+		<div class='col-md-2 '>";
+		$file_path=$questionThread->getQuestionFileName();
+        if(!file_exists($file_path)) {
+           	$file_path = "..\img\avatar2.png";                      
+        };
+
+        
+            echo "<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>
+
+
+			<! ---------------------------- Left column of the Question Block ------------------------ -->
 	            <div class='details vote_btns ".$vote_class." '>
   	            <form action= '..\..\private\models\Like.php?ref=questions&ref_id=".$row->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."'' method='POST'>
   	              <button type='submit' class='vote_btn vote_like' ";
@@ -80,9 +90,10 @@
   	            echo "><i class='fa fa-thumbs-down'> ". $row->getDownvotes() . "</i></button>
   	              </form>
   	            </div>
+  	            </div>
 
-			<!-- right column of question block -->
-		    <div class='question'>
+			<!------------------------------ right column of question block ------------------------------>
+		    <div class='col-md-10 question'>
 		        <h3><strong>".$row->getHeader()."</strong></h3>
 		        <p>".$row->getContent()."</p>
 		        <span class ='questionByDetail'>
@@ -113,8 +124,14 @@
 				echo "
 				<br>
 				<div class= 'answerBlock'>
+				<div class='col-md-2 '>";
+				$file_path=$info->getAnswerFileName();
+		                if(!file_exists($file_path)) {
+		                	$file_path = "..\img\avatar2.png";                      
+		        };
+		        echo "<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>
 
-					<! ---------------------------- Left side of the Question Block ------------------------ -->
+				<! ---------------------------- Left column of the Answer Block ------------------------ -->
 	            <div class='details vote_btns ".$vote_class." '>
   	            <form action= '..\..\private\models\Like.php?ref=answers&ref_id=".$answerInfo->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."'' method='POST'>
   	              <button type='submit' class='vote_btn vote_like' ";
@@ -130,11 +147,11 @@
   	              }
   	            echo "><i class='fa fa-thumbs-down'> ". $answerInfo->getDownvotes() . "</i></button>
   	              </form>
-  	            </div>";
+  	            </div></div>";
 
   	            echo "<!-- --------------------- right column of answer block ------------------------------- -->
-			        <div class='question'>
-			            <p>".$answerInfo->getContent()."</p>
+			        <div class='question col-md-10'>
+			            ".$answerInfo->getContent()."<br>
 			            <span class ='questionByDetail'>
 				            Answered By: ".$info->getAnswerName()."<br>
 						  	Posted On: ".$answerInfo->getDate()."
@@ -156,8 +173,6 @@
 			    		echo "
 						
 						<div class= 'commentBlock'>
-
-							<!-- right column of comment block -->
 					        <div class='comment'>
 					            <p>".$commentInfo->getContent()."</p>
 					            <span class ='questionByDetail'>

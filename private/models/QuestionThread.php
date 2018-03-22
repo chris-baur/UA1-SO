@@ -8,6 +8,7 @@
     class QuestionThread{
         var $question;
         var $questionName;
+        var $questionFileName;
         var $answerThreadArray;
         var $commentThreadArray;
 
@@ -34,6 +35,10 @@
             return $this->commentThreadArray;
         }
 
+        function getQuestionFileName(){
+            return $this->questionFileName;
+        }
+
         function setQuestion($question){
             $this->question = $question;
         }
@@ -48,6 +53,10 @@
 
         function setCommentThreadArray($commentThreadArray){
             $this->commentThreadArray = $commentThreadArray;
+        }
+
+        function setQuestionFileName($questionFileName){
+            $this->questionFileName = $questionFileName;
         }
     }
 
