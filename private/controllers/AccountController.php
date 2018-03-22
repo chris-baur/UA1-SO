@@ -41,7 +41,11 @@ function __construct(){
 	* @param $account		Account object
 	*/
 	static function addAccount($account){
-		global $servername, $username, $password, $dbname, $log;
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
 		$user_id = -9;
 		try{
 
@@ -118,10 +122,12 @@ function __construct(){
 	 * @param $username		Account's username
 	 */
 	static function getAccountByUsername($user){
-		global $servername, $username, $password, $dbname, $log;
-
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
 		$account = new Account();
-		
 
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)"); //hardcoded
@@ -165,7 +171,12 @@ function __construct(){
 	* @param $account		Account object
 	*/
 	static function updateAccount($account){
-		global $servername, $username, $password, $dbname, $log;
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
+		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
@@ -218,7 +229,11 @@ function __construct(){
 	 * @param $username		Account's username
 	 */
 	static function getAccountById($id){
-		global $servername, $username, $password, $dbname, $log;
+		$servername = self::$servername; 
+		$username = self::$username; 
+		$password = self::$password; 
+		$dbname = self::$dbname;  
+		$log = self::$log;
 
 		$account = new Account();
 		
