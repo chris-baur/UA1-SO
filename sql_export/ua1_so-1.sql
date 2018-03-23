@@ -192,7 +192,7 @@ INSERT INTO `questions` (`id`, `account_id`, `header`, `content`, `date`, `upvot
 (6, 1, 'Tighten Up', 'The Black Keys', '2018-03-20 02:33:58', 0, 0, 'java default'),
 (7, 1, 'LA Devotee', 'Panic at the disco', '2018-03-22 22:19:25', 0, 0, 'java default');
 
---------------------------------------------------------
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `votes`
