@@ -241,17 +241,38 @@
 		    	echo "<div class='collapse' id='allComments".$counter."'>";
 		    	
 		    	if ($commentRow != null){
+			    	$commentCounter=0;
 			    	foreach ($commentRow as $commentArrayInfo){
 			    		$commentInfo = $commentArrayInfo->getComment();
+			    		$commentID="comment".$commentCounter;
+			    		$buttonID="edit".$commentCounter;
+			    		$paragraphID="paragraph".$commentCounter;
+			    		$cancelID="cancel".$commentCounter;
 			    		echo "
 						
-						<div class= 'commentBlock'>
-					        <div class='comment'> 
-					        	<div>";
+						<div class='commentBlock'>
+
+							<!-- right column of comment block -->
+					        <div class='comment'>
+					            <div>
+					            <textarea class='form-control editText' style='display: none;' id='".$commentID."'>".$commentInfo->getContent()."</textarea>
+					            <div id='".$paragraphID."'>".$commentInfo->getContent()."</div>
+					            <button id='".$buttonID."' style='display: none;' type='button' class='btn subButton ' 
+					            		onClick='updateComment(".$commentID.",".$buttonID.",".$cancelID.",".$paragraphID.",".$commentInfo->getId().")'> Submit edit </button>
+					            <button id='".$cancelID."' style='display: none;' type='button' class='btn subButton ' 
+					            		onClick='cancel(".$commentID.",".$buttonID.",".$cancelID.",".$paragraphID.")'>Cancel</button>		
+					            
+					            ";
 					            if(isset($_SESSION['username'])){
-					            	if($_SESSION['username']==$commentArrayInfo->getCommentName()){
+					            	if($_SESSION['username']==$commentArrayInfo->getCommentName()){					            		
 					            	echo "
-						            <div class='utilities_btns'>
+						            <div class='utilities_btns'>								            
+								            <button 
+								            type='button' data-toggle='tooltip' title='Edit' 
+								            		class='edit_btn' type='submit' name='Edit' value='Edit'
+								            		onClick='editElement(".$commentID.",".$buttonID.",".$cancelID.",".$paragraphID.")'>
+								            <i class='fa fa-pencil'></i>
+								            </button>
 								            <button type='button' data-toggle='tooltip' title='Delete' 
 								            		class='delete_btn' type='submit' name='Delete' value='Delete'
 								            		onClick='deleteElement(".$commentInfo->getId().")'>
@@ -265,18 +286,49 @@
 						            		return true;
 						            	}
 						            }
+						            
+						            function editElement(elementId,buttonID,cancelID,paragraphID){						            	
+						            	elementId.style.display='inline-block';
+						            	cancelID.style.display='inline-block';
+						            	buttonID.style.display='inline-block';
+						            	paragraphID.style.display='none';
+			            	
+						            }
+
+						            function cancel(elementId,buttonID,cancelID,paragraphID){						            	
+						            	elementId.style.display='none';
+						            	elementId.value=paragraphID.innerHTML;
+						            	cancelID.style.display='none';
+						            	buttonID.style.display='none';
+						            	paragraphID.style.display='inline-block';
+			            	
+						            }
+
+						            function updateComment(elementId,buttonID,cancelID,paragraphID,commentID){
+						            	var newComment = elementId.value;   
+									    paragraphID.innerHTML= newComment;									     
+									    elementId.style.display='none';								    
+									    buttonID.style.display='none';
+									    cancelID.style.display='none';
+									    paragraphID.style.display='inline-block';
+									    var ajaxurl = 'edit.php',
+								        data =  {'action': 'update','content':newComment,'commentId':commentID};
+								        $.post(ajaxurl, data, function (response) {
+								            alert('comment updated successfully');
+								        });
+						            }
 						            </script>";
 						        	}
 						        }
-						        echo $commentInfo->getContent();
-						    	echo "
-						    	</div>
+						    	echo "</div>
+					            
 					            <span class ='questionByDetail'>
 						            Commented By: ".$commentArrayInfo->getCommentName()."<br>
 								  	Posted On: ".$commentInfo->getDate()."<br>
 					            </span>
-					        	</div>
+					        </div>
 				    	</div>";
+				    	$commentCounter++;
 			    	}
 			    	// new question
 			    	if(isset($_SESSION['username'])){
