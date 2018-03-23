@@ -14,7 +14,7 @@
 		var $upvotes;
 		var $downvotes;
 		
-		function __construct($id = 0, $account_id = 0, $question_id = 0, $answer_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0') {
+		function __construct($id = 0, $account_id = 0, $question_id = 0, $answer_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0) {
 			
 			$this->id = $id;
 			$this->account_id = $account_id;
@@ -22,81 +22,90 @@
 			$this->answer_id = $answer_id;
 			$this->content = $content;
 			$this->date = $date;
+			$this->upvotes = $upvotes;
+			$this->downvotes = $downvotes;
 			
 		}
 		
-		function get_id(){
+		function getId(){
 			return $this->id;
 		}
 		
-		function get_accountId(){
+		function getAccountId(){
 			return $this->account_id;
 		}
 		
-		function get_questionId(){
+		function getQuestionId(){
 			return $this->question_id;
 		}
 
-		function get_answerId(){
+		function getAnswerId(){
 			return $this->answer_id;
 		}
 		
-		function get_content(){
+		function getContent(){
 			return $this->content;
 		}
 		
-		function get_date(){
+		function getDate(){
 			return $this->date;
 		}
 
-		function get_upvotes(){
-			return $this -> $upvotes;
+		function getUpvotes(){
+			return $this ->upvotes;
 		}
 		
-		function get_downvotes(){
-			return $this -> $downvotes;
+		function getDownvotes(){
+			return $this ->downvotes;
 		}
 		
 		
-		function set_id($new_id){
+		function setId($new_id){
 			$this->id = $new_id;
 		}
 		
-		function set_accountId($new_accountID){
+		function setAccountId($new_accountID){
 			$this->account_id = $new_accountID;
 		}
 		
-		function set_questionId($new_contentID){
+		function setQuestionId($new_questionID){
 			$this->question_id = $new_questionID;
 		}
 		
-		function set_answerId($new_contentID){
+		function setAnswerId($new_answerID){
 			$this->answer_id = $new_answerID;
 		}
 
-		function set_content($new_content){
+		function setContent($new_content){
 			$this->content = $new_content;
 		}
 		
-		function set_date($new_date){
+		function setDate($new_date){
 			$this->date = $new_date;
 		}
 		
-		function set_upvote($new_upvotes){
-			$this -> $upvotes = $new_upvote;
+		function setUpvotes($new_upvotes){
+			$this ->upvotes = $new_upvotes;
 		}
 		
-		function set_downvote($new_downvotes){
-			$this -> $downvotes = $new_downvotes;
+		function setDownvotes($new_downvotes){
+			$this ->downvotes = $new_downvotes;
 		}
 		
 		// function to increament the upvotes/downvotes by one
-		function increment_upvotes(){
-			$this -> $upvotes++;
+		function incrementUpvotes(){
+			$this ->upvotes++;
+		}
+
+		function decrementUpvotes(){
+			$this ->upvotes--;
 		}
 		
-		function increment_downvotes(){
-			$this -> $downvotes--;
+		function incrementDownvotes(){
+			$this ->downvotes++;
+		}
+		function decrementDownvotes(){
+			$this ->downvotes--;
 		}
 	}
 ?>

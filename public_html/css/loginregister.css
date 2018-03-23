@@ -108,4 +108,16 @@ span.password {
     color:red;
 }
 
+#invalid{
+    color: firebrick;
+    font-size: 2em;
+    text-align: center;
+    margin: auto;
+}
+
+input:required {
+    box-shadow:none;
+    /* border-color: rgba(82, 168, 236, 0.8); */
+}
+
 

@@ -1,10 +1,11 @@
 <?php
 
-include '..\util\logging.php';
-include '..\models\Favourite.php';
-include '..\models\Question.php';
-include '..\models\Answer.php';
-$config = parse_ini_file('..\..\..\config.ini');
+include_once '..\..\private\util\logging.php';
+include_once '..\..\private\models\Favourite.php';
+include_once '..\..\private\models\Question.php';
+include_once '..\..\private\models\Answer.php';
+$config = parse_ini_file('..\..\config.ini');
+
 
 $servername = $config['servername'];
 $username = $config['username'];
@@ -25,14 +26,17 @@ $sets = new Sets();
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-            $stmt = $pdo -> prepare('INSERT INTO favourites(id, account_id, question_id, answer_id) VALUES(:id, 
+            $stmt = $pdo -> prepare('INSERT INTO favourites(account_id, question_id, answer_id) VALUES( 
                 :account_id, :question_id, :answer_id);');
-                //@TODO complete function
+				//@TODO complete function
+				
+			$accountId = $favourite->getAccountId();
+			$questionId = $favourite->getQuestionId();
+			$answerId = $favourite->getAnswerId();
 										
-			$stmt -> bindParam(':id', $favourite->get_id());
-			$stmt -> bindParam(':account_id', $favourite->get_accountId());
-			$stmt -> bindParam(':question_id', $favourite->get_questionId());
-            $stmt -> bindParam(':answer_id', $favourite->get_answerId());
+			$stmt -> bindParam(':account_id', $accountId);
+			$stmt -> bindParam(':question_id', $questionId);
+			$stmt -> bindParam(':answer_id', $answerId);			
 			
 			$stmt -> execute();
             $favouriteId = $pdo -> lastInsertId();
@@ -54,7 +58,7 @@ $sets = new Sets();
 	 */
 	function getFavouriteById($id){
 		global $servername, $username, $password, $dbname, $log;
-		$favourite = new Favourites();
+		$favourite = new Favourite();
 		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -66,10 +70,10 @@ $sets = new Sets();
 			
 			// if there is a user with specified username
 			if($result = $stmt -> fetch()){
-				$favourite->set_id($result[0]);
-                $favourite->set_accountId($result[1]);
-                $favourite->set_questionId($result[2]);
-                $favourite->set_answerId($result[3]);
+				$favourite->setId($result[0]);
+                $favourite->setAccountId($result[1]);
+                $favourite->setQuestionId($result[2]);
+                $favourite->setAnswerId($result[3]);
 			}
 		}
 		catch(PDOException $e){
@@ -104,14 +108,14 @@ $sets = new Sets();
 			while($result = $stmt -> fetch()){
                 $q = new Question();
 
-				$q->set_id($result[0]);
-                $q->set_accountId($result[1]);
-                $q->set_header($result[2]);
-                $q->set_content($result[3]);
-                $q->set_date($result[4]);
-                $q->set_upvotes($result[5]);
-                $q->set_downvotes($result[6]);
-                $q->set_tags($result[7]);
+				$q->setId($result[0]);
+                $q->setAccountId($result[1]);
+                $q->setHeader($result[2]);
+                $q->setContent($result[3]);
+                $q->setDate($result[4]);
+                $q->setUpvotes($result[5]);
+                $q->setDownvotes($result[6]);
+                $q->setTags($result[7]);
 
                 $favouritesArray[] = $q;
 			}
@@ -123,7 +127,7 @@ $sets = new Sets();
 			unset($pdo);
 		}
 		// returns the favourite object
-		return $favourite;
+		return $favouritesArray;
 	}
 	
 	/**
@@ -148,14 +152,14 @@ $sets = new Sets();
 			while($result = $stmt -> fetch()){
                 $a = new Answer();
 
-				$a->set_id($result[0]);
-                $a->set_accountId($result[1]);
-                $a->set_questionId($result[2]);
-                $a->set_content($result[3]);
-                $a->set_date($result[4]);
-                $a->set_upvotes($result[5]);
-                $a->set_downvotes($result[6]);
-                $a->set_best($result[7]);
+				$a->setId($result[0]);
+                $a->setAccountId($result[1]);
+                $a->setQuestionId($result[2]);
+                $a->setContent($result[3]);
+                $a->setDate($result[4]);
+                $a->setUpvotes($result[5]);
+                $a->setDownvotes($result[6]);
+                $a->setBest($result[7]);
 
                 $favouritesArray[] = $a;
 			}
@@ -167,7 +171,7 @@ $sets = new Sets();
 			unset($pdo);
 		}
 		// returns the favourite object
-		return $favourite;
+		return $favouritesArray;
 	}
 
 	/**

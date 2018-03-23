@@ -1,8 +1,86 @@
-[07/Feb/2018:21:13:12] (create_db) Connected successfully
-[07/Feb/2018:21:13:12] (create_db) Table accounts created successfully
-[07/Feb/2018:21:13:12] (create_db) Connected successfully
-[07/Feb/2018:21:13:12] (create_db) Questions Table created successfully
-[07/Feb/2018:21:13:12] (create_db) Connected successfully
-[07/Feb/2018:21:13:13] (create_db) Answers Table created successfully
-[07/Feb/2018:21:13:13] (create_db) Connected successfully
-[07/Feb/2018:21:13:13] (create_db) Comments Table created successfully
+[23/Mar/2018:00:22:30] (newAnswer) valid string
+[23/Mar/2018:00:22:30] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:22:30] (newAnswer) valid id here
+[23/Mar/2018:00:22:30] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:22:30] (newAnswer) valid id here
+[23/Mar/2018:00:22:30] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:22:30] (newAnswer) 1 , 12, dbvhsvbsvhjs, 2018-03-23 00:22:30, 0, 0, 
+[23/Mar/2018:00:22:30] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:22:30] (newAnswer) added answer succesfully. ID: 0
+[23/Mar/2018:00:22:30] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:22:30] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:22:30] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:22:30] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:22:30] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:40:45] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:40:45] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:40:45] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:40:45] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:40:45] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:40:49] (newAnswer) valid string
+[23/Mar/2018:00:40:49] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:40:49] (newAnswer) valid id here
+[23/Mar/2018:00:40:49] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:40:49] (newAnswer) valid id here
+[23/Mar/2018:00:40:49] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:40:49] (newAnswer) 1 , 12, sfnsbdkjbndjbndkf, 2018-03-23 00:40:49, 0, 0, 
+[23/Mar/2018:00:40:49] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:40:49] (newAnswer) added answer succesfully. ID: 0
+[23/Mar/2018:00:40:49] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:40:49] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:40:49] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:40:49] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:40:49] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:43:16] (newAnswer) valid string
+[23/Mar/2018:00:43:16] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:43:16] (newAnswer) valid id here
+[23/Mar/2018:00:43:16] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:43:16] (newAnswer) valid id here
+[23/Mar/2018:00:43:16] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:43:16] (newAnswer) 1 , 12, jfdjbnjfdbkddfb, 2018-03-23 00:43:16, 0, 0, jj 
+[23/Mar/2018:00:43:16] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:43:16] (newAnswer) added answer succesfully. ID: 0
+[23/Mar/2018:00:43:16] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:43:16] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:43:16] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:43:16] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:43:16] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:45:57] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:45:57] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:45:57] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:45:57] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:45:57] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:46:02] (newAnswer) valid string
+[23/Mar/2018:00:46:02] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:46:02] (newAnswer) valid id here
+[23/Mar/2018:00:46:02] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:46:02] (newAnswer) valid id here
+[23/Mar/2018:00:46:02] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:46:02] (newAnswer) 1 , 12, jvnjdvndkj, 2018-03-23 00:46:02, 0, 0, 
+[23/Mar/2018:00:46:02] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:46:02] (newAnswer) added answer succesfully. ID: 0
+[23/Mar/2018:00:46:02] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:46:02] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:46:02] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:46:02] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:46:02] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:48:03] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:48:03] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:03] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:48:03] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:03] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:48:06] (newAnswer) valid string
+[23/Mar/2018:00:48:06] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:48:06] (newAnswer) valid id here
+[23/Mar/2018:00:48:06] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:48:06] (newAnswer) valid id here
+[23/Mar/2018:00:48:06] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:48:06] (newAnswer) 1 , 12, gffgfgfg, 2018-03-23 00:48:06, 0, 0, 0
+[23/Mar/2018:00:48:06] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:48:06] (newAnswer) added answer succesfully. ID: 2
+[23/Mar/2018:00:48:07] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:48:07] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:07] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:07] (questionThreadPage) Got all the answer threads. Size of array: 2
+[23/Mar/2018:00:48:07] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:07] (questionThreadPage) Got everything for the QuestionThread

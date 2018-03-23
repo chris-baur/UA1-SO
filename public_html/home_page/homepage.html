@@ -5,45 +5,55 @@
     <title>Ask It! Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <?php $config = parse_ini_file('../../config.ini'); ?>
   </head>
 
-  <body>  
-
-
-    <p style="text-align: center;"><img src="../img/fill.png" alt="" width="1100" height="600" /></p>
+  <body>
+    <main> 
 
 
     <!--Outputting the items in the database-->
-    <!--
+    
     <?php
-    $username = 'ua1';
-    $password = 'Ua1password0)';
-    $servername = 'ua1_so';
+    $username = $config['username'];
+    $password = $config['password'];
+    $dbname = $config['dbname'];
+    $servername = $config['servername'];
 
     // connection to database
-    $con = mysqli_connect('localhost', $username, $password, $servername) or die("Connection Failed");
+    $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
-    $result = mysqli_query($con,"SELECT * FROM questions");
+    $result = mysqli_query($con,"SELECT questions.*, accounts.username FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY upvotes DESC, downvotes");
 
     ?>
+    
+    <!-- goes through each element in the questions table and outputs it. The order of the output is sorted by most upvotes then least downvotes -->
 
+    <br>
     <?php while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {?>
     
-    <div class = "separator">
-    <div class ="comment" align = "left">
-        <h5><strong><?php echo $row["header"]?></strong></h5>
-        <?php echo $row["content"]?><br>
-        <span class = "commentDetails"><?php echo "Posted on: ".$row["date"]?><br>
-        <?php echo "upvotes: ".$row["upvotes"]?>
-        <?php echo "downvotes: ".$row["downvotes"]?>
-        </span>
-    </div>
-    </div>
+    <div class= "questionBlock">
+        <div class= "details">
+            <!-- Output of the details of the comment and commenter -->
+            <?php echo "Asked By: ".$row["username"]?><br>
+            <?php echo "Posted on: ".$row["date"]?><br>
+            <?php echo "Upvotes: ".$row["upvotes"]?>
+            <?php echo "Downvotes: ".$row["downvotes"]?>
+
+        </div>
+        <div class="question">
+            <?php $question = $row["id"];?>
+            <a href="questionThread.php?questionid=<?php echo $row['id'];?>"><h5><strong><?php echo $row["header"]?></strong></h5></a>
+            <?php echo $row["content"]?><br>
+        </div>
+    </div>   
+    <br>
+    
     <?php }?>
     
-    -->
-
     
+
+</main>
   </body>
 
 </html>

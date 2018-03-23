@@ -21,39 +21,37 @@
         $this->answerId = $answerId;
     }
 
-    function get_id(){
+    function getId(){
         return $this->id;
     }
 
-    function get_accountId(){
+    function getAccountId(){
         return $this->accountId;
     }
 
-    function get_questionId(){
+    function getQuestionId(){
         return $this->questionId;
     }
 
-    function get_answerId(){
+    function getAnswerId(){
         return $this->answerId;
     }
 
-    function set_id($newId){
+    function setId($newId){
         $this->id = $newId;
     }
 
-    function set_accountId($newAccountId){
+    function setAccountId($newAccountId){
         $this->accountId = $newAccountId;
     }
 
-    function set_questionId($newQuestionId){
+    function setQuestionId($newQuestionId){
         $this->questionId = $newQuestionId;
     }
 
-    function set_answerId($newAnswerId){
+    function setAnswerId($newAnswerId){
         $this->answerId = $newAnswerId;
     }
-
-
  }
 
 

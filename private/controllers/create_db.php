@@ -4,8 +4,9 @@
  * @author Christoffer Baur
  */
 
-include '..\util\logging.php';
-include '..\util\sets.php';
+include_once '..\util\logging.php';
+include_once '..\util\sets.php';
+include_once '.\account_controller.php';
 $config = parse_ini_file('..\..\config.ini');
 
 $servername = $config['servername'];
@@ -25,6 +26,7 @@ function createDatabaseAndTables(){
     createAnswersTable();
     createCommentsTable();
     createFavouritesTable();
+    //createDefaultAccount();
 }
 
 function createDatabase(){
@@ -43,15 +45,25 @@ function createDatabase(){
         unset ($pdo);
     }
 }
+// function createDefaultAccount(){
+//     global $servername, $username, $password, $dbname, $log, $sets;
+//     $s1 = strtok($sets->toStringSecurityOne(), ',');
+//     $s1 = str_replace("'","",$s1);
+//     $s2 = strtok($sets->toStringSecurityTwo(), ',');
+//     $s2 = str_replace("'","",$s2);
+//     //password is hashed version of 'password'
+//     $a = new Account(-1, 'John118', '$2y$10$C/uoZeY8TclVBl7UskXJceE7v800lyCnANBNtbTWX6jH7/dtOSqoK', 'John', 'Master Chief', 'Male', $s1, $s2, 'Cortana', 'EDZ', 'Last Spartan Alive', 'Gamer', null);
+//     $id = addAccount($a);
+// }
 
 function createAccountsTable(){
     global $servername, $username, $password, $dbname, $log;
     
     $sets = new Sets();
-    $genders = $sets->to_string_genders();
-    $security_one = $sets->to_string_security_one();
-    $security_two = $sets->to_string_security_two();
-    $professions = $sets->to_string_professions();
+    $genders = $sets->toStringGenders();
+    $security_one = $sets->toStringSecurityOne();
+    $security_two = $sets->toStringSecurityTwo();
+    $professions = $sets->toStringProfessions();
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -66,17 +78,20 @@ function createAccountsTable(){
             `password` varchar(500) DEFAULT NULL,
             `name` varchar(25) NOT NULL DEFAULT 'default name',
             `last_name` varchar(25) NOT NULL DEFAULT 'default  last',
-            `gender` set($genders) NOT NULL DEFAULT '".$sets->get_genders()[0]."',
-            `security_one` set($security_one) DEFAULT '".$sets->get_security_one()[0]."',
-            `security_two` set($security_two) NOT NULL DEFAULT '".$sets->get_security_two()[0]."',
+            `gender` set($genders) NOT NULL DEFAULT '".$sets->getGenders()[0]."',
+            `security_one` set($security_one) DEFAULT '".$sets->getSecurityOne()[0]."',
+            `security_two` set($security_two) NOT NULL DEFAULT '".$sets->getSecurityTwo()[0]."',
             `answer_one` varchar(20) NOT NULL DEFAULT 'a1',
             `answer_two` varchar(20) NOT NULL DEFAULT 'a2',
             `bio` varchar(500) NOT NULL DEFAULT 'Training to be like goku',
-            `profession` set($professions) NOT NULL DEFAULT '".$sets->get_professions()[2]."',
-            `pin` tinyint(4) UNSIGNED NULL DEFAULT NULL,
+            `profession` set($professions) NOT NULL DEFAULT '".$sets->getProfessions()[2]."',
+            `pin` varchar(4) DEFAULT NULL,
+            `profile_picture_path` varchar(500) NOT NULL DEFAULT '../img/avatar2.png',
             PRIMARY KEY (`id`),
             UNIQUE KEY `username` (`username`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;INSERT INTO `accounts` (`username`, `password`, `name`, `last_name`, `gender`, `security_one`, `security_two`, `answer_one`, `answer_two`, `bio`, `profession`, `pin`) VALUES
+            ('john117', '$2y$10\$C/uoZeY8TclVBl7UskXJceE7v800lyCnANBNtbTWX6jH7/dtOSqoK', 'John', 'Master Chief', 'Male', 'What is the first name of the person you first kissed?', 'In what city or town did your mother and father meet?', 'Cortana', 'EDZ', 'Last Spartan Alive', 'Gamer', NULL);
+            COMMIT;";
 
         $conn->exec($sql);
         $log->lwrite('Table accounts created successfully');
@@ -180,6 +195,7 @@ function createFavouritesTable(){
           `id` int(11) NOT NULL AUTO_INCREMENT,
           `account_id` int(11) DEFAULT NULL,
           `question_id` int(11) DEFAULT NULL,
+          `answer_id` int(11) DEFAULT NULL,
           PRIMARY KEY (`id`),
           KEY `fk_favourties_account_id` (`account_id`),
           KEY `fk_favourites_question_id` (`question_id`),
@@ -187,7 +203,8 @@ function createFavouritesTable(){
         ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `favourites`
         ADD CONSTRAINT `fk_favourites_question_id` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
         ADD CONSTRAINT `fk_favourties_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE CASCADE,
-        ADD CONSTRAINT `fk_favourites_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `answers` (`id`) ON DELETE CASCADE;COMMIT";
+        ADD CONSTRAINT `fk_favourites_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `answers` (`id`) ON DELETE CASCADE;
+      COMMIT;";
 
         $conn->exec($sql);
         $log->lwrite('Favourites Table created successfully');
@@ -223,7 +240,12 @@ function createQuestionsTable(){
             PRIMARY KEY (`id`),
             KEY `fk_questions_account_id` (`account_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=latin1;ALTER TABLE `questions`
-            ADD CONSTRAINT `fk_questions_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL;COMMIT";
+            ADD CONSTRAINT `fk_questions_account_id` FOREIGN KEY (`account_id`) REFERENCES `accounts` (`id`) ON DELETE SET NULL;
+            INSERT INTO `questions` (`id`, `account_id`, `header`, `content`, `date`, `upvotes`, `downvotes`, `tags`) VALUES
+            (1, 1, 'How many fingers does a gopher have?', 'I cant seem to find the information on google. can anyone help ?', '2018-03-16 02:39:48', 0, 0, 'animal, silly'),
+            (2, 1, 'Where can you go to the bathroom legally?', 'Im asking about the non usual places? for Science reasons. ', '2018-03-16 02:39:48', 0, 0, 'potty, bathroom'),
+            (3, 1, 'Ain\'t it Fun?', 'Riot! or Self titled is better?\r\n\r\npersonally Riot! is the best', '2018-03-16 02:43:34', 0, 0, 'Paramore. album, music'),
+            (4, NULL, 'How now brown cow', 'Testing question with no account id (i.e. account was removed)', '2018-03-16 02:43:34', 0, 0, 'removed, test');COMMIT";
 
         $conn->exec($sql);
         $log->lwrite('Questions Table created successfully');

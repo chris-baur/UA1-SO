@@ -1,22 +1,28 @@
 <?php
 
-/**
- * @author Christoffer Baur
- */
-
-include '..\util\sets.php';
-include '..\models\Account.php';
+    $status = session_status();
+	if($status == PHP_SESSION_NONE){
+		//There is no active session
+		session_start();
+	}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    include_once '..\..\private\util\sets.php';
+    include_once '..\..\private\util\logging.php';
+    include_once '..\..\private\controllers\account_controller.php';
+    include_once '..\..\private\models\Account.php';    
+
     $account = new Account();
     $sets = new Sets();
-    $username = "";
-    $password = "";
+    $log = new Logging();
+    $user = "";
+    $pass = "";
     $hash = "";
     //$pin = "";
     $validData = true;
-    $invalidArray = null;
+    $invalidLogin = null;
+    $log->lwrite('Form has requested a post for File: validateLogin.php');
 
     //validate pin
     // if($validData){
@@ -31,38 +37,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // verify username
     if(validateUser()){
-        $username = htmlentities($_POST['username']);
-        $account = getAccountByUsername($username);
+        $log->lwrite('inside valid user');
+        $user = htmlentities($_POST['username']);
+        $account = getAccountByUsername($user);
         // if(($account -> getAttemptCtr()) >= 5){
         //     $validData = false;
-        //     $errMessage = "$username has been locked out. Too many failed login attempts.";
+        //     $errMessage = "$user has been locked out. Too many failed login attempts.";
         // }
     }
-    else
+    else{
+        $log->lwrite('invalid username. Valid data is false');
         $validData = false;
+    }
 
     if($validData){
         // verify password
-        if(validateString('password') && strlen($_POST['password']) >= 6){
+        if(validateString('password') && strlen($_POST['password']) >= 8){
+            $log->lwrite('Password passed prelim validaton');
             $pass = htmlentities($_POST['password']);
-            if (password_verify($pass, $account -> get_password())){
-                $_SESSION['userid'] = $account -> get_id();
-                $_SESSION['username'] = $account -> get_username();
+            if (password_verify($pass, $account -> getPassword())){
+                $log->lwrite('password is valid');
+                $_SESSION['userid'] = $account -> getId();
+                $_SESSION['username'] = $account -> getUsername();
                 session_regenerate_id();
                 // redirect to user home page
-                header('Location: ..\..\public_html\home_page\homepage.html');
+                header('Location: ..\home_page\homepage.php');
             }
             //password doesnt match
             else{
                 //increaseAttemptCounter($userObj);
-                $invalidArray['password'] = 'Incorrect password entered';
+                $log->lwrite('Password incorrect.');
+                $invalidLogin = 'Incorrect password entered';
                 showUserError();
             }
         }
         //incorrect syntax/length password entered
         else{
             //increaseAttemptCounter($userObj);
-            $invalidArray['password'] = 'Incorrect password entered. Check length/syntax';
+            $log->lwrite('Password failed prelim verification');
+            $invalidLogin = 'Incorrect password entered. Check length/syntax';
             showUserError();
         }
     }
@@ -105,27 +118,38 @@ function validateString($string){
  * 
  */
 function validateUser(){
-    global $invalidArray;
+    global $invalidLogin;
+    global $log;
     $valid = false;
     $user_name = htmlentities($_POST['username']);
     if(validateString('username')){
         // user exsts, set valid to true
-        if(UserExists($user_name))
+        $log -> lwrite("Username is: ".$user_name);
+        if(accountExists($user_name)){
+            $log -> lwrite("account exists with given username");
             $valid = true;
+        }
         // user does not exist, show error
-        else
-            $invalidArray['username'] = 'Username does not exist';
+        else{
+            $invalidLogin = 'Username does not exist';
+            $log -> lwrite("account does not exist with given username");
+        }
     //username provided is not a valid string
     }
-    else
-        $invalidArray['username'] = 'Username provided is not a valid string';
+    else{
+        $log -> lwrite("Username provided is not a valid string");
+        $invalidLogin = 'Username provided is not a valid string';
+    }
     return $valid;
 }
 
 // show user error
 function showUserError(){
-    global $invalidArray;
-    setcookie('invalidArray', json_encode($invalidArray), time()+20);
-    header('Location: ..\..\public_html\login_register\loginregister.html');
+    global $log;
+    $log->lwrite('Showing user error');
+    global $invalidLogin;
+    // setcookie('invalidLogin', json_encode($invalidLogin), time()+20);
+    $_SESSION['invalidLogin'] = $invalidLogin;
+    header('Location: loginregister.php');
 }
 ?>
