@@ -141,7 +141,7 @@ $log = new Logging();
 	 *
 	 * @param $answerId, $questionId		Comment's answerId, questionId
 	 */
-	function getCommentsByAnswerQuestionId($answerId, $questionId){
+	function getCommentByAnswerQuestionId($answerId, $questionId){
 		global $servername, $username, $password, $dbname, $log;
         $commentArray = [];
 

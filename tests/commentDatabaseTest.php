@@ -31,7 +31,8 @@ class commentDatabaseTest extends PHPUnit\Framework\TestCase{
         $cc  = new CommentController();
         $account = new Account();
         $account->setId(1);
-        $expectedNumber = 1;
+        //2 since we added one in previous function
+        $expectedNumber = 2;
         
         $actualNumber = sizeof($cc::getCommentsByAccount($account));
         $this->assertEquals($expectedNumber, $actualNumber);

@@ -30,7 +30,8 @@ class favouriteDatabaseTest extends PHPUnit\Framework\TestCase{
     public function testGetFavouriteQuestions(){
         $fc  = new FavouriteController();
         $id = 1;
-        $expectedNumber = 1;
+        //This will be 2 since we added one to the database in previous test function
+        $expectedNumber = 2;
         
         $actualNumber = sizeof($fc::getFavouriteQuestions($id));
         $this->assertEquals($expectedNumber, $actualNumber);
@@ -49,7 +50,8 @@ class favouriteDatabaseTest extends PHPUnit\Framework\TestCase{
         $accountId = 1;
         $questionId = 4;
         $fc::deleteFavouriteQuestion($accountId, $questionId);
-        $expectedNumber = 0;
+        //This will be 1 since we added one to the database in previous test function
+        $expectedNumber = 1;
         $actualNumber = sizeof($fc::getFavouriteQuestions($accountId));
         $this->assertEquals($expectedNumber, $actualNumber);
     }
