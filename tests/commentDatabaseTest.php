@@ -12,7 +12,7 @@ class commentDatabaseTest extends PHPUnit\Framework\TestCase{
         $c->setAnswerId(null);
         $expectedContent = 'A random content for testing'; 
         $c->setContent($expectedContent);
-        $id = $cc::addComment($a);
+        $id = $cc::addComment($c);
         $addedC = $cc::getCommentById($id);
         $actualContent = $addedC->getContent();
 
@@ -45,13 +45,13 @@ class commentDatabaseTest extends PHPUnit\Framework\TestCase{
         $actualNumber = sizeof($cc::getCommentsByContent($expectedContent));
         $this->assertEquals($expectedNumber, $actualNumber);        
     }
-    public function testGetCommentsByAnswerQuestionId(){
+    public function testgetCommentByAnswerQuestionId(){
         $cc = new CommentController();
         $expectedNumber = 1;
         $questionId = 1;
         $answerId = null;
         
-        $actualNumber = sizeof($cc::getCommentsByAnswerQuestionId($answerId, $questionId));
+        $actualNumber = sizeof($cc::getCommentByAnswerQuestionId($answerId, $questionId));
         $this->assertEquals($expectedNumber, $actualNumber);   
 
     }

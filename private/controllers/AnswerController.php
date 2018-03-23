@@ -76,6 +76,53 @@ class AnswerController{
 			unset($pdo);
 		}
 		return $answer_id;
+	}
+	
+	/**
+	 * Returns answers with the specified id
+	 *
+	 * @param $id		Answer's id
+	 */
+	static function getAnswerById($id){
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
+        $answer = new Answer();
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE id = :id;");						
+			$stmt -> bindParam(':id',$id);
+		
+			$stmt -> execute();
+			
+			// while there is an answer with specified account id
+			if($result = $stmt -> fetch()){
+                $a = new Answer();
+
+				$a->setId($result[0]);
+                $a->setAccountId($result[1]);
+                $a->setQuestionId($result[2]);
+                $a->setContent($result[3]);
+                $a->setDate($result[4]);
+                $a->setUpvotes($result[5]);
+                $a->setDownvotes($result[6]);
+                $a->setBest($result[7]);
+
+                $answer = $a;
+			}
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+		// returns the answer array
+		return $answer;
     }
 
     /**

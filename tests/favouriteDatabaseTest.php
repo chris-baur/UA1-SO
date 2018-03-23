@@ -8,24 +8,24 @@ class favouriteDatabaseTest extends PHPUnit\Framework\TestCase{
         $fc  = new FavouriteController();
         $f = new Favourite();
         $f->setAccountId(1);
-        $f->setQuestionId(1);
-        $f->setAnswerId(null);
-        $expectedContent = 'A random content for testing'; 
-        $f->setContent($expectedContent);
-        $id = $fc::addFavourite($a);
-        $addedC = $fc::getFavouriteById($id);
-        $actualContent = $addedC->getContent();
+        $expectedQuestionId = 1;
+        $f->setQuestionId($expectedQuestionId);
+        $f->setAnswerId(null); 
+        $id = $fc::addFavourite($f);
+        $addedF = $fc::getFavouriteById($id);
+        $actualQuestionId = $addedF->getQuestionId();
 
-        $this->assertEquals($expectedContent, $actualContent);
+        $this->assertEquals($expectedQuestionId, $actualQuestionId);
     }
 
     public function testGetFavouriteById(){
         $fc  = new FavouriteController();
-        $expectedContent = 'This must be from paramore'; 
-        $f = $fc::getFavouriteById(1);
-        $actualContent = $f->getContent();
+        $expectedQuestionId = 4;
+        $id = 1;
+        $f = $fc::getFavouriteById($id);
+        $actualQuestionId = $f->getQuestionId();
 
-        $this->assertEquals($expectedContent, $actualContent);
+        $this->assertEquals($expectedQuestionId, $actualQuestionId);
     }
     public function testGetFavouriteQuestions(){
         $fc  = new FavouriteController();

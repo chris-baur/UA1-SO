@@ -208,31 +208,35 @@ class CommentController{
 	}
 
 	/**
-	 * Returns comments with the specified answer_id and question_id
+	 * Returns comment with the specified answer_id and question_id
 	 *
 	 * @param $answerId, $questionId		Comment's answerId, questionId
 	 */
-	static function getCommentsByAnswerQuestionId($answerId, $questionId){
+	static function getCommentByAnswerQuestionId($answerId, $questionId){
 		$servername = self::$servername;
 		$username = self::$username;
 		$password = self::$password;
 		$dbname = self::$dbname;
 		$log = self::$log;
-		$commentArray = [];
-		$answerId = "%$answerId%";
-		$questionId = "%$questionId%";
+		$comment = new Comment();
+		$sql;
+		$stmt;
 
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id LIKE :answerId AND question_id LIKE :questionId;");						
-			$stmt -> bindParam(':answerId', $answerId);
-			$stmt -> bindParam(':questionId', $questionId);
-		
+			if(isset($answerId)){
+				$sql = "SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id = :answerId AND question_id IS NULL;";
+				$stmt = $pdo -> prepare();
+				$stmt -> bindParam(':answerId', $answerId);					
+			}else{
+				$sql = "SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id IS NULL AND question_id = :question_id;";
+				$stmt = $pdo -> prepare();					
+				$stmt -> bindParam(':questionId', $questionId);
+			}
 			$stmt -> execute();
 			
-            // while there is comment with specified content
-            while($result = $stmt -> fetch()){
+            // if there is comment with specified question and answer idid
+            if($result = $stmt -> fetch()){
                 $c = new Comment();
 
 				$c->setId($result[0]);
