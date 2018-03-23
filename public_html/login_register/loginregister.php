@@ -28,7 +28,7 @@
           <img src='../img/avatar.png' alt='Avatar' class='avatar'>
         </div>";
 
-        if(isset($_SESSION['invalidLogin'])){
+        if((isset($_SESSION['invalidLogin']) && isset($_SESSION['loginType']) && $_SESSION['loginType'] == 'password')){
           echo "<p id='invalid'>Error: " . $_SESSION['invalidLogin'] . "</p>";
         }
   
@@ -54,7 +54,7 @@
       </form>
     </div>
   
-    <p style='text-align: center;'><button onclick=" . '"document.getElementById(' . "'pin_login'" . ").style.display='block'" . '"' . "style='width:auto;'>Login using Pin</button></p>
+    <p style='text-align: center;'><button id='loginPinButton' onclick=" . '"document.getElementById(' . "'pin_login'" . ").style.display='block'" . '"' . "style='width:auto;'>Login using Pin</button></p>
   
   <div id='pin_login' class='modal'>
       <form class='modal-content animate' action='validateLogin.php' method='POST'>
@@ -62,6 +62,9 @@
           <span onclick=" . '"document.getElementById(' . "'pin_login'" . ").style.display='none'" . '"' . "class='close' title='Close Modal'>&times;</span>
           <img src='../img/avatar.png' alt='Avatar' class='avatar'>
         </div>";
+          if((isset($_SESSION['invalidLogin']) && isset($_SESSION['loginType']) && $_SESSION['loginType'] == 'pin')){
+            echo "<p id='invalid'>Error: " . $_SESSION['invalidLogin'] . "</p>";
+          }
   
         echo "<div class='container'>
             <label><b>Username</b></label>
@@ -197,7 +200,7 @@
 <p style='text-align: center;'> © All Rights Reserved 2018 </p>";
 
 
-if(isset($_SESSION['invalidLogin']) || isset($_SESSION['validRegister'])){
+if((isset($_SESSION['invalidLogin']) && isset($_SESSION['loginType']) && $_SESSION['loginType'] == 'password') || isset($_SESSION['validRegister'])){
   $log->lwrite('in simulating login form button click');
   
   echo '<script>
@@ -209,6 +212,21 @@ if(isset($_SESSION['invalidLogin']) || isset($_SESSION['validRegister'])){
   </html>';
   unset($_SESSION['invalidLogin']);
   unset($_SESSION['validRegister']);
+  $log->lwrite('unsset invalidLogin session');
+}
+else if((isset($_SESSION['invalidLogin']) && isset($_SESSION['loginType']) && $_SESSION['loginType'] == 'pin') || isset($_SESSION['validRegister'])){
+  $log->lwrite('in simulating login form button click');
+  
+  echo '<script>
+    window.addEventListener("load", function(event) {
+        document.getElementById("loginPinButton").click();
+    });
+  </script>
+  </body>
+  </html>';
+  unset($_SESSION['invalidLogin']);
+  unset($_SESSION['validRegister']);
+  unset($_SESSION['loginType']);
   $log->lwrite('unsset invalidLogin session');
 }
 else if(isset($_SESSION['invalidRegister'])){
