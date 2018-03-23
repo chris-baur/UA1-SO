@@ -10,7 +10,7 @@ class questionDatabaseTest extends PHPUnit\Framework\TestCase{
         
     }
 
-    public function testQuestionsByAccount(){
+    public function testGetQuestionsByAccount(){
         $qc = new QuestionController();
         $account = new Account();
         $account->setId(1);

@@ -72,6 +72,53 @@ class QuestionController{
 			unset($pdo);
 		}
 		return $question_id;
+	}
+	
+	/**
+	 * Returns questions with the specified id
+	 *
+	 * @param $id		Question's id
+	 */
+	static function getQuestionById($id){
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
+        $question = new Question();
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE id = :id;");						
+			$stmt -> bindParam(':id',$id );
+		
+			$stmt -> execute();
+			
+			// while there is a question with specified account id
+			if($result = $stmt -> fetch()){
+                $q = new Question();
+
+				$q->setId($result[0]);
+                $q->setAccountId($result[1]);
+                $q->setHeader($result[2]);
+                $q->setContent($result[3]);
+                $q->setDate($result[4]);
+                $q->setUpvotes($result[5]);
+                $q->setDownvotes($result[6]);
+                $q->setTags($result[7]);
+
+                $question = $q;
+			}
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+		// returns the question
+		return $question;
     }
 
      /**
@@ -134,12 +181,13 @@ class QuestionController{
 		$password = self::$password;
 		$dbname = self::$dbname;
 		$log = self::$log;
-        $questionArray = [];
+		$questionArray = [];
+		$content = "%$content%";
 		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE content LIKE '%:content%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE content LIKE :content;");						
 			$stmt -> bindParam(':content', $content);
 		
 			$stmt -> execute();
@@ -182,12 +230,13 @@ class QuestionController{
 		$dbname = self::$dbname;
 		$log = self::$log;
         $question = new Question();
-        $questionArray = [];
+		$questionArray = [];
+		$header = "%$header%";		
 		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE header LIKE '%:header%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE header LIKE :header;");						
 			$stmt -> bindParam(':header', $header);
 		
 			$stmt -> execute();
