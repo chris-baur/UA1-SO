@@ -45,11 +45,19 @@
 .utilities_btns form {
 	display: inline-block;
 }
+
 .delete_btn{
 	border: none;
 	cursor:pointer;
 	background: transparent;
 }
+
+.edit_btn{
+	border: none;
+	cursor:pointer;
+	background: transparent;
+}
+
 .delete_btn :hover{
 	color: #cc0000;
 }
