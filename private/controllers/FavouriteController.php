@@ -118,7 +118,7 @@ class FavouriteController{
 		$password = self::$password;
 		$dbname = self::$dbname;
 		$log = self::$log;
-		$favouritesArray = [];
+		$favouritesArray = null;
 		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
