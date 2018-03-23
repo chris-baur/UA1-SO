@@ -46,13 +46,13 @@ class commentDatabaseTest extends PHPUnit\Framework\TestCase{
         $actualNumber = sizeof($cc::getCommentsByContent($expectedContent));
         $this->assertEquals($expectedNumber, $actualNumber);        
     }
-    public function testgetCommentByAnswerQuestionId(){
+    public function testgetCommentsByAnswerQuestionId(){
         $cc = new CommentController();
         $expectedNumber = 1;
         $questionId = 1;
         $answerId = null;
         
-        $actualNumber = sizeof($cc::getCommentByAnswerQuestionId($answerId, $questionId));
+        $actualNumber = sizeof($cc::getCommentsByAnswerQuestionId($answerId, $questionId));
         $this->assertEquals($expectedNumber, $actualNumber);   
 
     }
