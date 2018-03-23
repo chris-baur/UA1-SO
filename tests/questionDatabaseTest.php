@@ -6,8 +6,20 @@ class questionDatabaseTest extends PHPUnit\Framework\TestCase{
     public function testId(){
         $qc = new QuestionController();
         $q = $qc::getQuestionById(1);
-        $this->assertEquals('Ain\'t it Fun', $q->getHeader());
+        $this->assertEquals('Aint it Fun', $q->getHeader());
         
+    }
+
+    public function testAddQuestion(){
+        $qc = new QuestionController();
+        $q = new Question();
+        $expectedHeader = 'A random header for testing'; 
+        $q->setHeader($expectedHeader);
+        $id = $qc::addQuestion($q);
+        $addedQ = $qc::getQuestionById($id);
+        $actualHeader = $addedQ->getHeader();
+
+        $this->assertEquals($expectedHeader, $actualHeader);
     }
 
     public function testGetQuestionsByAccount(){

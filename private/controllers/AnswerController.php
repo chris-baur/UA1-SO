@@ -137,12 +137,13 @@ class AnswerController{
 		$password = self::$password;
 		$dbname = self::$dbname;
 		$log = self::$log;
-        $answerArray = [];
+		$answerArray = [];
+		$content = "%$content%";
 		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE content LIKE '%:content%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE content LIKE :content;");						
 			$stmt -> bindParam(':content', $content);
 		
 			$stmt -> execute();
@@ -189,7 +190,7 @@ class AnswerController{
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE question_id LIKE '%:questionId%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, content, date, upvotes, downvotes, best FROM answers WHERE question_id = :questionId;");						
 			$stmt -> bindParam(':questionId', $questionId);
 		
 			$stmt -> execute();

@@ -70,6 +70,51 @@ class CommentController{
 		return $comment_id;
     }
 
+	/**
+	 * Returns comments with the specified id
+	 *
+	 * @param $id		Comments's id
+	 */
+	static function getCommentById($id){
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
+        $comment = new Comment();
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE id = :id;");	
+			$stmt -> bindParam(':id',$id );
+		
+			$stmt -> execute();
+			
+			// while there is a comment with specified account id
+			if($result = $stmt -> fetch()){
+                $c = new comment();
+
+				$c->setId($result[0]);
+                $c->setAccountId($result[1]);
+                $c->setQuestionId($result[2]);
+                $c->setAnswerId($result[3]);
+                $c->setContent($result[4]);
+                $c->setDate($result[5]);
+
+                $comment = $c;
+			}
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+		// returns the comment array
+		return $comment;
+    }
+
     /**
 	 * Returns comments with the specified account
 	 *
@@ -127,12 +172,13 @@ class CommentController{
 		$password = self::$password;
 		$dbname = self::$dbname;
 		$log = self::$log;
-        $commentArray = [];
+		$commentArray = [];
+		$content = "%$content%";
 
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE content LIKE '%:content%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE content LIKE :content;");						
 			$stmt -> bindParam(':content', $content);
 		
 			$stmt -> execute();
@@ -172,12 +218,14 @@ class CommentController{
 		$password = self::$password;
 		$dbname = self::$dbname;
 		$log = self::$log;
-        $commentArray = [];
+		$commentArray = [];
+		$answerId = "%$answerId%";
+		$questionId = "%$questionId%";
 
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id LIKE '%:answerId%' AND question_id LIKE '%:questionId%';");						
+			$stmt = $pdo -> prepare("SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id LIKE :answerId AND question_id LIKE :questionId;");						
 			$stmt -> bindParam(':answerId', $answerId);
 			$stmt -> bindParam(':questionId', $questionId);
 		
