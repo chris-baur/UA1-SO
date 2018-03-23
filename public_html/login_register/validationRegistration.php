@@ -236,21 +236,26 @@ function validateUser(){
     $valid = false;
     if(validateString('username')){
         $user_name = htmlentities($_POST['username']);
+        if($username.length > 3) {
         // user does not exist, can add user to DB
         // @TODO
-        if(!(accountExists($user_name))){
-            $account = new Account(0, $user_name, $hash, $name, $last_name, $gender, $security_one,
-                $security_two, $answer_one, $answer_two, $bio, $profession, $pin);
-            addAccount($account);
-            $valid = true;
+            if(!(accountExists($user_name))){
+                $account = new Account(0, $user_name, $hash, $name, $last_name, $gender, $security_one,
+                    $security_two, $answer_one, $answer_two, $bio, $profession, $pin);
+                addAccount($account);
+                $valid = true;
+            }
+            // username already in use, show error
+           else {
+                $invalidRegister[] = 'Username is already in use. Please choose another one.';
+            }
+        } else {
+            $invalidRegister[] = 'Username is too short. Please enter a username with at least 4 characters.';
         }
-        // username already in use, show error
-       else
-       $invalidRegister[] = 'Username is already in use. Please choose another one.';
+    } 
+    else {
+        $invalidRegister[] = 'Invalid username entered';
     }
-    //invalid username
-    else
-    $invalidRegister[] = 'Invalid username entered';
     return $valid;
 }
 
