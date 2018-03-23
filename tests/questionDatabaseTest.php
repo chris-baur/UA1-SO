@@ -40,7 +40,7 @@ class questionDatabaseTest extends PHPUnit\Framework\TestCase{
         $qc = new QuestionController();
         $q = $qc::getQuestionById(1);
         $newHeader = 'klkfdnksdvk';
-        $q->setHeader($newHeader)
+        $q->setHeader($newHeader);
         $qc::updateQuestion($q);
         $q = $qc::getQuestionById(1);
 
