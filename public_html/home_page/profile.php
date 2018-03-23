@@ -32,7 +32,7 @@
 					$uploaddir = '../img/accounts/';
 					$newfilename = $_SESSION['username'];
 					$uploadfile =  $uploaddir. $newfilename. '.png';
-					$_SESSION['name'] = $uploadfile;
+					$_SESSION['profile_picture_path'] = $uploadfile;
 
 					$stmt = $conn->prepare("UPDATE `accounts` SET `profile_picture_path` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
 					$stmt->bindParam(':profile_picture_path', $uploadfile);

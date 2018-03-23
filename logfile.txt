@@ -84,3 +84,49 @@
 [23/Mar/2018:00:48:07] (questionThreadPage) Got all the answer threads. Size of array: 2
 [23/Mar/2018:00:48:07] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
 [23/Mar/2018:00:48:07] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:13:48:10] (loginregister) in login register
+[23/Mar/2018:13:48:10] (loginregister) Got the arrays
+[23/Mar/2018:13:48:10] (loginregister) no session errors
+[23/Mar/2018:13:50:30] (loginregister) in login register
+[23/Mar/2018:13:50:30] (loginregister) Got the arrays
+[23/Mar/2018:13:50:30] (loginregister) no session errors
+[23/Mar/2018:13:50:52] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:13:50:52] (validateLogin) Username is: john117
+[23/Mar/2018:13:50:52] (validateLogin) account exists with given username
+[23/Mar/2018:13:50:52] (validateLogin) inside valid user
+[23/Mar/2018:13:50:52] (validateLogin) Password passed prelim validaton
+[23/Mar/2018:13:50:52] (validateLogin) password is valid
+[23/Mar/2018:13:54:38] (uploadBio) account updated succesfully. user name: john117
+[23/Mar/2018:13:54:47] (uploadBio) account updated succesfully. user name: john117
+[23/Mar/2018:14:21:15] (loginregister) in login register
+[23/Mar/2018:14:21:15] (loginregister) Got the arrays
+[23/Mar/2018:14:21:15] (loginregister) no session errors
+[23/Mar/2018:14:21:22] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:21:22] (validateLogin) Username is: john117
+[23/Mar/2018:14:21:22] (validateLogin) account exists with given username
+[23/Mar/2018:14:21:22] (validateLogin) inside valid user
+[23/Mar/2018:14:21:23] (validateLogin) Password passed prelim validaton
+[23/Mar/2018:14:21:23] (validateLogin) password is valid
+[23/Mar/2018:14:21:31] (newQuestion) In new question.php. top of the file
+[23/Mar/2018:14:21:31] (newQuestion) GET METHOD. for newQuestion.php
+[23/Mar/2018:14:21:31] (newQuestion) echoed body of the form
+[23/Mar/2018:14:21:53] (myquestions) ID retrieved from session: 1
+[23/Mar/2018:14:21:53] (myquestions) ID in account object: 1
+[23/Mar/2018:14:21:53] (myquestions) Number of rows retrieved: 5
+[23/Mar/2018:14:22:08] (questionThreadPage) Got the question with account username: john117
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the answer threads. Size of array: 11
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: question with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:14:22:39] (favorites) returning account
+[23/Mar/2018:14:22:39] (favorites) returning account
