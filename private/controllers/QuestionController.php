@@ -33,7 +33,11 @@ class QuestionController{
 	* @param $question		Question object
 	*/
 	static function addQuestion($question){
-		global $servername, $username, $password, $dbname, $log;
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
 		$question_id = -1;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -76,7 +80,11 @@ class QuestionController{
 	 * @param $account		Question's account owner
 	 */
 	static function getQuestionsByAccount($account){
-		global $servername, $username, $password, $dbname, $log;
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
         $question = new Question();
         $questionArray = [];
 		
@@ -121,7 +129,11 @@ class QuestionController{
 	 * @param $content		Question's content
 	 */
 	static function getQuestionsByContent($content){
-		global $servername, $username, $password, $dbname, $log;
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
         $questionArray = [];
 		
 		try{
@@ -164,7 +176,11 @@ class QuestionController{
 	 * @param $header		Question's header
 	 */
 	static function getQuestionsByHeader($header){
-		global $servername, $username, $password, $dbname, $log;
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
         $question = new Question();
         $questionArray = [];
 		
@@ -208,7 +224,11 @@ class QuestionController{
 	* @param $question		Question object
 	*/
 	static function updateQuestion($question){
-		global $servername, $username, $password, $dbname, $log;
+		$servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
