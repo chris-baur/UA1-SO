@@ -91,21 +91,9 @@
   	              }
   	            echo "><i class='fa fa-thumbs-down'> ". $row->getDownvotes() . "</i></button>
   	              </form>
-  	            </div>
-			</div>
+  	            ";
 
-			<!------------------------------ right column of question block ------------------------------>
-		    <div class='col-md-10 question'>
-		        <h3><strong>".$row->getHeader()."</strong></h3>
-		        <p>".$row->getContent()."</p>
-		        <span class ='questionByDetail'>
-			        Asked By: ".$questionThread->getQuestionName()."<br>
-				  	Posted On: ".$row->getDate();
-
-				 // 	------------------------------------ Favourite Button --------------------------------------
-			    
-			    
-
+ 				// 	------------------------------------ Favourite Button --------------------------------------
 			    if(isset($_SESSION['userid'])){
 					$fc = new FavouriteController();
 			    	$favouriteQuestionFound = false;
@@ -125,7 +113,7 @@
 						  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
 						  		<input type ='hidden' name = 'foundQuestion' value = true>
 
-						  		<button type='submit' class='favouriteButton'>Remove Favourite</button>
+						  		<button type='submit' class='favouriteButton fa fa-star isFavourited custom-fa' aria-hidden='true'></button>
 						  	</form>";
 			    	}
 
@@ -136,14 +124,21 @@
 						  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
 						  		<input type ='hidden' name = 'foundQuestion' value = false>
 
-						  		<button type='submit' class='favouriteButton'>Favourite</button>
+						  		<button type='submit' class='favouriteButton fa fa-star isNotFavourited' aria-hidden='true'></button>
 						  	</form>";
 			    	}
 
 			    }
 
+			echo "</div></div>
 
-
+			<!------------------------------ right column of question block ------------------------------>
+		    <div class='col-md-10 question'>
+		        <h3><strong>".$row->getHeader()."</strong></h3>
+		        <p>".$row->getContent()."</p>
+		        <span class ='questionByDetail'>
+			        Asked By: ".$questionThread->getQuestionName()."<br>
+				  	Posted On: ".$row->getDate();
 		        echo" </span>
 		    </div>
 	    </div><br><hr>";
