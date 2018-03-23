@@ -10,6 +10,7 @@
     include('header.php');
     include_once('..\..\private\controllers\question_controller.php');
     include_once('..\..\private\models\Account.php');
+    include_once('..\..\private\controllers\FavouriteController.php');
 
     echo "<link rel='stylesheet' type='text/css' href='../css/homepage.css'>";
 
@@ -21,7 +22,7 @@
 
         $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
 
-   		$result = mysqli_query($con,"SELECT questions.*, accounts.username,accounts.profile_picture_path FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY date DESC, upvotes DESC, downvotes");
+   		$result = mysqli_query($con,"SELECT questions.*, accounts.username,accounts.profile_picture_path FROM questions AS questions INNER JOIN accounts ON accounts.id=questions.account_id ORDER BY upvotes DESC, downvotes, date DESC");
 
         try{
             $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -88,9 +89,48 @@
   	              	echo "disabled";
   	              }
   	            echo "><i class='fa fa-thumbs-down'> ". $info['downvotes'] . "</i></button>
-  	              </form>
-                  </div>
-  	            </div>
+  	              </form>";
+                //  ------------------------------------ Favourite Button --------------------------------------
+          
+          
+
+                if(isset($_SESSION['userid'])){
+                $fc = new FavouriteController();
+                  $favouriteQuestionFound = false;
+                  $favouriteQuestionArray = $fc::getFavouriteQuestions($_SESSION['userid']);
+                  if (isset($favouriteQuestionArray)){
+                    foreach($favouriteQuestionArray as $favouriteQuestion){
+                      if ($favouriteQuestion->getId() == $info['id']){
+                        $favouriteQuestionFound = true;
+                      }
+                    }
+                  }
+
+                  if($favouriteQuestionFound == true){
+                    echo "
+                      <form method='post' action = 'newFavouriteHomepage.php'>
+                        <input type ='hidden' name = 'questionId' value = ".$info['id']." >
+                        <input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+                        <input type ='hidden' name = 'foundQuestion' value = true>
+
+                        <button type='submit' class='favouriteButton fa fa-star isFavourited custom-fa' aria-hidden='true'></button>
+                      </form>";
+                  }
+
+                  else{
+                    echo "
+                      <form method='post' action = 'newFavouriteHomepage.php'>
+                        <input type ='hidden' name = 'questionId' value = ".$info['id']." >
+                        <input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+                        <input type ='hidden' name = 'foundQuestion' value = false>
+
+                        <button type='submit' class='favouriteButton fa fa-star isNotFavourited' aria-hidden='true'></button>
+                      </form>";
+                  }
+
+                }
+
+  	            echo "</div></div>
   	            <div class='col-md-10 question'>
   	              <div>
   	              <a href='questionThreadPage.php?questionid=".$info['id']."'>
