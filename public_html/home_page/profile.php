@@ -54,7 +54,7 @@
 						echo "<img src=\"".$file_path."\" width = \"150\" height = \"150\">";								
 					?>
 						<p id = "changePic"> </p>
-						<p id = "showBio"> 
+						<p id = "showBio" style = "font-size: 60%"> 
 							<?php
 								$controller = new AccountController();
 								$account = new Account();
@@ -84,7 +84,19 @@
 				</div>					
 
 				<div id = "changeBio"> </div>
-				<div id = "ChangePass"></div>
+				<div id = "ChangePass">
+				<?php 
+					if(isset($_GET['errorMessage'])) {
+
+    					if("The password has successfully been modified !" == $_GET['errorMessage']) {
+    						echo "<br><p style='color:green;'>".$_GET['errorMessage']."</p>";
+    					} else {
+    						echo "<br><p style='color:red;'>".$_GET['errorMessage']."</p>";
+
+    					}
+					}
+				?>
+				</div>
 				
 		</div>
 
@@ -103,7 +115,7 @@
 			function changePassword() {
 				document.getElementById("changeBio").innerHTML = "";
 				document.getElementById("changePic").innerHTML = "";
-				document.getElementById("ChangePass").innerHTML = '<br><form action="changePassword.php" method="POST"> Current Password <input type = "text" class = "btn btn-gray btn-sm" name = "currentPass" placeholder = "Password"><br>New Password <input type = "password" class = "btn btn-gray btn-sm" name = "newpassword" placeholder = "Password" style = "margin-top: 1%"/><br>Retype New Password <input type = "password" class = "btn btn-gray btn-sm" name = "newpassword" placeholder = "Password" style = "margin-top: 1%"/><br><input type = "submit" class = "btn btn-gray btn-sm" id = "subChange" value = "Submit"/><input type = "submit" class = "btn btn-gray btn-sm" id = "subCancel" onclick = "cancelPass()" value = "Cancel" style = "margin-top: 2%"/></form>';
+				document.getElementById("ChangePass").innerHTML = '<br><form action="changePassword.php" method="POST"> Current Password <input type = "password" class = "btn btn-gray btn-sm" name = "currentPass" placeholder = "Password"><br>New Password <input type = "password" class = "btn btn-gray btn-sm" name = "newpassword1" placeholder = "Password" style = "margin-top: 1%"/><br>Retype New Password <input type = "password" class = "btn btn-gray btn-sm" name = "newpassword2" placeholder = "Password" style = "margin-top: 1%"/><br><input type = "submit" class = "btn btn-gray btn-sm" id = "subChange" value = "Submit"/><input type = "submit" class = "btn btn-gray btn-sm" id = "subCancel" onclick = "cancelPass()" value = "Cancel" style = "margin-top: 2%"/></form>';
 			}
 
 			function changeBio() {

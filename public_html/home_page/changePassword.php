@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../private/controllers/account_controller.php';
+include_once '../../private/controllers/AccountController.php';
 
 $config = parse_ini_file('../../config.ini');
 $username = $config['username'];
@@ -17,20 +17,37 @@ if($status == PHP_SESSION_NONE){
 	session_start();					
 }		 
 
+$controller = new AccountController();
+$account = new Account();
+$account = $controller::getAccountByUsername($_SESSION['username']);
+
 $user = $_SESSION['username'];
-$new_password = password_hash($_POST['newpassword'], PASSWORD_DEFAULT);
+$currentPass = $_POST['currentPass'];
+$new_password1 = $_POST['newpassword1'];
+$new_password2 = $_POST['newpassword2'];
 
-//$account = getAccountByUsername($user);
-//$account_pass = $account->get_password();
+$error;
 
-//$old_password = $_POST['oldpassword'];
+if(password_verify($currentPass, $account->getPassword())) {
+	if ($new_password1 == $new_password2) {
+		$newpassword = password_hash($_POST['newpassword1'], PASSWORD_DEFAULT);
+		$account->setPassword($newpassword);
+		$controller::updateAccount($account);
 
-//if(password_verify($old_password, "SELECT `password` FROM `accounts` WHERE `accounts`.`username` = '$user'")) {
+		$stmt = $conn->prepare("UPDATE `accounts` SET `password` = '$newpassword' WHERE `accounts`.`username` = '$user'");
+		$stmt->bindParam(':password', $newpassword);
+		$stmt->execute();
+		$error = "The password has successfully been modified !";
+	} else {
+		$error = "The new password does not match..";
+		header("Location: profile.php?errorMessage=$error");
+	}
+} else {
+	$error = "The current password entered is incorrect..";
+	header("Location: profile.php?errorMessage=$error");
+}
 
-$stmt = $conn->prepare("UPDATE `accounts` SET `password` = '$new_password' WHERE `accounts`.`username` = '$user'");
-$stmt->bindParam(':password', $new_password);
-$stmt->execute();
 
-header('Location: profile.php'); 
+header("Location: profile.php?errorMessage=$error"); 
 
 ?>
