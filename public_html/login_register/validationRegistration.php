@@ -168,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(validateString('password')){
         if(strlen($_POST['password']) < 8 ){
             $validData = false;
-            $invalidRegister[] = 'Invalid password length entered. It must be a minimum of 6 characters';
+            $invalidRegister[] = 'Invalid password length entered. It must be a minimum of 8 characters';
             $log->lwrite("password is not ok");
             
         }
@@ -236,7 +236,7 @@ function validateUser(){
     $valid = false;
     if(validateString('username')){
         $user_name = htmlentities($_POST['username']);
-        if($username.length > 3) {
+        if(strlen($user_name) > 3) {
         // user does not exist, can add user to DB
         // @TODO
             if(!(accountExists($user_name))){
