@@ -255,7 +255,7 @@
 							<!-- right column of comment block -->
 					        <div class='comment'>
 					            <div>
-					            <textarea class='form-control editText' style='display: none;' id='".$commentID."'>".$commentInfo->getContent()."</textarea>
+					            <textarea class='form-control editText' maxlength='250' style='display: none;' id='".$commentID."'>".$commentInfo->getContent()."</textarea>
 					            <div id='".$paragraphID."'>".$commentInfo->getContent()."</div>
 					            <button id='".$buttonID."' style='display: none;' type='button' class='btn subButton ' 
 					            		onClick='updateComment(".$commentID.",".$buttonID.",".$cancelID.",".$paragraphID.",".$commentInfo->getId().")'> Submit edit </button>
