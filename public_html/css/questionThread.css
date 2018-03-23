@@ -110,3 +110,7 @@
 .newAnswerButton:focus{
 	outline: none;
 }
+.editText{
+	min-height: 70px;
+	max-height: 400px;
+}
