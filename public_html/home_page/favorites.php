@@ -1,9 +1,15 @@
 <?php
  	include('header.php');
- 	include('../../private/controllers/account_controller.php');
- 	include('../../private/controllers/favourite_controller.php');
+ 	include_once('../../private/controllers/account_controller.php');
+ 	include_once('../../private/controllers/FavouriteController.php');
+ 	include_once('../../private/controllers/Vote.php');
+ 	include_once('../../private/controllers/AccountController.php');
 
- 	echo "<link rel='stylesheet' type = 'text/css' href='../css/favorite.css'>";
+
+ 	echo "
+ 	<link rel='stylesheet' type = 'text/css' href='../css/favorite.css'>
+ 	<link rel='stylesheet' type = 'text/css' href='../css/homepage.css'>
+ 	";
 
  	// outputs a warning message when user is not logged into an account
 
@@ -14,25 +20,102 @@
       </div></main>";
   	}
   	else{
-  		echo "<main><div class='container'>";  
-    	$userName = $_SESSION['username'];
-    	$rows = getFavouriteById($account->getId());
-    	$hasFavorite = false;
+  		$votesQ=[];
+  		$votesA=[];
 
-    	// If user has no favorites
-    	if($rows == NULL){
-    		echo "
- 				<div class='alert alert-warning margins'>
-      				<h2>You have not favorited any questions or answers</h2>
-      			</div></main>";
-    	}
-    	// User has favorites
-    	else{
+  		$fc = new FavouriteController();
+  		$ac = new AccountController();
 
-	    	echo '</div></main>';
-	    	$hasFavorite = true;
-		}
+
+  		// Get and print favourite questions
+  		$favouriteQuestionArray = $fc::getFavouriteQuestions($_SESSION['userid']);
+  		if(isset($favouriteQuestionArray)){
+	  		echo "
+	  			<div class= 'container'>
+	  			<br>
+	  			<h3>Favourite Questions</h3>";
+	  		foreach($favouriteQuestionArray as $favouriteQuestion){
+	  			$vote=getVote($votesQ,$favouriteQuestion->getId());
+	  			$account = $ac::getAccountById($favouriteQuestion->getAccountId());
+
+			    if($favouriteQuestion->getId()==$vote['ref_id'])
+			    	$vote_class=Vote::getClass($vote);
+			    else
+			    	$vote_class=Vote::getClass(false);
+
+				echo "
+				<br>
+				<div class= 'questionBlock'>
+				<div class='col-md-2 '>";
+				$file_path=$account->getProfilePicturePath();
+		        if(!file_exists($file_path)) {
+		           	$file_path = "..\img\avatar2.png";                      
+		        };
+
+		        
+		            echo "<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>
+
+
+					<! ---------------------------- Left column of the Question Block ------------------------ -->
+			            <div class='details vote_btns ".$vote_class." '>
+		  	            <form action= '.\Like.php?ref=questions&ref_id=".$favouriteQuestion->getId()."&vote=1&page=questionThreadPage.php?questionid=".$favouriteQuestion->getId()."'' method='POST'>
+		  	              <button type='submit' class='vote_btn vote_like' ";
+		  	              if(!isset($_SESSION['userid'])){
+		  	              	echo "disabled";
+		  	              }
+		  	            echo "><i class='fa fa-thumbs-up'> ". $favouriteQuestion->getUpvotes() . "</i></button>
+		  	            </form>
+		  	            <form action='.\Like.php?ref=questions&ref_id=".$favouriteQuestion->getId()."&vote=-1&page=questionThreadPage.php?questionid=".$favouriteQuestion->getId()."' method='POST'>
+		  	              <button type='submit' class='vote_btn vote_dislike' ";
+		  	              if(!isset($_SESSION['userid'])){
+		  	              	echo "disabled";
+		  	              }
+		  	            echo "><i class='fa fa-thumbs-down'> ". $favouriteQuestion->getDownvotes() . "</i></button>
+		  	              </form>
+		  	            </div>
+		  	            </div>
+
+					<!------------------------------ right column of question block ------------------------------>
+				    <div class='col-md-10 question'>
+				    	<a href='questionThreadPage.php?questionid=".$favouriteQuestion->getId()."'>
+				        <h3><strong>".$favouriteQuestion->getHeader()."</strong></h3>
+				        </a>
+				        <p>".$favouriteQuestion->getContent()."</p>
+				        <span class ='questionByDetail'>
+					        Asked By: ".$account->getUsername()."<br>
+						  	Posted On: ".$favouriteQuestion->getDate()."<br>
+				        </span>
+				    </div>
+			    </div>";
+
+
+	  		}
+	  		echo "</div>";
+  		}
+  		else{
+  			echo "
+	  			<main>
+	  			<div class='alert alert-warning margins'>
+	      			<h2>You dont have any questions favourited</h2>
+	     		</div></main>";
+  		}
+
+
+
+
+
+
+
+
   	}
+  	function getVote($votes,$info_id){
+      foreach ($votes as $vote) {
+        if($vote['ref_id']==$info_id){
+          return $vote;
+        }
+      }
+      return false;
+    }
 
 
 

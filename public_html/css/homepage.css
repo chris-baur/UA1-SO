@@ -67,3 +67,11 @@
 	padding: 5px;
 	border-color: black;
 }
+
+.favouriteButton{
+	background-color: transparent;
+	border-color: transparent;
+	cursor: pointer;
+	padding: 0px;
+	color: #007bff;
+}

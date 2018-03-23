@@ -118,7 +118,7 @@ class FavouriteController{
 		$password = self::$password;
 		$dbname = self::$dbname;
 		$log = self::$log;
-		$favouritesArray = [];
+		$favouritesArray = null;
 		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -224,7 +224,6 @@ class FavouriteController{
 			$stmt -> bindParam(':question_id', $questionId);			
 		
 			$stmt -> execute();
-			$low->lwrite("Favourite question ID: $questionId was removed from account ID: $accountId");
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
