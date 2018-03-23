@@ -14,7 +14,7 @@
 	include_once('..\..\private\models\Answer.php');
 	include_once('..\..\private\models\Comment.php');
 	include_once('..\..\private\controllers\QuestionThreadController.php');
-	require "../../private/models/Vote.php";
+	require "../../private/controllers/Vote.php";
 	echo "<link rel='stylesheet' type='text/css' href='../css/homepage.css'>
 		<link rel='stylesheet' type='text/css' href='../css/questionThread.css'>";
 
@@ -75,14 +75,14 @@
 
 			<! ---------------------------- Left column of the Question Block ------------------------ -->
 	            <div class='details vote_btns ".$vote_class." '>
-  	            <form action= '..\..\private\models\Like.php?ref=questions&ref_id=".$row->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."'' method='POST'>
+  	            <form action= '.\Like.php?ref=questions&ref_id=".$row->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."'' method='POST'>
   	              <button type='submit' class='vote_btn vote_like' ";
   	              if(!isset($_SESSION['userid'])){
   	              	echo "disabled";
   	              }
   	            echo "><i class='fa fa-thumbs-up'> ". $row->getUpvotes() . "</i></button>
   	            </form>
-  	            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$row->getId()."&vote=-1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
+  	            <form action='.\Like.php?ref=questions&ref_id=".$row->getId()."&vote=-1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
   	              <button type='submit' class='vote_btn vote_dislike' ";
   	              if(!isset($_SESSION['userid'])){
   	              	echo "disabled";
@@ -166,14 +166,14 @@
 
 				<! ---------------------------- Left column of the Answer Block ------------------------ -->
 	            <div class='details vote_btns ".$vote_class." '>
-  	            <form action= '..\..\private\models\Like.php?ref=answers&ref_id=".$answerInfo->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
+  	            <form action= '.\Like.php?ref=answers&ref_id=".$answerInfo->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
   	              <button type='submit' class='vote_btn vote_like' ";
   	              if(!isset($_SESSION['userid'])){
   	              	echo "disabled";
   	              }
   	            echo "><i class='fa fa-thumbs-up'> ". $answerInfo->getUpvotes() . "</i></button>
   	            </form>
-  	            <form action='..\..\private\models\Like.php?ref=answers&ref_id=".$answerInfo->getId()."&vote=-1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
+  	            <form action='.\Like.php?ref=answers&ref_id=".$answerInfo->getId()."&vote=-1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
   	              <button type='submit' class='vote_btn vote_dislike' ";
   	              if(!isset($_SESSION['userid'])){
   	              	echo "disabled";

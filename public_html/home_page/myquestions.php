@@ -1,7 +1,7 @@
 <?php 
   include_once('..\..\private\util\logging.php');
   $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
-  require "../../private/models/Vote.php";
+  require "../../private/controllers/Vote.php";
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     $log->lwrite("POST METHOD. for newQuestion.php");
@@ -84,10 +84,10 @@
           echo "<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>";
           echo "
             <div class='details vote_btns ".$vote_class."'>
-              <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->getId()."&vote=1&page=myquestions.php' method='POST'>
+              <form action='.\Like.php?ref=questions&ref_id=".$info->getId()."&vote=1&page=myquestions.php' method='POST'>
                 <button type='submit' class='vote_btn vote_like'><i class='fa fa-thumbs-up'> ". $info->getUpvotes() . "</i></button>
               </form>
-              <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info->getId()."&vote=-1&page=myquestions.php' method='POST'>
+              <form action='.\Like.php?ref=questions&ref_id=".$info->getId()."&vote=-1&page=myquestions.php' method='POST'>
                 <button type='submit' class='vote_btn vote_dislike'><i class='fa fa-thumbs-down'> ". $info->getDownvotes() . "</i></button>
                 </form>
              </div>   

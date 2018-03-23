@@ -1,6 +1,6 @@
 <?php
 
-$config = parse_ini_file('..\..\..\UA1-SO\config.ini');
+$config = parse_ini_file('..\..\config.ini');
 
 	$servername = $config['servername'];
 	$username = $config['username'];

@@ -1,98 +1,86 @@
-[22/Mar/2018:20:09:28] (loginregister) in login register
-[22/Mar/2018:20:09:28] (loginregister) Got the arrays
-[22/Mar/2018:20:09:28] (loginregister) no session errors
-[22/Mar/2018:20:10:03] (validationRegistration) in validation registration
-[22/Mar/2018:20:10:03] (validationRegistration) Profession option succeeded
-[22/Mar/2018:20:10:03] (validationRegistration) Gender option succeeded
-[22/Mar/2018:20:10:03] (validationRegistration) Security question 1 option succeeded
-[22/Mar/2018:20:10:03] (validationRegistration) Security question 2 option succeeded
-[22/Mar/2018:20:10:03] (validationRegistration)  answer 1 option succeeded
-[22/Mar/2018:20:10:03] (validationRegistration) Security answer 2 option succeeded
-[22/Mar/2018:20:10:04] (validationRegistration) Password hashed succeeded
-[22/Mar/2018:20:10:04] (validationRegistration) valid data true
-[22/Mar/2018:20:10:04] (validationRegistration) added account succesfully. ID: 6
-[22/Mar/2018:20:10:04] (validationRegistration) valid user true
-[22/Mar/2018:20:10:04] (validationRegistration) valid username true
-[22/Mar/2018:20:10:04] (loginregister) in login register
-[22/Mar/2018:20:10:04] (loginregister) Got the arrays
-[22/Mar/2018:20:10:04] (loginregister) in invalid register isset
-[22/Mar/2018:20:10:04] (loginregister) echoed script for on click
-[22/Mar/2018:20:10:04] (loginregister) unsset invalidRegister session
-[22/Mar/2018:20:32:54] (loginregister) in login register
-[22/Mar/2018:20:32:54] (loginregister) Got the arrays
-[22/Mar/2018:20:32:54] (loginregister) in simulating login form button click
-[22/Mar/2018:20:32:54] (loginregister) unsset invalidLogin session
-[22/Mar/2018:20:32:56] (loginregister) in login register
-[22/Mar/2018:20:32:56] (loginregister) Got the arrays
-[22/Mar/2018:20:32:56] (loginregister) no session errors
-[22/Mar/2018:20:33:20] (validationRegistration) in validation registration
-[22/Mar/2018:20:33:20] (validationRegistration) Profession option succeeded
-[22/Mar/2018:20:33:20] (validationRegistration) Gender option succeeded
-[22/Mar/2018:20:33:20] (validationRegistration) Security question 1 option succeeded
-[22/Mar/2018:20:33:20] (validationRegistration) Security question 2 option succeeded
-[22/Mar/2018:20:33:20] (validationRegistration)  answer 1 option succeeded
-[22/Mar/2018:20:33:20] (validationRegistration) Security answer 2 option succeeded
-[22/Mar/2018:20:33:20] (validationRegistration) Password hashed succeeded
-[22/Mar/2018:20:33:20] (validationRegistration) valid data true
-[22/Mar/2018:20:33:20] (validationRegistration) added account succesfully. ID: 7
-[22/Mar/2018:20:33:20] (validationRegistration) valid user true
-[22/Mar/2018:20:33:20] (validationRegistration) valid username true
-[22/Mar/2018:20:33:20] (loginregister) in login register
-[22/Mar/2018:20:33:20] (loginregister) Got the arrays
-[22/Mar/2018:20:33:20] (loginregister) in simulating login form button click
-[22/Mar/2018:20:33:20] (loginregister) unsset invalidLogin session
-[22/Mar/2018:20:33:30] (validateLogin) Form has requested a post for File: validateLogin.php
-[22/Mar/2018:20:33:30] (validateLogin) Username is: henrykitty
-[22/Mar/2018:20:33:30] (validateLogin) account exists with given username
-[22/Mar/2018:20:33:30] (validateLogin) inside valid user
-[22/Mar/2018:20:33:30] (validateLogin) Password passed prelim validaton
-[22/Mar/2018:20:33:30] (validateLogin) password is valid
-[22/Mar/2018:20:34:16] (myquestions) ID retrieved from session: 7
-[22/Mar/2018:20:34:16] (myquestions) ID in account object: 7
-[22/Mar/2018:20:34:16] (myquestions) Number of rows retrieved: 0
-[22/Mar/2018:22:23:30] (myquestions) ID retrieved from session: 7
-[22/Mar/2018:22:23:30] (myquestions) ID in account object: 7
-[22/Mar/2018:22:23:30] (myquestions) Number of rows retrieved: 0
-[22/Mar/2018:22:23:32] (newQuestion) In new question.php. top of the file
-[22/Mar/2018:22:23:32] (newQuestion) GET METHOD. for newQuestion.php
-[22/Mar/2018:22:23:32] (newQuestion) echoed body of the form
-[22/Mar/2018:22:23:54] (newQuestion) In new question.php. top of the file
-[22/Mar/2018:22:23:54] (newQuestion) POST METHOD. for newQuestion.php
-[22/Mar/2018:22:23:54] (newQuestion) Inside submit question
-[22/Mar/2018:22:23:54] (newQuestion) header and content are set by POST
-[22/Mar/2018:22:23:54] (newQuestion) session user id is set: 7
-[22/Mar/2018:22:23:54] (newQuestion) Question has been made
-[22/Mar/2018:22:23:54] (newQuestion) about to use function in question controller to add the question
-[22/Mar/2018:22:23:54] (newQuestion) added question succesfully. ID: 12
-[22/Mar/2018:22:23:54] (newQuestion) after adding the question to the database. Before redirecting to my questions
-[22/Mar/2018:22:23:54] (myquestions) ID retrieved from session: 7
-[22/Mar/2018:22:23:54] (myquestions) ID in account object: 7
-[22/Mar/2018:22:23:54] (myquestions) Number of rows retrieved: 1
-[22/Mar/2018:22:23:57] (questionThreadPage) Got the question with account username: henrykitty
-[22/Mar/2018:22:23:57] (questionThreadPage) Got all the answer threads. Size of array: 0
-[22/Mar/2018:22:23:57] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
-[22/Mar/2018:22:23:57] (questionThreadPage) Got everything for the QuestionThread
-[22/Mar/2018:22:24:00] (myquestions) ID retrieved from session: 7
-[22/Mar/2018:22:24:00] (myquestions) ID in account object: 7
-[22/Mar/2018:22:24:00] (myquestions) Number of rows retrieved: 1
-[22/Mar/2018:22:24:45] (questionThreadPage) Got the question with account username: henrykitty
-[22/Mar/2018:22:24:45] (questionThreadPage) Got all the answer threads. Size of array: 0
-[22/Mar/2018:22:24:45] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
-[22/Mar/2018:22:24:45] (questionThreadPage) Got everything for the QuestionThread
-[22/Mar/2018:22:24:54] (myquestions) ID retrieved from session: 7
-[22/Mar/2018:22:24:54] (myquestions) ID in account object: 7
-[22/Mar/2018:22:24:54] (myquestions) Number of rows retrieved: 1
-[22/Mar/2018:22:25:22] (myquestions) ID retrieved from session: 7
-[22/Mar/2018:22:25:22] (myquestions) ID in account object: 7
-[22/Mar/2018:22:25:22] (myquestions) Number of rows retrieved: 1
-[22/Mar/2018:22:25:41] (myquestions) ID retrieved from session: 7
-[22/Mar/2018:22:25:41] (myquestions) ID in account object: 7
-[22/Mar/2018:22:25:41] (myquestions) Number of rows retrieved: 1
-[22/Mar/2018:22:25:45] (questionThreadPage) Got the question with account username: henrykitty
-[22/Mar/2018:22:25:45] (questionThreadPage) Got all the answer threads. Size of array: 0
-[22/Mar/2018:22:25:45] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
-[22/Mar/2018:22:25:45] (questionThreadPage) Got everything for the QuestionThread
-[22/Mar/2018:22:30:59] (questionThreadPage) Got the question with account username: henrykitty
-[22/Mar/2018:22:30:59] (questionThreadPage) Got all the answer threads. Size of array: 0
-[22/Mar/2018:22:30:59] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
-[22/Mar/2018:22:30:59] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:22:30] (newAnswer) valid string
+[23/Mar/2018:00:22:30] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:22:30] (newAnswer) valid id here
+[23/Mar/2018:00:22:30] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:22:30] (newAnswer) valid id here
+[23/Mar/2018:00:22:30] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:22:30] (newAnswer) 1 , 12, dbvhsvbsvhjs, 2018-03-23 00:22:30, 0, 0, 
+[23/Mar/2018:00:22:30] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:22:30] (newAnswer) added answer succesfully. ID: 0
+[23/Mar/2018:00:22:30] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:22:30] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:22:30] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:22:30] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:22:30] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:40:45] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:40:45] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:40:45] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:40:45] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:40:45] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:40:49] (newAnswer) valid string
+[23/Mar/2018:00:40:49] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:40:49] (newAnswer) valid id here
+[23/Mar/2018:00:40:49] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:40:49] (newAnswer) valid id here
+[23/Mar/2018:00:40:49] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:40:49] (newAnswer) 1 , 12, sfnsbdkjbndjbndkf, 2018-03-23 00:40:49, 0, 0, 
+[23/Mar/2018:00:40:49] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:40:49] (newAnswer) added answer succesfully. ID: 0
+[23/Mar/2018:00:40:49] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:40:49] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:40:49] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:40:49] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:40:49] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:43:16] (newAnswer) valid string
+[23/Mar/2018:00:43:16] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:43:16] (newAnswer) valid id here
+[23/Mar/2018:00:43:16] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:43:16] (newAnswer) valid id here
+[23/Mar/2018:00:43:16] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:43:16] (newAnswer) 1 , 12, jfdjbnjfdbkddfb, 2018-03-23 00:43:16, 0, 0, jj 
+[23/Mar/2018:00:43:16] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:43:16] (newAnswer) added answer succesfully. ID: 0
+[23/Mar/2018:00:43:16] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:43:16] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:43:16] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:43:16] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:43:16] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:45:57] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:45:57] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:45:57] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:45:57] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:45:57] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:46:02] (newAnswer) valid string
+[23/Mar/2018:00:46:02] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:46:02] (newAnswer) valid id here
+[23/Mar/2018:00:46:02] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:46:02] (newAnswer) valid id here
+[23/Mar/2018:00:46:02] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:46:02] (newAnswer) 1 , 12, jvnjdvndkj, 2018-03-23 00:46:02, 0, 0, 
+[23/Mar/2018:00:46:02] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:46:02] (newAnswer) added answer succesfully. ID: 0
+[23/Mar/2018:00:46:02] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:46:02] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:46:02] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:46:02] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:46:02] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:48:03] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:48:03] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:03] (questionThreadPage) Got all the answer threads. Size of array: 1
+[23/Mar/2018:00:48:03] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:03] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:00:48:06] (newAnswer) valid string
+[23/Mar/2018:00:48:06] (newAnswer) Checking ID: accountId
+[23/Mar/2018:00:48:06] (newAnswer) valid id here
+[23/Mar/2018:00:48:06] (newAnswer) Checking ID: questionId
+[23/Mar/2018:00:48:06] (newAnswer) valid id here
+[23/Mar/2018:00:48:06] (newAnswer) servername: localhost, username: ua1, password: Ua1password0), dbname: ua1_so
+[23/Mar/2018:00:48:06] (newAnswer) 1 , 12, gffgfgfg, 2018-03-23 00:48:06, 0, 0, 0
+[23/Mar/2018:00:48:06] (newAnswer) adding answer to question ID: 12, with accountId: 1
+[23/Mar/2018:00:48:06] (newAnswer) added answer succesfully. ID: 2
+[23/Mar/2018:00:48:07] (questionThreadPage) Got the question with account username: henrykitty
+[23/Mar/2018:00:48:07] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:07] (questionThreadPage) Got all the comment threads for Type: answer with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:07] (questionThreadPage) Got all the answer threads. Size of array: 2
+[23/Mar/2018:00:48:07] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
+[23/Mar/2018:00:48:07] (questionThreadPage) Got everything for the QuestionThread

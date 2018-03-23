@@ -20,7 +20,8 @@ $log = new Logging();
 	*/
 	function addAnswer($answer){
 		global $servername, $username, $password, $dbname, $log;
-		$answer_id = 0;
+		$log->lwrite("servername: $servername, username: $username, password: $password, dbname: $dbname");		
+		$answer_id = -9;
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
@@ -34,6 +35,8 @@ $log = new Logging();
 			$up = $answer->getUpvotes();
 			$down = $answer->getDownvotes();
 			$best = $answer->getBest();
+
+			$log->lwrite("$accountId , $questionId, $content, $date, $up, $down, $best");
 										
 			$stmt -> bindParam(':account_id', $accountId);
 			$stmt -> bindParam(':question_id', $questionId);
@@ -43,6 +46,7 @@ $log = new Logging();
             $stmt -> bindParam(':downvotes', $down);
             $stmt -> bindParam(':best', $best);
 			
+            $log->lwrite("adding answer to question ID: $questionId, with accountId: $accountId");			
 			$stmt -> execute();
             $answer_id = $pdo -> lastInsertId();
             $log->lwrite('added answer succesfully. ID: '.$answer_id);

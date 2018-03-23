@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST'){
 	die();
 }
 
-require 'Vote.php';
+require "../../private/controllers/Vote.php";
 $vote= new Vote();
 if($_GET['vote']==1){
 	$vote ->like($_GET['ref'],$_GET['ref_id'],$_SESSION['userid']);
@@ -19,4 +19,4 @@ if($_GET['vote']==1){
 	$vote->dislike($_GET['ref'],$_GET['ref_id'],$_SESSION['userid']);
 }
 
-header('Location: ../../public_html/home_page/'. $_GET['page']);
+header('Location: ./'. $_GET['page']);

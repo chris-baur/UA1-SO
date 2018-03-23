@@ -10,6 +10,7 @@
 			$answerObject->setQuestionId($_POST['questionId']);
 			$answerObject->setContent($_POST['answerContent']);
 			$answerObject->setDate(date("Y-m-d H:i:s"));
+			$answerObject->setBest(0);
 
 			addAnswer($answerObject);
 		}
@@ -32,7 +33,7 @@
 		global $log;
     		$log->lwrite('Checking ID: ' . $id);
 
-		if(!(empty($_POST[$id])) && isset($_POST[$id]) && is_numeric($_POST[$id]) && ($_POST[$id]) >= 0){
+		if(!(empty($_POST[$id])) && isset($_POST[$id]) && is_numeric($_POST[$id]) && $_POST[$id] >= 0){
     		$log->lwrite('valid id here');
 			return true;
 		}

@@ -14,7 +14,7 @@
 		var $downvotes;
 		var $best;
 		
-		function __construct($id = 0, $account_id = 0, $question_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0, $best = false) {			
+		function __construct($id = 0, $account_id = 0, $question_id = 0, $content = 'content', $date = '2011-08-08 00:00:00.0', $upvotes = 0, $downvotes = 0, $best = 0) {			
 			$this->id = $id;
 			$this->account_id = $account_id;
 			$this->question_id = $question_id;

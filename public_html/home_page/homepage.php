@@ -1,7 +1,7 @@
 <?php 
   include_once('..\..\private\util\logging.php');
   $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
-  require "../../private/models/Vote.php";
+  require "../../private/controllers/Vote.php";
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     $log->lwrite("POST METHOD. for homepage.php");
@@ -75,14 +75,14 @@
             echo "<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>";
             echo"
 	            <div class='details vote_btns ".$vote_class." '>
-  	            <form action= '..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=1&page=homepage.php' method='POST'>
+  	            <form action= '.\Like.php?ref=questions&ref_id=".$info['id']."&vote=1&page=homepage.php' method='POST'>
   	              <button type='submit' class='vote_btn vote_like' ";
   	              if(!isset($_SESSION['userid'])){
   	              	echo "disabled";
   	              }
   	            echo "><i class='fa fa-thumbs-up'> ". $info['upvotes'] . "</i></button>
   	            </form>
-  	            <form action='..\..\private\models\Like.php?ref=questions&ref_id=".$info['id']."&vote=-1&page=homepage.php' method='POST'>
+  	            <form action='.\Like.php?ref=questions&ref_id=".$info['id']."&vote=-1&page=homepage.php' method='POST'>
   	              <button type='submit' class='vote_btn vote_dislike' ";
   	              if(!isset($_SESSION['userid'])){
   	              	echo "disabled";
