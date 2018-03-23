@@ -14,7 +14,7 @@
 		var $downvotes;
 		var $tags;
 
-		function __construct($id = 0, $account_id = null, $header = 'header', $content = 'content', $date = '2018-01-01 01:00:00.0', $upvotes = 0, $downvotes = 0, $tags = []) {
+		function __construct($id = 0, $account_id = null, $header = 'header', $content = 'content', $date = '2018-01-01 01:00:00.0', $upvotes = 0, $downvotes = 0, $tags = ['Default', 'Tag']) {
 			
 			$this->id = $id;
 			$this->account_id = $account_id;
