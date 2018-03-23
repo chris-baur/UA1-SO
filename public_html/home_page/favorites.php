@@ -71,9 +71,57 @@
 		  	              	echo "disabled";
 		  	              }
 		  	            echo "><i class='fa fa-thumbs-down'> ". $favouriteQuestion->getDownvotes() . "</i></button>
-		  	              </form>
-		  	            </div>
-		  	            </div>
+		  	              </form>";
+
+
+
+		  	            // 	------------------------------------ Favourite Button --------------------------------------
+			    
+			    
+
+					    if(isset($_SESSION['userid'])){
+							$fc = new FavouriteController();
+					    	$favouriteQuestionFound = false;
+					    	$favouriteQuestionArray = $fc::getFavouriteQuestions($_SESSION['userid']);
+					    	if (isset($favouriteQuestionArray)){
+						    	foreach($favouriteQuestionArray as $favouriteQuestion){
+						    		if ($favouriteQuestion->getId() == $favouriteQuestion->getId()){
+						    			$favouriteQuestionFound = true;
+						    		}
+						    	}
+					    	}
+
+					    	if($favouriteQuestionFound == true){
+					    		echo "
+					    			<form method='post' action = 'newFavouritePage.php'>
+								  		<input type ='hidden' name = 'questionId' value = ".$favouriteQuestion->getId()." >
+								  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+								  		<input type ='hidden' name = 'foundQuestion' value = true>
+
+								  		<button type='submit' class='favouriteButton fa fa-star isFavourited custom-fa' aria-hidden='true'></button>
+								  	</form>";
+					    	}
+
+					    	else{
+					    		echo "
+					    			<form method='post' action = 'newFavouritePage.php'>
+								  		<input type ='hidden' name = 'questionId' value = ".$favouriteQuestion->getId()." >
+								  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+								  		<input type ='hidden' name = 'foundQuestion' value = false>
+
+								  		<button type='submit' class='favouriteButton fa fa-star isNotFavourited' aria-hidden='true'></button>
+								  	</form>";
+					    	}
+
+					    }
+
+
+
+
+
+
+
+		  	            echo "</div></div>
 
 					<!------------------------------ right column of question block ------------------------------>
 				    <div class='col-md-10 question'>
