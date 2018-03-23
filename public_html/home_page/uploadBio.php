@@ -1,5 +1,8 @@
 <?php
 
+include_once '../../private/models/Account.php';
+include_once '../../private/controllers/accountController.php';
+
 $config = parse_ini_file('../../config.ini');
 $username = $config['username'];
 $password = $config['password'];
@@ -13,32 +16,20 @@ $status = session_status();
 if($status == PHP_SESSION_NONE){
 	//There is no active session
 	session_start();					
-}		 
+}		
 
-$uploaddir = '../img/accounts/';
-$newfilename = $_SESSION['username'];
-$uploadfile =  $uploaddir. $newfilename. '.png';
-$_SESSION['name'] = $uploadfile;
+$uploadBio =  $_POST['bio'];
 
-$stmt = $conn->prepare("UPDATE `accounts` SET `name` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
-//$stmt = $conn->prepare("UPDATE accounts SET name = $uploadfile");
-$stmt->bindParam(':name', $uploadfile);
-$stmt->execute();	
+$controller = new AccountController();
+$account = new Account();
+$account = $controller::getAccountByUsername($_SESSION['username']);
+$account->setBio($uploadBio);
+$controller::updateAccount($account);
 
-echo "<p>";
+$stmt = $conn->prepare("UPDATE `accounts` SET `bio` = '$uploadBio' WHERE `accounts`.`username` = '$user'");
+$stmt->bindParam(':bio', $uploadBio);
+$stmt->execute();
 
-if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-  echo "File is valid, and was successfully uploaded.\n";
-} else {
-   echo "Upload failed";
-}
-
-header('Location: profile.php'); 
-
-echo "</p>";
-echo '<pre>';
-echo 'Here is some more debugging info:';
-print_r($_FILES);
-print "</pre>";
+header('Location: profile.php');
 
 ?> 

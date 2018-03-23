@@ -9,6 +9,10 @@
 		<body>
 
 			<?php 
+
+				include_once '../../private/models/Account.php';
+				include_once '../../private/controllers/accountController.php';
+				
 				$status = session_status();
 				if($status == PHP_SESSION_NONE){
 					//There is no active session
@@ -24,14 +28,16 @@
 				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-				$uploaddir = '../img/accounts/';
-				$newfilename = $_SESSION['username'];
-				$uploadfile =  $uploaddir. $newfilename. '.png';
-				$_SESSION['name'] = $uploadfile;
+				if(!isset($_SESSION['name'])) {
+					$uploaddir = '../img/accounts/';
+					$newfilename = $_SESSION['username'];
+					$uploadfile =  $uploaddir. $newfilename. '.png';
+					$_SESSION['name'] = $uploadfile;
 
-				$stmt = $conn->prepare("UPDATE `accounts` SET `name` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
-				$stmt->bindParam(':name', $uploadfile);
-				$stmt->execute(); 
+					$stmt = $conn->prepare("UPDATE `accounts` SET `name` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
+					$stmt->bindParam(':name', $uploadfile);
+					$stmt->execute();					
+				}
 			?>
 
 			<div class = "title"> Account Settings
@@ -48,19 +54,28 @@
 						echo "<img src=\"".$file_path."\" width = \"150\" height = \"150\">";								
 					?>
 						<p id = "changePic"> </p>
-
+						<p id = "showBio"> 
+							<?php
+								$controller = new AccountController();
+								$account = new Account();
+								$account = $controller::getAccountByUsername($_SESSION['username']);
+								if (!("Enter your description here.." == $account->getBio())) {
+									echo $account->getBio();
+								};
+							 ?>
+						</p>
 					</div>
 
 					<div class = "column2">	 
 							
 							<li>		
-								<input type="submit" id = "password" onclick = "changePassword()" value = "Change Password"/>	
-							</li>
-							<li>
 								<input type=submit id = "profile" onclick = "changePicture()" value="Change profile picture"/>
 							</li>
 							<li>
-								<input type=submit id = "bio" onclick = "changeBio()" value="Change your bio"/>
+								<input type="submit" id = "password" onclick = "changePassword()" value = "Modify password"/>	
+							</li>
+							<li>
+								<input type=submit id = "bio" onclick = "changeBio()" value="Add or change your description"/>
 							</li>
 					</div>
 
@@ -88,14 +103,13 @@
 			function changePassword() {
 				document.getElementById("changeBio").innerHTML = "";
 				document.getElementById("changePic").innerHTML = "";
-				document.getElementById("ChangePass").innerHTML = '<br><form action="changePassword.php" method="POST"> New Password <input type = "password" id = "changePass" name = "newpassword" placeholder = "Password" style = "margin-top: 2%"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/></form>';
-				//Current Password <input type = "text" id = "ChangePass" name = "oldpassword" placeholder = "Password"><br>
+				document.getElementById("ChangePass").innerHTML = '<br><form action="changePassword.php" method="POST"> Current Password <input type = "text" class = "btn btn-gray btn-sm" name = "currentPass" placeholder = "Password"><br>New Password <input type = "password" class = "btn btn-gray btn-sm" name = "newpassword" placeholder = "Password" style = "margin-top: 1%"/><br>Retype New Password <input type = "password" class = "btn btn-gray btn-sm" name = "newpassword" placeholder = "Password" style = "margin-top: 1%"/><br><input type = "submit" class = "btn btn-gray btn-sm" id = "subChange" value = "Submit"/><input type = "submit" class = "btn btn-gray btn-sm" id = "subCancel" onclick = "cancelPass()" value = "Cancel" style = "margin-top: 2%"/></form>';
 			}
 
 			function changeBio() {
 				document.getElementById("ChangePass").innerHTML = "";
 				document.getElementById("changePic").innerHTML = "";
-				document.getElementById("changeBio").innerHTML = '<br>Describe Yourself<form action="uploadBio.php" method="POST" style = "padding-bottom: 2%"><textarea rows = 5 cols = 50 placeholder = "Enter your description here" maxlength = 500 style = "font-size: 18px; height:50%"></textarea><br><input type=submit value="Submit" style = "font-size: 18px"/><input type=submit value="Cancel" onclick = "cancelBio()" style = "font-size: 18px; margin-left: 2%"/></form>';
+				document.getElementById("changeBio").innerHTML = '<br>Describe Yourself<form action="uploadBio.php" method="POST" style = "padding-bottom: 2%"><textarea rows = 5 cols = 50 class = "btn btn-gray btn-sm" name = bio placeholder = "Enter your description here" maxlength = 300 style = "font-size: 18px; height:50%"></textarea><br><input type=submit class = "btn btn-gray btn-sm" value="Submit" style = "font-size: 18px"/><input type=submit class = "btn btn-gray btn-sm" value="Cancel" onclick = "cancelBio()" style = "font-size: 18px; margin-left: 2%"/></form>';
 			}
 
 			function cancelPass() {
