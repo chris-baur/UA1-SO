@@ -14,6 +14,8 @@
 	include_once('..\..\private\models\Answer.php');
 	include_once('..\..\private\models\Comment.php');
 	include_once('..\..\private\controllers\QuestionThreadController.php');
+	include_once('..\..\private\controllers\FavouriteController.php');
+	include_once('..\..\private\models\Favourite.php');
 	require "../../private/controllers/Vote.php";
 	echo "<link rel='stylesheet' type='text/css' href='../css/homepage.css'>
 		<link rel='stylesheet' type='text/css' href='../css/questionThread.css'>";
@@ -70,8 +72,8 @@
         };
 
         
-            echo "<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>
-
+        echo "
+        	<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>
 
 			<! ---------------------------- Left column of the Question Block ------------------------ -->
 	            <div class='details vote_btns ".$vote_class." '>
@@ -90,7 +92,7 @@
   	            echo "><i class='fa fa-thumbs-down'> ". $row->getDownvotes() . "</i></button>
   	              </form>
   	            </div>
-  	            </div>
+			</div>
 
 			<!------------------------------ right column of question block ------------------------------>
 		    <div class='col-md-10 question'>
@@ -98,8 +100,51 @@
 		        <p>".$row->getContent()."</p>
 		        <span class ='questionByDetail'>
 			        Asked By: ".$questionThread->getQuestionName()."<br>
-				  	Posted On: ".$row->getDate()."<br>
-		        </span>
+				  	Posted On: ".$row->getDate();
+
+				 // 	------------------------------------ Favourite Button --------------------------------------
+			    
+			    
+
+			    if(isset($_SESSION['userid'])){
+					$fc = new FavouriteController();
+			    	$favouriteQuestionFound = false;
+			    	$favouriteQuestionArray = $fc::getFavouriteQuestions($_SESSION['userid']);
+			    	if (isset($favouriteQuestionArray)){
+				    	foreach($favouriteQuestionArray as $favouriteQuestion){
+				    		if ($favouriteQuestion->getId() == $questId){
+				    			$favouriteQuestionFound = true;
+				    		}
+				    	}
+			    	}
+
+			    	if($favouriteQuestionFound == true){
+			    		echo "
+			    			<form method='post' action = 'newFavourite.php'>
+						  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
+						  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+						  		<input type ='hidden' name = 'foundQuestion' value = true>
+
+						  		<button type='submit' class='favouriteButton'>Remove Favourite</button>
+						  	</form>";
+			    	}
+
+			    	else{
+			    		echo "
+			    			<form method='post' action = 'newFavourite.php'>
+						  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
+						  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+						  		<input type ='hidden' name = 'foundQuestion' value = false>
+
+						  		<button type='submit' class='favouriteButton'>Favourite</button>
+						  	</form>";
+			    	}
+
+			    }
+
+
+
+		        echo" </span>
 		    </div>
 	    </div><br><hr>";
 

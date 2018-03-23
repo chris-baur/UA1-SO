@@ -224,7 +224,6 @@ class FavouriteController{
 			$stmt -> bindParam(':question_id', $questionId);			
 		
 			$stmt -> execute();
-			$low->lwrite("Favourite question ID: $questionId was removed from account ID: $accountId");
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
