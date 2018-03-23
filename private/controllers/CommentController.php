@@ -229,7 +229,7 @@ class CommentController{
 				$stmt = $pdo -> prepare($sql);
 				$stmt -> bindParam(':answerId', $answerId);				
 			}else{
-				$sql = "SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id IS NULL AND question_id = :question_id;";
+				$sql = "SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id IS NULL AND question_id = :questionId;";
 				$stmt = $pdo -> prepare($sql);					
 				$stmt -> bindParam(':questionId', $questionId);
 			}
