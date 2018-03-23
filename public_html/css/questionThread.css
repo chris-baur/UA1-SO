@@ -45,11 +45,19 @@
 .utilities_btns form {
 	display: inline-block;
 }
+
 .delete_btn{
 	border: none;
 	cursor:pointer;
 	background: transparent;
 }
+
+.edit_btn{
+	border: none;
+	cursor:pointer;
+	background: transparent;
+}
+
 .delete_btn :hover{
 	color: #cc0000;
 }
@@ -101,4 +109,8 @@
 
 .newAnswerButton:focus{
 	outline: none;
+}
+.editText{
+	min-height: 70px;
+	max-height: 400px;
 }
