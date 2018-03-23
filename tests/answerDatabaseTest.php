@@ -9,6 +9,8 @@ class answerDatabaseTest extends PHPUnit\Framework\TestCase{
         $a = new Answer();
         $expectedContent = 'A random content for testing'; 
         $a->setContent($expectedContent);
+        $a->setQuestionId(1);
+        $a->setAccountId(1);
         $id = $ac::addAnswer($a);
         $addedA = $ac::getAnswerById($id);
         $actualContent = $addedA->getContent();

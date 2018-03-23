@@ -226,13 +226,13 @@ class CommentController{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 			if(isset($answerId)){
 				$sql = "SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id = :answerId AND question_id IS NULL;";
-				$stmt = $pdo -> prepare($sql);
-				$stmt -> bindParam(':answerId', $answerId);					
+								
 			}else{
 				$sql = "SELECT id, account_id, question_id, answer_id, content, date FROM comments WHERE answer_id IS NULL AND question_id = :question_id;";
-				$stmt = $pdo -> prepare($sql);					
-				$stmt -> bindParam(':questionId', $questionId);
 			}
+			$stmt = $pdo -> prepare($sql);
+			$stmt -> bindParam(':answerId', $answerId);				
+			$stmt -> bindParam(':questionId', $questionId);
 			$stmt -> execute();
 			
             // if there is comment with specified question and answer idid
