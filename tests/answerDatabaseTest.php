@@ -21,7 +21,8 @@ class answerDatabaseTest extends PHPUnit\Framework\TestCase{
         $ac = new AnswerController();
         $account = new Account();
         $account->setId(1);
-        $expectedNumber = 19;
+        //increased by 1 since we added an answer which corresponds to the account in previous function
+        $expectedNumber = 20;
         
         $actualNumber = sizeof($ac::getAnswersByAccount($account));
         $this->assertEquals($expectedNumber, $actualNumber);
@@ -37,7 +38,8 @@ class answerDatabaseTest extends PHPUnit\Framework\TestCase{
     }
     public function testGetAnswersByQuestionId(){
         $ac = new AnswerController();
-        $expectedNumber = 1;
+        //increased by 1 since we added an answer which corresponds to the question id in previous function        
+        $expectedNumber = 2;
         $questionId = 1;
         
         $actualNumber = sizeof($ac::getAnswersByQuestionId($questionId));
