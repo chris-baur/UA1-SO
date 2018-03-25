@@ -35,7 +35,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
  $account = $ac::getAccountById($SESSION["id"]);
  $s1 = $account->getSecurityOne();
 $s2 = $account->getSecurityTwo();
+
 echo "
+<form class='modal-content animate' action='validateSQ.php' method='POST'>
 <label> <b> Enter username </b>
 <input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
 <label> <b> Security Question 1 </b>". $s1;
@@ -48,12 +50,13 @@ echo"
 echo"
   <input ng-model='answer1' type='text' placeholder='Enter Answer' name='Answer1' required>
 
-  button type='submit'>Login</button>
+  <button type='submit'>Login</button>
           <button type='button' onclick=" . '"document.getElementById(' . "'login'" . ").style.display='none'" . '"' . "class='cancel'>Cancel</button>
-
+</form>
   <p>&nbsp;</p>
 
   <p style='text-align: center;''> © All Rights Reserved 2018 </p>
+
 </body>
 </html>";
 }

@@ -87,3 +87,11 @@
 [25/Mar/2018:23:38:41] (forgotpassword) GET METHOD. for forgotpassword.php
 [25/Mar/2018:23:39:00] (forgotpassword) GET METHOD. for forgotpassword.php
 [25/Mar/2018:23:39:00] (forgotpassword) returning account
+[25/Mar/2018:23:39:53] (forgotpassword) GET METHOD. for forgotpassword.php
+[25/Mar/2018:23:39:53] (forgotpassword) returning account
+[25/Mar/2018:23:42:46] (forgotpassword) GET METHOD. for forgotpassword.php
+[25/Mar/2018:23:42:46] (forgotpassword) returning account
+[25/Mar/2018:23:43:19] (forgotpassword) GET METHOD. for forgotpassword.php
+[25/Mar/2018:23:43:19] (forgotpassword) returning account
+[25/Mar/2018:23:43:36] (forgotpassword) GET METHOD. for forgotpassword.php
+[25/Mar/2018:23:43:36] (forgotpassword) returning account
