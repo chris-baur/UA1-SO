@@ -16,26 +16,36 @@ echo "
 "
 ;
 
-if($_SERVER["REQUEST_METHOD"] == "POST")
+if($_SERVER["REQUEST_METHOD"] == "GET")
 {
-    $log->lwrite("POST METHOD. for forgotpassword.php");
+  include_once '..\..\private\util\sets.php';
+    include_once '..\..\private\util\logging.php';
+    include_once '..\..\private\controllers\AccountController.php';
+    include_once '..\..\private\models\Account.php';    
+
+  $log = new logging();
+    $log->lwrite("GET METHOD. for forgotpassword.php");
     
  $servername = $config['servername'];
         $username = $config['username'];
         $password = $config['password'];
         $dbname = $config['dbname'];
-
-        $con = mysqli_connect($servername, $username, $password, $dbname) or die("Connection Failed");
-
-      $result = mysqli_query($con,"SELECT username, security_one, security_two, answer_one, answer_two FROM `accounts` WHERE 1 ");
-    }
+    
+ $ac = new AccountController();
+ $account = $ac::getAccountById($SESSION["id"]);
+ $s1 = $account->getSecurityOne();
+$s2 = $account->getSecurityTwo();
 echo "
 <label> <b> Enter username </b>
 <input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
-<label> <b> Security Question 1 </b>
+<label> <b> Security Question 1 </b>". $s1;
+
+echo"
    <input ng-model='answer1' type='text' placeholder='Enter Answer'name='Answer1' required>
 <br>
-<label> <b> Security Question 2 </b>
+<label> <b> Security Question 2 </b>". $s2;
+
+echo"
   <input ng-model='answer1' type='text' placeholder='Enter Answer' name='Answer1' required>
 
   button type='submit'>Login</button>
@@ -46,4 +56,5 @@ echo "
   <p style='text-align: center;''> © All Rights Reserved 2018 </p>
 </body>
 </html>";
+}
  ?>

@@ -84,3 +84,6 @@
 [23/Mar/2018:00:48:07] (questionThreadPage) Got all the answer threads. Size of array: 2
 [23/Mar/2018:00:48:07] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
 [23/Mar/2018:00:48:07] (questionThreadPage) Got everything for the QuestionThread
+[25/Mar/2018:23:38:41] (forgotpassword) GET METHOD. for forgotpassword.php
+[25/Mar/2018:23:39:00] (forgotpassword) GET METHOD. for forgotpassword.php
+[25/Mar/2018:23:39:00] (forgotpassword) returning account
