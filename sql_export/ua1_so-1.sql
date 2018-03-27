@@ -127,6 +127,13 @@ CREATE TABLE IF NOT EXISTS `comments` (
   KEY `fk_comments_answer_id` (`answer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `content`, `account_id`, `question_id`, `answer_id`, `date`) VALUES
+(1, 'This must be from paramore', 1, 1, NULL, '2018-03-23 03:31:58');
+
 
 -- --------------------------------------------------------
 
@@ -152,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `favourites` (
 
 INSERT INTO `favourites` (`id`, `account_id`, `question_id`, `answer_id`) VALUES
 (1, 1, 4, NULL),
-(2, 1, 4, 13);
+(2, 1, NULL, 13);
 
 -- --------------------------------------------------------
 
@@ -179,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
 --
 
 INSERT INTO `questions` (`id`, `account_id`, `header`, `content`, `date`, `upvotes`, `downvotes`, `tags`) VALUES
-(1, 1, 'Ain\'t it Fun', 'Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring', '2018-03-07 16:14:11', 1, 0, 'noob'),
+(1, 1, 'Aint it Fun', 'Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring Brick Brick by Boring', '2018-03-07 16:14:11', 1, 0, 'noob'),
 (4, 1, 'The Pretender', 'Foo FIghters\r\n', '2018-03-07 16:14:44', 1, 0, 'rock'),
 (5, 1, 'Gooey', 'Glass Animals', '2018-03-08 10:39:16', 1, 0, 'java default'),
 (6, 1, 'Tighten Up', 'The Black Keys', '2018-03-20 02:33:58', 0, 0, 'java default'),

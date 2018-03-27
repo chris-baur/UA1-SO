@@ -224,6 +224,7 @@ class FavouriteController{
 			$stmt -> bindParam(':question_id', $questionId);			
 		
 			$stmt -> execute();
+			$log->lwrite("Favourite question ID: $questionId was removed from account ID: $accountId");
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
@@ -253,7 +254,7 @@ class FavouriteController{
 			$stmt -> bindParam(':account_id', $accountId);		
 		
 			$stmt -> execute();
-			$low->lwrite("All Favourite questions were removed from account ID: $accountId");
+			$log->lwrite("All Favourite questions were removed from account ID: $accountId");
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
@@ -284,7 +285,7 @@ class FavouriteController{
 			$stmt -> bindParam(':answer_id', $answerId);			
 		
 			$stmt -> execute();
-			$low->lwrite("Favourite answer ID: $answerId was removed from account ID: $accountId");
+			$log->lwrite("Favourite answer ID: $answerId was removed from account ID: $accountId");
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
@@ -314,7 +315,7 @@ class FavouriteController{
 			$stmt -> bindParam(':account_id', $accountId);		
 		
 			$stmt -> execute();
-			$low->lwrite("All Favourite answers were removed from account ID: $accountId");
+			$log->lwrite("All Favourite answers were removed from account ID: $accountId");
 		}
 		catch(PDOException $e){
 			$log->lwrite($e -> getMessage());
