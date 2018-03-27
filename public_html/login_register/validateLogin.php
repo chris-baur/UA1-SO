@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     //validate using password
     else if(isset($_POST['password'])){
-        $_SESSION['loginType'] = 'password';        
+        $_SESSION['loginType'] = 'password';       
         if($validData){
             // verify password
             if(validateString('password') && strlen($_POST['password']) >= 8){
@@ -103,6 +103,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //username was incorrect from before
         else
             showUserError();
+    }
+    else{
+        $log->lwrite('Incorrect login method used');
+        $invalidLogin = 'Incorrect login method used';
+        showUserError();
     }
 
 }
@@ -145,6 +150,7 @@ function validateUser(){
     global $log;
     $valid = false;
     $user_name = htmlentities($_POST['username']);
+    $_SESSION['uName'] = $user_name;
     if(validateString('username')){
         // user exsts, set valid to true
         $log -> lwrite("Username is: ".$user_name);
