@@ -84,3 +84,133 @@
 [23/Mar/2018:00:48:07] (questionThreadPage) Got all the answer threads. Size of array: 2
 [23/Mar/2018:00:48:07] (questionThreadPage) Got all the comment threads for Type: question with ID: 12. Size of array: 0
 [23/Mar/2018:00:48:07] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:13:48:10] (loginregister) in login register
+[23/Mar/2018:13:48:10] (loginregister) Got the arrays
+[23/Mar/2018:13:48:10] (loginregister) no session errors
+[23/Mar/2018:13:50:30] (loginregister) in login register
+[23/Mar/2018:13:50:30] (loginregister) Got the arrays
+[23/Mar/2018:13:50:30] (loginregister) no session errors
+[23/Mar/2018:13:50:52] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:13:50:52] (validateLogin) Username is: john117
+[23/Mar/2018:13:50:52] (validateLogin) account exists with given username
+[23/Mar/2018:13:50:52] (validateLogin) inside valid user
+[23/Mar/2018:13:50:52] (validateLogin) Password passed prelim validaton
+[23/Mar/2018:13:50:52] (validateLogin) password is valid
+[23/Mar/2018:13:54:38] (uploadBio) account updated succesfully. user name: john117
+[23/Mar/2018:13:54:47] (uploadBio) account updated succesfully. user name: john117
+[23/Mar/2018:14:21:15] (loginregister) in login register
+[23/Mar/2018:14:21:15] (loginregister) Got the arrays
+[23/Mar/2018:14:21:15] (loginregister) no session errors
+[23/Mar/2018:14:21:22] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:21:22] (validateLogin) Username is: john117
+[23/Mar/2018:14:21:22] (validateLogin) account exists with given username
+[23/Mar/2018:14:21:22] (validateLogin) inside valid user
+[23/Mar/2018:14:21:23] (validateLogin) Password passed prelim validaton
+[23/Mar/2018:14:21:23] (validateLogin) password is valid
+[23/Mar/2018:14:21:31] (newQuestion) In new question.php. top of the file
+[23/Mar/2018:14:21:31] (newQuestion) GET METHOD. for newQuestion.php
+[23/Mar/2018:14:21:31] (newQuestion) echoed body of the form
+[23/Mar/2018:14:21:53] (myquestions) ID retrieved from session: 1
+[23/Mar/2018:14:21:53] (myquestions) ID in account object: 1
+[23/Mar/2018:14:21:53] (myquestions) Number of rows retrieved: 5
+[23/Mar/2018:14:22:08] (questionThreadPage) Got the question with account username: john117
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: answer with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the answer threads. Size of array: 11
+[23/Mar/2018:14:22:08] (questionThreadPage) Got all the comment threads for Type: question with ID: 7. Size of array: 0
+[23/Mar/2018:14:22:08] (questionThreadPage) Got everything for the QuestionThread
+[23/Mar/2018:14:22:39] (favorites) returning account
+[23/Mar/2018:14:22:39] (favorites) returning account
+[23/Mar/2018:14:44:34] (loginregister) in login register
+[23/Mar/2018:14:44:34] (loginregister) Got the arrays
+[23/Mar/2018:14:44:34] (loginregister) no session errors
+[23/Mar/2018:14:49:27] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:49:27] (validateLogin) Username is: john117
+[23/Mar/2018:14:49:27] (validateLogin) account exists with given username
+[23/Mar/2018:14:49:27] (validateLogin) inside valid user
+[23/Mar/2018:14:49:27] (validateLogin) Password passed prelim validaton
+[23/Mar/2018:14:49:28] (validateLogin) Password incorrect.
+[23/Mar/2018:14:49:28] (validateLogin) Showing user error
+[23/Mar/2018:14:49:28] (loginregister) in login register
+[23/Mar/2018:14:49:28] (loginregister) Got the arrays
+[23/Mar/2018:14:49:28] (loginregister) in simulating login form button click
+[23/Mar/2018:14:49:28] (loginregister) unsset invalidLogin session
+[23/Mar/2018:14:50:15] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:50:15] (validateLogin) Username is: john118
+[23/Mar/2018:14:50:15] (validateLogin) account does not exist with given username
+[23/Mar/2018:14:50:15] (validateLogin) invalid username. Valid data is false
+[23/Mar/2018:14:50:15] (validateLogin) Showing user error
+[23/Mar/2018:14:50:15] (loginregister) in login register
+[23/Mar/2018:14:50:15] (loginregister) Got the arrays
+[23/Mar/2018:14:50:15] (loginregister) in simulating login form button click
+[23/Mar/2018:14:50:15] (loginregister) unsset invalidLogin session
+[23/Mar/2018:14:50:22] (loginregister) in login register
+[23/Mar/2018:14:50:22] (loginregister) Got the arrays
+[23/Mar/2018:14:50:22] (loginregister) no session errors
+[23/Mar/2018:14:51:24] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:51:24] (validateLogin) Username is: john118
+[23/Mar/2018:14:51:24] (validateLogin) account does not exist with given username
+[23/Mar/2018:14:51:24] (validateLogin) invalid username. Valid data is false
+[23/Mar/2018:14:51:24] (validateLogin) Showing user error
+[23/Mar/2018:14:51:24] (loginregister) in login register
+[23/Mar/2018:14:51:24] (loginregister) Got the arrays
+[23/Mar/2018:14:51:24] (loginregister) in simulating login form button click
+[23/Mar/2018:14:51:24] (loginregister) unsset invalidLogin session
+[23/Mar/2018:14:52:43] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:52:43] (validateLogin) Username is: john117
+[23/Mar/2018:14:52:43] (validateLogin) account exists with given username
+[23/Mar/2018:14:52:43] (validateLogin) inside valid user
+[23/Mar/2018:14:52:43] (validateLogin) Password passed prelim validaton
+[23/Mar/2018:14:52:43] (validateLogin) password is valid
+[23/Mar/2018:14:55:41] (loginregister) in login register
+[23/Mar/2018:14:55:41] (loginregister) Got the arrays
+[23/Mar/2018:14:55:41] (loginregister) no session errors
+[23/Mar/2018:15:10:21] (loginregister) in login register
+[23/Mar/2018:15:10:21] (loginregister) Got the arrays
+[23/Mar/2018:15:10:21] (loginregister) no session errors
+[23/Mar/2018:15:36:08] (loginregister) in login register
+[23/Mar/2018:15:36:08] (loginregister) Got the arrays
+[23/Mar/2018:15:36:08] (loginregister) no session errors
+[23/Mar/2018:15:36:16] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:15:36:16] (validateLogin) Username is: john117
+[23/Mar/2018:15:36:16] (validateLogin) account exists with given username
+[23/Mar/2018:15:36:16] (validateLogin) inside valid user
+[23/Mar/2018:15:36:16] (validateLogin) Pin incorrect.
+[23/Mar/2018:15:36:16] (validateLogin) Showing user error
+[23/Mar/2018:15:36:16] (loginregister) in login register
+[23/Mar/2018:15:36:16] (loginregister) Got the arrays
+[23/Mar/2018:15:36:16] (loginregister) in simulating login form button click
+[23/Mar/2018:15:36:16] (loginregister) unsset invalidLogin session
+[23/Mar/2018:15:36:43] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:15:36:43] (validateLogin) Username is: ubvuhvbus
+[23/Mar/2018:15:36:43] (validateLogin) account does not exist with given username
+[23/Mar/2018:15:36:43] (validateLogin) invalid username. Valid data is false
+[23/Mar/2018:15:36:43] (validateLogin) Showing user error
+[23/Mar/2018:15:36:44] (loginregister) in login register
+[23/Mar/2018:15:36:44] (loginregister) Got the arrays
+[23/Mar/2018:15:36:44] (loginregister) in simulating login form button click
+[23/Mar/2018:15:36:44] (loginregister) unsset invalidLogin session
+[23/Mar/2018:15:39:44] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:15:39:44] (validateLogin) Username is: john711
+[23/Mar/2018:15:39:44] (validateLogin) account exists with given username
+[23/Mar/2018:15:39:44] (validateLogin) inside valid user
+[23/Mar/2018:15:39:44] (validateLogin) Pin incorrect.
+[23/Mar/2018:15:39:44] (validateLogin) Showing user error
+[23/Mar/2018:15:39:44] (loginregister) in login register
+[23/Mar/2018:15:39:44] (loginregister) Got the arrays
+[23/Mar/2018:15:39:44] (loginregister) in simulating login form button click
+[23/Mar/2018:15:39:44] (loginregister) unsset invalidLogin session
+[23/Mar/2018:15:39:52] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:15:39:52] (validateLogin) Username is: john711
+[23/Mar/2018:15:39:52] (validateLogin) account exists with given username
+[23/Mar/2018:15:39:52] (validateLogin) inside valid user
+[23/Mar/2018:15:39:52] (validateLogin) password is valid

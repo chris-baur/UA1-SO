@@ -39,8 +39,6 @@ body {
 	
 }
 
-
-
 #password  {
 	font-size: 18px; 
 	padding: 1%; 
@@ -52,14 +50,25 @@ body {
 	text-decoration:underline;
 }
 
-#button  {
+#profile  {
 	font-size: 18px; 
 	padding: 1%; 
 	border: none;
 	background: none;
 }
 
-#button:hover  {
+#profile:hover  {
+	text-decoration:underline;
+}
+
+#bio  {
+	font-size: 18px; 
+	padding: 1%; 
+	border: none;
+	background: none;
+}
+
+#bio:hover  {
 	text-decoration:underline;
 }
 

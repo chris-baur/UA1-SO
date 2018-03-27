@@ -18,13 +18,13 @@ if($status == PHP_SESSION_NONE){
 $uploaddir = '../img/accounts/';
 $newfilename = $_SESSION['username'];
 $uploadfile =  $uploaddir. $newfilename. '.png';
-$_SESSION['name'] = $uploadfile;
+$_SESSION['profile_picture_path'] = $uploadfile;
+
 
 echo $uploadfile;
 
 $stmt = $conn->prepare("UPDATE `accounts` SET `profile_picture_path` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
-//$stmt = $conn->prepare("UPDATE accounts SET name = $uploadfile");
-$stmt->bindParam(':name', $uploadfile);
+$stmt->bindParam(':profile_picture_path', $uploadfile);
 $stmt->execute();	
 
 echo "<p>";
