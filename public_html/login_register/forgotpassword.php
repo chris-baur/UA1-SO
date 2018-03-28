@@ -1,4 +1,10 @@
 <?php
+
+ $status = session_status();
+  if($status == PHP_SESSION_NONE){
+    //There is no active session
+    session_start();
+  }
 $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
 echo "
 <html ng-app='myRegister' ng-controller='myCtrl'>
@@ -31,32 +37,71 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         $password = $config['password'];
         $dbname = $config['dbname'];
     
- $ac = new AccountController();
- $account = $ac::getAccountById($SESSION["id"]);
+ 
+
+  
+    echo "
+
+<form class='modal-content' method='POST' action='validatSQ.php'>
+        <div class='container'>
+    <label><b>Username</b></label>
+            <input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
+    <p style='text-align: center;'><button id='loginButton' onclick=" . '"document.getElementById(' . "'login'" . ").style.display='block'" . '"' . "style='width:auto;'>Submit</button></p>
+    </div>;
+    </form>";
+
+if(isset($_SESSION['invalidLogin']))
+        {
+          echo "
+          <p id='invalid'>Error: " . $_SESSION['invalidLogin'] . "</p>";
+        }
+    echo "
+    <div id='login' class='modal'>
+      <form class='modal-content animate' action='validateSQ.php' method='POST'>
+        <div class='imgcontainer'>
+          <span onclick=" . '"document.getElementById(' . "'login'" . ").style.display='none'" . '"' . "class='close' title='Close Modal'>&times;</span>
+          <img src='../img/avatar.png' alt='Avatar' class='avatar'>
+         
+        </div>";
+      
+
+        if(isset($_SESSION['invalidLogin']))
+        {
+          echo "
+          <p id='invalid'>Error: " . $_SESSION['invalidLogin'] . "</p>";
+        }
+  
+
+  $ac = new AccountController();
+ $account = $ac::getAccountById(isset($_SESSION['id']));
  $s1 = $account->getSecurityOne();
 $s2 = $account->getSecurityTwo();
+  
+        echo "
 
-echo "
-<form class='modal-content animate' action='validateSQ.php' method='POST'>
-<label> <b> Enter username </b>
-<input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
-<label> <b> Security Question 1 </b>". $s1;
+        <div class='container'>
 
+          <label> <b> Security Question 1 </b>". $s1;
 echo"
    <input ng-model='answer1' type='text' placeholder='Enter Answer'name='Answer1' required>
 <br>
-<label> <b> Security Question 2 </b>". $s2;
+          <label> <b> Security Question 2 </b>". $s2;
 
 echo"
-  <input ng-model='answer1' type='text' placeholder='Enter Answer' name='Answer1' required>
-
-  <button type='submit'>Login</button>
+  <input ng-model='answer2' type='text' placeholder='Enter Answer' name='Answer2' required>
+          
+          <button type='submit'>Login</button>
           <button type='button' onclick=" . '"document.getElementById(' . "'login'" . ").style.display='none'" . '"' . "class='cancel'>Cancel</button>
-</form>
-  <p>&nbsp;</p>
+
+        </div>
+  
+      </form>
+
+    </div>  <p>&nbsp;</p>
 
   <p style='text-align: center;''> © All Rights Reserved 2018 </p>
-
+        </div>
+  
 </body>
 </html>";
 }

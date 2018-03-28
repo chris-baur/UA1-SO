@@ -95,3 +95,129 @@
 [25/Mar/2018:23:43:19] (forgotpassword) returning account
 [25/Mar/2018:23:43:36] (forgotpassword) GET METHOD. for forgotpassword.php
 [25/Mar/2018:23:43:36] (forgotpassword) returning account
+[25/Mar/2018:23:58:46] (forgotpassword) GET METHOD. for forgotpassword.php
+[25/Mar/2018:23:58:46] (forgotpassword) returning account
+[25/Mar/2018:23:58:51] (validateSQ) Form has requested a post for File: validateLogin.php
+[25/Mar/2018:23:58:51] (validateSQ) Username is: Tooba
+[25/Mar/2018:23:58:51] (validateSQ) account does not exist with given username
+[25/Mar/2018:23:58:51] (validateSQ) invalid username. Valid data is false
+[25/Mar/2018:23:58:51] (validateSQ) answer_two failed prelim verification
+[25/Mar/2018:23:58:51] (validateSQ) Showing user error
+[25/Mar/2018:23:58:51] (loginregister) in login register
+[25/Mar/2018:23:58:51] (loginregister) Got the arrays
+[25/Mar/2018:23:58:51] (loginregister) no session errors
+[25/Mar/2018:23:59:03] (forgotpassword) GET METHOD. for forgotpassword.php
+[25/Mar/2018:23:59:03] (forgotpassword) returning account
+[25/Mar/2018:23:59:31] (validateSQ) Form has requested a post for File: validateLogin.php
+[25/Mar/2018:23:59:31] (validateSQ) Username is: t
+[25/Mar/2018:23:59:31] (validateSQ) account does not exist with given username
+[25/Mar/2018:23:59:31] (validateSQ) invalid username. Valid data is false
+[25/Mar/2018:23:59:31] (validateSQ) answer_two failed prelim verification
+[25/Mar/2018:23:59:31] (validateSQ) Showing user error
+[25/Mar/2018:23:59:31] (loginregister) in login register
+[25/Mar/2018:23:59:31] (loginregister) Got the arrays
+[25/Mar/2018:23:59:31] (loginregister) no session errors
+[26/Mar/2018:00:22:39] (forgotpassword) GET METHOD. for forgotpassword.php
+[26/Mar/2018:00:22:39] (forgotpassword) returning account
+[26/Mar/2018:00:23:12] (forgotpassword) GET METHOD. for forgotpassword.php
+[26/Mar/2018:00:23:12] (forgotpassword) returning account
+[26/Mar/2018:00:24:17] (forgotpassword) GET METHOD. for forgotpassword.php
+[26/Mar/2018:00:24:17] (forgotpassword) returning account
+[26/Mar/2018:00:24:34] (forgotpassword) GET METHOD. for forgotpassword.php
+[26/Mar/2018:00:24:34] (forgotpassword) returning account
+[26/Mar/2018:00:25:54] (forgotpassword) GET METHOD. for forgotpassword.php
+[26/Mar/2018:00:25:54] (forgotpassword) returning account
+[26/Mar/2018:00:26:54] (forgotpassword) GET METHOD. for forgotpassword.php
+[26/Mar/2018:00:26:54] (forgotpassword) returning account
+[26/Mar/2018:00:28:18] (forgotpassword) GET METHOD. for forgotpassword.php
+[26/Mar/2018:00:28:18] (forgotpassword) returning account
+[28/Mar/2018:16:57:59] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:16:58:01] (forgotpassword) returning account
+[28/Mar/2018:16:58:35] (loginregister) in login register
+[28/Mar/2018:16:58:35] (loginregister) Got the arrays
+[28/Mar/2018:16:58:35] (loginregister) no session errors
+[28/Mar/2018:16:58:49] (validateLogin) Form has requested a post for File: validateLogin.php
+[28/Mar/2018:16:58:50] (validateLogin) Username is: ua1
+[28/Mar/2018:16:58:50] (validateLogin) account does not exist with given username
+[28/Mar/2018:16:58:50] (validateLogin) invalid username. Valid data is false
+[28/Mar/2018:16:58:50] (validateLogin) Showing user error
+[28/Mar/2018:16:58:50] (loginregister) in login register
+[28/Mar/2018:16:58:50] (loginregister) Got the arrays
+[28/Mar/2018:16:58:50] (loginregister) in simulating login form button click
+[28/Mar/2018:16:58:50] (loginregister) unsset invalidLogin session
+[28/Mar/2018:17:06:58] (loginregister) in login register
+[28/Mar/2018:17:06:58] (loginregister) Got the arrays
+[28/Mar/2018:17:06:58] (loginregister) no session errors
+[28/Mar/2018:17:28:05] (loginregister) in login register
+[28/Mar/2018:17:28:05] (loginregister) Got the arrays
+[28/Mar/2018:17:28:05] (loginregister) no session errors
+[28/Mar/2018:17:28:11] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:28:11] (forgotpassword) returning account
+[28/Mar/2018:17:29:27] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:29:27] (forgotpassword) returning account
+[28/Mar/2018:17:30:02] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:30:02] (forgotpassword) returning account
+[28/Mar/2018:17:30:14] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:30:14] (forgotpassword) returning account
+[28/Mar/2018:17:31:11] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:31:11] (forgotpassword) returning account
+[28/Mar/2018:17:31:46] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:31:46] (forgotpassword) returning account
+[28/Mar/2018:17:33:50] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:33:51] (forgotpassword) returning account
+[28/Mar/2018:17:34:04] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:34:04] (forgotpassword) returning account
+[28/Mar/2018:17:34:29] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:34:29] (forgotpassword) returning account
+[28/Mar/2018:17:34:42] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:34:42] (forgotpassword) returning account
+[28/Mar/2018:17:35:10] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:35:10] (forgotpassword) returning account
+[28/Mar/2018:17:35:47] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:35:47] (forgotpassword) returning account
+[28/Mar/2018:17:35:56] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:35:56] (forgotpassword) returning account
+[28/Mar/2018:17:36:13] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:36:13] (forgotpassword) returning account
+[28/Mar/2018:17:36:43] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:36:43] (forgotpassword) returning account
+[28/Mar/2018:17:38:03] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:38:03] (forgotpassword) returning account
+[28/Mar/2018:17:39:48] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:39:48] (forgotpassword) returning account
+[28/Mar/2018:17:40:38] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:40:38] (forgotpassword) returning account
+[28/Mar/2018:17:41:28] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:41:28] (forgotpassword) returning account
+[28/Mar/2018:17:42:57] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:42:57] (forgotpassword) returning account
+[28/Mar/2018:17:43:34] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:43:34] (forgotpassword) returning account
+[28/Mar/2018:17:45:13] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:45:13] (forgotpassword) returning account
+[28/Mar/2018:17:46:10] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:46:10] (forgotpassword) returning account
+[28/Mar/2018:17:50:17] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:50:17] (forgotpassword) returning account
+[28/Mar/2018:17:51:31] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:51:31] (forgotpassword) returning account
+[28/Mar/2018:17:51:46] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:51:46] (forgotpassword) returning account
+[28/Mar/2018:17:52:28] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:52:28] (forgotpassword) returning account
+[28/Mar/2018:17:52:43] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:52:43] (forgotpassword) returning account
+[28/Mar/2018:17:53:49] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:53:49] (forgotpassword) returning account
+[28/Mar/2018:17:54:08] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:54:08] (forgotpassword) returning account
+[28/Mar/2018:17:55:06] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:55:06] (forgotpassword) returning account
+[28/Mar/2018:17:55:38] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:55:38] (forgotpassword) returning account
+[28/Mar/2018:17:57:43] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:17:57:43] (forgotpassword) returning account
+[28/Mar/2018:18:00:54] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:18:00:54] (forgotpassword) returning account
+[28/Mar/2018:18:03:12] (forgotpassword) GET METHOD. for forgotpassword.php
+[28/Mar/2018:18:03:12] (forgotpassword) returning account
