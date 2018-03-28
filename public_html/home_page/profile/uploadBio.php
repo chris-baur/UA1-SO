@@ -1,7 +1,7 @@
 <?php
 
-include_once '../../private/models/Account.php';
-include_once '../../private/controllers/AccountController.php';
+include_once '../../../private/models/Account.php';
+include_once '../../../private/controllers/AccountController.php';
 
 $status = session_status();
 if($status == PHP_SESSION_NONE){

@@ -1,13 +1,7 @@
 <?php
 
-$config = parse_ini_file('../../config.ini');
-$username = $config['username'];
-$password = $config['password'];
-$dbname = $config['dbname'];
-$servername = $config['servername'];
-
-$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+include_once '../../../private/models/Account.php';
+include_once '../../../private/controllers/AccountController.php';
 
 $status = session_status();
 if($status == PHP_SESSION_NONE){
@@ -15,19 +9,17 @@ if($status == PHP_SESSION_NONE){
 	session_start();					
 }		 
 
-$uploaddir = '../img/accounts/';
+$uploaddir = '../../img/accounts/';
+$path = '../img/accounts/';
 $newfilename = $_SESSION['username'];
 $uploadfile =  $uploaddir. $newfilename. '.png';
-$_SESSION['profile_picture_path'] = $uploadfile;
-
-
-echo $uploadfile;
-
-$stmt = $conn->prepare("UPDATE `accounts` SET `profile_picture_path` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
-$stmt->bindParam(':profile_picture_path', $uploadfile);
-$stmt->execute();	
-
-echo "<p>";
+$profilePath = $path. $newfilename. '.png';
+	
+$controller = new AccountController();
+$account = new Account();
+$account = $controller::getAccountByUsername($_SESSION['username']);
+$account->setProfilePicturePath($profilePath);
+$controller::updateAccount($account);
 
 if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
   echo "File is valid, and was successfully uploaded.\n";
@@ -35,12 +27,6 @@ if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
    echo "Upload failed";
 }
 
-header('Location: profile.php'); 
-
-echo "</p>";
-echo '<pre>';
-echo 'Here is some more debugging info:';
-print_r($_FILES);
-print "</pre>";
+header('Location: ..\profile.php'); 
 
 ?> 
