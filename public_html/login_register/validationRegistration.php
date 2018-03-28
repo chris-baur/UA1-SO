@@ -48,33 +48,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      */
 
     //validating first name
-    // if(validateString('name')){
-    //     $name = htmlentities($_POST['name']);
-    //     $log->lwrite("name is ok");
-    // }
-    // else{
-    //     $invalidRegister[] = 'Invalid name provided';
-    //     $validData = false;
-    //     $log->lwrite("Name is not ok");
+    if(validateString('firstName')){
+        $name = htmlentities($_POST['firstName']);
+        $_SESSION['firstName'] = $name;
+        $log->lwrite("name is ok");
+    }
+    else{
+        $invalidRegister[] = 'Invalid name provided';
+        $validData = false;
+        $log->lwrite("Name is not ok");
         
-    // }
+    }
 
     //validate last name
-    // if(validateString('last_name')){
-    //     $last_name = htmlentities($_POST['last_name']);
-    //     $log->lwrite("last Name is ok");
+    if(validateString('lastName')){
+        $last_name = htmlentities($_POST['lastName']);
+        $_SESSION['lastName'] = $last_name;
         
-    // }
-    // else{
-    //     $invalidRegister[] = 'Invalid last name provided';
-    //     $validData = false;
-    //     $log->lwrite("last Name is not ok");
+        $log->lwrite("last Name is ok");
         
-    // }
+    }
+    else{
+        $invalidRegister[] = 'Invalid last name provided';
+        $validData = false;
+        $log->lwrite("last Name is not ok");
+        
+    }
 
     //validate professions
     if(validateString('profession') && in_array(($_POST['profession']), $sets->getProfessions())) {
         $profession = htmlentities($_POST['profession']);
+        $_SESSION['profession'] = $profession;        
         $log->lwrite('Profession option succeeded');
     }else{
         $invalidRegister[] = 'Invalid profession selected. Make sure it is part of the list';
@@ -86,6 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //validate gender
     if(validateString('gender') && in_array(($_POST['gender']), $sets->getGenders())){
         $gender = htmlentities($_POST['gender']);
+        $_SESSION['gender'] = $gender;
         $log->lwrite('Gender option succeeded');
     }else{
         $invalidRegister[] = 'Invalid gender selected. Make sure it is part of the list';
@@ -94,21 +99,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     }
     
-    //validate bio
-    // if(validateString('bio')) {
-    //     $log->lwrite("bio is ok");        
-    //     $bio = htmlentities($_POST['bio']);
-    // }
-    // else{
-    //     $invalidRegister[] = 'Invalid bio provided. Make sure it is not empty and has proper text';
-    //     $validData = false;
-    //     $log->lwrite("bio is not ok");
+    // validate bio
+    if(validateString('bio')) {
+        $bio = htmlentities($_POST['bio']);
+        $_SESSION['bio'] = $bio;
+        $log->lwrite("bio is ok");
+    }
+    else{
+        $invalidRegister[] = 'Invalid bio provided. Make sure it is not empty and has proper text';
+        $validData = false;
+        $log->lwrite("bio is not ok");
         
-    // }
+    }
     
     //validate security question one
     if(validateString('SQ1') && in_array($_POST['SQ1'], $sets->getSecurityOne())){
             $security_one = htmlentities($_POST['SQ1']);
+            $_SESSION['SQ1'] = $security_one;            
             $log->lwrite('Security question 1 option succeeded');
     }
     else{
@@ -121,6 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //validate security question two
     if(validateString('SQ2') && in_array($_POST['SQ2'], $sets->getSecurityTwo())){
             $security_two = htmlentities($_POST['SQ2']);
+            $_SESSION['SQ2'] = $security_two;                        
             $log->lwrite('Security question 2 option succeeded');
         }
     else{
@@ -133,6 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //validate answer one
     if(validateString('Answer1')){
             $answer_one = htmlentities($_POST['Answer1']);
+            $_SESSION['A1'] = $answer_one;                        
             $log->lwrite(' answer 1 option succeeded');
         }
     else{
@@ -145,6 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //validate answer two
     if(validateString('Answer2')){
             $answer_two = htmlentities($_POST['Answer2']);
+            $_SESSION['A2'] = $answer_two;                        
             $log->lwrite('Security answer 2 option succeeded');
     }
     else{
@@ -155,25 +165,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     //validate pin
-    // if(validateString('pin'))
-    //     $pin = htmlentities($_POST['pin']);
-    // //invalid pin
-    // else{
-    //     $invalidRegister[] = true;
-    //     $validData = false;
-    // }
+    if(isset($_POST['pin']) && !(empty($_POST['pin'])))
+        if(is_numeric($_POST['pin']) && strlen($_POST['pin']) == 4){
+            $pin = htmlentities($_POST['pin']);
+            $_SESSION['pin'] = $pin;                        
+            $log-lwrite('Pin is good');
+        }
+
+        //invalid pin
+        else{
+            $invalidRegister[] = 'Pin must be a number and of length 4';
+            $validData = false;
+            $log->lwrite('Pin is invalid');
+            
+        }
+    else
+        //pin is not set, it is not required so nohing wrong here
+        $log->lwrite('Pin left empty. nothing wrong.');
 
     //password TO BE HASHED
     // validate password 
     if(validateString('password')){
         if(strlen($_POST['password']) < 8 ){
             $validData = false;
-            $invalidRegister[] = 'Invalid password length entered. It must be a minimum of 6 characters';
+            $invalidRegister[] = 'Invalid password length entered. It must be a minimum of 8 characters';
             $log->lwrite("password is not ok");
             
         }
         else {
             $hash = password_hash(htmlentities($_POST['password']), PASSWORD_DEFAULT);
+            $_SESSION['password'] = htmlentities($_POST['password']);                 
             $log->lwrite('Password hashed succeeded');
         }
     }
@@ -183,9 +204,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $log->lwrite("password is not ok");        
     }
     
+    $_SESSION['uName'] = htmlentities($_POST['username']);
     //validate user name
     if($validData){
-        $log->lwrite('valid data true');
+        $log->lwrite('valid data true');                         
         if(validateUser()){
             $log->lwrite('valid user true');
             if(strlen($_POST['username']) >= 4 && strlen($_POST['username']) <= 20){
@@ -193,6 +215,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 //setcookie('invalidArray', 'false', time() + 30);
                 $log->lwrite('valid username true');
                 $_SESSION['validRegister'] = true;
+                unsetSessionFormVariables();
                 header('Location: loginregister.php');
             }
             else{
@@ -209,6 +232,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else {
         $log->lwrite('valid data false');
         showUserError();
+    }
+}
+
+/**
+ * Unsets all the form variables that were stored in the session in case of a error in the form input
+ */
+function unsetSessionFormVariables(){
+    $array = array('firstName', 'lastName', 'password', 'bio', 'profession', 'gender', 'SQ1', 'SQ2', 'A1', 'A2', 'pin');
+    foreach($array as $element){
+        unset($_SESSION[$element]);
     }
 }
 
@@ -236,21 +269,26 @@ function validateUser(){
     $valid = false;
     if(validateString('username')){
         $user_name = htmlentities($_POST['username']);
+        if(strlen($user_name) > 3) {
         // user does not exist, can add user to DB
         // @TODO
-        if(!(accountExists($user_name))){
-            $account = new Account(0, $user_name, $hash, $name, $last_name, $gender, $security_one,
-                $security_two, $answer_one, $answer_two, $bio, $profession, $pin);
-            addAccount($account);
-            $valid = true;
+            if(!(accountExists($user_name))){
+                $account = new Account(0, $user_name, $hash, $name, $last_name, $gender, $security_one,
+                    $security_two, $answer_one, $answer_two, $bio, $profession, $pin);
+                addAccount($account);
+                $valid = true;
+            }
+            // username already in use, show error
+           else {
+                $invalidRegister[] = 'Username is already in use. Please choose another one.';
+            }
+        } else {
+            $invalidRegister[] = 'Username is too short. Please enter a username with at least 4 characters.';
         }
-        // username already in use, show error
-       else
-       $invalidRegister[] = 'Username is already in use. Please choose another one.';
+    } 
+    else {
+        $invalidRegister[] = 'Invalid username entered';
     }
-    //invalid username
-    else
-    $invalidRegister[] = 'Invalid username entered';
     return $valid;
 }
 

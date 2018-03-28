@@ -24,17 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $invalidLogin = null;
     $log->lwrite('Form has requested a post for File: validateLogin.php');
 
-    //validate pin
-    // if($validData){
-    //     if(validateString('pin'))
-    //         $pin = htmlentities($_POST['pin']);
-    //     else{
-    //         $errMessage = "Invalid pin";
-    //         $validData = false;
-    //     }
-    // }else
-    //     showUserError($errMessage);
-
     // verify username
     if(validateUser()){
         $log->lwrite('inside valid user');
@@ -50,38 +39,77 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $validData = false;
     }
 
-    if($validData){
-        // verify password
-        if(validateString('password') && strlen($_POST['password']) >= 8){
-            $log->lwrite('Password passed prelim validaton');
-            $pass = htmlentities($_POST['password']);
-            if (password_verify($pass, $account -> getPassword())){
-                $log->lwrite('password is valid');
-                $_SESSION['userid'] = $account -> getId();
-                $_SESSION['username'] = $account -> getUsername();
-                session_regenerate_id();
-                // redirect to user home page
-                header('Location: ..\home_page\homepage.php');
+    //validate uing pin
+    if(isset($_POST['pin'])){
+        $_SESSION['loginType'] = 'pin';
+        //validate pin
+        if($validData){
+            if(is_numeric($_POST['pin'])){
+                $pin = htmlentities($_POST['pin']);
+                if($pin == $account->getPin()){
+                    $log->lwrite('password is valid');
+                    $_SESSION['userid'] = $account -> getId();
+                    $_SESSION['username'] = $account -> getUsername();
+                    session_regenerate_id();
+                    // redirect to user home page
+                    header('Location: ..\home_page\homepage.php');
+                }
+                else{
+                    //increaseAttemptCounter($userObj);
+                    $log->lwrite('Pin incorrect.');
+                    $invalidLogin = 'Incorrect pin entered';
+                    showUserError();
+                }
+            }else{
+                $log->lwrite('invalid pin. It is not numeric');                
+                $invalidLogin = "Invalid pin. It is not numeric";
+                showUserError();
             }
-            //password doesnt match
+        }else
+            showUserError();
+    }
+    //validate using password
+    else if(isset($_POST['password'])){
+        $_SESSION['loginType'] = 'password';       
+        if($validData){
+            // verify password
+            if(validateString('password') && strlen($_POST['password']) >= 8){
+                $log->lwrite('Password passed prelim validaton');
+                $pass = htmlentities($_POST['password']);
+                if (password_verify($pass, $account -> getPassword())){
+                    $log->lwrite('password is valid');
+                    $_SESSION['userid'] = $account -> getId();
+                    $_SESSION['username'] = $account -> getUsername();
+                    session_regenerate_id();
+                    // redirect to user home page
+                    header('Location: ..\home_page\homepage.php');
+                }
+                //password doesnt match
+                else{
+                    //increaseAttemptCounter($userObj);
+                    $log->lwrite('Password incorrect.');
+                    $invalidLogin = 'Incorrect password entered';
+                    showUserError();
+                }
+            }
+            //incorrect syntax/length password entered
             else{
                 //increaseAttemptCounter($userObj);
-                $log->lwrite('Password incorrect.');
-                $invalidLogin = 'Incorrect password entered';
+                $log->lwrite('Password failed prelim verification');
+                $invalidLogin = 'Incorrect password entered. Check length/syntax';
                 showUserError();
             }
         }
-        //incorrect syntax/length password entered
-        else{
-            //increaseAttemptCounter($userObj);
-            $log->lwrite('Password failed prelim verification');
-            $invalidLogin = 'Incorrect password entered. Check length/syntax';
+        //username was incorrect from before
+        else
             showUserError();
-        }
     }
-    //username was incorrect from before
-    else
+    else{
+        $log->lwrite('Incorrect login method used');
+        $invalidLogin = 'Incorrect login method used';
         showUserError();
+    }
+
 }
 
 /**
@@ -122,6 +150,7 @@ function validateUser(){
     global $log;
     $valid = false;
     $user_name = htmlentities($_POST['username']);
+    $_SESSION['uName'] = $user_name;
     if(validateString('username')){
         // user exsts, set valid to true
         $log -> lwrite("Username is: ".$user_name);

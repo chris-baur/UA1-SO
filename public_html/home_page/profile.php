@@ -7,6 +7,7 @@
 			<link rel="stylesheet" type="text/css" href="../css/profil.css">
 		</head>
 		<body>
+			<main>
 
 			<?php 
 
@@ -165,7 +166,7 @@
 			}
 
 		</script>
-
+		</main>
 		</body>
 	</html>
 

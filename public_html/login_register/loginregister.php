@@ -28,15 +28,17 @@
           <img src='../img/avatar.png' alt='Avatar' class='avatar'>
         </div>";
 
-        if(isset($_SESSION['invalidLogin'])){
+        if((isset($_SESSION['invalidLogin']) && isset($_SESSION['loginType']) && $_SESSION['loginType'] == 'password')){
           echo "<p id='invalid'>Error: " . $_SESSION['invalidLogin'] . "</p>";
         }
   
   
         echo "<div class='container'>
-
-          <label><b>Username</b></label>
-            <input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
+                <label><b>Username</b></label>
+                <input ng-model='userName' type='text' placeholder='Enter Username' ";
+        if(isset($_SESSION['uName']))
+          echo 'ng-init="userName=' . "'" . $_SESSION['uName'] . "'" . '"';
+        echo " name='username' required>
   
           <label><b>Password</b></label>
             <input ng-model='password' type='password' placeholder='Enter Password' name='password' required>
@@ -54,7 +56,7 @@
       </form>
     </div>
   
-    <p style='text-align: center;'><button onclick=" . '"document.getElementById(' . "'pin_login'" . ").style.display='block'" . '"' . "style='width:auto;'>Login using Pin</button></p>
+    <p style='text-align: center;'><button id='loginPinButton' onclick=" . '"document.getElementById(' . "'pin_login'" . ").style.display='block'" . '"' . "style='width:auto;'>Login using Pin</button></p>
   
   <div id='pin_login' class='modal'>
       <form class='modal-content animate' action='validateLogin.php' method='POST'>
@@ -62,10 +64,16 @@
           <span onclick=" . '"document.getElementById(' . "'pin_login'" . ").style.display='none'" . '"' . "class='close' title='Close Modal'>&times;</span>
           <img src='../img/avatar.png' alt='Avatar' class='avatar'>
         </div>";
+          if((isset($_SESSION['invalidLogin']) && isset($_SESSION['loginType']) && $_SESSION['loginType'] == 'pin')){
+            echo "<p id='invalid'>Error: " . $_SESSION['invalidLogin'] . "</p>";
+          }
   
         echo "<div class='container'>
             <label><b>Username</b></label>
-            <input ng-model='userName' type='text' placeholder='Enter Username' name='username' required>
+            <input ng-model='userName' type='text' placeholder='Enter Username' ";
+        if(isset($_SESSION['uName']))
+          echo 'ng-init="userName=' . "'" . $_SESSION['uName'] . "'" . '"';
+      echo " name='username' required>
           <label><b>Pin: </b></label>
             <input ng-model='pin' type='number' placeholder='Enter Pin' name='pin' required>
           <button type='submit'>Login</button>
@@ -93,17 +101,52 @@
           }
 
           echo "<hr>
+          <label><b>First Name</b></label>
+          <input ng-model='firstName' type='text' placeholder='Enter First Name' name='firstName' maxlength='50' required=''";
+          if(isset($_SESSION['firstName']))
+            echo ' ng-init="firstName=' . "'" . $_SESSION['firstName'] . "'" . '"';
+          echo "><span class='alert' ng-if='firstName.length<2 && firstName.length!=0'>First Name entered is too short (Minimum of 1 and maximum of 50 characters)</span>
+        <br>
+          <label><b>Last Name</b></label>
+          <input ng-model='lastName' type='text' placeholder='Enter Last Name'";
+          if(isset($_SESSION['lastName']))
+            echo ' ng-init="lastName=' . "'" . $_SESSION['lastName'] . "'" . '"';
+          echo " name='lastName' maxlength='50' required>
+      <span class='alert' ng-if='lastName.length<2 && lastName.length!=0'>Last Name entered is too short (Minimum of 1 and maximum of 50 characters)</span>
+      <br>
+          <label><b>Bio</b></label>
+          <div class='form-control'>
+            <textarea ng-model='bio' style='width:100%' rows='10' placeholder='Enter Bio'";
+            if(isset($_SESSION['bio']))
+              echo 'ng-init="bio=' . "'" . $_SESSION['bio'] . "'" . '"';
+            echo " name='bio' maxlength='500' required></textarea>
+            <span class='alert' ng-if='bio.length<2 && bio.length!=0'>Bio entered is too short (Minimum of 1 and maximum of 500 characters)</span>
+            
+          </div>
+      
+      <br>
           <label><b>Username</b></label>
-          <input ng-model='userName' type='text' placeholder='Enter Username' name='username' maxlength='20' required>
+          <input ng-model='userName' type='text' placeholder='Enter Username'";
+          if(isset($_SESSION['uName']))
+            echo 'ng-init="userName=' . "'" . $_SESSION['uName'] . "'" . '"';
+          echo " name='username' maxlength='20' required>
       <span class='alert' ng-if='userName.length<4 && userName.length!=0'>Username enter is too short (Minimum of 4 and maximum of 20 characters)</span>
       <br>
           <label><b>Password</b></label>
-          <input ng-model='password' type='password' placeholder='Enter Password' name='password' maxlength='20' required>
+          <input ng-model='password' type='password' placeholder='Enter Password'";
+          if(isset($_SESSION['password']))
+            echo 'ng-init="password=' . "'" . $_SESSION['password'] . "'" . '"';
+          echo " name='password' maxlength='20' required>
       <span class='alert' ng-if='password.length<8 && password.length!=0'>Password should have a minimum of 8 characters</span>
       <br>
           <label> <b> Security Question 1 </b>
             <select name = 'SQ1'>
-              <option value = 'select'> -Please select- </option>";
+              <option value = ";
+              if(isset($_SESSION['SQ1']))
+              echo "'" . $_SESSION['SQ1'] . "'> " . $_SESSION['SQ1'] . " ";
+              else
+                echo "'select'> -Please select- ";
+              echo "</option>";
 
   include '..\..\private\util\sets.php';
   include '..\..\private\util\logging.php';
@@ -134,11 +177,19 @@
   }
   echo "</select> 
     </label>
-    <input ng-model='answer1' type='text' placeholder='Enter Answer' name='Answer1' required>
+    <input ng-model='answer1' type='text' placeholder='Enter Answer'";
+    if(isset($_SESSION['A1']))
+      echo 'ng-init="answer1=' . "'" . $_SESSION['A1'] . "'" . '"';
+    echo " name='Answer1' required>
     <br>
     <label> <b> Security Question 2 </b>
       <select name = 'SQ2'>
-        <option value = 'select'> -Please select- </option>";
+        <option value = ";
+        if(isset($_SESSION['SQ2']))
+          echo "'" . $_SESSION['SQ2'] . "'> " . $_SESSION['SQ2'] . " ";
+        else
+          echo "'select'> -Please select- ";
+        echo "</option>";
   for($ctr = 0; $ctr < sizeof($s2Array); $ctr++){
     $element = $s2Array[$ctr];
     echo "<option value = '$element'> $element </option>";
@@ -147,12 +198,20 @@
 
   echo "</select> 
     </label>
-    <input ng-model='answer2' type='text' placeholder='Enter Answer' name='Answer2' required>
+    <input ng-model='answer2' type='text' placeholder='Enter Answer'";
+    if(isset($_SESSION['A2']))
+      echo 'ng-init="answer2=' . "'" . $_SESSION['A2'] . "'" . '"';
+    echo " name='Answer2' required>
     <br>
     <br>
     <label> <b> Profession </b>
       <select name = 'profession'>
-        <option value = 'select'> -Please select- </option>";
+        <option value = ";
+        if(isset($_SESSION['profession']))
+          echo "'" . $_SESSION['profession'] . "'> " . $_SESSION['profession'] . " ";
+        else
+          echo "'select'> -Please select- ";
+        echo "</option>";
   for($ctr = 0; $ctr < sizeof($professionArray); $ctr++){
     $element = $professionArray[$ctr];
     echo "<option value = '$element'> $element </option>";
@@ -164,7 +223,10 @@
   <br>
   <br>
   <b> Pin (for quick login): </b>
-    <input ng-model='pin' type='pin' placeholder='Enter Pin' name='pin' maxlength='4' >
+    <input ng-model='pin' type='pin' placeholder='Enter Pin'";
+    if(isset($_SESSION['pin']))
+      echo 'ng-init="pin=' . "'" . $_SESSION['pin'] . "'" . '"';
+    echo " name='pin' maxlength='4' >
     <span class='alert' ng-if='pin.length<4 && pin.length!=0'>Pin enter is too short</span>
   <br>
   <br>
@@ -178,10 +240,6 @@
   echo "</form>
 
   <p>&nbsp;</p>
-
-  <label>
-    <input type='checkbox' checked='checked' style='margin-bottom:15px'> Remember me
-  </label>
 
   <p>By creating an account you agree to our <a href='#' style='color:blue'>Terms & Privacy</a>.</p>
 
@@ -197,7 +255,7 @@
 <p style='text-align: center;'> © All Rights Reserved 2018 </p>";
 
 
-if(isset($_SESSION['invalidLogin']) || isset($_SESSION['validRegister'])){
+if((isset($_SESSION['invalidLogin']) && isset($_SESSION['loginType']) && $_SESSION['loginType'] == 'password') || isset($_SESSION['validRegister'])){
   $log->lwrite('in simulating login form button click');
   
   echo '<script>
@@ -209,6 +267,21 @@ if(isset($_SESSION['invalidLogin']) || isset($_SESSION['validRegister'])){
   </html>';
   unset($_SESSION['invalidLogin']);
   unset($_SESSION['validRegister']);
+  $log->lwrite('unsset invalidLogin session');
+}
+else if((isset($_SESSION['invalidLogin']) && isset($_SESSION['loginType']) && $_SESSION['loginType'] == 'pin') || isset($_SESSION['validRegister'])){
+  $log->lwrite('in simulating login form button click');
+  
+  echo '<script>
+    window.addEventListener("load", function(event) {
+        document.getElementById("loginPinButton").click();
+    });
+  </script>
+  </body>
+  </html>';
+  unset($_SESSION['invalidLogin']);
+  unset($_SESSION['validRegister']);
+  unset($_SESSION['loginType']);
   $log->lwrite('unsset invalidLogin session');
 }
 else if(isset($_SESSION['invalidRegister'])){

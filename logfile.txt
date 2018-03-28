@@ -130,3 +130,598 @@
 [23/Mar/2018:14:22:08] (questionThreadPage) Got everything for the QuestionThread
 [23/Mar/2018:14:22:39] (favorites) returning account
 [23/Mar/2018:14:22:39] (favorites) returning account
+[23/Mar/2018:14:44:34] (loginregister) in login register
+[23/Mar/2018:14:44:34] (loginregister) Got the arrays
+[23/Mar/2018:14:44:34] (loginregister) no session errors
+[23/Mar/2018:14:49:27] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:49:27] (validateLogin) Username is: john117
+[23/Mar/2018:14:49:27] (validateLogin) account exists with given username
+[23/Mar/2018:14:49:27] (validateLogin) inside valid user
+[23/Mar/2018:14:49:27] (validateLogin) Password passed prelim validaton
+[23/Mar/2018:14:49:28] (validateLogin) Password incorrect.
+[23/Mar/2018:14:49:28] (validateLogin) Showing user error
+[23/Mar/2018:14:49:28] (loginregister) in login register
+[23/Mar/2018:14:49:28] (loginregister) Got the arrays
+[23/Mar/2018:14:49:28] (loginregister) in simulating login form button click
+[23/Mar/2018:14:49:28] (loginregister) unsset invalidLogin session
+[23/Mar/2018:14:50:15] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:50:15] (validateLogin) Username is: john118
+[23/Mar/2018:14:50:15] (validateLogin) account does not exist with given username
+[23/Mar/2018:14:50:15] (validateLogin) invalid username. Valid data is false
+[23/Mar/2018:14:50:15] (validateLogin) Showing user error
+[23/Mar/2018:14:50:15] (loginregister) in login register
+[23/Mar/2018:14:50:15] (loginregister) Got the arrays
+[23/Mar/2018:14:50:15] (loginregister) in simulating login form button click
+[23/Mar/2018:14:50:15] (loginregister) unsset invalidLogin session
+[23/Mar/2018:14:50:22] (loginregister) in login register
+[23/Mar/2018:14:50:22] (loginregister) Got the arrays
+[23/Mar/2018:14:50:22] (loginregister) no session errors
+[23/Mar/2018:14:51:24] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:51:24] (validateLogin) Username is: john118
+[23/Mar/2018:14:51:24] (validateLogin) account does not exist with given username
+[23/Mar/2018:14:51:24] (validateLogin) invalid username. Valid data is false
+[23/Mar/2018:14:51:24] (validateLogin) Showing user error
+[23/Mar/2018:14:51:24] (loginregister) in login register
+[23/Mar/2018:14:51:24] (loginregister) Got the arrays
+[23/Mar/2018:14:51:24] (loginregister) in simulating login form button click
+[23/Mar/2018:14:51:24] (loginregister) unsset invalidLogin session
+[23/Mar/2018:14:52:43] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:14:52:43] (validateLogin) Username is: john117
+[23/Mar/2018:14:52:43] (validateLogin) account exists with given username
+[23/Mar/2018:14:52:43] (validateLogin) inside valid user
+[23/Mar/2018:14:52:43] (validateLogin) Password passed prelim validaton
+[23/Mar/2018:14:52:43] (validateLogin) password is valid
+[23/Mar/2018:14:55:41] (loginregister) in login register
+[23/Mar/2018:14:55:41] (loginregister) Got the arrays
+[23/Mar/2018:14:55:41] (loginregister) no session errors
+[23/Mar/2018:15:10:21] (loginregister) in login register
+[23/Mar/2018:15:10:21] (loginregister) Got the arrays
+[23/Mar/2018:15:10:21] (loginregister) no session errors
+[23/Mar/2018:15:36:08] (loginregister) in login register
+[23/Mar/2018:15:36:08] (loginregister) Got the arrays
+[23/Mar/2018:15:36:08] (loginregister) no session errors
+[23/Mar/2018:15:36:16] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:15:36:16] (validateLogin) Username is: john117
+[23/Mar/2018:15:36:16] (validateLogin) account exists with given username
+[23/Mar/2018:15:36:16] (validateLogin) inside valid user
+[23/Mar/2018:15:36:16] (validateLogin) Pin incorrect.
+[23/Mar/2018:15:36:16] (validateLogin) Showing user error
+[23/Mar/2018:15:36:16] (loginregister) in login register
+[23/Mar/2018:15:36:16] (loginregister) Got the arrays
+[23/Mar/2018:15:36:16] (loginregister) in simulating login form button click
+[23/Mar/2018:15:36:16] (loginregister) unsset invalidLogin session
+[23/Mar/2018:15:36:43] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:15:36:43] (validateLogin) Username is: ubvuhvbus
+[23/Mar/2018:15:36:43] (validateLogin) account does not exist with given username
+[23/Mar/2018:15:36:43] (validateLogin) invalid username. Valid data is false
+[23/Mar/2018:15:36:43] (validateLogin) Showing user error
+[23/Mar/2018:15:36:44] (loginregister) in login register
+[23/Mar/2018:15:36:44] (loginregister) Got the arrays
+[23/Mar/2018:15:36:44] (loginregister) in simulating login form button click
+[23/Mar/2018:15:36:44] (loginregister) unsset invalidLogin session
+[23/Mar/2018:15:39:44] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:15:39:44] (validateLogin) Username is: john711
+[23/Mar/2018:15:39:44] (validateLogin) account exists with given username
+[23/Mar/2018:15:39:44] (validateLogin) inside valid user
+[23/Mar/2018:15:39:44] (validateLogin) Pin incorrect.
+[23/Mar/2018:15:39:44] (validateLogin) Showing user error
+[23/Mar/2018:15:39:44] (loginregister) in login register
+[23/Mar/2018:15:39:44] (loginregister) Got the arrays
+[23/Mar/2018:15:39:44] (loginregister) in simulating login form button click
+[23/Mar/2018:15:39:44] (loginregister) unsset invalidLogin session
+[23/Mar/2018:15:39:52] (validateLogin) Form has requested a post for File: validateLogin.php
+[23/Mar/2018:15:39:52] (validateLogin) Username is: john711
+[23/Mar/2018:15:39:52] (validateLogin) account exists with given username
+[23/Mar/2018:15:39:52] (validateLogin) inside valid user
+[23/Mar/2018:15:39:52] (validateLogin) password is valid
+[27/Mar/2018:15:42:28] (loginregister) in login register
+[27/Mar/2018:15:42:28] (loginregister) Got the arrays
+[27/Mar/2018:15:42:28] (loginregister) no session errors
+[27/Mar/2018:15:43:15] (questionThreadPage) Got the question with account username: john117
+[27/Mar/2018:15:43:15] (questionThreadPage) Got all the comment threads for Type: answer with ID: 5. Size of array: 0
+[27/Mar/2018:15:43:15] (questionThreadPage) Got all the comment threads for Type: answer with ID: 5. Size of array: 0
+[27/Mar/2018:15:43:15] (questionThreadPage) Got all the comment threads for Type: answer with ID: 5. Size of array: 0
+[27/Mar/2018:15:43:15] (questionThreadPage) Got all the comment threads for Type: answer with ID: 5. Size of array: 0
+[27/Mar/2018:15:43:15] (questionThreadPage) Got all the comment threads for Type: answer with ID: 5. Size of array: 0
+[27/Mar/2018:15:43:15] (questionThreadPage) Got all the answer threads. Size of array: 5
+[27/Mar/2018:15:43:15] (questionThreadPage) Got all the comment threads for Type: question with ID: 5. Size of array: 0
+[27/Mar/2018:15:43:15] (questionThreadPage) Got everything for the QuestionThread
+[27/Mar/2018:15:43:17] (loginregister) in login register
+[27/Mar/2018:15:43:17] (loginregister) Got the arrays
+[27/Mar/2018:15:43:17] (loginregister) no session errors
+[27/Mar/2018:15:43:24] (validateLogin) Form has requested a post for File: validateLogin.php
+[27/Mar/2018:15:43:24] (validateLogin) Username is: john117
+[27/Mar/2018:15:43:24] (validateLogin) account exists with given username
+[27/Mar/2018:15:43:24] (validateLogin) inside valid user
+[27/Mar/2018:15:43:24] (validateLogin) Password passed prelim validaton
+[27/Mar/2018:15:43:24] (validateLogin) Password incorrect.
+[27/Mar/2018:15:43:24] (validateLogin) Showing user error
+[27/Mar/2018:15:43:24] (loginregister) in login register
+[27/Mar/2018:15:43:24] (loginregister) Got the arrays
+[27/Mar/2018:15:43:24] (loginregister) in simulating login form button click
+[27/Mar/2018:15:43:24] (loginregister) unsset invalidLogin session
+[27/Mar/2018:15:43:28] (validateLogin) Form has requested a post for File: validateLogin.php
+[27/Mar/2018:15:43:28] (validateLogin) Username is: john117
+[27/Mar/2018:15:43:28] (validateLogin) account exists with given username
+[27/Mar/2018:15:43:28] (validateLogin) inside valid user
+[27/Mar/2018:15:43:28] (validateLogin) Password passed prelim validaton
+[27/Mar/2018:15:43:28] (validateLogin) password is valid
+[27/Mar/2018:15:43:31] (newQuestion) In new question.php. top of the file
+[27/Mar/2018:15:43:31] (newQuestion) GET METHOD. for newQuestion.php
+[27/Mar/2018:15:43:31] (newQuestion) echoed body of the form
+[27/Mar/2018:17:37:38] (loginregister) in login register
+[27/Mar/2018:17:37:38] (loginregister) Got the arrays
+[27/Mar/2018:17:37:38] (loginregister) no session errors
+[27/Mar/2018:17:39:09] (loginregister) in login register
+[27/Mar/2018:17:39:09] (loginregister) Got the arrays
+[27/Mar/2018:17:39:09] (loginregister) no session errors
+[27/Mar/2018:17:44:12] (loginregister) in login register
+[27/Mar/2018:17:44:12] (loginregister) Got the arrays
+[27/Mar/2018:17:44:12] (loginregister) no session errors
+[27/Mar/2018:17:44:57] (loginregister) in login register
+[27/Mar/2018:17:44:57] (loginregister) Got the arrays
+[27/Mar/2018:17:44:57] (loginregister) no session errors
+[27/Mar/2018:17:45:27] (loginregister) in login register
+[27/Mar/2018:17:45:27] (loginregister) Got the arrays
+[27/Mar/2018:17:45:27] (loginregister) no session errors
+[27/Mar/2018:17:46:33] (loginregister) in login register
+[27/Mar/2018:17:46:33] (loginregister) Got the arrays
+[27/Mar/2018:17:46:33] (loginregister) no session errors
+[27/Mar/2018:17:47:13] (loginregister) in login register
+[27/Mar/2018:17:47:13] (loginregister) Got the arrays
+[27/Mar/2018:17:47:13] (loginregister) no session errors
+[27/Mar/2018:17:48:39] (loginregister) in login register
+[27/Mar/2018:17:48:39] (loginregister) Got the arrays
+[27/Mar/2018:17:48:39] (loginregister) no session errors
+[27/Mar/2018:17:48:55] (loginregister) in login register
+[27/Mar/2018:17:48:55] (loginregister) Got the arrays
+[27/Mar/2018:17:48:55] (loginregister) no session errors
+[27/Mar/2018:17:52:08] (loginregister) in login register
+[27/Mar/2018:17:52:08] (loginregister) Got the arrays
+[27/Mar/2018:17:52:08] (loginregister) no session errors
+[27/Mar/2018:17:52:55] (validationRegistration) in validation registration
+[27/Mar/2018:17:52:55] (validationRegistration) Profession option succeeded
+[27/Mar/2018:17:52:55] (validationRegistration) Gender option succeeded
+[27/Mar/2018:17:52:55] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:17:52:55] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:17:52:55] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:17:52:55] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:17:52:55] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:17:52:55] (validationRegistration) valid data true
+[27/Mar/2018:17:52:55] (validationRegistration) added account succesfully. ID: 4
+[27/Mar/2018:17:52:55] (validationRegistration) valid user true
+[27/Mar/2018:17:52:55] (validationRegistration) valid username true
+[27/Mar/2018:17:52:55] (loginregister) in login register
+[27/Mar/2018:17:52:55] (loginregister) Got the arrays
+[27/Mar/2018:17:52:55] (loginregister) in simulating login form button click
+[27/Mar/2018:17:52:55] (loginregister) unsset invalidLogin session
+[27/Mar/2018:17:53:13] (validateLogin) Form has requested a post for File: validateLogin.php
+[27/Mar/2018:17:53:13] (validateLogin) Username is: guybyebye
+[27/Mar/2018:17:53:13] (validateLogin) account exists with given username
+[27/Mar/2018:17:53:13] (validateLogin) inside valid user
+[27/Mar/2018:17:53:13] (validateLogin) Pin incorrect.
+[27/Mar/2018:17:53:13] (validateLogin) Showing user error
+[27/Mar/2018:17:53:13] (loginregister) in login register
+[27/Mar/2018:17:53:13] (loginregister) Got the arrays
+[27/Mar/2018:17:53:13] (loginregister) in simulating login form button click
+[27/Mar/2018:17:53:13] (loginregister) unsset invalidLogin session
+[27/Mar/2018:18:00:00] (loginregister) in login register
+[27/Mar/2018:18:00:00] (loginregister) Got the arrays
+[27/Mar/2018:18:00:00] (loginregister) no session errors
+[27/Mar/2018:18:00:34] (validationRegistration) in validation registration
+[27/Mar/2018:18:00:34] (validationRegistration) name is ok
+[27/Mar/2018:18:00:34] (validationRegistration) last Name is ok
+[27/Mar/2018:18:00:34] (validationRegistration) Profession option succeeded
+[27/Mar/2018:18:00:34] (validationRegistration) Gender option succeeded
+[27/Mar/2018:18:00:34] (validationRegistration) bio is ok
+[27/Mar/2018:18:00:34] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:18:00:34] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:18:00:34] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:18:00:34] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:18:00:35] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:18:00:35] (validationRegistration) valid data true
+[27/Mar/2018:18:00:35] (validationRegistration) added account succesfully. ID: 5
+[27/Mar/2018:18:00:35] (validationRegistration) valid user true
+[27/Mar/2018:18:00:35] (validationRegistration) valid username true
+[27/Mar/2018:18:00:35] (loginregister) in login register
+[27/Mar/2018:18:00:35] (loginregister) Got the arrays
+[27/Mar/2018:18:00:35] (loginregister) in simulating login form button click
+[27/Mar/2018:18:00:35] (loginregister) unsset invalidLogin session
+[27/Mar/2018:18:00:45] (validateLogin) Form has requested a post for File: validateLogin.php
+[27/Mar/2018:18:00:45] (validateLogin) Username is: hellogoodbye
+[27/Mar/2018:18:00:45] (validateLogin) account exists with given username
+[27/Mar/2018:18:00:45] (validateLogin) inside valid user
+[27/Mar/2018:18:00:45] (validateLogin) Password passed prelim validaton
+[27/Mar/2018:18:00:45] (validateLogin) password is valid
+[27/Mar/2018:18:00:50] (loginregister) in login register
+[27/Mar/2018:18:00:50] (loginregister) Got the arrays
+[27/Mar/2018:18:00:50] (loginregister) no session errors
+[27/Mar/2018:18:00:59] (validateLogin) Form has requested a post for File: validateLogin.php
+[27/Mar/2018:18:00:59] (validateLogin) Username is: hellogoodbye
+[27/Mar/2018:18:00:59] (validateLogin) account exists with given username
+[27/Mar/2018:18:00:59] (validateLogin) inside valid user
+[27/Mar/2018:18:00:59] (validateLogin) password is valid
+[27/Mar/2018:18:01:05] (loginregister) in login register
+[27/Mar/2018:18:01:05] (loginregister) Got the arrays
+[27/Mar/2018:18:01:05] (loginregister) no session errors
+[27/Mar/2018:18:01:48] (validationRegistration) in validation registration
+[27/Mar/2018:18:01:48] (validationRegistration) name is ok
+[27/Mar/2018:18:01:48] (validationRegistration) last Name is ok
+[27/Mar/2018:18:01:48] (validationRegistration) Profession option succeeded
+[27/Mar/2018:18:01:48] (validationRegistration) Gender option succeeded
+[27/Mar/2018:18:01:48] (validationRegistration) bio is ok
+[27/Mar/2018:18:01:48] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:18:01:48] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:18:01:48] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:18:01:48] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:18:01:48] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:18:01:48] (validationRegistration) valid data false
+[27/Mar/2018:18:01:48] (validationRegistration) in show user error: Pin must be a number and of length 4
+[27/Mar/2018:18:01:49] (loginregister) in login register
+[27/Mar/2018:18:01:49] (loginregister) Got the arrays
+[27/Mar/2018:18:01:49] (loginregister) in invalid register isset
+[27/Mar/2018:18:01:49] (loginregister) echoed script for on click
+[27/Mar/2018:18:01:49] (loginregister) unsset invalidRegister session
+[27/Mar/2018:18:05:17] (loginregister) in login register
+[27/Mar/2018:18:05:17] (loginregister) Got the arrays
+[27/Mar/2018:18:05:17] (loginregister) no session errors
+[27/Mar/2018:18:05:49] (validationRegistration) in validation registration
+[27/Mar/2018:18:05:49] (validationRegistration) name is ok
+[27/Mar/2018:18:05:49] (validationRegistration) last Name is ok
+[27/Mar/2018:18:05:49] (validationRegistration) Profession option succeeded
+[27/Mar/2018:18:05:49] (validationRegistration) Gender option succeeded
+[27/Mar/2018:18:05:49] (validationRegistration) bio is ok
+[27/Mar/2018:18:05:49] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:18:05:49] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:18:05:49] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:18:05:49] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:18:31:28] (validationRegistration) in validation registration
+[27/Mar/2018:18:31:28] (validationRegistration) name is ok
+[27/Mar/2018:18:31:28] (validationRegistration) last Name is ok
+[27/Mar/2018:18:31:28] (validationRegistration) Profession option succeeded
+[27/Mar/2018:18:31:28] (validationRegistration) Gender option succeeded
+[27/Mar/2018:18:31:28] (validationRegistration) bio is ok
+[27/Mar/2018:18:31:28] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:18:31:28] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:18:31:28] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:18:31:28] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:18:31:28] (validationRegistration) Pin left empty. nothing wrong.
+[27/Mar/2018:18:31:28] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:18:31:28] (validationRegistration) valid data true
+[27/Mar/2018:18:31:28] (validationRegistration) added account succesfully. ID: 6
+[27/Mar/2018:18:31:28] (validationRegistration) valid user true
+[27/Mar/2018:18:31:28] (validationRegistration) valid username true
+[27/Mar/2018:18:31:28] (loginregister) in login register
+[27/Mar/2018:18:31:28] (loginregister) Got the arrays
+[27/Mar/2018:18:31:28] (loginregister) in simulating login form button click
+[27/Mar/2018:18:31:28] (loginregister) unsset invalidLogin session
+[27/Mar/2018:18:56:07] (loginregister) in login register
+[27/Mar/2018:18:56:07] (loginregister) Got the arrays
+[27/Mar/2018:18:56:07] (loginregister) no session errors
+[27/Mar/2018:18:56:36] (validationRegistration) in validation registration
+[27/Mar/2018:18:56:36] (validationRegistration) name is ok
+[27/Mar/2018:18:56:36] (validationRegistration) last Name is ok
+[27/Mar/2018:18:56:36] (validationRegistration) Profession option succeeded
+[27/Mar/2018:18:56:36] (validationRegistration) Gender is not ok
+[27/Mar/2018:18:56:36] (validationRegistration) bio is ok
+[27/Mar/2018:18:56:36] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:18:56:36] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:18:56:36] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:18:56:36] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:18:56:36] (validationRegistration) Pin left empty. nothing wrong.
+[27/Mar/2018:18:56:36] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:18:56:36] (validationRegistration) valid data false
+[27/Mar/2018:18:56:36] (validationRegistration) in show user error: Invalid gender selected. Make sure it is part of the list
+[27/Mar/2018:18:56:36] (loginregister) in login register
+[27/Mar/2018:18:56:36] (loginregister) Got the arrays
+[27/Mar/2018:18:56:36] (loginregister) in invalid register isset
+[27/Mar/2018:18:56:36] (loginregister) echoed script for on click
+[27/Mar/2018:18:56:36] (loginregister) unsset invalidRegister session
+[27/Mar/2018:18:58:48] (loginregister) in login register
+[27/Mar/2018:18:58:48] (loginregister) Got the arrays
+[27/Mar/2018:18:58:48] (loginregister) no session errors
+[27/Mar/2018:18:59:08] (validationRegistration) in validation registration
+[27/Mar/2018:18:59:08] (validationRegistration) name is ok
+[27/Mar/2018:18:59:08] (validationRegistration) last Name is ok
+[27/Mar/2018:18:59:08] (validationRegistration) Profession option succeeded
+[27/Mar/2018:18:59:08] (validationRegistration) Gender is not ok
+[27/Mar/2018:18:59:08] (validationRegistration) bio is ok
+[27/Mar/2018:18:59:08] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:18:59:08] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:18:59:08] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:18:59:08] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:18:59:08] (validationRegistration) Pin left empty. nothing wrong.
+[27/Mar/2018:18:59:08] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:18:59:08] (validationRegistration) valid data false
+[27/Mar/2018:18:59:08] (validationRegistration) in show user error: Invalid gender selected. Make sure it is part of the list
+[27/Mar/2018:18:59:08] (loginregister) in login register
+[27/Mar/2018:18:59:08] (loginregister) Got the arrays
+[27/Mar/2018:18:59:08] (loginregister) in invalid register isset
+[27/Mar/2018:18:59:08] (loginregister) echoed script for on click
+[27/Mar/2018:18:59:08] (loginregister) unsset invalidRegister session
+[27/Mar/2018:19:00:20] (loginregister) in login register
+[27/Mar/2018:19:00:20] (loginregister) Got the arrays
+[27/Mar/2018:19:00:20] (loginregister) no session errors
+[27/Mar/2018:19:00:34] (loginregister) in login register
+[27/Mar/2018:19:00:34] (loginregister) Got the arrays
+[27/Mar/2018:19:00:34] (loginregister) no session errors
+[27/Mar/2018:19:01:04] (loginregister) in login register
+[27/Mar/2018:19:01:04] (loginregister) Got the arrays
+[27/Mar/2018:19:01:04] (loginregister) no session errors
+[27/Mar/2018:19:04:02] (loginregister) in login register
+[27/Mar/2018:19:04:02] (loginregister) Got the arrays
+[27/Mar/2018:19:04:02] (loginregister) no session errors
+[27/Mar/2018:19:04:24] (loginregister) in login register
+[27/Mar/2018:19:04:24] (loginregister) Got the arrays
+[27/Mar/2018:19:04:24] (loginregister) no session errors
+[27/Mar/2018:19:05:43] (loginregister) in login register
+[27/Mar/2018:19:05:43] (loginregister) Got the arrays
+[27/Mar/2018:19:05:43] (loginregister) no session errors
+[27/Mar/2018:19:07:47] (loginregister) in login register
+[27/Mar/2018:19:07:47] (loginregister) Got the arrays
+[27/Mar/2018:19:07:47] (loginregister) no session errors
+[27/Mar/2018:19:07:51] (loginregister) in login register
+[27/Mar/2018:19:07:51] (loginregister) Got the arrays
+[27/Mar/2018:19:07:51] (loginregister) no session errors
+[27/Mar/2018:19:09:40] (loginregister) in login register
+[27/Mar/2018:19:09:40] (loginregister) Got the arrays
+[27/Mar/2018:19:09:40] (loginregister) no session errors
+[27/Mar/2018:19:09:43] (loginregister) in login register
+[27/Mar/2018:19:09:43] (loginregister) Got the arrays
+[27/Mar/2018:19:09:43] (loginregister) no session errors
+[27/Mar/2018:19:10:19] (loginregister) in login register
+[27/Mar/2018:19:10:19] (loginregister) Got the arrays
+[27/Mar/2018:19:10:19] (loginregister) no session errors
+[27/Mar/2018:19:10:54] (loginregister) in login register
+[27/Mar/2018:19:10:54] (loginregister) Got the arrays
+[27/Mar/2018:19:10:54] (loginregister) no session errors
+[27/Mar/2018:19:10:58] (loginregister) in login register
+[27/Mar/2018:19:10:58] (loginregister) Got the arrays
+[27/Mar/2018:19:10:58] (loginregister) no session errors
+[27/Mar/2018:19:13:19] (loginregister) in login register
+[27/Mar/2018:19:13:19] (loginregister) Got the arrays
+[27/Mar/2018:19:13:19] (loginregister) no session errors
+[27/Mar/2018:19:14:57] (loginregister) in login register
+[27/Mar/2018:19:14:57] (loginregister) Got the arrays
+[27/Mar/2018:19:14:57] (loginregister) no session errors
+[27/Mar/2018:19:15:18] (validationRegistration) in validation registration
+[27/Mar/2018:19:15:18] (validationRegistration) name is ok
+[27/Mar/2018:19:15:18] (validationRegistration) last Name is ok
+[27/Mar/2018:19:15:18] (validationRegistration) Profession option succeeded
+[27/Mar/2018:19:15:18] (validationRegistration) Gender is not ok
+[27/Mar/2018:19:15:18] (validationRegistration) bio is ok
+[27/Mar/2018:19:15:18] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:19:15:18] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:19:15:18] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:19:15:18] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:19:15:18] (validationRegistration) Pin left empty. nothing wrong.
+[27/Mar/2018:19:15:18] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:19:15:18] (validationRegistration) valid data false
+[27/Mar/2018:19:15:18] (validationRegistration) in show user error: Invalid gender selected. Make sure it is part of the list
+[27/Mar/2018:19:15:18] (loginregister) in login register
+[27/Mar/2018:19:15:18] (loginregister) Got the arrays
+[27/Mar/2018:19:15:18] (loginregister) in invalid register isset
+[27/Mar/2018:19:15:18] (loginregister) echoed script for on click
+[27/Mar/2018:19:15:18] (loginregister) unsset invalidRegister session
+[27/Mar/2018:20:14:32] (loginregister) in login register
+[27/Mar/2018:20:14:32] (loginregister) Got the arrays
+[27/Mar/2018:20:14:32] (loginregister) no session errors
+[27/Mar/2018:20:17:18] (loginregister) in login register
+[27/Mar/2018:20:17:18] (loginregister) Got the arrays
+[27/Mar/2018:20:17:18] (loginregister) no session errors
+[27/Mar/2018:20:30:51] (loginregister) in login register
+[27/Mar/2018:20:30:51] (loginregister) Got the arrays
+[27/Mar/2018:20:30:51] (loginregister) no session errors
+[27/Mar/2018:20:34:43] (loginregister) in login register
+[27/Mar/2018:20:34:43] (loginregister) Got the arrays
+[27/Mar/2018:20:34:43] (loginregister) no session errors
+[27/Mar/2018:20:37:51] (loginregister) in login register
+[27/Mar/2018:20:37:51] (loginregister) Got the arrays
+[27/Mar/2018:20:37:51] (loginregister) no session errors
+[27/Mar/2018:20:38:16] (validationRegistration) in validation registration
+[27/Mar/2018:20:38:16] (validationRegistration) name is ok
+[27/Mar/2018:20:38:16] (validationRegistration) last Name is ok
+[27/Mar/2018:20:38:16] (validationRegistration) Profession option succeeded
+[27/Mar/2018:20:38:16] (validationRegistration) Gender is not ok
+[27/Mar/2018:20:38:16] (validationRegistration) bio is ok
+[27/Mar/2018:20:38:16] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:20:38:16] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:20:38:16] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:20:38:16] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:20:38:16] (validationRegistration) Pin left empty. nothing wrong.
+[27/Mar/2018:20:38:16] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:20:38:16] (validationRegistration) valid data false
+[27/Mar/2018:20:38:16] (validationRegistration) in show user error: Invalid gender selected. Make sure it is part of the list
+[27/Mar/2018:20:38:16] (loginregister) in login register
+[27/Mar/2018:20:38:16] (loginregister) Got the arrays
+[27/Mar/2018:20:38:16] (loginregister) in invalid register isset
+[27/Mar/2018:20:38:16] (loginregister) echoed script for on click
+[27/Mar/2018:20:38:16] (loginregister) unsset invalidRegister session
+[27/Mar/2018:20:39:53] (loginregister) in login register
+[27/Mar/2018:20:39:53] (loginregister) Got the arrays
+[27/Mar/2018:20:39:53] (loginregister) no session errors
+[27/Mar/2018:20:43:11] (loginregister) in login register
+[27/Mar/2018:20:43:11] (loginregister) Got the arrays
+[27/Mar/2018:20:43:11] (loginregister) no session errors
+[27/Mar/2018:20:43:34] (loginregister) in login register
+[27/Mar/2018:20:43:34] (loginregister) Got the arrays
+[27/Mar/2018:20:43:34] (loginregister) no session errors
+[27/Mar/2018:20:45:08] (loginregister) in login register
+[27/Mar/2018:20:45:08] (loginregister) Got the arrays
+[27/Mar/2018:20:45:08] (loginregister) no session errors
+[27/Mar/2018:20:45:26] (loginregister) in login register
+[27/Mar/2018:20:45:26] (loginregister) Got the arrays
+[27/Mar/2018:20:45:26] (loginregister) no session errors
+[27/Mar/2018:22:13:30] (loginregister) in login register
+[27/Mar/2018:22:13:30] (loginregister) Got the arrays
+[27/Mar/2018:22:13:30] (loginregister) no session errors
+[27/Mar/2018:22:16:39] (loginregister) in login register
+[27/Mar/2018:22:16:39] (loginregister) Got the arrays
+[27/Mar/2018:22:16:39] (loginregister) no session errors
+[27/Mar/2018:22:16:47] (validationRegistration) in validation registration
+[27/Mar/2018:22:16:47] (validationRegistration) name is ok
+[27/Mar/2018:22:16:47] (validationRegistration) last Name is ok
+[27/Mar/2018:22:16:47] (validationRegistration) Profession option succeeded
+[27/Mar/2018:22:16:47] (validationRegistration) Gender is not ok
+[27/Mar/2018:22:16:47] (validationRegistration) bio is ok
+[27/Mar/2018:22:16:47] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:22:16:47] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:22:16:47] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:22:16:47] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:22:16:47] (validationRegistration) Pin left empty. nothing wrong.
+[27/Mar/2018:22:16:47] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:22:16:47] (validationRegistration) valid data false
+[27/Mar/2018:22:16:47] (validationRegistration) in show user error: Invalid gender selected. Make sure it is part of the list
+[27/Mar/2018:22:16:47] (loginregister) in login register
+[27/Mar/2018:22:16:47] (loginregister) Got the arrays
+[27/Mar/2018:22:16:47] (loginregister) in invalid register isset
+[27/Mar/2018:22:16:47] (loginregister) echoed script for on click
+[27/Mar/2018:22:16:47] (loginregister) unsset invalidRegister session
+[27/Mar/2018:22:19:00] (loginregister) in login register
+[27/Mar/2018:22:19:00] (loginregister) Got the arrays
+[27/Mar/2018:22:19:00] (loginregister) no session errors
+[27/Mar/2018:22:19:07] (validationRegistration) in validation registration
+[27/Mar/2018:22:19:07] (validationRegistration) name is ok
+[27/Mar/2018:22:19:07] (validationRegistration) last Name is ok
+[27/Mar/2018:22:19:07] (validationRegistration) Profession option succeeded
+[27/Mar/2018:22:19:07] (validationRegistration) Gender is not ok
+[27/Mar/2018:22:19:07] (validationRegistration) bio is ok
+[27/Mar/2018:22:19:07] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:22:19:07] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:22:19:07] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:22:19:07] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:22:19:07] (validationRegistration) Pin left empty. nothing wrong.
+[27/Mar/2018:22:19:07] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:22:19:07] (validationRegistration) valid data false
+[27/Mar/2018:22:19:07] (validationRegistration) in show user error: Invalid gender selected. Make sure it is part of the list
+[27/Mar/2018:22:19:07] (loginregister) in login register
+[27/Mar/2018:22:19:07] (loginregister) Got the arrays
+[27/Mar/2018:22:19:07] (loginregister) in invalid register isset
+[27/Mar/2018:22:19:07] (loginregister) echoed script for on click
+[27/Mar/2018:22:19:07] (loginregister) unsset invalidRegister session
+[27/Mar/2018:22:19:54] (loginregister) in login register
+[27/Mar/2018:22:19:54] (loginregister) Got the arrays
+[27/Mar/2018:22:19:54] (loginregister) no session errors
+[27/Mar/2018:22:20:16] (validationRegistration) in validation registration
+[27/Mar/2018:22:20:16] (validationRegistration) name is ok
+[27/Mar/2018:22:20:16] (validationRegistration) last Name is ok
+[27/Mar/2018:22:20:16] (validationRegistration) Profession option succeeded
+[27/Mar/2018:22:20:16] (validationRegistration) Gender is not ok
+[27/Mar/2018:22:20:16] (validationRegistration) bio is ok
+[27/Mar/2018:22:20:16] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:22:20:16] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:22:20:16] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:22:20:16] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:22:20:16] (validationRegistration) Pin left empty. nothing wrong.
+[27/Mar/2018:22:20:16] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:22:20:16] (validationRegistration) valid data false
+[27/Mar/2018:22:20:16] (validationRegistration) in show user error: Invalid gender selected. Make sure it is part of the list
+[27/Mar/2018:22:20:16] (loginregister) in login register
+[27/Mar/2018:22:20:16] (loginregister) Got the arrays
+[27/Mar/2018:22:20:16] (loginregister) in invalid register isset
+[27/Mar/2018:22:20:16] (loginregister) echoed script for on click
+[27/Mar/2018:22:20:16] (loginregister) unsset invalidRegister session
+[27/Mar/2018:22:20:41] (validationRegistration) in validation registration
+[27/Mar/2018:22:20:41] (validationRegistration) name is ok
+[27/Mar/2018:22:20:41] (validationRegistration) last Name is ok
+[27/Mar/2018:22:20:41] (validationRegistration) Profession option succeeded
+[27/Mar/2018:22:20:41] (validationRegistration) Gender option succeeded
+[27/Mar/2018:22:20:41] (validationRegistration) bio is ok
+[27/Mar/2018:22:20:41] (validationRegistration) Security question 1 option succeeded
+[27/Mar/2018:22:20:41] (validationRegistration) Security question 2 option succeeded
+[27/Mar/2018:22:20:41] (validationRegistration)  answer 1 option succeeded
+[27/Mar/2018:22:20:41] (validationRegistration) Security answer 2 option succeeded
+[27/Mar/2018:22:20:41] (validationRegistration) Pin left empty. nothing wrong.
+[27/Mar/2018:22:20:41] (validationRegistration) Password hashed succeeded
+[27/Mar/2018:22:20:41] (validationRegistration) valid data true
+[27/Mar/2018:22:20:41] (validationRegistration) added account succesfully. ID: 7
+[27/Mar/2018:22:20:41] (validationRegistration) valid user true
+[27/Mar/2018:22:20:41] (validationRegistration) valid username true
+[27/Mar/2018:22:20:41] (loginregister) in login register
+[27/Mar/2018:22:20:41] (loginregister) Got the arrays
+[27/Mar/2018:22:20:41] (loginregister) in simulating login form button click
+[27/Mar/2018:22:20:41] (loginregister) unsset invalidLogin session
+[27/Mar/2018:22:20:57] (validateLogin) Form has requested a post for File: validateLogin.php
+[27/Mar/2018:22:20:57] (validateLogin) Username is: suckmy
+[27/Mar/2018:22:20:57] (validateLogin) account exists with given username
+[27/Mar/2018:22:20:57] (validateLogin) inside valid user
+[27/Mar/2018:22:20:57] (validateLogin) Pin incorrect.
+[27/Mar/2018:22:20:57] (validateLogin) Showing user error
+[27/Mar/2018:22:20:57] (loginregister) in login register
+[27/Mar/2018:22:20:57] (loginregister) Got the arrays
+[27/Mar/2018:22:20:57] (loginregister) in simulating login form button click
+[27/Mar/2018:22:20:57] (loginregister) unsset invalidLogin session
+[27/Mar/2018:22:21:07] (validateLogin) Form has requested a post for File: validateLogin.php
+[27/Mar/2018:22:21:07] (validateLogin) Username is: suckmy
+[27/Mar/2018:22:21:07] (validateLogin) account exists with given username
+[27/Mar/2018:22:21:07] (validateLogin) inside valid user
+[27/Mar/2018:22:21:07] (validateLogin) Password passed prelim validaton
+[27/Mar/2018:22:21:07] (validateLogin) password is valid
+[27/Mar/2018:22:23:09] (uploadBio) account updated succesfully. user name: suckmy
+[27/Mar/2018:22:30:38] (loginregister) in login register
+[27/Mar/2018:22:30:38] (loginregister) Got the arrays
+[27/Mar/2018:22:30:38] (loginregister) no session errors
+[27/Mar/2018:22:30:51] (validateLogin) Form has requested a post for File: validateLogin.php
+[27/Mar/2018:22:30:51] (validateLogin) Username is: john117
+[27/Mar/2018:22:30:51] (validateLogin) account exists with given username
+[27/Mar/2018:22:30:51] (validateLogin) inside valid user
+[27/Mar/2018:22:30:51] (validateLogin) Password passed prelim validaton
+[27/Mar/2018:22:30:51] (validateLogin) password is valid
+[27/Mar/2018:22:30:55] (myquestions) ID retrieved from session: 1
+[27/Mar/2018:22:30:55] (myquestions) ID in account object: 1
+[27/Mar/2018:22:30:55] (myquestions) Number of rows retrieved: 5
+[27/Mar/2018:22:30:57] (favorites) returning account
+[27/Mar/2018:22:30:57] (favorites) returning account
+[27/Mar/2018:22:38:27] (newQuestion) In new question.php. top of the file
+[27/Mar/2018:22:38:27] (newQuestion) GET METHOD. for newQuestion.php
+[27/Mar/2018:22:38:27] (newQuestion) echoed body of the form
+[27/Mar/2018:22:38:34] (favorites) returning account
+[27/Mar/2018:22:38:34] (favorites) returning account
+[27/Mar/2018:22:38:39] (loginregister) in login register
+[27/Mar/2018:22:38:39] (loginregister) Got the arrays
+[27/Mar/2018:22:38:39] (loginregister) no session errors
+[27/Mar/2018:22:38:49] (validateLogin) Form has requested a post for File: validateLogin.php
+[27/Mar/2018:22:38:49] (validateLogin) Username is: john117
+[27/Mar/2018:22:38:49] (validateLogin) account exists with given username
+[27/Mar/2018:22:38:49] (validateLogin) inside valid user
+[27/Mar/2018:22:38:49] (validateLogin) Password passed prelim validaton
+[27/Mar/2018:22:38:49] (validateLogin) password is valid
+[27/Mar/2018:22:38:52] (newFavouriteHomepage) Favourite question ID: 4 was removed from account ID: 1
+[27/Mar/2018:22:38:55] (myquestions) ID retrieved from session: 1
+[27/Mar/2018:22:38:55] (myquestions) ID in account object: 1
+[27/Mar/2018:22:38:55] (myquestions) Number of rows retrieved: 5
+[27/Mar/2018:22:39:03] (newFavouriteHomepage) added favourite succesfully. ID: 3
+[27/Mar/2018:22:39:07] (favorites) returning account
+[27/Mar/2018:22:39:15] (newFavouriteHomepage) added favourite succesfully. ID: 4
+[27/Mar/2018:22:39:16] (newFavouriteHomepage) Favourite question ID: 4 was removed from account ID: 1
+[27/Mar/2018:22:39:17] (newFavouriteHomepage) added favourite succesfully. ID: 5
+[27/Mar/2018:22:39:19] (favorites) returning account
+[27/Mar/2018:22:39:19] (favorites) returning account
+[27/Mar/2018:22:39:25] (newFavouriteHomepage) Favourite question ID: 4 was removed from account ID: 1
+[27/Mar/2018:22:39:27] (favorites) returning account
+[27/Mar/2018:22:39:30] (newFavouriteHomepage) added favourite succesfully. ID: 6
+[27/Mar/2018:22:39:32] (favorites) returning account
+[27/Mar/2018:22:39:32] (favorites) returning account
+[27/Mar/2018:22:39:37] (newFavouriteHomepage) Favourite question ID: 4 was removed from account ID: 1
+[27/Mar/2018:22:39:39] (favorites) returning account
+[27/Mar/2018:22:39:45] (newFavouriteHomepage) added favourite succesfully. ID: 7
+[27/Mar/2018:22:39:47] (newFavouriteHomepage) Favourite question ID: 5 was removed from account ID: 1
+[27/Mar/2018:22:39:49] (favorites) returning account
+[27/Mar/2018:22:39:53] (newFavouriteHomepage) added favourite succesfully. ID: 8
+[27/Mar/2018:22:39:55] (favorites) returning account
+[27/Mar/2018:22:39:55] (favorites) returning account
+[27/Mar/2018:22:40:02] (newFavouriteHomepage) added favourite succesfully. ID: 9
+[27/Mar/2018:22:40:06] (favorites) returning account
+[27/Mar/2018:22:40:06] (favorites) returning account
+[27/Mar/2018:22:40:07] (favorites) returning account
+[27/Mar/2018:22:42:59] (favorites) returning account
+[27/Mar/2018:22:42:59] (favorites) returning account
+[27/Mar/2018:22:42:59] (favorites) returning account
+[27/Mar/2018:22:44:08] (newFavouritePage) Favourite question ID: 1 was removed from account ID: 1
+[27/Mar/2018:22:44:08] (favorites) returning account
+[27/Mar/2018:22:44:08] (favorites) returning account
+[27/Mar/2018:22:44:14] (newFavouritePage) Favourite question ID: 5 was removed from account ID: 1
+[27/Mar/2018:22:44:14] (favorites) returning account
+[27/Mar/2018:22:44:15] (newFavouritePage) Favourite question ID: 4 was removed from account ID: 1
+[27/Mar/2018:22:44:23] (newFavouriteHomepage) added favourite succesfully. ID: 10
+[27/Mar/2018:22:44:27] (favorites) returning account

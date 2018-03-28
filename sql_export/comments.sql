@@ -43,6 +43,13 @@ CREATE TABLE IF NOT EXISTS `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `content`, `account_id`, `question_id`, `answer_id`, `date`) VALUES
+(1, 'This must be from paramore', 1, 1, NULL, '2018-03-23 03:31:58');
+
+--
 -- Constraints for dumped tables
 --
 
