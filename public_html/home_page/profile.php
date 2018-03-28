@@ -39,7 +39,7 @@
 						echo "<img class='circle_img' src=\"".$file_path."\" width = \"150\" height = \"150\"><br>";
 						echo $account->getUsername();	
 					?>
-						
+						<img src = "..\img\edit.png" id = "edit" onclick="modifyUsername()">
 						<p id = "changePic"></p>
 						<p id = "showBio" style = "font-size: 60%"> 
 							<?php
@@ -48,19 +48,16 @@
 								};
 							 ?>
 						</p>
+			
+						<button type=button id = "profile" class = "btn btn-primary btn-block" onclick = "changePicture()"> Change profile picture </button>
+						<button type=button id = "profile" class = "btn btn-primary btn-block" onclick = "changePassword()"> Modify password </button>
+						<button type=button id = "profile" class = "btn btn-primary btn-block" onclick = "changeBio()"> Add or change your description </button>
+						
 					</div>
 
 					<div class = "column2">	 
 							
-						<li>		
-							<input type=submit id = "profile" onclick = "changePicture()" value="Change profile picture"/>
-						</li>
-						<li>
-							<input type="submit" id = "password" onclick = "changePassword()" value = "Modify password"/>	
-						</li>
-						<li>
-							<input type=submit id = "bio" onclick = "changeBio()" value="Add or change your description"/>
-						</li>
+						
 					</div>
 
 				</div>					

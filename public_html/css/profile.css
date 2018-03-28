@@ -27,50 +27,41 @@ body {
 }
 
 .column1{
+	background-color: white;
 	position: relative;
 	text-align: center;
+	border-style: solid;
+	border-width: 2px;
+	border-color: gray;
+	border-radius: 2%;
 	line-height: 50%;
 	width: 50%;
 }
 
+.column1 button {
+	background-color: #DEB887;
+	border-color: #F5DEB3;
+}
+
+.column1 button:hover{
+	background-color: #D2B48C;
+	border-color: #F5DEB3;
+}
+
+#edit{
+	width: 20px;
+	height: 20px;
+}
+
+#edit: hover{
+	width: 400px;
+	height: 409px;
+}
 
 .column2{
 	position: relative;
 	text-align: left;
 	width:50%;
-}
-
-#password  {
-	font-size: 18px; 
-	padding: 1%; 
-	border: none;
-	background: none;
-}
-
-#password:hover  {
-	text-decoration:underline;
-}
-
-#profile  {
-	font-size: 18px; 
-	padding: 1%; 
-	border: none;
-	background: none;
-}
-
-#profile:hover  {
-	text-decoration:underline;
-}
-
-#bio  {
-	font-size: 18px; 
-	padding: 1%; 
-	border: none;
-	background: none;
-}
-
-#bio:hover  {
-	text-decoration:underline;
 }
 
 #ChangePass {
@@ -96,9 +87,6 @@ body {
 	padding: 5%;
 }
 
-li{
-	list-style-type: none;
-}
 
 
 
