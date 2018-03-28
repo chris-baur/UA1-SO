@@ -48,7 +48,7 @@
 
           <label><input type='checkbox' checked='checked'> Remember me
           </label>
-          <a href='forgotpassword.html' style = 'text-align: left; padding: 4%'> Forgot password? 
+          <a href='forgotpassword.php' style = 'text-align: left; padding: 4%'> Forgot password? 
           </a>
 
         </div>
