@@ -62,8 +62,10 @@
 	    else
 	    	$vote_class=Vote::getClass(false);
 
+        
 		echo "
 		<br>
+		<h3>Question</h3>
 		<div class= 'questionBlock'>
 		<div class='col-md-2 '>";
 		$file_path=$questionThread->getQuestionFileName();
@@ -71,64 +73,65 @@
            	$file_path = "..\img\avatar2.png";                      
         };
 
-        
+
+        // ------------------------------ Outputting the requested question --------------------------
         echo "
         	<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>
 
 			<! ---------------------------- Left column of the Question Block ------------------------ -->
-	            <div class='details vote_btns ".$vote_class." '>
-  	            <form action= '.\Like.php?ref=questions&ref_id=".$row->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."'' method='POST'>
-  	              <button type='submit' class='vote_btn vote_like' ";
-  	              if(!isset($_SESSION['userid'])){
-  	              	echo "disabled";
-  	              }
-  	            echo "><i class='fa fa-thumbs-up'> ". $row->getUpvotes() . "</i></button>
-  	            </form>
-  	            <form action='.\Like.php?ref=questions&ref_id=".$row->getId()."&vote=-1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
-  	              <button type='submit' class='vote_btn vote_dislike' ";
-  	              if(!isset($_SESSION['userid'])){
-  	              	echo "disabled";
-  	              }
-  	            echo "><i class='fa fa-thumbs-down'> ". $row->getDownvotes() . "</i></button>
-  	              </form>
-  	            ";
+            <div class='details vote_btns ".$vote_class." '>
+            <form action= '.\Like.php?ref=questions&ref_id=".$row->getId()."&vote=1&page=questionThreadPage.php?questionid=".$row->getId()."'' method='POST'>
+              <button type='submit' class='vote_btn vote_like' ";
+              if(!isset($_SESSION['userid'])){
+              	echo "disabled";
+              }
+            echo "><i class='fa fa-thumbs-up'> ". $row->getUpvotes() . "</i></button>
+            </form>
+            <form action='.\Like.php?ref=questions&ref_id=".$row->getId()."&vote=-1&page=questionThreadPage.php?questionid=".$row->getId()."' method='POST'>
+              <button type='submit' class='vote_btn vote_dislike' ";
+              if(!isset($_SESSION['userid'])){
+              	echo "disabled";
+              }
+            echo "><i class='fa fa-thumbs-down'> ". $row->getDownvotes() . "</i></button>
+              </form>
+            ";
 
- 				// 	------------------------------------ Favourite Button --------------------------------------
-			    if(isset($_SESSION['userid'])){
-					$fc = new FavouriteController();
-			    	$favouriteQuestionFound = false;
-			    	$favouriteQuestionArray = $fc::getFavouriteQuestions($_SESSION['userid']);
-			    	if (isset($favouriteQuestionArray)){
-				    	foreach($favouriteQuestionArray as $favouriteQuestion){
-				    		if ($favouriteQuestion->getId() == $questId){
-				    			$favouriteQuestionFound = true;
-				    		}
-				    	}
+				// 	------------------------------------ Favourite Button --------------------------------------
+		    if(isset($_SESSION['userid'])){
+				$fc = new FavouriteController();
+		    	$favouriteQuestionFound = false;
+		    	$favouriteQuestionArray = $fc::getFavouriteQuestions($_SESSION['userid']);
+		    	if (isset($favouriteQuestionArray)){
+			    	foreach($favouriteQuestionArray as $favouriteQuestion){
+			    		if ($favouriteQuestion->getId() == $questId){
+			    			$favouriteQuestionFound = true;
+			    		}
 			    	}
+		    	}
 
-			    	if($favouriteQuestionFound == true){
-			    		echo "
-			    			<form method='post' action = 'newFavourite.php'>
-						  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
-						  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
-						  		<input type ='hidden' name = 'foundQuestion' value = true>
+		    	if($favouriteQuestionFound == true){
+		    		echo "
+		    			<form method='post' action = 'newFavourite.php?returnLocation=questionThreadPage.php?questionid=".$row->getId()."'>
+					  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
+					  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+					  		<input type ='hidden' name = 'foundQuestion' value = true>
 
-						  		<button type='submit' class='favouriteButton fa fa-star isFavourited custom-fa' aria-hidden='true'></button>
-						  	</form>";
-			    	}
+					  		<button type='submit' class='favouriteButton fa fa-star isFavourited custom-fa' aria-hidden='true'></button>
+					  	</form>";
+		    	}
 
-			    	else{
-			    		echo "
-			    			<form method='post' action = 'newFavourite.php'>
-						  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
-						  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
-						  		<input type ='hidden' name = 'foundQuestion' value = false>
+		    	else{
+		    		echo "
+		    			<form method='post' action = 'newFavourite.php?returnLocation=questionThreadPage.php?questionid=".$row->getId()."'>
+					  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
+					  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
+					  		<input type ='hidden' name = 'foundQuestion' value = false>
 
-						  		<button type='submit' class='favouriteButton fa fa-star isNotFavourited' aria-hidden='true'></button>
-						  	</form>";
-			    	}
+					  		<button type='submit' class='favouriteButton fa fa-star isNotFavourited' aria-hidden='true'></button>
+					  	</form>";
+		    	}
 
-			    }
+		    }
 
 			echo "</div></div>
 
@@ -166,7 +169,7 @@
 		}
 
 
-
+		echo "<hr><h3>Answers</h3>";
 		// Output all answers corresponding to question
 	    
 		$answerRow = $questionThread->getAnswerThreadArray();
@@ -195,7 +198,6 @@
 					}
 				}
 				echo "
-				<br>
 				<div class= 'answerBlock'>
 				<div class='col-md-2 '>";
 				$file_path=$info->getAnswerFileName();
@@ -235,6 +237,7 @@
 			            </span>
 			        </div>
 			        </div>
+			        
 		    	";
 
 		    	// Output of the details of the comments requested
@@ -255,7 +258,7 @@
 							<!-- right column of comment block -->
 					        <div class='comment'>
 					            <div>
-					            <textarea class='form-control editText' style='display: none;' id='".$commentID."'>".$commentInfo->getContent()."</textarea>
+					            <textarea class='form-control editText' maxlength='250' style='display: none;' id='".$commentID."'>".$commentInfo->getContent()."</textarea>
 					            <div id='".$paragraphID."'>".$commentInfo->getContent()."</div>
 					            <button id='".$buttonID."' style='display: none;' type='button' class='btn subButton ' 
 					            		onClick='updateComment(".$commentID.",".$buttonID.",".$cancelID.",".$paragraphID.",".$commentInfo->getId().")'> Submit edit </button>
@@ -330,7 +333,7 @@
 				    	</div>";
 				    	$commentCounter++;
 			    	}
-			    	// new question
+			    	// new comment
 			    	if(isset($_SESSION['username'])){
 					    echo"
 					    <span class= 'hasComment'>
@@ -386,7 +389,7 @@
 					}
 
 			    }
-		    	echo "</div></div><br>";
+		    	echo "</div></div><br><br>";
 		    	$counter++;
 
 			}

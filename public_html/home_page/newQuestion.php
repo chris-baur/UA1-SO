@@ -41,12 +41,9 @@
 					</div>
 					<div class='form-control space'>
 						<textarea class='form-control' rows='10' name='content'
-						ng-model='content' required></textarea>
+						ng-model='content' maxlength = '500' required></textarea>
 					</div>
-					<div class='form-control space'>
-						<label>Tags : </label>
-						<tags-input ng-model='tags'></tags-input>
-					</div>
+					
 					<div class='space'>
 						<button ng-disabled='allowSubmit()' type='submit' class='btn btn-primary btn-md'> Ask it! </button>
 					</div>
