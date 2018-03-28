@@ -17,7 +17,8 @@
 		$fc::addFavourite($newFavourite);
 		
 	}
-		header("Location: questionThreadPage.php?questionid=".$_POST['questionId']);
+
+	header("Location: ".$_GET[returnLocation]."");
 
 
 ?>

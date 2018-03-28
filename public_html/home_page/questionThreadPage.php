@@ -111,7 +111,7 @@
 
 		    	if($favouriteQuestionFound == true){
 		    		echo "
-		    			<form method='post' action = 'newFavourite.php'>
+		    			<form method='post' action = 'newFavourite.php?returnLocation=questionThreadPage.php?questionid=".$row->getId()."'>
 					  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
 					  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
 					  		<input type ='hidden' name = 'foundQuestion' value = true>
@@ -122,7 +122,7 @@
 
 		    	else{
 		    		echo "
-		    			<form method='post' action = 'newFavourite.php'>
+		    			<form method='post' action = 'newFavourite.php?returnLocation=questionThreadPage.php?questionid=".$row->getId()."'>
 					  		<input type ='hidden' name = 'questionId' value = ".$row->getId()." >
 					  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
 					  		<input type ='hidden' name = 'foundQuestion' value = false>
@@ -237,7 +237,7 @@
 			            </span>
 			        </div>
 			        </div>
-			        <br>
+			        
 		    	";
 
 		    	// Output of the details of the comments requested
@@ -333,7 +333,7 @@
 				    	</div>";
 				    	$commentCounter++;
 			    	}
-			    	// new question
+			    	// new comment
 			    	if(isset($_SESSION['username'])){
 					    echo"
 					    <span class= 'hasComment'>
@@ -389,7 +389,7 @@
 					}
 
 			    }
-		    	echo "</div></div><br>";
+		    	echo "</div></div><br><br>";
 		    	$counter++;
 
 			}

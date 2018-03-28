@@ -108,7 +108,7 @@
 
                   if($favouriteQuestionFound == true){
                     echo "
-                      <form method='post' action = 'newFavouriteHomepage.php'>
+                      <form method='post' action = 'newFavourite.php?returnLocation=homepage.php'>
                         <input type ='hidden' name = 'questionId' value = ".$info['id']." >
                         <input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
                         <input type ='hidden' name = 'foundQuestion' value = true>
@@ -119,7 +119,7 @@
 
                   else{
                     echo "
-                      <form method='post' action = 'newFavouriteHomepage.php'>
+                      <form method='post' action = 'newFavourite.php?returnLocation=homepage.php'>
                         <input type ='hidden' name = 'questionId' value = ".$info['id']." >
                         <input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
                         <input type ='hidden' name = 'foundQuestion' value = false>

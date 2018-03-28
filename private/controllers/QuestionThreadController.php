@@ -147,7 +147,8 @@
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 $sql = "SELECT C.id, C.account_id, C.question_id, C.answer_id, C.content, C.date, AC.username FROM comments C 
                 JOIN accounts AC ON AC.id = C.account_id 
-                WHERE C.".$type."_id = :id;";
+                WHERE C.".$type."_id = :id
+                ORDER BY C.date ASC;";
                 $stmt = $pdo -> prepare($sql);						
                 $stmt -> bindParam(':id', $id);
             

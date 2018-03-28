@@ -79,7 +79,7 @@
 
   	            // 	------------------------------------ Favourite Button --------------------------------------
 	    		echo "
-	    			<form method='post' action = 'newFavouritePage.php'>
+	    			<form method='post' action = 'newFavourite.php?returnLocation=favorites.php'>
 				  		<input type ='hidden' name = 'questionId' value = ".$favouriteQuestion->getId()." >
 				  		<input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >
 				  		<input type ='hidden' name = 'foundQuestion' value = true>
