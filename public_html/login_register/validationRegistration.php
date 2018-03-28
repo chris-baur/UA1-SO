@@ -169,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(is_numeric($_POST['pin']) && strlen($_POST['pin']) == 4){
             $pin = htmlentities($_POST['pin']);
             $_SESSION['pin'] = $pin;                        
-            $log-lwrite('Pin is good');
+            $log->lwrite('Pin is good');
         }
 
         //invalid pin
