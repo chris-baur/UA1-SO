@@ -48,11 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $pin = htmlentities($_POST['pin']);
                 if($pin == $account->getPin()){
                     $log->lwrite('password is valid');
-                    $_SESSION['userid'] = $account -> getId();
-                    $_SESSION['username'] = $account -> getUsername();
-                    session_regenerate_id();
-                    // redirect to user home page
-                    header('Location: ..\home_page\homepage.php');
+                    createSession();
                 }
                 else{
                     //increaseAttemptCounter($userObj);
@@ -78,11 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $pass = htmlentities($_POST['password']);
                 if (password_verify($pass, $account -> getPassword())){
                     $log->lwrite('password is valid');
-                    $_SESSION['userid'] = $account -> getId();
-                    $_SESSION['username'] = $account -> getUsername();
-                    session_regenerate_id();
-                    // redirect to user home page
-                    header('Location: ..\home_page\homepage.php');
+                    createSession();
                 }
                 //password doesnt match
                 else{
@@ -123,6 +115,20 @@ function validateString($string){
     else
         return false;
 }
+
+/**
+ * creates the session and redirects user to the home page
+ */
+
+ function createSession(){
+    global $account;
+    $_SESSION['userid'] = $account -> getId();
+    $_SESSION['username'] = $account -> getUsername();
+    unset($_SESSION['uName']);
+    session_regenerate_id();
+    // redirect to user home page
+    header('Location: ..\home_page\homepage.php');
+ }
 
 // increases the user's attempt ctr
 // function increaseAttemptCounter($account){

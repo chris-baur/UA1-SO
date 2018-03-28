@@ -2,6 +2,7 @@
   include_once('..\..\private\util\logging.php');
   $config = parse_ini_file('..\..\..\UA1-SO\config.ini');
   require "../../private/controllers/Vote.php";
+  $log = new Logging();
 
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     $log->lwrite("POST METHOD. for newQuestion.php");
@@ -9,8 +10,9 @@
   }
   else if($_SERVER["REQUEST_METHOD"] == "GET"){
     include('header.php');
-    include_once('..\..\private\controllers\question_controller.php');
+    include_once('..\..\private\controllers\QuestionController.php');
     include_once('..\..\private\models\Account.php');
+    include_once('..\..\private\controllers\AccountController.php');
 
     echo "<link rel='stylesheet' type='text/css' href='../css/homepage.css'>";
   
@@ -54,14 +56,17 @@
       //<!--Outputting the items in the database-->
       echo "<br>
             <div class='container'>"; 
-
+      $qController = new QuestionController();
       $userName = $_SESSION['username'];
       $id = $_SESSION['userid'];
       $log->lwrite("ID retrieved from session: $id");
       $account = new Account();
-      $account->setId($id);
+      $aController = new AccountController();
+      $account = $aController::getAccountById($id);
+      $picPath = $account->getProfilePicturePath();
+      $log->lwrite("The pic path: $picPath");
       $log->lwrite('ID in account object: ' . $account->getId());
-      $rows = getQuestionsByAccount($account);
+      $rows = $qController::getQuestionsByAccount($account);
       $log->lwrite('Number of rows retrieved: ' . sizeof($rows));
       foreach ($rows as $info) {
         $vote=getVote($votes,$info->getId());
@@ -73,14 +78,13 @@
         echo "
 
           <div class='form-group row questionBlock'>                    
-            <div class='col-md-2 '>";
-              $file_path = "";       
-              if(isset($_SESSION['name'])) {
-                $file_path = $_SESSION['name'];
-              } 
-              if(!file_exists($file_path)) {
-              $file_path = "..\img\avatar2.png";                      
-              };
+            <div class='col-md-2 '>";       
+              if(!file_exists($picPath)) {
+                $file_path = "..\img\avatar2.png";                      
+              }else{
+                $file_path = $picPath;
+              }
+      $log->lwrite("The file path: $file_path");              
           echo "<div class='col-md-10'><img class='circle_img' src=".$file_path."></div>";
           echo "
             <div class='details vote_btns ".$vote_class."'>

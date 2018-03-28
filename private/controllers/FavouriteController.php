@@ -124,7 +124,7 @@ class FavouriteController{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 			$stmt = $pdo -> prepare('SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags FROM questions Q JOIN favourites F 
-                ON Q.id=F.question_id WHERE F.account_id=:account_id AND F.question_id IS NOT NULL;');						
+                ON Q.id=F.question_id WHERE F.account_id=:account_id;');						
 			$stmt -> bindParam(':account_id', $accountId);
 		
 			$stmt -> execute();
