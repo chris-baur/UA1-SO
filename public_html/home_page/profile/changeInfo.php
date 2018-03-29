@@ -10,7 +10,6 @@ if($status == PHP_SESSION_NONE){
 }		 
 
 $controller = new AccountController();
-$account = new Account();
 $account = $controller::getAccountByUsername($_SESSION['username']);
 
 $uname = $_POST['username'];
