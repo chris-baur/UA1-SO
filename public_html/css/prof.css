@@ -11,16 +11,15 @@ body {
 	margin-right: 25%;
 	margin-left: 25%;
 }
+
 #titleName {
 	font-size: 21px;
 	text-align: center;
 }
+
 .columns {
 	display: flex;
 	position: relative;
-	border-radius: 25px;
-	background-color: #FAEBD7;
-	font-size: 26px;
 	text-transform: none;	
 	width: 100%;
 	padding-top: 2%;
@@ -35,7 +34,7 @@ body {
 	border-color: gray;
 	border-radius: 2%;
 	line-height: 50%;
-	width: 50%;
+	width: 40%;
 }
 
 .column1 button {
@@ -58,11 +57,47 @@ body {
 	height: 409px;
 }
 
+#gen {
+	margin-top: 1%;
+	text-align: center;
+	background-color: #A9A9A9;
+	border-radius: 2px;
+}
+
 .column2{
 	position: relative;
+	background-color: #f2f2f2;
+	width: 60%;
+	border-radius: 5px;
+	font-size: 18px;
 	text-align: left;
-	width:50%;
 }
+
+.column2 input[type=text], select {
+    width: 90%;
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+.column2 input[type=submit] {
+    width: 90%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
+.column2 input[type=submit]:hover {
+    background-color: #45a049;
+}
+
 
 #ChangePass {
 	font-size: 18px;
@@ -71,15 +106,21 @@ body {
 }
 
 #subChange {
+	background-color: green;
+	width: 40%;
 	font-size: 18px;
 	text-transform: none;
 	margin-top: 2%;
+	color: white;
 }
 
 #subCancel {
+	background-color: red;
+	width: 40%;
 	font-size: 18px;
 	text-transform: none;
 	margin-left: 1%;
+	color: white;
 }
 
 .circle_img{
