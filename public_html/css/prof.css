@@ -31,7 +31,7 @@ body {
 	text-align: center;
 	border-style: solid;
 	border-width: 2px;
-	border-color: gray;
+	border-color: #F4A460;
 	border-radius: 2%;
 	line-height: 50%;
 	width: 40%;
@@ -60,13 +60,13 @@ body {
 #gen {
 	margin-top: 1%;
 	text-align: center;
-	background-color: #A9A9A9;
+	background-color: #F4A460;
 	border-radius: 2px;
 }
 
 .column2{
 	position: relative;
-	background-color: #f2f2f2;
+	background-color: white;
 	width: 60%;
 	border-radius: 5px;
 	font-size: 18px;
@@ -98,6 +98,19 @@ body {
     background-color: #45a049;
 }
 
+.column2 table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+    margin: 2%;
+    border-radius: 2px;
+    line-height: 200%;
+}
+
+.column2 tr:nth-child(even) {
+    background-color: #FFDEAD;
+    border-radius: 2px;
+}
 
 #ChangePass {
 	font-size: 18px;

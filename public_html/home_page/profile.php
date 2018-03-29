@@ -59,13 +59,28 @@
 						
 						<div id = "gen">Your General Informations</div>
 						<p id = text> 
-							<?php
-								$fname = $account->getName();
-								$lname = $account->getLastName();
-								$profession = $account->getProfession();
-								$gender = $account->getGender();
-								echo 'First Name ' ;
-							?>
+							<table>
+								<tr>
+									<th>First Name</th>
+									<th><?php echo $account->getName() ?></th>
+									
+								</tr>
+								<tr>
+									<td>Last Name</td>
+									<td><?php echo $account->getLastName() ?></td>
+									
+								</tr>
+								<tr>
+								    <td>Profession</td>
+								    <td><?php echo $account->getProfession() ?></td>
+								    
+								</tr>
+								<tr>
+								    <td>Gender</td>
+								    <td><?php echo $account->getGender() ?></td>
+								    
+						  		</tr>
+							</table>
 						</p>
 						<p id = info> </p>
 					</div>
