@@ -78,7 +78,7 @@
 								<tr>
 								    <td>Gender</td>
 								    <td><?php echo $account->getGender() ?></td>
-								    
+				
 						  		</tr>
 							</table>
 						</p>
@@ -97,6 +97,9 @@
     					} else {
     						echo "<br><p style='color:red;'>".$_GET['errorMessage']."</p>";
     					}
+					}
+					if(isset($_GET['Message'])) {
+    						echo "<br><p style='color:green;'>".$_GET['Message']."</p>";
 					}
 				?>
 				</div>
@@ -134,7 +137,7 @@
 					document.getElementById("ChangePass").innerHTML = "";
 					document.getElementById("changePic").innerHTML = "";
 					document.getElementById("changeBio").innerHTML = "";
-					document.getElementById("info").innerHTML = '<form action="#" method="POST" id = "info" style="margin-left: 2%"><label for="fname" style="margin-top: 2%">UserName</label><input type="text" id="uname" name="username" placeholder= "<?php echo $_SESSION['username'] ?>"><br><label for="fname" style="margin-top: 2%">First Name</label><input type="text" id="fname" name="firstname" placeholder="Your name.."><br><label for="lname" style="margin-top: 2%">Last Name</label><input type="text" id="lname" name="lastname" placeholder="Your last name.."><br><label for="lname" style="margin-top: 2%">Profession</label><input type="text" id="lname" name="lastname" placeholder="<?php echo $account->getProfession() ?>"><br><label for="lname" style="margin-top: 2%">Gender</label><input type="text" id="lname" name="lastname" placeholder="<?php echo $account->getGender() ?>"><br><br><input type="submit" value="Submit"><input type="submit" value="Cancel" onclick = "cancelInfo()" style = "background-color: red;"></form>';
+					document.getElementById("info").innerHTML = '<form action="profile/changeInfo.php" method="POST" id = "info" style="margin-left: 2%"><label for="fname" style="margin-top: 2%">UserName</label><input type="text" id="uname" name="username" placeholder= "<?php echo $_SESSION['username'] ?>"><br><label for="fname" style="margin-top: 2%">First Name</label><input type="text" id="fname" name="firstname" placeholder="Your name.."><br><label for="lname" style="margin-top: 2%">Last Name</label><input type="text" id="lname" name="lastname" placeholder="Your last name.."><br><label style="margin-top: 2%">Profession</label><select name="profession"><option value="" disabled selected>Select your profession</option><option value="Gamer">Gamer</option><option value="Student">Student</option><option value="Potatoe">Potatoe</option><option value="Teacher">Teacher</option><option value="Professor">Professor</option><option value="Hipster">Hipster</option><option value="Trainer">Trainer</option><option value="Sloth">Sloth</option></select><br><label for="lname" style="margin-top: 2%">Gender</label><select name="gender"><option value="" disabled selected>Select your gender</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select><br><br><input type="submit" value="Submit"><input type="submit" value="Cancel" onclick = "cancelInfo()" style = "background-color: red;"></form>';
 				}
 
 				function cancelPass() {
