@@ -4,111 +4,87 @@
 	<html>
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" type="text/css" href="../css/profil.css">
+			<link rel="stylesheet" type="text/css" href="../css/prof.css">
 		</head>
 		<body>
-			<main>
+			
 
 			<?php 
 
 				include_once '../../private/models/Account.php';
-				include_once '../../private/controllers/accountController.php';
-				
+				include_once '../../private/controllers/AccountController.php';
+			
 				$status = session_status();
 				if($status == PHP_SESSION_NONE){
 					//There is no active session
 					session_start();
 				}		
 
-				$config = parse_ini_file('../../config.ini');
-				$username = $config['username'];
-				$password = $config['password'];
-				$dbname = $config['dbname'];
-				$servername = $config['servername'];
-
-				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-				if(!isset($_SESSION['profile_picture_path'])) {
-					$uploaddir = '../img/accounts/';
-					$newfilename = $_SESSION['username'];
-					$uploadfile =  $uploaddir. $newfilename. '.png';
-					$_SESSION['profile_picture_path'] = $uploadfile;
-
-					$stmt = $conn->prepare("UPDATE `accounts` SET `profile_picture_path` = '$uploadfile' WHERE `accounts`.`username` = '$newfilename'");
-					$stmt->bindParam(':profile_picture_path', $uploadfile);
-					$stmt->execute();					
-				}
+				$controller = new AccountController();
+				$account = $controller::getAccountByUsername($_SESSION['username']);
 
 			?>
 
 			<div class = "title"> Account Settings
-				<br>
-				<a id = "titleName"><?php echo $_SESSION['username']?>'s profile </a>
+				
 				<div class = "columns">
 
 					<div class = "column1">
 
-					<?php $file_path = $_SESSION['profile_picture_path'];
+					<?php 
+						$file_path = $account->getProfilePicturePath();
 						if(!file_exists($file_path)) {
-							$file_path = "..\img\avatar2.png";											
+							$file_path = "..\img\avatar2.png";
 						}
-						echo "<img class='circle_img' src=\"".$file_path."\" width = \"150\" height = \"150\">";								
+						echo "<img class='circle_img' src=\"".$file_path."\" width = \"150\" height = \"150\"><br>";
+						echo $account->getUsername();	
 					?>
-						<p id = "changePic"> </p>
-
-
-						<script>
-							function changePicture() {
-								document.getElementById("ChangePass").innerHTML = "";
-								document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding-bottom: 2%"><input name="userfile" type="file" style = "font-size: 18px; width: 50%"/><input type=submit name = "modify" value="Modify" onclick = "noshiet()" style = "font-size: 18px"/></form><input type=submit value="Cancel" onclick = "cancelChange()" style = "font-size: 18px"/>';
-							}
-
-							function pictureChanged() {
-								document.getElementById("changePic").outterHTML = "";
-							}
-
-							function changePassword() {
-								document.getElementById("changePic").innerHTML = "";
-								document.getElementById("ChangePass").innerHTML = '<form action="changePassword.php" method="POST">Current Password <input type = "password" id = "ChangePass" placeholder = "Password"><br> New Password <input type = "password" id = "changePass" placeholder = "Password"/><br><input type = "submit" id = "subChange" value = "Submit"/><input type = "submit" id = "subCancel" onclick = "cancelPass()" value = "Cancel"/></form>';
-							}
-
-							function cancelPass() {
-								document.getElementById("ChangePass").innerHTML = "";
-							}
-
-							function cancelChange() {
-								document.getElementById("changePic").innerHTML = "";
-							}
-
-						</script>
-
+						<img src = "..\img\edit.png" id = "edit" onclick="modifyUsername()">
+						<p id = "changePic"></p>
 						<p id = "showBio" style = "font-size: 60%"> 
 							<?php
-								$controller = new AccountController();
-								$account = new Account();
-								$account = $controller::getAccountByUsername($_SESSION['username']);
-								if (!("Enter your description here.." == $account->getBio())) {
+								if (!("null" == $account->getBio())) {
 									echo $account->getBio();
 								};
 							 ?>
 						</p>
+			
+						<button type=button id = "profile" class = "btn btn-primary btn-block" onclick = "changePicture()"> Change profile picture </button>
+						<button type=button id = "profile" class = "btn btn-primary btn-block" onclick = "changePassword()"> Modify password </button>
+						<button type=button id = "profile" class = "btn btn-primary btn-block" onclick = "changeBio()"> Add or change your description </button>
+						<button type=button id = "profile" class = "btn btn-primary btn-block" onclick = "changeInfo()"> Modify my general informations </button>
+						
 					</div>
 
-					<div class = "column2">	 
-							
-							<li>		
-								<input type=submit id = "profile" onclick = "changePicture()" value="Change profile picture"/>
-							</li>
-							<li>
-								<input type="submit" id = "password" onclick = "changePassword()" value = "Modify password"/>	
-							</li>
-							<li>
-								<input type=submit id = "bio" onclick = "changeBio()" value="Add or change your description"/>
-							</li>
+					<div class = "column2">	
+						
+						<div id = "gen">Your General Informations</div>
+						<p id = text> 
+							<table>
+								<tr>
+									<th>First Name</th>
+									<th><?php echo $account->getName() ?></th>
+									
+								</tr>
+								<tr>
+									<td>Last Name</td>
+									<td><?php echo $account->getLastName() ?></td>
+									
+								</tr>
+								<tr>
+								    <td>Profession</td>
+								    <td><?php echo $account->getProfession() ?></td>
+								    
+								</tr>
+								<tr>
+								    <td>Gender</td>
+								    <td><?php echo $account->getGender() ?></td>
+				
+						  		</tr>
+							</table>
+						</p>
+						<p id = info> </p>
 					</div>
-
-
 
 				</div>					
 
@@ -116,57 +92,72 @@
 				<div id = "ChangePass">
 				<?php 
 					if(isset($_GET['errorMessage'])) {
-
     					if("The password has successfully been modified !" == $_GET['errorMessage']) {
     						echo "<br><p style='color:green;'>".$_GET['errorMessage']."</p>";
     					} else {
     						echo "<br><p style='color:red;'>".$_GET['errorMessage']."</p>";
-
     					}
+					}
+					if(isset($_GET['Message'])) {
+    						echo "<br><p style='color:green;'>".$_GET['Message']."</p>";
 					}
 				?>
 				</div>
 				
-		</div>
+			</div>
 
-		<script>
-			
-			function changePicture() {
-				document.getElementById("ChangePass").innerHTML = "";
-				document.getElementById("changeBio").innerHTML = "";
-				document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="uploadImage.php" method="POST" style = "padding-bottom: 2%"><input name="userfile" type="file" style = "font-size: 18px; width: 50%"/><input type=submit name = "modify" value="Modify" onclick = "noshiet()" style = "font-size: 18px"/></form><input type=submit value="Cancel" onclick = "cancelChange()" style = "font-size: 18px"/>';
-			}
+			<script>
+				
+				function changePicture() {
+					document.getElementById("ChangePass").innerHTML = "";
+					document.getElementById("changeBio").innerHTML = "";
+					document.getElementById("info").innerHTML = "";
+					document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="../home_page/profile/uploadImage.php" method="POST" style = "padding-bottom: 2%; padding-top: 2%"><input name="userfile" type="file" style = "font-size: 18px; width: 60%; margin-top:2%;"/><br><input type=submit name = "modify" class = "btn btn-gray btn-sm" id = "subChange" value="Submit" style = "font-size: 14px"/><input type=submit id = subCancel class = "btn btn-gray btn-sm" value="Cancel" onclick = "cancelChange()" style = "font-size: 14px; margin-top: 2%"/></form>';
+				}
 
-			function pictureChanged() {
-				document.getElementById("changePic").outterHTML = "";
-			}
+				function pictureChanged() {
+					document.getElementById("changePic").outterHTML = "";
+				}
 
-			function changePassword() {
-				document.getElementById("changeBio").innerHTML = "";
-				document.getElementById("changePic").innerHTML = "";
-				document.getElementById("ChangePass").innerHTML = '<br><form action="changePassword.php" method="POST"> Current Password <input type = "password" class = "btn btn-gray btn-sm" name = "currentPass" placeholder = "Password"><br>New Password <input type = "password" class = "btn btn-gray btn-sm" name = "newpassword1" placeholder = "Password" style = "margin-top: 1%"/><br>Retype New Password <input type = "password" class = "btn btn-gray btn-sm" name = "newpassword2" placeholder = "Password" style = "margin-top: 1%"/><br><input type = "submit" class = "btn btn-gray btn-sm" id = "subChange" value = "Submit"/><input type = "submit" class = "btn btn-gray btn-sm" id = "subCancel" onclick = "cancelPass()" value = "Cancel" style = "margin-top: 2%"/></form>';
-			}
+				function changePassword() {
+					document.getElementById("changeBio").innerHTML = "";
+					document.getElementById("changePic").innerHTML = "";
+					document.getElementById("info").innerHTML = "";
+					document.getElementById("ChangePass").innerHTML = '<br><form action="profile/changePassword.php" method="POST"> Current Password <br> <input type = "password" class = "btn btn-gray btn-sm" name = "currentPass" placeholder = "Current Password" style = "width: 100%"><br>New Password <br><input type = "password" class = "btn btn-gray btn-sm" name = "newpassword1" placeholder = "New Password" style = "margin-top: 1%; width: 100%"/><br>Retype New Password <br><input type = "password" class = "btn btn-gray btn-sm" name = "newpassword2" id = "focus" placeholder = "New Password" style = "margin-top: 1%; width:100%"/><br><input type = "submit" class = "btn btn-gray btn-sm" id = "subChange" value = "Submit"/><input type = "submit" class = "btn btn-gray btn-sm" id = "subCancel" onclick = "cancelPass()" value = "Cancel" style = "margin-top: 2%"/></form>';
+				}
 
-			function changeBio() {
-				document.getElementById("ChangePass").innerHTML = "";
-				document.getElementById("changePic").innerHTML = "";
-				document.getElementById("changeBio").innerHTML = '<br>Describe Yourself<form action="uploadBio.php" method="POST" style = "padding-bottom: 2%"><textarea rows = 5 cols = 50 class = "btn btn-gray btn-sm" name = bio placeholder = "Enter your description here" maxlength = 300 style = "font-size: 18px; height:50%"></textarea><br><input type=submit class = "btn btn-gray btn-sm" value="Submit" style = "font-size: 18px"/><input type=submit class = "btn btn-gray btn-sm" value="Cancel" onclick = "cancelBio()" style = "font-size: 18px; margin-left: 2%"/></form>';
-			}
+				function changeBio() {
+					document.getElementById("ChangePass").innerHTML = "";
+					document.getElementById("changePic").innerHTML = "";
+					document.getElementById("info").innerHTML = "";
+					document.getElementById("changeBio").innerHTML = '<br>Describe Yourself<form action="profile/uploadBio.php" method="POST" style = "padding-bottom: 2%"><textarea rows = 5 cols = 50 class = "btn btn-gray btn-sm" name = bio placeholder = "Enter your description here" maxlength = 300 style = "font-size: 18px; height:50%; width: 80%"></textarea><br><input type=submit id = "subChange" class = "btn btn-gray btn-sm" value="Submit" style = "font-size: 18px"/><input type=submit id = "subCancel" class = "btn btn-gray btn-sm" value="Cancel" onclick = "cancelBio()" style = "font-size: 18px; margin-left: 2%; margin-top: 2%"/></form>';
+				}
 
-			function cancelPass() {
-				document.getElementById("ChangePass").innerHTML = "";
-			}
+				function changeInfo() {
+					document.getElementById("ChangePass").innerHTML = "";
+					document.getElementById("changePic").innerHTML = "";
+					document.getElementById("changeBio").innerHTML = "";
+					document.getElementById("info").innerHTML = '<form action="profile/changeInfo.php" method="POST" id = "info" style="margin-left: 2%"><label for="fname" style="margin-top: 2%">UserName</label><input type="text" id="uname" name="username" placeholder= "<?php echo $_SESSION['username'] ?>"><br><label for="fname" style="margin-top: 2%">First Name</label><input type="text" id="fname" name="firstname" placeholder="Your name.."><br><label for="lname" style="margin-top: 2%">Last Name</label><input type="text" id="lname" name="lastname" placeholder="Your last name.."><br><label style="margin-top: 2%">Profession</label><select name="profession"><option value="" disabled selected>Select your profession</option><option value="Gamer">Gamer</option><option value="Student">Student</option><option value="Potatoe">Potatoe</option><option value="Teacher">Teacher</option><option value="Professor">Professor</option><option value="Hipster">Hipster</option><option value="Trainer">Trainer</option><option value="Sloth">Sloth</option></select><br><label for="lname" style="margin-top: 2%">Gender</label><select name="gender"><option value="" disabled selected>Select your gender</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select><br><br><input type="submit" value="Submit"><input type="submit" value="Cancel" onclick = "cancelInfo()" style = "background-color: red;"></form>';
+				}
 
-			function cancelChange() {
-				document.getElementById("changePic").innerHTML = "";
-			}
+				function cancelPass() {
+					document.getElementById("ChangePass").innerHTML = "";
+				}
 
-			function cancelBio() {
-				document.getElementById("changeBio").innerHTML = "";
-			}
+				function cancelChange() {
+					document.getElementById("changePic").innerHTML = "";
+				}
 
-		</script>
-		</main>
+				function cancelBio() {
+					document.getElementById("changeBio").innerHTML = "";
+				}
+
+				function cancelInfo() {
+					document.getElementById("info").innerHTML = "";
+				}
+
+			</script>
+
 		</body>
 	</html>
 

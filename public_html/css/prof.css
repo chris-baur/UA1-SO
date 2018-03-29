@@ -1,0 +1,148 @@
+body {
+	background: #FFDEAD;
+}
+
+.title {
+	position: relative;
+	text-align: center;
+	padding-top: 2%;
+	font-size: 32px;
+	font-weight: bold;
+	margin-right: 25%;
+	margin-left: 25%;
+}
+
+#titleName {
+	font-size: 21px;
+	text-align: center;
+}
+
+.columns {
+	display: flex;
+	position: relative;
+	text-transform: none;	
+	width: 100%;
+	padding-top: 2%;
+}
+
+.column1{
+	background-color: white;
+	position: relative;
+	text-align: center;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #F4A460;
+	border-radius: 2%;
+	line-height: 50%;
+	width: 40%;
+}
+
+.column1 button {
+	background-color: #DEB887;
+	border-color: #F5DEB3;
+}
+
+.column1 button:hover{
+	background-color: #D2B48C;
+	border-color: #F5DEB3;
+}
+
+#edit{
+	width: 20px;
+	height: 20px;
+}
+
+#edit: hover{
+	width: 400px;
+	height: 409px;
+}
+
+#gen {
+	margin-top: 1%;
+	text-align: center;
+	background-color: #F4A460;
+	border-radius: 2px;
+}
+
+.column2{
+	position: relative;
+	background-color: white;
+	width: 60%;
+	border-radius: 5px;
+	font-size: 18px;
+	text-align: left;
+}
+
+.column2 input[type=text], select {
+    width: 90%;
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+.column2 input[type=submit] {
+    width: 90%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
+.column2 input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.column2 table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+    margin: 2%;
+    border-radius: 2px;
+    line-height: 200%;
+}
+
+.column2 tr:nth-child(even) {
+    background-color: #FFDEAD;
+    border-radius: 2px;
+}
+
+#ChangePass {
+	font-size: 18px;
+	text-transform: none;
+	padding:0.5%;
+}
+
+#subChange {
+	background-color: green;
+	width: 40%;
+	font-size: 18px;
+	text-transform: none;
+	margin-top: 2%;
+	color: white;
+}
+
+#subCancel {
+	background-color: red;
+	width: 40%;
+	font-size: 18px;
+	text-transform: none;
+	margin-left: 1%;
+	color: white;
+}
+
+.circle_img{
+	border-radius: 50%;
+	padding: 5%;
+}
+
+
+
+
+
+
