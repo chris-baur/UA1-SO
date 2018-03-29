@@ -39,7 +39,7 @@
 						echo "<img class='circle_img' src=\"".$file_path."\" width = \"150\" height = \"150\"><br>";
 						echo $account->getUsername();	
 					?>
-						<img src = "..\img\edit.png" id = "edit" onclick="modifyUsername()">
+						
 						<p id = "changePic"></p>
 						<p id = "showBio" style = "font-size: 60%"> 
 							<?php
@@ -137,7 +137,8 @@
 					document.getElementById("ChangePass").innerHTML = "";
 					document.getElementById("changePic").innerHTML = "";
 					document.getElementById("changeBio").innerHTML = "";
-					document.getElementById("info").innerHTML = '<form action="profile/changeInfo.php" method="POST" id = "info" style="margin-left: 2%"><label for="fname" style="margin-top: 2%">UserName</label><input type="text" id="uname" name="username" placeholder= "<?php echo $_SESSION['username'] ?>"><br><label for="fname" style="margin-top: 2%">First Name</label><input type="text" id="fname" name="firstname" placeholder="Your name.."><br><label for="lname" style="margin-top: 2%">Last Name</label><input type="text" id="lname" name="lastname" placeholder="Your last name.."><br><label style="margin-top: 2%">Profession</label><select name="profession"><option value="" disabled selected>Select your profession</option><option value="Gamer">Gamer</option><option value="Student">Student</option><option value="Potatoe">Potatoe</option><option value="Teacher">Teacher</option><option value="Professor">Professor</option><option value="Hipster">Hipster</option><option value="Trainer">Trainer</option><option value="Sloth">Sloth</option></select><br><label for="lname" style="margin-top: 2%">Gender</label><select name="gender"><option value="" disabled selected>Select your gender</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select><br><br><input type="submit" value="Submit"><input type="submit" value="Cancel" onclick = "cancelInfo()" style = "background-color: red;"></form>';
+					document.getElementById("info").innerHTML = '<form action="profile/changeInfo.php" method="POST" id = "info" style="margin-left: 2%"><label for="fname" style="margin-top: 2%">First Name</label><input type="text" id="fname" name="firstname" placeholder="Your name.."><br><label for="lname" style="margin-top: 2%">Last Name</label><input type="text" id="lname" name="lastname" placeholder="Your last name.."><br><label style="margin-top: 2%">Profession</label><select name="profession"><option value="" disabled selected>Select your profession</option><option value="Gamer">Gamer</option><option value="Student">Student</option><option value="Potatoe">Potatoe</option><option value="Teacher">Teacher</option><option value="Professor">Professor</option><option value="Hipster">Hipster</option><option value="Trainer">Trainer</option><option value="Sloth">Sloth</option></select><br><label for="lname" style="margin-top: 2%">Gender</label><select name="gender"><option value="" disabled selected>Select your gender</option><option value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select><br><br><input type="submit" value="Submit"><input type="submit" value="Cancel" onclick = "cancelInfo()" style = "background-color: red;"></form>';
+					//<label for="fname" style="margin-top: 2%">UserName</label><input type="text" id="uname" name="username" placeholder= "<?php echo $_SESSION['username'] ?>"><br>
 				}
 
 				function cancelPass() {

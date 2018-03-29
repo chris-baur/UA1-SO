@@ -725,3 +725,12 @@
 [27/Mar/2018:22:44:15] (newFavouritePage) Favourite question ID: 4 was removed from account ID: 1
 [27/Mar/2018:22:44:23] (newFavouriteHomepage) added favourite succesfully. ID: 10
 [27/Mar/2018:22:44:27] (favorites) returning account
+[29/Mar/2018:22:52:23] (loginregister) in login register
+[29/Mar/2018:22:52:23] (loginregister) Got the arrays
+[29/Mar/2018:22:52:23] (loginregister) no session errors
+[29/Mar/2018:22:52:31] (validateLogin) Form has requested a post for File: validateLogin.php
+[29/Mar/2018:22:52:31] (validateLogin) Username is: nooooo
+[29/Mar/2018:22:52:31] (validateLogin) account exists with given username
+[29/Mar/2018:22:52:31] (validateLogin) inside valid user
+[29/Mar/2018:22:52:31] (validateLogin) Password passed prelim validaton
+[29/Mar/2018:22:52:31] (validateLogin) password is valid

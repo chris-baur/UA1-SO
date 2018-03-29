@@ -20,11 +20,12 @@ $gender = $_POST['gender'];
 
 $error = "General Informations has successfully been modified !";
 
-/*if(!($uname = $_SESSION['username'])) {
+/*if(!($uname == $account->getUsername())) {
 	if ($controller::accountExists($uname)) {
-		$error = "The username entered already exists. Please try something else.";
+		$error .= "The username entered already exists. Please try something else.";
 	} else {
-		//$account->setUsername($uname);
+		$account->setUsername($uname);
+
 	}	
 }*/
 
@@ -33,8 +34,6 @@ $account->setLastname($lname);
 $account->setProfession($profession);
 $account->setGender($gender);
 $controller::updateAccount($account);
-
-$error = "General Informations has successfully been modified !";
 
 header("Location: ..\profile.php?Message=$error"); 
 
