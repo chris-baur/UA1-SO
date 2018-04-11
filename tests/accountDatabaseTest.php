@@ -116,7 +116,8 @@ class accountDatabaseTest extends PHPUnit\Framework\TestCase{
 
     public function testUpdatingAccount(){
         //changing the gender
-        $account = new Account(-1, 'john117', '$2y$10$C/uoZeY8TclVBl7UskXJceE7v800lyCnANBNtbTWX6jH7/dtOSqoK', 'John', 'Master Chief', 'Female', 'What is the first name of the person you first kissed?',
+        //must have valid ID, since update to accountController updateAccount method
+        $account = new Account(1, 'john117', '$2y$10$C/uoZeY8TclVBl7UskXJceE7v800lyCnANBNtbTWX6jH7/dtOSqoK', 'John', 'Master Chief', 'Female', 'What is the first name of the person you first kissed?',
         'In what city or town did your mother and father meet?', 'Cortana', 'EDZ', 'Last Spartan Alive', 'Gamer', null, '../img/avatar2.png');
         $ac = new AccountController();
         $ac::updateAccount($account);
