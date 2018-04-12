@@ -4,7 +4,7 @@
   <head>
     <title>Ask It!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/new_header.css">
   </head>
 
   <body>
@@ -54,7 +54,7 @@
                     if(!file_exists($file_path)) {
                       $file_path = "..\img\avatar2.png";
                     }
-                    echo "<img class='circle_img' src=\"".$file_path."\"> Hi, " .$account->getUsername(). " !"; 
+                    echo "<img class='circle_img' src=\"../".$file_path."\"> Hi, " .$account->getUsername(). " !"; 
                   ?>
                 </button>
                 <div class="dropdown-content">
@@ -70,7 +70,7 @@
           else {
             ?>
             <div class = "head_noSession">
-              <a href="../login_register/loginregister.php">Log In/Sign Up</a> 
+              <a href="../../login_register/loginregister.php">Log In/Sign Up</a> 
             </div>
             <?php
           }
