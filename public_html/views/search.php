@@ -99,7 +99,7 @@
 	        </div>
 	            <div class='col-md-10 question'>
 	              <div>
-	              <a href='questionThreadPage.php?questionid=".$info['id']."'>
+	              <a href='questionThreadPage.php?questionId=".$info['id']."'>
 	                <h3><strong>" . $info['header'] . "</strong></h3></a>
 	              </div>
 	              <p>" . $info['content'] . "

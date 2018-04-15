@@ -78,11 +78,10 @@
         }
 
         echo "
-          <div class='form-group row questionBlock'>";      
+          <div class='form-group row questionBlock'>";
+          $filePath=$account->getProfilePicturePath();      
         if(!file_exists($account->getProfilePicturePath()))
           $filePath = "..\img\avatar2.png";                      
-        else
-          $filePath = $picPath;
 
         $returnLocation = "myQuestions.php";
         $ob->outputBlock("questions", $question, $voteClass, $filePath, $_SESSION['username'], $returnLocation);
