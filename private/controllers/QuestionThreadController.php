@@ -43,10 +43,6 @@
                     WHERE Q.id = :id;");						
                 $stmt -> bindParam(':id', $id);
                 $stmt -> execute();
-                if(is_null($stmt->fetch()))
-                    echo ' fetched null statement *********';
-                else
-                    echo'*********** not null **********'; 
                 
                 // while there is a question with specified header
                 if($result = $stmt -> fetch()){
