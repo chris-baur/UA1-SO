@@ -151,13 +151,21 @@ class OutputBlock{
               ".sizeof($commentThread)."
               Comments
               </a>";
+
+            }
+            
+            echo "</span>";
+            if ($outputType == "questions" && $model->getTags() != null){
+              echo "<br><span class = 'tags'>Tags: ";
+              $allTags = $model->getTags();
+              foreach($allTags as $singleTag){
+                echo "<span class='badge badge-default'>".$singleTag."</span> ";
+              }
+              echo "</span>";
             }
 
 
-
-              echo "
-            </span>
-	        </div>";
+            echo"</div>";
 		}
 
 		// Output if type is a comment

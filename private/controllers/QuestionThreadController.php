@@ -55,7 +55,7 @@
                     $q->setDate($result[4]);
                     $q->setUpvotes($result[5]);
                     $q->setDownvotes($result[6]);
-                    $q->setTags($result[7]);
+                    $q->setTags(explode(' ', $result[7]));
                     $uname = $result[8];
                     $questionThread->setQuestion($q);
                     $questionThread->setQuestionName($uname);
