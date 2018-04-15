@@ -38,7 +38,8 @@ class questionThreadDatabaseTest extends PHPUnit\Framework\TestCase{
         $qtc = new QuestionThreadController();
         $qId = 1;
         $qt = $qtc::getQuestionThread($qId);
-        $expectedNumber = 1;
+        //a comment is added in the commentDatabaseTest to this question id 1. so there are two in total
+        $expectedNumber = 2;
         
         $actualNumber = sizeof($qt->getCommentThreadArray());
         $this->assertEquals($expectedNumber, $actualNumber);
