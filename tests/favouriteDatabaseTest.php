@@ -42,7 +42,7 @@ class favouriteDatabaseTest extends PHPUnit\Framework\TestCase{
         $questionId = 4;
         $expectedNumber = 1;
         
-        $actualNumber = sizeof($fc::getFavouriteAnswers($id));
+        $actualNumber = sizeof($fc::getFavouriteAnswers($accountId, $questionId));
         $this->assertEquals($expectedNumber, $actualNumber);
     }
     public function testGetAllFavouriteAnswers(){
