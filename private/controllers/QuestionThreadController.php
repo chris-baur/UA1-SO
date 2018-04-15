@@ -46,7 +46,7 @@
                 $result = $stmt -> fetch();
                 
                 // while there is a question with specified header
-                if($result){
+                if(isset($result)){
                     $q = new Question();
                     $q->setId($result[0]);
                     $q->setAccountId($result[1]);
@@ -85,7 +85,7 @@
          *
          * @param $id		Answer's question id
          */
-        private static function getAnswerThread($id){
+        static function getAnswerThread($id){
             global $servername, $username, $password, $dbname, $log;
             $answerThreadArray = null;
             
@@ -139,7 +139,7 @@
          * @param $id		answer or question's id
          * @param $type     string containing 'answer' or 'question'
          */
-        private static function getCommentThread($id, $type){
+        static function getCommentThread($id, $type){
             global $servername, $username, $password, $dbname, $log;
             $commentThreadArray = null;
             
