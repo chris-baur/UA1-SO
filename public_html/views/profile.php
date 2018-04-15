@@ -99,7 +99,11 @@
     					}
 					}
 					if(isset($_GET['Message'])) {
+						if("General Informations has successfully been modified !" == $_GET['Message']) {
     						echo "<br><p style='color:green;'>".$_GET['Message']."</p>";
+    					} else {
+    						echo "<br><p style='color:red;'>".$_GET['Message']."</p>";
+    					}
 					}
 				?>
 				</div>
