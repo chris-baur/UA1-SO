@@ -23,20 +23,20 @@
           <!--Inquiries content-->
           <td><a href="mailto:help@askit.com">help@askit.com</a></td>
           <!--Follow us content-->
-          <td><img src="../img/facebook.png" alt="" width="20" height="20" /><a>&nbsp;Like us on Facebook</a></td>
+          <td><img src="../img/facebook.svg" alt="" width="20" height="20" /><a>&nbsp;Like us on Facebook</a></td>
         </tr>
         <tr>
           <!--Contact us content-->
           <td>Phone CA: (514) 123-4567&nbsp;</td>
           <td> </td>
           <!--Follow us content-->
-          <td><img src="../img/instagram.png" alt="" width="20" height="20" /> <a>&nbsp;Like and Follow us on Instagram</a></td>
+          <td><img src="../img/instagram.svg" alt="" width="20" height="20" /> <a>&nbsp;Like and Follow us on Instagram</a></td>
         </tr>
         <tr>
           <td>   </td>
           <td>   </td>
           <!--Follow us content-->
-          <td><img src="../img/twitter.png" alt="" width="20" height="20" /><a>&nbsp;Follow us on Twitter</a></td>
+          <td><img src="../img/twitter.svg" alt="" width="20" height="20" /><a>&nbsp;Follow us on Twitter</a></td>
         </tr>
         </table>
       </div>
