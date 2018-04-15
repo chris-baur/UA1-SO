@@ -91,7 +91,6 @@
 			<?php
 
 			if(isset($_SESSION['username'])) {
-				//echo "Hi, " .$_SESSION['username']. "!";
 				?>
 
 				<div class="dropdown">
@@ -104,10 +103,6 @@
 	  				</div>
 				</div>
 
-
-				<!--<div class="col-lg-2 <?php echo $logout;?>">
-					<a class="<?php echo $logout;?>"href="logout.php">Logout</a>
-				</div>-->
 				<?php
 			} else {
 				?>
