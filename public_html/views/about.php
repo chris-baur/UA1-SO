@@ -1,8 +1,6 @@
 
-<?php include("header.php");?>
-
-
-<?php include("aboutBody.php");?>
-
-
-<?php include("footer.php");?> 
+<?php 
+	include("header.php"); echo "<br>";
+	include("aboutBody.php");
+	include("footer.php");
+?> 

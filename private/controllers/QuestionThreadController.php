@@ -102,7 +102,7 @@
                 $stmt = $pdo -> prepare("SELECT A.id, A.account_id, A.question_id, A.content, A.date, A.upvotes, A.downvotes, A.best, AC.username, AC.profile_picture_path FROM answers A 
                     JOIN accounts AC ON AC.id = A.account_id 
                     WHERE A.question_id = :id
-                    ORDER BY A.upvotes DESC, A.downvotes, A.date DESC;");						
+                    ORDER BY A.best DESC, A.upvotes DESC, A.downvotes, A.date DESC;");						
                 $stmt -> bindParam(':id', $id);
             
                 $stmt -> execute();

@@ -61,6 +61,8 @@
 
 	}
 	else{
+		$error = "Please log in or sign up to ask a question..";
+		header("Location: ..\..\loginregister.php?errorMessage=$error"); 
 		$log->lwrite('session userid not set');
 	}
 

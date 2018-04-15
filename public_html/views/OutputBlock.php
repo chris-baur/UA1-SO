@@ -89,11 +89,10 @@ class OutputBlock{
                 }
                 
                 echo "<form method='post' action = 'newFavourite.php?returnLocation=".$returnLocation."'>
-                  <input type = 'hidden' name = 'idType' value = questionId>
                   <input type ='hidden' name = 'id' value = ".$model->getId()." >
                   <input type ='hidden' name = 'accountId' value = ".$_SESSION['userid']." >";
 
-
+                // favourite button in questions block
                 if($outputType=="questions"){
                   echo"<input type ='hidden' name = 'outputType' value = 'questions'>";
                   if($favouriteFound == 'true'){
@@ -104,6 +103,8 @@ class OutputBlock{
                     echo "<input type ='hidden' name = 'found' value = false>
                       <button type='submit' class='favouriteButton fa fa-star isNotFavourited' aria-hidden='true'></button>";
                 }
+
+                // favourite button in answers block
                 else if($outputType=="answers" && $_SESSION['userid']==$questionUserId){
                   echo"<input type ='hidden' name = 'outputType' value = 'answers'>
                     <input type = 'hidden' name = 'questionId' value = ".$model->getQuestionId().">";
