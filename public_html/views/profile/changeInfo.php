@@ -12,14 +12,17 @@ $controller = new AccountController();
 $account = $controller::getAccountByUsername($_SESSION['username']);
 
 //$uname = $_POST['username'];
-
 $error;
+
+if (isset($_POST['profession']) || isset($_POST['gender'])) {
+	$error = "General Informations has successfully been modified !";
+}
 
 if (isset($_POST['profession'])) {
 	$profession = $_POST['profession'];
 } else {
 	$profession = $account->getProfession();
-	$error = "Profession options has not been set properly. Please try again.<br>";
+	$error .= "Profession options has not been set properly. Please try again.<br>";
 }
 
 if (isset($_POST['gender'])) {
