@@ -18,7 +18,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/new_header.css">  
+    <link rel="stylesheet" type="text/css" href="../css/new_header.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
   </head>
 
   <body>
@@ -67,17 +71,17 @@
                 <div class="dropdown">
                   <button class="dropbtn"> 
                     <?php 
-                      $file_path = $account->getProfilePicturePath();
-                      if(!file_exists($file_path)) {
-                        $file_path = "..\img\avatar2.png";
+                      $filePath = $account->getProfilePicturePath();
+                      if(!file_exists($filePath)) {
+                        $filePath = "..\img\avatar2.png";
                       }
-                      echo "<img class='circle_img' src=\"../".$file_path."\"> Hi, " .$account->getUsername(). " !"; 
+                      echo "<img class='circle_img' src=".$filePath."> Hi, " .$account->getUsername(). " !"; 
                     ?>
                   </button>
                   <div class="dropdown-content">
                     <a href="profile.php">My Profile</a>
                     <a href="myquestions.php">My Questions</a>
-                    <a href="favorites.php">Favorites</a>
+                    <a href="favourites.php">Favourites</a>
                     <a href="logout.php">Logout</a>
                   </div>
                 </div>
@@ -87,7 +91,7 @@
             else {
               ?>
               <div class = "head_noSession">
-                <a href="../../login_register/loginregister.php">Log In/Sign Up</a> 
+                <a href="../login_register/loginregister.php">Log In/Sign Up</a> 
               </div>
               <?php
             }
