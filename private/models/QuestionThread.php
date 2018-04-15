@@ -14,7 +14,8 @@
 
         function __construct(){
             $this->question = null;
-            $this->questionName = null;
+            $this->questionName = 'default user name';
+            $this->questionFileName = 'default profile picture path';
             $this->answerThreadArray = null;
             $this->commentThreadArray = null;
         }
