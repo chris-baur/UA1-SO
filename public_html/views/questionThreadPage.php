@@ -19,6 +19,11 @@
 		<link rel='stylesheet' type='text/css' href='../css/questionThread.css'>";
 
 	// output warning message if user
+	if(isset($_GET['favouriteAnswer'])){
+		echo"<div class='favourite-warning alert-warning'>
+  		<h2>Please unfavourite old favourited answer first before favouriting a new one</h2>
+		</div>";
+	}
 
 	// gets the questionId from the page before enterring this page and prints out the question, answers, and comments
 	if (isset($_GET['questionId'])){
@@ -86,7 +91,7 @@
 		    echo"
 		    <button class='newAnswerButton' type='button' data-toggle='collapse' data-target='#newAnswer' aria-expanded='false' aria-controls='newAnswer'>
 	    	Answer Question
-	  		</button>";
+	  		</button><hr>";
 
 	  		// Contents inside the Add Answer Button
 		  	echo"	
@@ -104,12 +109,13 @@
 		}
 
 
-		echo "<hr><h3>Answers</h3>";
+		
 		// Output all answers corresponding to question
 	    
 		$answerArrayElementThread = $questionThread->getAnswerThreadArray();
 		$counter=0;
 		if($answerArrayElementThread != null){
+			$answerArrayCounter=0;
 			foreach ($answerArrayElementThread as $answerArrayElement){
 				echo "<div class = 'block'>";
 				$answer = $answerArrayElement->getAnswer();
@@ -133,17 +139,25 @@
 					}
 				}
 				$filePath=$answerArrayElement->getAnswerFileName();
-		                if(!file_exists($filePath)) {
-		                	$filePath = "..\img\avatar2.png";                      
-		        };
+                if(!file_exists($filePath))
+                	$filePath = "..\img\avatar2.png";
 
 
+				if($answer->getBest() == '1'){
+					echo "<br><h3>Asker's Favourite Answer</h3>";
+			        echo "<div class= 'answerBlock answer-favourite'>";
+			        $ob->outputBlock("answers", $answer, $voteClass, $filePath, $answerArrayElement->getAnswerName(), $returnLocation, $_GET['questionId'], $counter, $commentArray, $question->getAccountId());
+		        	echo "</div>";
+		    	}
+		    	else{
+		    		if($answerArrayCounter=='0')
+		    			echo "<h3>Answers</h3>";
+		    		echo "<div class= 'answerBlock'>";
+		    		$ob->outputBlock("answers", $answer, $voteClass, $filePath, $answerArrayElement->getAnswerName(), $returnLocation, $_GET['questionId'], $counter, $commentArray, $question->getAccountId());
+		        	echo "</div>";
+		    		$answerArrayCounter++;
+		    	}
 
-				echo "<div class= 'answerBlock'>";
-
-		        $ob->outputBlock("answers", $answer, $voteClass, $filePath, $answerArrayElement->getAnswerName(), $returnLocation, $_GET['questionId'], $counter, $commentArray, $question->getAccountId());
-
-		        echo "</div>";
 
 
 		    	// Output of the details of the comments requested
@@ -297,7 +311,6 @@
 			    }
 		    	echo "</div></div><br><br>";
 		    	$counter++;
-
 			}
 		}
 		
