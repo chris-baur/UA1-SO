@@ -2,6 +2,12 @@
 body {
   background: #D9BB91;
 }
+
+#image img {
+    width: 50%;
+    height: 50%;
+}
+
 /* input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -119,5 +125,7 @@ input:required {
     box-shadow:none;
     /* border-color: rgba(82, 168, 236, 0.8); */
 }
+
+
 
 
