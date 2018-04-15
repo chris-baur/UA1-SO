@@ -6,7 +6,6 @@
 
     include_once(dirname(__FILE__).'/../util/logging.php');
     include_once(dirname(__FILE__).'/../util/sets.php');
-    include_once(dirname(__FILE__).'/../models/Account.php');
 
     class QuestionThreadController{
 
@@ -33,7 +32,11 @@
          * @param $id		Question's id
          */
         static function getQuestionThread($questionID){
-            global $servername, $username, $password, $dbname, $log;
+            $servername = self::$servername;
+            $username = self::$username;
+            $password = self::$password;
+            $dbname = self::$dbname;
+            $log = self::$log;
             $questionThread = new QuestionThread();
             
             try{
