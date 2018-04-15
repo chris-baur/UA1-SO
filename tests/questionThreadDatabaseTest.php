@@ -34,4 +34,14 @@ class questionThreadDatabaseTest extends PHPUnit\Framework\TestCase{
         $this->assertEquals($expectedNumber, $actualNumber);
         
     }
+    public function testGetQuestionThreadCommentsTwo(){
+        $qtc = new QuestionThreadController();
+        $qId = 1;
+        $qt = $qtc::getQuestionThread($qId);
+        $expectedNumber = 1;
+        
+        $actualNumber = sizeof($qt->getCommentThreadArray());
+        $this->assertEquals($expectedNumber, $actualNumber);
+        
+    }
 }
