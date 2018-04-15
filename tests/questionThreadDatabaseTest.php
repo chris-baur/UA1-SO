@@ -5,7 +5,8 @@
 class questionThreadDatabaseTest extends PHPUnit\Framework\TestCase{
     public function testGetQuestionThread(){
         $qtc = new QuestionThreadController();
-        $qt = $qtc::getQuestionThread(6);
+        $qId = 6;
+        $qt = $qtc::getQuestionThread($qId);
         $expectedAccountId = 1;
         $name = $qt->getQuestionName();
         $pic = $qt->getQuestionFileName();
