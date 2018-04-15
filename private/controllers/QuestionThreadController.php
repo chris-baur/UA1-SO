@@ -89,7 +89,7 @@
          *
          * @param $id		Answer's question id
          */
-        static function getAnswerThread($id){
+        private static function getAnswerThread($id){
             $servername = self::$servername;
             $username = self::$username;
             $password = self::$password;
@@ -147,7 +147,7 @@
          * @param $id		answer or question's id
          * @param $type     string containing 'answer' or 'question'
          */
-        static function getCommentThread($id, $type){
+        private static function getCommentThread($id, $type){
             $servername = self::$servername;
             $username = self::$username;
             $password = self::$password;
