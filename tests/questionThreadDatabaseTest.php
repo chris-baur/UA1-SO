@@ -5,12 +5,26 @@
 class questionThreadDatabaseTest extends PHPUnit\Framework\TestCase{
     public function testGetQuestionThread(){
         $qtc = new QuestionThreadController();
-        $qt = $qtc::getQuestionThread(7);
+        $qt = $qtc::getQuestionThread(6);
         $expectedAccountId = 1;
-        $q = $qt->getQuestion();
-        $actualAccountId = 0; //$q->getAccountId();
-        echo $q . ' : is this null ??';
-        //$this->assertEquals($expectedAccountId, $actualAccountId);
+        $name = $qt->getQuestionName();
+        $pic = $qt->getQuestionFileName();
+        echo '** ' . $name . ' what is this name"s value ?**';
+        echo '** ' . $pic . ' what is this pic"s value ?**';
+
+        $qc = new QuestionController();
+        $account = new Account();
+        $account->setId(1);
+        $expectedNumber = 5;
+        $q = $qc::getQuestionById(6);
+        $accountId = $q->getAccountId();
+        
+        $actualNumber = sizeof($qc::getQuestionsByAccount($account));
+        echo '** ' . $actualNumber . " actual number of questions in DB**";
+        echo '** ' . $accountId . "Actual account id for the question**";
+        // $q = $qt->getQuestion();
+        // $actualAccountId = $q->getAccountId();
+        // $this->assertEquals($expectedAccountId, $actualAccountId);
         
     }
 
