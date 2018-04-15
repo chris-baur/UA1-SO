@@ -38,10 +38,19 @@ class favouriteDatabaseTest extends PHPUnit\Framework\TestCase{
     }
     public function testGetFavouriteAnswers(){
         $fc  = new FavouriteController();
-        $id = 1;
+        $accountId = 1;
+        $questionId = 4;
         $expectedNumber = 1;
         
         $actualNumber = sizeof($fc::getFavouriteAnswers($id));
+        $this->assertEquals($expectedNumber, $actualNumber);
+    }
+    public function testGetAllFavouriteAnswers(){
+        $fc  = new FavouriteController();
+        $id = 1;
+        $expectedNumber = 1;
+        
+        $actualNumber = sizeof($fc::getAllFavouriteAnswers($id));
         $this->assertEquals($expectedNumber, $actualNumber);
     }
 
@@ -77,7 +86,7 @@ class favouriteDatabaseTest extends PHPUnit\Framework\TestCase{
         $accountId = 1;
         $fc::deleteAllFavouriteAnswers($accountId);
         $expectedNumber = 0;
-        $actualNumber = sizeof($fc::getFavouriteAnswers($accountId));
+        $actualNumber = sizeof($fc::getAllFavouriteAnswers($accountId));
         $this->assertEquals($expectedNumber, $actualNumber);
     }
 }

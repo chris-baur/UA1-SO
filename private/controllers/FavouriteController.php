@@ -153,9 +153,10 @@ class FavouriteController{
 	}
 	
 	/**
-	 * Returns a favourite array of answers with the specified account_id, otherwsie returns default faourite if none found
+	 * Returns a favourite array of answers with the specified accountId andd questionId, otherwsie returns default faourite if none found
 	 *
 	 * @param $accountId		favourite's account id
+	 * @param $questionId		favourite's question id
 	 */
 	static function getFavouriteAnswers($accountId, $questionId){
         $servername = self::$servername;
@@ -170,6 +171,55 @@ class FavouriteController{
 
 			$stmt = $pdo -> prepare('SELECT A.id, A.account_id, A.question_id, A.content, A.date, A.upvotes, A.downvotes, A.best FROM answers A JOIN favourites F 
                 ON A.id=F.answer_id WHERE F.account_id=:account_id AND F.question_id=:question_id AND F.answer_id IS NOT NULL AND F.question_id IS NOT NULL;');
+			$stmt -> bindParam(':account_id', $accountId);
+			$stmt -> bindParam(':question_id', $questionId);
+		
+			$stmt -> execute();
+			
+			// if there is a user with specified username
+			while($result = $stmt -> fetch()){
+                $a = new Answer();
+
+				$a->setId($result[0]);
+                $a->setAccountId($result[1]);
+                $a->setQuestionId($result[2]);
+                $a->setContent($result[3]);
+                $a->setDate($result[4]);
+                $a->setUpvotes($result[5]);
+                $a->setDownvotes($result[6]);
+                $a->setBest($result[7]);
+
+                $favouritesArray[] = $a;
+			}
+		}
+		catch(PDOException $e){
+			$log->lwrite($e -> getMessage());
+		}
+		finally{
+			unset($pdo);
+		}
+		// returns the favourite object
+		return $favouritesArray;
+	}
+
+	/**
+	 * Returns a favourite array of answers with the specified account_id, otherwsie returns default faourite if none found
+	 *
+	 * @param $accountId		favourite's account id
+	 */
+	static function getAllFavouriteAnswers($accountId){
+        $servername = self::$servername;
+		$username = self::$username;
+		$password = self::$password;
+		$dbname = self::$dbname;
+		$log = self::$log;
+		$favouritesArray = null;
+		
+		try{
+			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+			$stmt = $pdo -> prepare('SELECT A.id, A.account_id, A.question_id, A.content, A.date, A.upvotes, A.downvotes, A.best FROM answers A JOIN favourites F 
+                ON A.id=F.answer_id WHERE F.account_id=:account_id AND F.answer_id IS NOT NULL;');
 			$stmt -> bindParam(':account_id', $accountId);
 			$stmt -> bindParam(':question_id', $questionId);
 		

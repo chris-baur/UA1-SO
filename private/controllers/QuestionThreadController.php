@@ -1,12 +1,12 @@
 <?php
 
-    include_once(dirname(__FILE__).'\..\models\QuestionThread.php');
-    include_once(dirname(__FILE__).'\..\models\AnswerThread.php');
-    include_once(dirname(__FILE__).'\..\models\CommentThread.php');
+    include_once(dirname(__FILE__).'/../models/QuestionThread.php');
+    include_once(dirname(__FILE__).'/../models/AnswerThread.php');
+    include_once(dirname(__FILE__).'/../models/CommentThread.php');
 
-    include_once(dirname(__FILE__).'\..\util\logging.php');
-    include_once(dirname(__FILE__).'\..\util\sets.php');
-    include_once(dirname(__FILE__).'\..\models\Account.php');
+    include_once(dirname(__FILE__).'/../util/logging.php');
+    include_once(dirname(__FILE__).'/../util/sets.php');
+    include_once(dirname(__FILE__).'/../models/Account.php');
 
     class QuestionThreadController{
 
