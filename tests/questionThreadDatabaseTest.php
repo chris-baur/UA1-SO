@@ -11,41 +11,41 @@ class questionThreadDatabaseTest extends PHPUnit\Framework\TestCase{
         
         
 
-        try{
-            $pdo = new PDO("mysql:host=localhost;dbname=ua1_so", 'ua1', 'Ua1password0)');
-            $stmt = $pdo -> prepare("SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags, AC.username, AC.profile_picture_path 
-                FROM questions Q 
-                JOIN accounts AC ON AC.id = Q.account_id 
-                WHERE Q.id = :id;");						
-            $stmt -> bindParam(':id', $qId);
-            $stmt -> execute();
-            $result = $stmt -> fetch();
+        // try{
+        //     $pdo = new PDO("mysql:host=localhost;dbname=ua1_so", 'ua1', 'Ua1password0)');
+        //     $stmt = $pdo -> prepare("SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags, AC.username, AC.profile_picture_path 
+        //         FROM questions Q 
+        //         JOIN accounts AC ON AC.id = Q.account_id 
+        //         WHERE Q.id = :id;");						
+        //     $stmt -> bindParam(':id', $qId);
+        //     $stmt -> execute();
+        //     $result = $stmt -> fetch();
 
-            if(isset($result)){
-                echo '************ is set**********';
-                $q = new Question();
-                $q->setId($result[0]);
-                $q->setAccountId($result[1]);
-                $q->setHeader($result[2]);
-                $q->setContent($result[3]);
-                $q->setDate($result[4]);
-                $q->setUpvotes($result[5]);
-                $q->setDownvotes($result[6]);
-                $q->setTags(explode(' ', $result[7]));
-                $uname = $result[8];                    
-                $qt->setQuestion($q);
-                $qt->setQuestionName($uname);
-                $qt->setQuestionFileName($result[9]);               
-            }
-            else
-                echo '********** is NOT set*********';
-        }
-        catch(PDOException $e){
-            echo $e -> getMessage();
-        }
-        finally{
-            unset($pdo);
-        }
+        //     if(isset($result)){
+        //         echo '************ is set**********';
+        //         $q = new Question();
+        //         $q->setId($result[0]);
+        //         $q->setAccountId($result[1]);
+        //         $q->setHeader($result[2]);
+        //         $q->setContent($result[3]);
+        //         $q->setDate($result[4]);
+        //         $q->setUpvotes($result[5]);
+        //         $q->setDownvotes($result[6]);
+        //         $q->setTags(explode(' ', $result[7]));
+        //         $uname = $result[8];                    
+        //         $qt->setQuestion($q);
+        //         $qt->setQuestionName($uname);
+        //         $qt->setQuestionFileName($result[9]);               
+        //     }
+        //     else
+        //         echo '********** is NOT set*********';
+        // }
+        // catch(PDOException $e){
+        //     echo $e -> getMessage();
+        // }
+        // finally{
+        //     unset($pdo);
+        // }
         $name = $qt->getQuestionName();
         $pic = $qt->getQuestionFileName();
         echo '** ' . $name . ' what is this name"s value ?**';

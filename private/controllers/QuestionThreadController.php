@@ -32,7 +32,7 @@
          *
          * @param $id		Question's id
          */
-        static function getQuestionThread($id){
+        static function getQuestionThread($questionID){
             global $servername, $username, $password, $dbname, $log;
             $questionThread = new QuestionThread();
             
@@ -42,7 +42,7 @@
                     FROM questions Q 
                     JOIN accounts AC ON AC.id = Q.account_id 
                     WHERE Q.id = :id;");						
-                $stmt -> bindParam(':id', $id);
+                $stmt -> bindParam(':id', $questionID);
                 $stmt -> execute();
                 $result = $stmt -> fetch();
                 
@@ -65,8 +65,8 @@
                     self::$log->lwrite("Got the question with account username: $uname");                 
                     
                     //get other objects from questoinThread
-                    $questionThread->setAnswerThreadArray(self::getAnswerThread($id));
-                    $questionThread->setCommentThreadArray(self::getCommentThread($id, 'question')); 
+                    $questionThread->setAnswerThreadArray(self::getAnswerThread($questionID));
+                    $questionThread->setCommentThreadArray(self::getCommentThread($questionID, 'question')); 
                     
                     self::$log->lwrite('Got everything for the QuestionThread');                 
                 }
