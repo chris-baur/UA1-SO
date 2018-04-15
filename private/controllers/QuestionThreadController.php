@@ -38,7 +38,8 @@
             
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                $stmt = $pdo -> prepare("SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags, AC.username, AC.profile_picture_path FROM questions Q 
+                $stmt = $pdo -> prepare("SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags, AC.username, AC.profile_picture_path 
+                    FROM questions Q 
                     JOIN accounts AC ON AC.id = Q.account_id 
                     WHERE Q.id = :id;");						
                 $stmt -> bindParam(':id', $id);
