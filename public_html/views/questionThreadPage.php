@@ -73,7 +73,7 @@
            	$filePath = "..\img\avatar2.png";                      
         };
 
-        $returnLocation = "http://localhost/Askit/UA1-SO/public_html/views/questionThreadPage.php?questionId=".$_GET['questionId'];
+        $returnLocation = "questionThreadPage.php?questionId=".$_GET['questionId'];
 
 
         // ------------------------------ Outputting the requested question --------------------------
