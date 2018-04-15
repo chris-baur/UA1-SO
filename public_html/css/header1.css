@@ -1,0 +1,146 @@
+.menu{
+  background-color: #DEB887;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  max-width: 1100px;
+  font-family: helvetica, sans-serif;
+}
+.content {
+  position: relative;
+  padding-top: 80px;
+}
+.content p {
+  margin-bottom: 10px;
+}
+.container img{
+  float: left;
+}
+.search-container {
+  float: left;
+  padding: 0;
+}
+.search-container form{
+  width: 100%;
+}
+
+.search-container input[type=text] {
+  font-size: 17px;
+  border: none;
+  width: 85%;
+  height: 30px;
+}
+
+.search-container button {
+  float: right;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  width: 15%;
+}
+
+.container .search-container button:hover {
+  background: #ccc;
+}
+
+.myButtons {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  font-size: 17px;
+  margin: auto 0;
+  padding: 4px;
+}
+
+.myButtons:hover {
+    background-color: #D2B48C; 
+    text-decoration: none;
+    color:black;
+    font-family: arial;
+  }
+.myActiveButton {
+  background-color: #D2B48C;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  font-size: 17px;
+  margin: auto 0;
+  padding: 4px;
+  font-family: arial;
+}
+
+.myActiveButton:hover {
+  background-color: #D2B48C; 
+  text-decoration: none;
+  color:black;
+}
+
+.loginButton{
+  background-color: red;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  color: black;    
+  border: none;
+  cursor: pointer;
+  margin: auto 0;
+  padding: 15px 25px;
+}
+.loginButton:hover{
+   opacity: 0.8;
+}
+
+.head_login .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.head_login .dropbtn {
+  background-color: #DEB887;
+  color: black;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: arial;
+  text-transform: uppercase;
+  border: none;
+}
+
+.head_login .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.head_login .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.head_login .dropdown-content a:hover {background-color: #ddd}
+
+.head_login .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.head_login .dropdown:hover .dropbtn {
+  background-color: #D2B48C;
+}
+
+@media (max-width: 990px) {
+
+
+
+}

@@ -17,7 +17,7 @@
   </head>
   <body>
   
-    <p><a href='../home_page/homepage.php'><img style='display: block; margin-left: auto; margin-right: auto;' src='../img/newlogo.png' alt='' width='800' height='450' /></a></p>
+    <p id=image><a href='../views/homepage.php'><img style='display: block; margin-left: auto; margin-right: auto;' src='../img/newlogo.png' alt='' width='50%' height='50%' /></a></p>
     <p>&nbsp;</p>";
   
   echo  "<p style='text-align: center;'><button id='loginButton' onclick=" . '"document.getElementById(' . "'login'" . ").style.display='block'" . '"' . "style='width:auto;'>Login</button></p>
@@ -48,7 +48,7 @@
 
           <label><input type='checkbox' checked='checked'> Remember me
           </label>
-          <a href='forgotpassword.html' style = 'text-align: left; padding: 4%'> Forgot password? 
+          <a href='forgotpassword.php' style = 'text-align: left; padding: 4%'> Forgot password? 
           </a>
 
         </div>

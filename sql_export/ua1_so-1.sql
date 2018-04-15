@@ -206,6 +206,12 @@ CREATE TABLE `votes` (
   `vote` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+ALTER TABLE `votes`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `votes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+
 --
 -- Dumping data for table `votes`
 --

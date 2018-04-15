@@ -180,10 +180,11 @@ function __construct(){
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", "ua1", "Ua1password0)");
 
-            $stmt = $pdo -> prepare('UPDATE accounts set password = :password, name = :name, last_name = :last_name, gender = :gender, 
+            $stmt = $pdo -> prepare('UPDATE accounts set username = :username, password = :password, name = :name, last_name = :last_name, gender = :gender, 
                 security_one = :security_one, security_two = :security_two, answer_one = :answer_one, answer_two = :answer_two,
-				bio = :bio, profession = :profession, pin = :pin, profile_picture_path = :profile_pic WHERE username = :username;');
+				bio = :bio, profession = :profession, pin = :pin, profile_picture_path = :profile_pic WHERE id = :id;');
 
+            $id = $account->getID();
 			$uname = $account->getUsername();
 			$pass = $account->getPassword();
 			$name = $account->getName();
@@ -197,7 +198,7 @@ function __construct(){
 			$profession = $account->getProfession();
 			$pin = $account->getPin();
 			$pic = $account->getProfilePicturePath();			
-				
+			$stmt -> bindParam(':id', $id);	
 			$stmt -> bindParam(':username', $uname);
 			$stmt -> bindParam(':password', $pass);
 			$stmt -> bindParam(':name', $name);
