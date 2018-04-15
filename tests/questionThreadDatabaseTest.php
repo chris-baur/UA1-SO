@@ -5,11 +5,11 @@
 class questionThreadDatabaseTest extends PHPUnit\Framework\TestCase{
     public function testGetQuestionThread(){
         $qtc = new QuestionThreadController();
-        $qt = $qtc::getQuestionThread(1);
-        $expectedId = 1;
+        $qt = $qtc::getQuestionThread(7);
+        $expectedAccountId = 1;
         $q = $qt->getQuestion();
-        $actualId = $q->getAccountId();
-        $this->assertEquals($expectedId, $actualId);
+        $actualAccountId = $q->getAccountId();
+        $this->assertEquals($expectedAccountId, $actualAccountId);
         
     }
 
