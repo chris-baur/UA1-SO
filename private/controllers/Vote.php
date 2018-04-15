@@ -49,7 +49,8 @@ class Vote{
 			}	
 		
 	}
-	public function dislike($ref,$ref_id,$user_id){			global $servername, $username, $password, $dbname;
+	public function dislike($ref,$ref_id,$user_id){			
+		global $servername, $username, $password, $dbname;
 
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
