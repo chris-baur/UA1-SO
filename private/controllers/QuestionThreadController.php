@@ -57,6 +57,8 @@
                     $q->setDownvotes($result[6]);
                     $q->setTags(explode(' ', $result[7]));
                     $uname = $result[8];
+                    echo $uname . " this is the uname";
+                    echo $fileName . " this is the filename";                    
                     $questionThread->setQuestion($q);
                     $questionThread->setQuestionName($uname);
                     $questionThread->setQuestionFileName($result[9]);
