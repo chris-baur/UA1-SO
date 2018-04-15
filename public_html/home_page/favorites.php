@@ -60,14 +60,14 @@
 
 				<! ---------------------------- Left column of the Question Block ------------------------ -->
 	            <div class='details vote_btns ".$vote_class." '>
-  	            <form action= '.\Like.php?ref=questions&ref_id=".$favouriteQuestion->getId()."&vote=1&page=questionThreadPage.php?questionid=".$favouriteQuestion->getId()."'' method='POST'>
+  	            <form action= '.\Like.php?ref=questions&ref_id=".$favouriteQuestion->getId()."&vote=1&page=questionThreadPage.php?questionId=".$favouriteQuestion->getId()."'' method='POST'>
   	            <button type='submit' class='vote_btn vote_like' ";
   	            if(!isset($_SESSION['userid'])){
   	            	echo "disabled";
   	            }
   	            echo "><i class='fa fa-thumbs-up'> ". $favouriteQuestion->getUpvotes() . "</i></button>
   	            </form>
-  	            <form action='.\Like.php?ref=questions&ref_id=".$favouriteQuestion->getId()."&vote=-1&page=questionThreadPage.php?questionid=".$favouriteQuestion->getId()."' method='POST'>
+  	            <form action='.\Like.php?ref=questions&ref_id=".$favouriteQuestion->getId()."&vote=-1&page=questionThreadPage.php?questionId=".$favouriteQuestion->getId()."' method='POST'>
   	            <button type='submit' class='vote_btn vote_dislike' ";
   	            if(!isset($_SESSION['userid'])){
   	              	echo "disabled";
@@ -91,7 +91,7 @@
 
 				<!------------------------------ right column of question block ------------------------------>
 			    <div class='col-md-10 question'>
-			    	<a href='questionThreadPage.php?questionid=".$favouriteQuestion->getId()."'>
+			    	<a href='questionThreadPage.php?questionId=".$favouriteQuestion->getId()."'>
 			        <h3><strong>".$favouriteQuestion->getHeader()."</strong></h3>
 			        </a>
 			        <p>".$favouriteQuestion->getContent()."</p>

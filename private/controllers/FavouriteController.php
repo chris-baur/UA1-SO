@@ -24,8 +24,6 @@ class FavouriteController{
         self::$dbname = $config['dbname'];
 
         self::$log = new Logging();
-
-
     }
 
 	/**
@@ -124,9 +122,8 @@ class FavouriteController{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 			$stmt = $pdo -> prepare('SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags FROM questions Q JOIN favourites F 
-                ON Q.id=F.question_id WHERE F.account_id=:account_id;');						
+                ON Q.id=F.question_id WHERE F.account_id=:account_id AND F.answer_id IS NULL;');						
 			$stmt -> bindParam(':account_id', $accountId);
-		
 			$stmt -> execute();
 			
 			// if there is a user with specified username
@@ -160,20 +157,21 @@ class FavouriteController{
 	 *
 	 * @param $accountId		favourite's account id
 	 */
-	static function getFavouriteAnswers($accountId){
+	static function getFavouriteAnswers($accountId, $questionId){
         $servername = self::$servername;
 		$username = self::$username;
 		$password = self::$password;
 		$dbname = self::$dbname;
 		$log = self::$log;
-		$favouritesArray = [];
+		$favouritesArray = null;
 		
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 			$stmt = $pdo -> prepare('SELECT A.id, A.account_id, A.question_id, A.content, A.date, A.upvotes, A.downvotes, A.best FROM answers A JOIN favourites F 
-                ON A.id=F.answer_id WHERE F.account_id=:account_id AND F.answer_id IS NOT NULL;');						
+                ON A.id=F.answer_id WHERE F.account_id=:account_id AND F.question_id=:question_id AND F.answer_id IS NOT NULL AND F.question_id IS NOT NULL;');
 			$stmt -> bindParam(':account_id', $accountId);
+			$stmt -> bindParam(':question_id', $questionId);
 		
 			$stmt -> execute();
 			

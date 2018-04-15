@@ -23,7 +23,7 @@
 		}
 	}
 
-	header("Location: questionThreadPage.php?questionid=".$_POST['questionId']);
+	header("Location: questionThreadPage.php?questionId=".$_POST['questionId']);
 
 
 
