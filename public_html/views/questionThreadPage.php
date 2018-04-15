@@ -7,10 +7,7 @@
     $dbname = $config['dbname'];
     $servername = $config['servername'];
 	include('header.php');
-	include_once('..\..\private\controllers\question_controller.php');
-	include_once('..\..\private\controllers\answer_controller.php');
-	include_once('..\..\private\controllers\comment_controller.php');
-	include_once('..\..\private\views\OutputTemplateView.php');
+	include_once('OutputBlock.php');
 	include_once('..\..\private\models\Question.php');
 	include_once('..\..\private\models\Answer.php');
 	include_once('..\..\private\models\Comment.php');
@@ -31,7 +28,7 @@
 		$votesA=[];
 
 		$qtc = new QuestionThreadController();
-		$otv = new OutputTemplateView();
+		$ob = new OutputBlock();
 		$questionThread = $qtc::getQuestionThread($questId);
 		$question = $questionThread->getQuestion(); 
 
@@ -76,11 +73,11 @@
            	$filePath = "..\img\avatar2.png";                      
         };
 
-        $returnLocation = "http://localhost/Askit/UA1-SO/public_html/home_page/questionThreadPage.php?questionId=".$_GET['questionId'];
+        $returnLocation = "questionThreadPage.php?questionId=".$_GET['questionId'];
 
 
         // ------------------------------ Outputting the requested question --------------------------
-        $otv->outputTemplate("questions", $question, $voteClass, $filePath, $questionThread->getQuestionName(), $returnLocation);
+        $ob->outputBlock("questions", $question, $voteClass, $filePath, $questionThread->getQuestionName(), $returnLocation);
         
         echo "</div><hr>";
 
@@ -144,7 +141,7 @@
 
 				echo "<div class= 'answerBlock'>";
 
-		        $otv->outputTemplate("answers", $answer, $voteClass, $filePath, $answerArrayElement->getAnswerName(), $returnLocation, $_GET['questionId'], $counter, $commentArray, $question->getAccountId());
+		        $ob->outputBlock("answers", $answer, $voteClass, $filePath, $answerArrayElement->getAnswerName(), $returnLocation, $_GET['questionId'], $counter, $commentArray, $question->getAccountId());
 
 		        echo "</div>";
 

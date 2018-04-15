@@ -30,6 +30,21 @@
         </div>
       </div>
     </header>
+<<<<<<< HEAD:public_html/home_page/header.php
+=======
+
+    <div class = "header" >
+     <!--<div class = "hamburger"> </div>-->
+        <span>
+          <a class = "hamburger"> </a>
+          <a class = "option" href = "../views/about.php">About</a>
+          <a class = "option" href = "../views/myquestions.php">My Question</a> 
+          <a class = "option" href = "../views/homepage.php">Home</a>      
+        </span> 
+        <img src="../img/newlogo.png">
+    </div>
+
+>>>>>>> 10049027833ca31d1e4ec4f2d37dfb7bc0e99f36:public_html/views/header.php
   </body>
 
 </html>

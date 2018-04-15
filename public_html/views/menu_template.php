@@ -54,7 +54,7 @@
 	  				<div class="dropdown-content">
 	    				<a href="profile.php">My Profile</a>
 	    				<a href="myquestions.php">My Questions</a>
-	    				<a href="favorites.php">Favorites</a>
+	    				<a href="favourites.php">Favorites</a>
 	    				<a href="logout.php">Logout</a>
 	  				</div>
 				</div>
