@@ -30,20 +30,30 @@ $error;
 
 if(password_verify($currentPass, $account->getPassword())) {
 	if ($new_password1 == $new_password2) {
-		$newpassword = password_hash($_POST['newpassword1'], PASSWORD_DEFAULT);
-		$account->setPassword($newpassword);
-		$controller::updateAccount($account);
+		if(strlen($_POST['newpassword1'])<8){
+			$error = "The new password is too short";
+			header("Location: profile.php?errorMessage=$error");
+		}
+		else if($new_password1 == $currentPass){
+			$error = "The new password the same as the current pass, please enter a new password";
+			header("Location: profile.php?errorMessage=$error");
+		}
+		else{
+			$newpassword = password_hash($_POST['newpassword1'], PASSWORD_DEFAULT);
+			$account->setPassword($newpassword);
+			$controller::updateAccount($account);
 
-		$stmt = $conn->prepare("UPDATE `accounts` SET `password` = '$newpassword' WHERE `accounts`.`username` = '$user'");
-		$stmt->bindParam(':password', $newpassword);
-		$stmt->execute();
-		$error = "The password has successfully been modified !";
+			$stmt = $conn->prepare("UPDATE `accounts` SET `password` = '$newpassword' WHERE `accounts`.`username` = '$user'");
+			$stmt->bindParam(':password', $newpassword);
+			$stmt->execute();
+			$error = "The password has successfully been modified!";
+		}
 	} else {
-		$error = "The new password does not match..";
+		$error = "The new password does not match";
 		header("Location: profile.php?errorMessage=$error");
 	}
 } else {
-	$error = "The current password entered is incorrect..";
+	$error = "The current password entered is incorrect";
 	header("Location: profile.php?errorMessage=$error");
 }
 

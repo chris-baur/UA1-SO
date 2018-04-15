@@ -138,7 +138,7 @@ class QuestionController{
 		try{
 			$pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE account_id = :account_id;");
+			$stmt = $pdo -> prepare("SELECT id, account_id, header, content, date, upvotes, downvotes, tags FROM questions WHERE account_id = :account_id ORDER BY date desc;");
 			$accountID=$account->getId();						
 			$stmt -> bindParam(':account_id',$accountID );
 		

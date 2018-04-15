@@ -1,16 +1,9 @@
 .menu{
   background-color: #DEB887;
+  position: relative;
   text-transform: uppercase;
   font-weight: bold;
   height: 100%;
-}
-
-.header {
-  display: none;
-}
-
-.burgerMenu {
-  display: none;
 }
 
 .container {
@@ -90,7 +83,7 @@
 }
 
 .loginButton{
-  background-color: #D2B48C;
+  background-color: red;
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
@@ -144,4 +137,10 @@
 
 .head_login .dropdown:hover .dropbtn {
   background-color: #D2B48C;
+}
+
+@media (max-width: 990px) {
+
+
+
 }

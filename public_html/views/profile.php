@@ -4,7 +4,7 @@
 	<html>
 		<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" type="text/css" href="../css/prof.css">
+			<link rel="stylesheet" type="text/css" href="../css/profile.css">
 		</head>
 		<body>
 			
@@ -92,7 +92,7 @@
 				<div id = "ChangePass">
 				<?php 
 					if(isset($_GET['errorMessage'])) {
-    					if("The password has successfully been modified !" == $_GET['errorMessage']) {
+    					if("The password has successfully been modified!" == $_GET['errorMessage']) {
     						echo "<br><p style='color:green;'>".$_GET['errorMessage']."</p>";
     					} else {
     						echo "<br><p style='color:red;'>".$_GET['errorMessage']."</p>";
@@ -112,7 +112,7 @@
 					document.getElementById("ChangePass").innerHTML = "";
 					document.getElementById("changeBio").innerHTML = "";
 					document.getElementById("info").innerHTML = "";
-					document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="../home_page/profile/uploadImage.php" method="POST" style = "padding-bottom: 2%; padding-top: 2%"><input name="userfile" type="file" style = "font-size: 18px; width: 60%; margin-top:2%;"/><br><input type=submit name = "modify" class = "btn btn-gray btn-sm" id = "subChange" value="Submit" style = "font-size: 14px"/><input type=submit id = subCancel class = "btn btn-gray btn-sm" value="Cancel" onclick = "cancelChange()" style = "font-size: 14px; margin-top: 2%"/></form>';
+					document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="../views/profile/uploadImage.php" method="POST" style = "padding-bottom: 2%; padding-top: 2%"><input name="userfile" type="file" style = "font-size: 18px; width: 60%; margin-top:2%;"/><br><input type=submit name = "modify" class = "btn btn-gray btn-sm" id = "subChange" value="Submit" style = "font-size: 14px"/><input type=submit id = subCancel class = "btn btn-gray btn-sm" value="Cancel" onclick = "cancelChange()" style = "font-size: 14px; margin-top: 2%"/></form>';
 				}
 
 				function pictureChanged() {
@@ -123,7 +123,7 @@
 					document.getElementById("changeBio").innerHTML = "";
 					document.getElementById("changePic").innerHTML = "";
 					document.getElementById("info").innerHTML = "";
-					document.getElementById("ChangePass").innerHTML = '<br><form action="profile/changePassword.php" method="POST"> Current Password <br> <input type = "password" class = "btn btn-gray btn-sm" name = "currentPass" placeholder = "Current Password" style = "width: 100%"><br>New Password <br><input type = "password" class = "btn btn-gray btn-sm" name = "newpassword1" placeholder = "New Password" style = "margin-top: 1%; width: 100%"/><br>Confirm Password <br><input type = "password" class = "btn btn-gray btn-sm" name = "newpassword2" id = "focus" placeholder = "Confirm New Password" style = "margin-top: 1%; width:100%"/><br><input type = "submit" class = "btn btn-gray btn-sm" id = "subChange" value = "Submit"/><input type = "submit" class = "btn btn-gray btn-sm" id = "subCancel" onclick = "cancelPass()" value = "Cancel" style = "margin-top: 2%"/></form>';
+					document.getElementById("ChangePass").innerHTML = '<br><form action="changePassword.php" method="POST"> Current Password <br> <input type = "password" class = "btn btn-gray btn-sm" name = "currentPass" placeholder = "Current Password" style = "width: 100%"><br>New Password <br><input type = "password" class = "btn btn-gray btn-sm" name = "newpassword1" placeholder = "New Password" style = "margin-top: 1%; width: 100%"/><br>Confirm Password <br><input type = "password" class = "btn btn-gray btn-sm" name = "newpassword2" id = "focus" placeholder = "Confirm New Password" style = "margin-top: 1%; width:100%"/><br><input type = "submit" class = "btn btn-gray btn-sm" id = "subChange" value = "Submit"/><input type = "submit" class = "btn btn-gray btn-sm" id = "subCancel" onclick = "cancelPass()" value = "Cancel" style = "margin-top: 2%"/></form>';
 				}
 
 				function changeBio() {

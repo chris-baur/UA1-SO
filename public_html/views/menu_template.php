@@ -3,52 +3,8 @@
 	<head>
 		<title>Ask It! About</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<link rel="stylesheet" type="text/css" href="../css/header.css">
+    	<link rel="stylesheet" type="text/css" href="../css/header2.css">
     </head>
-
-    <style>
-    	.dropbtn {
-		    background-color: #DEB887;
-		    color: black;
-		    padding: 16px;
-		    font-size: 17px;
-		    font-weight: bold;
-		    font-family: arial;
-		    text-transform: uppercase;
-		    border: none;
-		}
-
-		.dropdown {
-		    position: relative;
-		    display: inline-block;
-		}
-
-		.dropdown-content {
-		    display: none;
-		    position: absolute;
-		    background-color: #f1f1f1;
-		    min-width: 160px;
-		    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		    z-index: 1;
-		}
-
-		.dropdown-content a {
-		    color: black;
-		    padding: 12px 16px;
-		    text-decoration: none;
-		    display: block;
-		}
-
-		.dropdown-content a:hover {background-color: #ddd}
-
-		.dropdown:hover .dropdown-content {
-		    display: block;
-		}
-
-		.dropdown:hover .dropbtn {
-		    background-color: #D2B48C;
-		}
-	</style>
 
  	<body>
 
@@ -87,11 +43,10 @@
 			<a class="<?php echo $about;?>"href="about.php">About</a>
 		</div>
 
-		<div class="col-lg-4">
+		<div class="head_login">
 			<?php
 
 			if(isset($_SESSION['username'])) {
-				//echo "Hi, " .$_SESSION['username']. "!";
 				?>
 
 				<div class="dropdown">
@@ -99,15 +54,11 @@
 	  				<div class="dropdown-content">
 	    				<a href="profile.php">My Profile</a>
 	    				<a href="myquestions.php">My Questions</a>
-	    				<a href="favorites.php">Favorites</a>
+	    				<a href="favourites.php">Favorites</a>
 	    				<a href="logout.php">Logout</a>
 	  				</div>
 				</div>
 
-
-				<!--<div class="col-lg-2 <?php echo $logout;?>">
-					<a class="<?php echo $logout;?>"href="logout.php">Logout</a>
-				</div>-->
 				<?php
 			} else {
 				?>

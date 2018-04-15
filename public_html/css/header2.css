@@ -1,16 +1,13 @@
+.head {
+  display: none;
+}
+
 .menu{
   background-color: #DEB887;
+  position: relative;
   text-transform: uppercase;
   font-weight: bold;
   height: 100%;
-}
-
-.header {
-  display: none;
-}
-
-.burgerMenu {
-  display: none;
 }
 
 .container {
@@ -18,16 +15,11 @@
   max-width: 1100px;
   font-family: helvetica, sans-serif;
 }
-.content {
-  position: relative;
-  padding-top: 80px;
-}
-.content p {
-  margin-bottom: 10px;
-}
+
 .container img{
   float: left;
 }
+
 .search-container {
   float: left;
   padding: 0;
@@ -90,7 +82,7 @@
 }
 
 .loginButton{
-  background-color: #D2B48C;
+  background-color: #DEB887;
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
@@ -101,7 +93,7 @@
   padding: 15px 25px;
 }
 .loginButton:hover{
-   opacity: 0.8;
+  background-color: #D2B48C; 
 }
 
 .head_login .dropdown {
@@ -144,4 +136,18 @@
 
 .head_login .dropdown:hover .dropbtn {
   background-color: #D2B48C;
+}
+
+@media (max-width: 990px) {
+
+  header {
+    display: none;
+  }
+
+  .head {
+    display: block;
+  }
+
+
+
 }
