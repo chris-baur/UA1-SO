@@ -40,7 +40,7 @@ class favouriteDatabaseTest extends PHPUnit\Framework\TestCase{
         $fc  = new FavouriteController();
         $accountId = 1;
         $questionId = 4;
-        $expectedNumber = 1;
+        $expectedNumber = 0 ;
         
         $actualNumber = sizeof($fc::getFavouriteAnswers($accountId, $questionId));
         $this->assertEquals($expectedNumber, $actualNumber);

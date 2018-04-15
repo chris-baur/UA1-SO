@@ -42,8 +42,9 @@
                     JOIN accounts AC ON AC.id = Q.account_id 
                     WHERE Q.id = :id;");						
                 $stmt -> bindParam(':id', $id);
-            
                 $stmt -> execute();
+                if(is_null($stmt->fetch()))
+                    echo ' fetched null statement *********';
                 
                 // while there is a question with specified header
                 if($result = $stmt -> fetch()){
