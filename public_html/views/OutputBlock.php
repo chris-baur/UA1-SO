@@ -151,7 +151,6 @@ class OutputBlock{
               ".sizeof($commentThread)."
               Comments
               </a>";
-
             }
             
             echo "</span>";
@@ -164,11 +163,8 @@ class OutputBlock{
               echo "</span>";
             }
 
-
             echo"</div>";
 		}
-
-		// Output if type is a comment
 
 	}
 

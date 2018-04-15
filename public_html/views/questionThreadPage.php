@@ -307,7 +307,6 @@
 	echo "</div>"; // div that closes the container class div
 
 
-
 	//Verifie if the current question has a vote, if yes it returns it if not false
 	function getVote($votes,$answerArrayElement_id){
 	    foreach ($votes as $vote) {
