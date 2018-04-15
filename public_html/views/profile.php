@@ -112,7 +112,7 @@
 					document.getElementById("ChangePass").innerHTML = "";
 					document.getElementById("changeBio").innerHTML = "";
 					document.getElementById("info").innerHTML = "";
-					document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="../home_page/profile/uploadImage.php" method="POST" style = "padding-bottom: 2%; padding-top: 2%"><input name="userfile" type="file" style = "font-size: 18px; width: 60%; margin-top:2%;"/><br><input type=submit name = "modify" class = "btn btn-gray btn-sm" id = "subChange" value="Submit" style = "font-size: 14px"/><input type=submit id = subCancel class = "btn btn-gray btn-sm" value="Cancel" onclick = "cancelChange()" style = "font-size: 14px; margin-top: 2%"/></form>';
+					document.getElementById("changePic").innerHTML = '<form enctype="multipart/form-data" action="../views/profile/uploadImage.php" method="POST" style = "padding-bottom: 2%; padding-top: 2%"><input name="userfile" type="file" style = "font-size: 18px; width: 60%; margin-top:2%;"/><br><input type=submit name = "modify" class = "btn btn-gray btn-sm" id = "subChange" value="Submit" style = "font-size: 14px"/><input type=submit id = subCancel class = "btn btn-gray btn-sm" value="Cancel" onclick = "cancelChange()" style = "font-size: 14px; margin-top: 2%"/></form>';
 				}
 
 				function pictureChanged() {

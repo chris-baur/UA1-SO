@@ -127,7 +127,7 @@ function validateString($string){
     unset($_SESSION['uName']);
     session_regenerate_id();
     // redirect to user home page
-    header('Location: ..\home_page\homepage.php');
+    header('Location: ..\views\homepage.php');
  }
 
 // increases the user's attempt ctr

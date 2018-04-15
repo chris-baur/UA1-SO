@@ -1,13 +1,14 @@
 <?php
 
-include_once(dirname(__FILE__).'/../util/logging.php');
-include_once(dirname(__FILE__).'/../util/sets.php');
-include_once(dirname(__FILE__).'/../models/Question.php');
-include_once(dirname(__FILE__).'/../models/Answer.php');
-include_once(dirname(__FILE__).'/../models/Account.php');
+include_once(dirname(__FILE__).'../../../private/util/logging.php');
+include_once(dirname(__FILE__).'../../../private/util/sets.php');
+include_once(dirname(__FILE__).'../../../private/models/Question.php');
+include_once(dirname(__FILE__).'../../../private/models/Answer.php');
+include_once(dirname(__FILE__).'../../../private/models/Account.php');
+include_once(dirname(__FILE__).'../../../private/controllers/FavouriteController.php');
 
 
-class outputTemplateView{
+class OutputBlock{
 	private static $servername;
 	private static $username;
 	private static $password;
@@ -31,7 +32,7 @@ class outputTemplateView{
 	* @param $account		Account object
 	*/
 
-	static function outputTemplate($outputType, $model, $voteClass, $filePath, $username, $returnLocation, $questionId = null, $commentCounter = null, $commentThread = null, $questionUserId = null){
+	static function outputBlock($outputType, $model, $voteClass, $filePath, $username, $returnLocation, $questionId = null, $commentCounter = null, $commentThread = null, $questionUserId = null){
 		// Output if type is a question or answer
 		if ($outputType == "answers" || $outputType == "questions"){
 

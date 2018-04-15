@@ -12,7 +12,7 @@ $status = session_status();
 
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
-    header("location: ..\home_page\about.php");
+    header("location: ..\views\about.php");
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

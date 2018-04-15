@@ -17,7 +17,7 @@ echo "
     <script src='../js/register.js'></script>
 </head>
 <body>
-  <p><a href='../home_page/homepage.php'><img style='display: block; margin-left: auto; margin-right: auto;' src='../img/newlogo.png' alt=''width='100' height='100' /></a></p>
+  <p><a href='../views/homepage.php'><img style='display: block; margin-left: auto; margin-right: auto;' src='../img/newlogo.png' alt=''width='100' height='100' /></a></p>
   <p>&nbsp;</p>
 "
 ;

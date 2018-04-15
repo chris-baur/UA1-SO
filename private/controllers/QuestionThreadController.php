@@ -61,17 +61,17 @@
                     $questionThread->setQuestionName($uname);
                     $questionThread->setQuestionFileName($result[9]);
 
-                    $log->lwrite("Got the question with account username: $uname");                 
+                    self::$log->lwrite("Got the question with account username: $uname");                 
                     
                     //get other objects from questoinThread
                     $questionThread->setAnswerThreadArray(self::getAnswerThread($id));
                     $questionThread->setCommentThreadArray(self::getCommentThread($id, 'question')); 
                     
-                    $log->lwrite('Got everything for the QuestionThread');                 
+                    self::$log->lwrite('Got everything for the QuestionThread');                 
                 }
             }
             catch(PDOException $e){
-                $log->lwrite($e -> getMessage());
+                self::$log->lwrite($e -> getMessage());
             }
             finally{
                 unset($pdo);
@@ -121,10 +121,10 @@
                     
                 }
                 $size = isset($answerThreadArray)?sizeof($answerThreadArray):0;
-                $log->lwrite("Got all the answer threads. Size of array: $size");
+                self::$log->lwrite("Got all the answer threads. Size of array: $size");
             }
             catch(PDOException $e){
-                $log->lwrite($e -> getMessage());
+                self::$log->lwrite($e -> getMessage());
             }
             finally{
                 unset($pdo);
@@ -171,10 +171,10 @@
                     
                 }
                 $size = isset($commentThreadArray)?sizeof($commentThreadArray):0;
-                $log->lwrite("Got all the comment threads for Type: $type with ID: $id. Size of array: $size");
+                self::$log->lwrite("Got all the comment threads for Type: $type with ID: $id. Size of array: $size");
             }
             catch(PDOException $e){
-                $log->lwrite($e -> getMessage());
+                self::$log->lwrite($e -> getMessage());
             }
             finally{
                 unset($pdo);

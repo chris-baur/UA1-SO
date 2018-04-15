@@ -38,9 +38,9 @@
      <!--<div class = "hamburger"> </div>-->
         <span>
           <a class = "hamburger"> </a>
-          <a class = "option" href = "../home_page/about.php">About</a>
-          <a class = "option" href = "../home_page/myquestions.php">My Question</a> 
-          <a class = "option" href = "../home_page/homepage.php">Home</a>      
+          <a class = "option" href = "../views/about.php">About</a>
+          <a class = "option" href = "../views/myquestions.php">My Question</a> 
+          <a class = "option" href = "../views/homepage.php">Home</a>      
         </span> 
         <img src="../img/newlogo.png">
     </div>
