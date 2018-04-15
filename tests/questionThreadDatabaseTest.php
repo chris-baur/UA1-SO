@@ -9,8 +9,7 @@ class questionThreadDatabaseTest extends PHPUnit\Framework\TestCase{
         $qt = $qtc::getQuestionThread($qId);
         $expectedAccountId = 1;
         
-        echo '** ' . $name . ' what is this name"s value ?**';
-        echo '** ' . $pic . ' what is this pic"s value ?**';
+        
 
         try{
             $pdo = new PDO("mysql:host=localhost;dbname=ua1_so", 'ua1', 'Ua1password0)');
@@ -49,6 +48,8 @@ class questionThreadDatabaseTest extends PHPUnit\Framework\TestCase{
         }
         $name = $qt->getQuestionName();
         $pic = $qt->getQuestionFileName();
+        echo '** ' . $name . ' what is this name"s value ?**';
+        echo '** ' . $pic . ' what is this pic"s value ?**';
 
         $qc = new QuestionController();
         $account = new Account();
