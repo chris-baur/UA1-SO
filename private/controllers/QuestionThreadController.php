@@ -90,7 +90,11 @@
          * @param $id		Answer's question id
          */
         static function getAnswerThread($id){
-            global $servername, $username, $password, $dbname, $log;
+            $servername = self::$servername;
+            $username = self::$username;
+            $password = self::$password;
+            $dbname = self::$dbname;
+            $log = self::$log;
             $answerThreadArray = null;
             
             try{
@@ -144,7 +148,11 @@
          * @param $type     string containing 'answer' or 'question'
          */
         static function getCommentThread($id, $type){
-            global $servername, $username, $password, $dbname, $log;
+            $servername = self::$servername;
+            $username = self::$username;
+            $password = self::$password;
+            $dbname = self::$dbname;
+            $log = self::$log;
             $commentThreadArray = null;
             
             try{
