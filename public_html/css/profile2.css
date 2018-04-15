@@ -34,7 +34,7 @@ body {
 	border-color: #F4A460;
 	border-radius: 2%;
 	line-height: 50%;
-	width: 40%;
+	width: 45%;
 }
 
 .column1 button {
@@ -67,7 +67,7 @@ body {
 .column2{
 	position: relative;
 	background-color: white;
-	width: 60%;
+	width: 55%;
 	border-radius: 5px;
 	font-size: 18px;
 	text-align: left;
@@ -139,6 +139,14 @@ body {
 .circle_img{
 	border-radius: 50%;
 	padding: 5%;
+}
+
+@media (max-width: 990px) {
+	.title {
+		width: 350px;
+		margin-right: 5%;
+		margin-left: 5%;
+	}
 }
 
 

@@ -9,7 +9,7 @@
     
   }
   else if($_SERVER["REQUEST_METHOD"] == "GET"){
-    include('header.php');
+    include('header.php'); echo "<br>"; echo "<br>";
     include_once('..\..\private\controllers\QuestionController.php');
     include_once('..\..\private\models\Account.php');
     include_once('..\..\private\controllers\AccountController.php');

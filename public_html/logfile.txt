@@ -15,3 +15,5 @@
 [29/Mar/2018:22:54:18] (changeInfo) account updated succesfully. user name: nooooo
 [15/Apr/2018:05:29:13] (uploadImage) account updated succesfully. user name: DaveGrohl
 [15/Apr/2018:05:29:28] (changePassword) account updated succesfully. user name: DaveGrohl
+[15/Apr/2018:14:45:56] (changeInfo) account updated succesfully. user name: john117
+[15/Apr/2018:14:46:08] (uploadImage) account updated succesfully. user name: john117

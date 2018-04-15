@@ -223,16 +223,13 @@
   }
 
   .head_login {
-    background-color: red;
-    float: center;
     display: block;
     width: 100%;
-    height: 100px;
+    height: 50px;
     line-height: 0px;
   }
 
   .head_login .dropdown {
-    float: center;
     text-align: center;
     display: inline-block;
     height: 100%;
