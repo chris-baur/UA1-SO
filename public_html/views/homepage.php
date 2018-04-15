@@ -70,8 +70,7 @@
 
     $question = $qc->getQuestionById($questionElement['id']);
 
-    echo "
-      <div class='form-group row questionBlock'>";
+    echo "<div class='form-group row questionBlock'>";
     $filePath=$questionElement['profile_picture_path']; 
     if(!file_exists($filePath))
       $filePath = "..\img\avatar2.png";
