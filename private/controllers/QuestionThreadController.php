@@ -43,9 +43,10 @@
                     WHERE Q.id = :id;");						
                 $stmt -> bindParam(':id', $id);
                 $stmt -> execute();
+                $result = $stmt -> fetch();
                 
                 // while there is a question with specified header
-                if($result = $stmt -> fetch()){
+                if($result){
                     $q = new Question();
                     $q->setId($result[0]);
                     $q->setAccountId($result[1]);
