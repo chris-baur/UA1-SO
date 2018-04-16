@@ -87,3 +87,12 @@
 .isNotFavourited{
 	color: black;
 }
+
+.badge-default{
+	background-color: #A48963;
+	color: white;
+}
+
+.tags{
+	font-size: 14px;
+}

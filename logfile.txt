@@ -734,3 +734,43 @@
 [29/Mar/2018:22:52:31] (validateLogin) inside valid user
 [29/Mar/2018:22:52:31] (validateLogin) Password passed prelim validaton
 [29/Mar/2018:22:52:31] (validateLogin) password is valid
+[12/Apr/2018:03:58:59] (myquestions) ID retrieved from session: 2
+[12/Apr/2018:03:58:59] (myquestions) returning account
+[12/Apr/2018:03:58:59] (myquestions) The pic path: ../img/accounts/wissem.png
+[12/Apr/2018:03:58:59] (myquestions) ID in account object: 2
+[12/Apr/2018:03:58:59] (myquestions) Number of rows retrieved: 1
+[12/Apr/2018:03:58:59] (myquestions) The file path: ../img/accounts/wissem.png
+[12/Apr/2018:04:05:51] (questionThreadPage) Got the question with account username: wissem
+[12/Apr/2018:04:05:51] (questionThreadPage) Got all the answer threads. Size of array: 0
+[12/Apr/2018:04:05:51] (questionThreadPage) Got all the comment threads for Type: question with ID: 9. Size of array: 0
+[12/Apr/2018:04:05:51] (questionThreadPage) Got everything for the QuestionThread
+[12/Apr/2018:13:36:16] (loginregister) in login register
+[12/Apr/2018:13:36:16] (loginregister) Got the arrays
+[12/Apr/2018:13:36:16] (loginregister) no session errors
+[12/Apr/2018:13:36:24] (validateLogin) Form has requested a post for File: validateLogin.php
+[12/Apr/2018:13:36:24] (validateLogin) Username is: wissem
+[12/Apr/2018:13:36:24] (validateLogin) account exists with given username
+[12/Apr/2018:13:36:24] (validateLogin) inside valid user
+[12/Apr/2018:13:36:24] (validateLogin) Password passed prelim validaton
+[12/Apr/2018:13:36:24] (validateLogin) password is valid
+[12/Apr/2018:13:36:27] (myquestions) ID retrieved from session: 2
+[12/Apr/2018:13:36:27] (myquestions) returning account
+[12/Apr/2018:13:36:27] (myquestions) The pic path: ../img/accounts/wissem.png
+[12/Apr/2018:13:36:27] (myquestions) ID in account object: 2
+[12/Apr/2018:13:36:27] (myquestions) Number of rows retrieved: 1
+[12/Apr/2018:13:36:27] (myquestions) The file path: ../img/accounts/wissem.png
+[12/Apr/2018:14:12:24] (loginregister) in login register
+[12/Apr/2018:14:12:24] (loginregister) Got the arrays
+[12/Apr/2018:14:12:24] (loginregister) no session errors
+[12/Apr/2018:14:12:30] (validateLogin) Form has requested a post for File: validateLogin.php
+[12/Apr/2018:14:12:30] (validateLogin) Username is: wissem
+[12/Apr/2018:14:12:30] (validateLogin) account exists with given username
+[12/Apr/2018:14:12:30] (validateLogin) inside valid user
+[12/Apr/2018:14:12:30] (validateLogin) Password passed prelim validaton
+[12/Apr/2018:14:12:30] (validateLogin) password is valid
+[12/Apr/2018:14:13:08] (myquestions) ID retrieved from session: 2
+[12/Apr/2018:14:13:08] (myquestions) returning account
+[12/Apr/2018:14:13:08] (myquestions) The pic path: ../img/accounts/wissem.png
+[12/Apr/2018:14:13:08] (myquestions) ID in account object: 2
+[12/Apr/2018:14:13:08] (myquestions) Number of rows retrieved: 1
+[12/Apr/2018:14:13:08] (myquestions) The file path: ../img/accounts/wissem.png

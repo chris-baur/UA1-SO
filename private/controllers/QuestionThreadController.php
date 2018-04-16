@@ -1,12 +1,11 @@
 <?php
 
-    include_once(dirname(__FILE__).'\..\models\QuestionThread.php');
-    include_once(dirname(__FILE__).'\..\models\AnswerThread.php');
-    include_once(dirname(__FILE__).'\..\models\CommentThread.php');
+    include_once(dirname(__FILE__).'/../models/QuestionThread.php');
+    include_once(dirname(__FILE__).'/../models/AnswerThread.php');
+    include_once(dirname(__FILE__).'/../models/CommentThread.php');
 
-    include_once(dirname(__FILE__).'\..\util\logging.php');
-    include_once(dirname(__FILE__).'\..\util\sets.php');
-    include_once(dirname(__FILE__).'\..\models\Account.php');
+    include_once(dirname(__FILE__).'/../util/logging.php');
+    include_once(dirname(__FILE__).'/../util/sets.php');
 
     class QuestionThreadController{
 
@@ -32,21 +31,26 @@
          *
          * @param $id		Question's id
          */
-        static function getQuestionThread($id){
-            global $servername, $username, $password, $dbname, $log;
+        static function getQuestionThread($questionID){
+            $servername = self::$servername;
+            $username = self::$username;
+            $password = self::$password;
+            $dbname = self::$dbname;
+            $log = self::$log;
             $questionThread = new QuestionThread();
             
             try{
                 $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                $stmt = $pdo -> prepare("SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags, AC.username, AC.profile_picture_path FROM questions Q 
+                $stmt = $pdo -> prepare("SELECT Q.id, Q.account_id, Q.header, Q.content, Q.date, Q.upvotes, Q.downvotes, Q.tags, AC.username, AC.profile_picture_path 
+                    FROM questions Q 
                     JOIN accounts AC ON AC.id = Q.account_id 
                     WHERE Q.id = :id;");						
-                $stmt -> bindParam(':id', $id);
-            
+                $stmt -> bindParam(':id', $questionID);
                 $stmt -> execute();
+                $result = $stmt -> fetch();
                 
                 // while there is a question with specified header
-                if($result = $stmt -> fetch()){
+                if(isset($result)){
                     $q = new Question();
                     $q->setId($result[0]);
                     $q->setAccountId($result[1]);
@@ -55,23 +59,23 @@
                     $q->setDate($result[4]);
                     $q->setUpvotes($result[5]);
                     $q->setDownvotes($result[6]);
-                    $q->setTags($result[7]);
-                    $uname = $result[8];
+                    $q->setTags(explode(' ', $result[7]));
+                    $uname = $result[8];                    
                     $questionThread->setQuestion($q);
                     $questionThread->setQuestionName($uname);
                     $questionThread->setQuestionFileName($result[9]);
 
-                    $log->lwrite("Got the question with account username: $uname");                 
+                    self::$log->lwrite("Got the question with account username: $uname");                 
                     
                     //get other objects from questoinThread
-                    $questionThread->setAnswerThreadArray(self::getAnswerThread($id));
-                    $questionThread->setCommentThreadArray(self::getCommentThread($id, 'question')); 
+                    $questionThread->setAnswerThreadArray(self::getAnswerThread($questionID));
+                    $questionThread->setCommentThreadArray(self::getCommentThread($questionID, 'question')); 
                     
-                    $log->lwrite('Got everything for the QuestionThread');                 
+                    self::$log->lwrite('Got everything for the QuestionThread');                 
                 }
             }
             catch(PDOException $e){
-                $log->lwrite($e -> getMessage());
+                self::$log->lwrite($e -> getMessage());
             }
             finally{
                 unset($pdo);
@@ -86,7 +90,11 @@
          * @param $id		Answer's question id
          */
         private static function getAnswerThread($id){
-            global $servername, $username, $password, $dbname, $log;
+            $servername = self::$servername;
+            $username = self::$username;
+            $password = self::$password;
+            $dbname = self::$dbname;
+            $log = self::$log;
             $answerThreadArray = null;
             
             try{
@@ -94,7 +102,7 @@
                 $stmt = $pdo -> prepare("SELECT A.id, A.account_id, A.question_id, A.content, A.date, A.upvotes, A.downvotes, A.best, AC.username, AC.profile_picture_path FROM answers A 
                     JOIN accounts AC ON AC.id = A.account_id 
                     WHERE A.question_id = :id
-                    ORDER BY A.upvotes DESC, A.downvotes, A.date DESC;");						
+                    ORDER BY A.best DESC, A.upvotes DESC, A.downvotes, A.date DESC;");						
                 $stmt -> bindParam(':id', $id);
             
                 $stmt -> execute();
@@ -121,10 +129,10 @@
                     
                 }
                 $size = isset($answerThreadArray)?sizeof($answerThreadArray):0;
-                $log->lwrite("Got all the answer threads. Size of array: $size");
+                self::$log->lwrite("Got all the answer threads. Size of array: $size");
             }
             catch(PDOException $e){
-                $log->lwrite($e -> getMessage());
+                self::$log->lwrite($e -> getMessage());
             }
             finally{
                 unset($pdo);
@@ -140,7 +148,11 @@
          * @param $type     string containing 'answer' or 'question'
          */
         private static function getCommentThread($id, $type){
-            global $servername, $username, $password, $dbname, $log;
+            $servername = self::$servername;
+            $username = self::$username;
+            $password = self::$password;
+            $dbname = self::$dbname;
+            $log = self::$log;
             $commentThreadArray = null;
             
             try{
@@ -171,10 +183,10 @@
                     
                 }
                 $size = isset($commentThreadArray)?sizeof($commentThreadArray):0;
-                $log->lwrite("Got all the comment threads for Type: $type with ID: $id. Size of array: $size");
+                self::$log->lwrite("Got all the comment threads for Type: $type with ID: $id. Size of array: $size");
             }
             catch(PDOException $e){
-                $log->lwrite($e -> getMessage());
+                self::$log->lwrite($e -> getMessage());
             }
             finally{
                 unset($pdo);

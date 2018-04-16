@@ -26,13 +26,12 @@
 		$log->lwrite("GET METHOD. for newQuestion.php");
 		include("header.php");
 		
-		echo "<script src='http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js'></script>
+		echo "
  			<script src='../js/newQuestion.js'></script>
- 			<link rel='stylesheet' href='http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css' />
 		 	<link rel='stylesheet' type='text/css' href='../css/questions_page.css'>";
 		 
-		 echo "<!--Body-->
-			<form method='post' action='?'>
+		 echo "
+			<form method='post' action='newQuestion.php'>
 				<div class='container' ng-app='newQuestion' ng-controller='QuestionController'>
 					<div class='form-control space'>
 						<span class='col-lg-2'>Tilte  </span>
@@ -43,7 +42,12 @@
 						<textarea class='form-control' rows='10' name='content'
 						ng-model='content' maxlength = '500' required></textarea>
 					</div>
-					
+
+					<div class='form-control space'>
+						<span class='col-lg-2'>Tags  </span>
+						<input class='col-lg-10' type='text' placeholder='Tags' name='tags' 
+						ng-model='question_title' required>		
+					</div>
 					<div class='space'>
 						<button ng-disabled='allowSubmit()' type='submit' class='btn btn-primary btn-md'> Ask it! </button>
 					</div>
@@ -57,6 +61,8 @@
 
 	}
 	else{
+		$error = "Please log in or sign up to ask a question..";
+		header("Location: ..\..\loginregister.php?errorMessage=$error"); 
 		$log->lwrite('session userid not set');
 	}
 
@@ -81,13 +87,16 @@
 				
 			// }		
 			
-			$tags=array('java','default');
+			$tags=$_POST['tags'];
+			$log->lwrite($_POST['tags']);
 			$upvotes=0;
 			$downvotes=0;
 			$date=date("Y-m-d H:i:s");
 
 			$newQuestion=new Question(-1,$_SESSION['userid'],$question_title,$content,$date,$upvotes,$downvotes,$tags);
-			$log->lwrite("Question has been made");		
+			$log->lwrite("Question has been made");
+			$tagging = explode(" ", $tags);
+			$newQuestion->setTags($tagging);
 
 			$log->lwrite("about to use function in question controller to add the question");		
 			$response=addQuestion($newQuestion);
