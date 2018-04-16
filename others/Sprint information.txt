@@ -37,7 +37,7 @@ sprint 3
 - Login
 	- username
 	- password
-		- ask security questions (3 attempts) if forgotten
+		- ask security questions
 	- fast login (pin)
 
 - Tasks breakdown
