@@ -1,6 +1,4 @@
 UA1-SO
-Any member is welcome to add to or edit the content of the README
-This is a template from github for readme files.
 
 # Stack Overflow Wannabe site
 
@@ -11,85 +9,42 @@ The goal of the project is to create a site like Stack Overflow.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Download the project and place it in your www folder of your apache server. Advanced users, you know where to go if you want to change the default folder.These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+Ensure that you have sowftare such as WAMP installed and running on your computer.
+Windows Apache MySQL PHP (WAMP)
+This project requires that you have:
+  - PHP
+  - Composer
+  - MySQL
+  - Apache server
+  - Travis-CI account
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+For windows,
+ install wamp which can be found: http://www.wampserver.com/en/
+ install composer which can be found: https://getcomposer.org/doc/00-intro.md
+ 
+ Access your phpmyadmin page from wamp, login using root and '' for login credentials (password is empty).
+ Import the database file.
+ You may change the user credentials that are used for accessing the database.
+ 
+ At this point the project can be run locally.
+ For preparing testing environment, continue
+ 
+ The settings for Travis-CI, the continuous integration testing tool, are found in the .travis.yml file
+ Ensure that you have your own github repository now with your version of the project. Create a travis-CI account
+ on their website at https://travis-ci.org/. Check the repositories you want travis to watch. Every push to your repository will cause a 
+ build to be done, and tests will be run based on the configuration you have for .travis.yml. Testing details and test folder configurations
+ are located in the phpunit.xml
+ 
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+The tests defined in the tests folder, with help of the phpunit and travis yml file will allow the tests to be run every push
+to the repository. The static tool test can be run via commmand line as such:
+/vendor/bin/parallel-lint insert_directory_of_files_to_test
 
